@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 /* STERNBERG-CINEMATIC-THEME v1 — shared verbatim across all pages */
-:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#15130F;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#163026;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px;overflow-x:hidden}
@@ -36,7 +36,7 @@ section{padding:clamp(100px,15vh,190px) 0}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:36px}
 .serif{font-family:var(--serif)}
 .it{font-style:italic}
-.dark{background:var(--ink);color:var(--bg);position:relative}
+.dark{background:#163026;color:var(--bg);position:relative}
 .dark .eyebrow{color:var(--gold)}
 .soft{background:rgba(184,148,90,0.04)}
 
@@ -50,7 +50,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .hero .mosaic{position:absolute;inset:-3px;display:grid;gap:3px;opacity:1;will-change:transform,opacity}
 .hero .mosaic i{display:block;width:100%;height:100%;border-radius:2px;opacity:0;transform:scale(.3)}
 .hero .mosaic i.lit{opacity:1;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
-.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 58% 44% at center,rgba(15,13,10,0.66) 0%,rgba(15,13,10,0.22) 46%,transparent 66%),radial-gradient(ellipse 92% 92% at center,transparent 52%,rgba(15,13,10,0.92) 100%);pointer-events:none}
+.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 58% 44% at center,rgba(11,22,17,0.66) 0%,rgba(11,22,17,0.22) 46%,transparent 66%),radial-gradient(ellipse 92% 92% at center,transparent 52%,rgba(11,22,17,0.92) 100%);pointer-events:none}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity}
 .hero .eyebrow{margin-bottom:40px}
 .hero .figure{font-family:var(--serif);font-weight:300;line-height:0.85;letter-spacing:-4px;font-size:clamp(6rem,22vw,20rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
@@ -213,7 +213,7 @@ section:not(.dark) .valbox .note{color:var(--muted)}
 .cta .card-cta .ref{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:rgba(248,246,241,0.55);margin-top:14px}
 
 /* footer (dark) */
-footer{padding:64px 0 48px;background:var(--ink);border-top:1px solid rgba(248,246,241,0.1)}
+footer{padding:64px 0 48px;background:#163026;border-top:1px solid rgba(248,246,241,0.1)}
 footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
@@ -476,7 +476,7 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 (function(){
   var host = document.getElementById('mosaic');
   if(!host) return;
-  var PALETTE = ['#0F0D0A','#15130F','#1C1813','#241E16','#0F0D0A','#15130F','#1C1813','#211C16','#15130F','#0F0D0A','#1C1813','#15130F','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
   function build(){
     var w = host.clientWidth, h = host.clientHeight;
     if(!w || !h) return;
