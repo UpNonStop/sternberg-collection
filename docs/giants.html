@@ -234,6 +234,145 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== GIANTS bespoke hero — "OVERSIZED" typographic wall ===== */
+.gnt-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:#163026;
+  overflow:hidden;
+}
+
+/* typographic wall */
+.gnt-wall{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  pointer-events:none;
+  user-select:none;
+}
+.gnt-row{
+  display:flex;
+  white-space:nowrap;
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(5rem,18vw,16rem);
+  line-height:0.92;
+  color:rgba(224,192,131,0.13);
+  will-change:transform;
+}
+.gnt-row span{
+  display:inline-block;
+  padding-right:0.25em;
+}
+
+/* five rows at slightly different speeds; odd rows drift left, even drift right */
+@keyframes gnt-drift-left{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@keyframes gnt-drift-right{
+  from{transform:translateX(-50%)}
+  to{transform:translateX(0)}
+}
+.gnt-row--1{animation:gnt-drift-left  38s linear infinite}
+.gnt-row--2{animation:gnt-drift-right 52s linear infinite;color:rgba(203,162,88,0.10)}
+.gnt-row--3{animation:gnt-drift-left  44s linear infinite;color:rgba(248,246,241,0.07)}
+.gnt-row--4{animation:gnt-drift-right 60s linear infinite;color:rgba(224,192,131,0.12)}
+.gnt-row--5{animation:gnt-drift-left  48s linear infinite;color:rgba(203,162,88,0.09)}
+
+/* radial scrim for legibility over the type wall */
+.gnt-scrim{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
+    radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+
+/* film grain */
+.gnt-grain{
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:2;
+}
+
+/* centered title content */
+.gnt-inner{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:140px 32px 90px;
+}
+.gnt-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:36px;
+}
+.gnt-title{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(5rem,18vw,14rem);
+  line-height:0.88;
+  letter-spacing:-3px;
+  color:#F8F6F1;
+  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+  margin:0;
+}
+.gnt-title em{
+  font-style:italic;
+  color:var(--gold);
+}
+.gnt-sub{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(1.3rem,3vw,2.2rem);
+  font-style:italic;
+  color:rgba(248,246,241,0.88);
+  max-width:720px;
+  margin:36px auto 0;
+  line-height:1.3;
+  text-shadow:0 1px 40px rgba(0,0,0,0.6);
+}
+.gnt-spec{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:rgba(248,246,241,0.5);
+  margin-top:24px;
+}
+
+/* scroll cue sits above the wall */
+.gnt-hero .scrollcue{z-index:3}
+
+/* reduced-motion: freeze all rows in place */
+@media (prefers-reduced-motion:reduce){
+  .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
+    animation:none;
+    /* show only the first copy so the row stays in frame */
+    transform:translateX(0);
+  }
+  .gnt-row span + span{display:none}
+}
 </style>
 </head>
 <body>
@@ -254,14 +393,25 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">Skyline Series One Oversized</div>
-    <div class="htitle">The <span class="g">GIANTS</span></div>
-    <div class="sub">Oversized city skyline vessels &mdash; among the rarest production pieces in the Starbucks archive.</div>
-    <div class="dates">22 oz &nbsp;&middot;&nbsp; &copy;2002 &nbsp;&middot;&nbsp; 16 Cities + Tahoe</div>
+<header class="gnt-hero" aria-label="Giants hero">
+  <!-- typographic wall of city names -->
+  <div class="gnt-wall" aria-hidden="true">
+    <div class="gnt-row gnt-row--1"><span>Pike Place&ensp;Seattle&ensp;Los Angeles&ensp;New York&ensp;Portland&ensp;Denver&ensp;Washington DC&ensp;San Diego&ensp;New Orleans&ensp;Dallas&ensp;Vancouver&ensp;Victoria&ensp;Chicago&ensp;Miami&ensp;San Francisco&ensp;Tahoe&ensp;</span><span aria-hidden="true">Pike Place&ensp;Seattle&ensp;Los Angeles&ensp;New York&ensp;Portland&ensp;Denver&ensp;Washington DC&ensp;San Diego&ensp;New Orleans&ensp;Dallas&ensp;Vancouver&ensp;Victoria&ensp;Chicago&ensp;Miami&ensp;San Francisco&ensp;Tahoe&ensp;</span></div>
+    <div class="gnt-row gnt-row--2"><span>New York&ensp;Chicago&ensp;Seattle&ensp;San Francisco&ensp;Miami&ensp;Portland&ensp;Dallas&ensp;Vancouver&ensp;Los Angeles&ensp;Denver&ensp;New Orleans&ensp;Washington DC&ensp;Victoria&ensp;San Diego&ensp;Pike Place&ensp;Tahoe&ensp;</span><span aria-hidden="true">New York&ensp;Chicago&ensp;Seattle&ensp;San Francisco&ensp;Miami&ensp;Portland&ensp;Dallas&ensp;Vancouver&ensp;Los Angeles&ensp;Denver&ensp;New Orleans&ensp;Washington DC&ensp;Victoria&ensp;San Diego&ensp;Pike Place&ensp;Tahoe&ensp;</span></div>
+    <div class="gnt-row gnt-row--3"><span>San Diego&ensp;Denver&ensp;New Orleans&ensp;Victoria&ensp;Pike Place&ensp;Los Angeles&ensp;Vancouver&ensp;Dallas&ensp;Chicago&ensp;Miami&ensp;New York&ensp;Portland&ensp;San Francisco&ensp;Seattle&ensp;Washington DC&ensp;Tahoe&ensp;</span><span aria-hidden="true">San Diego&ensp;Denver&ensp;New Orleans&ensp;Victoria&ensp;Pike Place&ensp;Los Angeles&ensp;Vancouver&ensp;Dallas&ensp;Chicago&ensp;Miami&ensp;New York&ensp;Portland&ensp;San Francisco&ensp;Seattle&ensp;Washington DC&ensp;Tahoe&ensp;</span></div>
+    <div class="gnt-row gnt-row--4"><span>Dallas&ensp;Miami&ensp;Vancouver&ensp;Seattle&ensp;New Orleans&ensp;Washington DC&ensp;Portland&ensp;San Francisco&ensp;Denver&ensp;Pike Place&ensp;Chicago&ensp;Victoria&ensp;San Diego&ensp;Los Angeles&ensp;New York&ensp;Tahoe&ensp;</span><span aria-hidden="true">Dallas&ensp;Miami&ensp;Vancouver&ensp;Seattle&ensp;New Orleans&ensp;Washington DC&ensp;Portland&ensp;San Francisco&ensp;Denver&ensp;Pike Place&ensp;Chicago&ensp;Victoria&ensp;San Diego&ensp;Los Angeles&ensp;New York&ensp;Tahoe&ensp;</span></div>
+    <div class="gnt-row gnt-row--5"><span>Portland&ensp;Washington DC&ensp;Victoria&ensp;New York&ensp;Chicago&ensp;San Diego&ensp;Seattle&ensp;New Orleans&ensp;Miami&ensp;Vancouver&ensp;Denver&ensp;Dallas&ensp;Los Angeles&ensp;Pike Place&ensp;San Francisco&ensp;Tahoe&ensp;</span><span aria-hidden="true">Portland&ensp;Washington DC&ensp;Victoria&ensp;New York&ensp;Chicago&ensp;San Diego&ensp;Seattle&ensp;New Orleans&ensp;Miami&ensp;Vancouver&ensp;Denver&ensp;Dallas&ensp;Los Angeles&ensp;Pike Place&ensp;San Francisco&ensp;Tahoe&ensp;</span></div>
+  </div>
+  <!-- scrim for legibility -->
+  <div class="gnt-scrim" aria-hidden="true"></div>
+  <!-- film grain -->
+  <div class="gnt-grain" aria-hidden="true"></div>
+  <!-- centered title block -->
+  <div class="gnt-inner">
+    <div class="gnt-eyebrow">Skyline Series One Oversized</div>
+    <h1 class="gnt-title">The <em>GIANTS</em></h1>
+    <p class="gnt-sub">Oversized city skyline vessels &mdash; among the rarest pieces in the Starbucks archive.</p>
+    <p class="gnt-spec">22 oz &nbsp;&middot;&nbsp; 16 cities</p>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>

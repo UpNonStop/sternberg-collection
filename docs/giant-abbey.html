@@ -234,6 +234,29 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ---- Giant Abbey signature hero: concentric vessel ripple-rings ---- */
+.ghero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 32px;background:#163026;overflow:hidden}
+.ghero .rings{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.ghero .rings span{position:absolute;width:34vmin;height:34vmin;border:1.5px solid rgba(184,148,90,0.6);border-radius:50%;opacity:0;transform:scale(.4)}
+html.js .ghero .rings span{animation:ripple 6s cubic-bezier(.16,1,.3,1) infinite}
+.ghero .rings span:nth-child(2){animation-delay:0.85s}
+.ghero .rings span:nth-child(3){animation-delay:1.7s}
+.ghero .rings span:nth-child(4){animation-delay:2.55s}
+.ghero .rings span:nth-child(5){animation-delay:3.4s}
+.ghero .rings span:nth-child(6){animation-delay:4.25s}
+.ghero .rings span:nth-child(7){animation-delay:5.1s}
+@keyframes ripple{0%{transform:scale(.4);opacity:0}12%{opacity:.75}100%{transform:scale(3.6);opacity:0}}
+.ghero .core{position:absolute;width:34vmin;height:34vmin;border-radius:50%;border:1.5px solid rgba(184,148,90,0.7);box-shadow:inset 0 0 140px rgba(184,148,90,0.22),0 0 100px rgba(184,148,90,0.12);pointer-events:none}
+.ghero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at center,rgba(11,22,17,0.55) 0%,rgba(11,22,17,0.15) 45%,transparent 70%),radial-gradient(ellipse 95% 95% at center,transparent 55%,rgba(11,22,17,0.92) 100%);pointer-events:none}
+.ghero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:0.05;pointer-events:none;mix-blend-mode:overlay;z-index:1}
+.ghero .ghero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.ghero .eyebrow{margin-bottom:36px}
+.ghero .gfigure{font-family:var(--serif);font-weight:300;line-height:0.82;letter-spacing:-4px;font-size:clamp(7rem,26vw,22rem);color:#F8F6F1;text-shadow:0 2px 90px rgba(0,0,0,0.5)}
+.ghero .gfigure .u{font-size:0.26em;letter-spacing:0;color:var(--gold);vertical-align:baseline;margin-left:.12em}
+.ghero .gtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);color:rgba(248,246,241,0.82);margin-top:18px;max-width:680px;line-height:1.25}
+.ghero .gsub{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:26px}
+@media (prefers-reduced-motion:reduce){.ghero .rings span{animation:none;opacity:.22;transform:scale(1)}}
 </style>
 </head>
 <body>
@@ -254,14 +277,15 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+<header class="ghero">
+  <div class="rings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="core"></div>
   <div class="vignette"></div>
-  <div class="hero-inner">
+  <div class="ghero-inner">
     <div class="eyebrow">The Anchor Piece</div>
-    <div class="htitle">Giant Abbey</div>
-    <div class="figure" style="margin-top:8px"><span data-to="138">138</span><span class="u">&nbsp;oz</span></div>
-    <div class="sub">The largest production Starbucks vessel ever made.</div>
+    <div class="gfigure"><span data-to="138">138</span><span class="u">oz</span></div>
+    <div class="gtitle">Giant Abbey &mdash; the largest production Starbucks vessel ever made</div>
+    <div class="gsub">SKU 168515 &middot; 15 lbs &middot; New in box</div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>

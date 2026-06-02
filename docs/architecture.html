@@ -234,6 +234,120 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== ARC HERO — Blueprint Skyline ===== */
+.arc-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 32px 110px;
+  overflow:hidden;
+  background-color:#163026;
+  /* Blueprint grid: faint gold lines at low opacity */
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,148,90,0.07) 59px, rgba(184,148,90,0.07) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(184,148,90,0.07) 59px, rgba(184,148,90,0.07) 60px),
+    repeating-linear-gradient(0deg, transparent, transparent 299px, rgba(184,148,90,0.12) 299px, rgba(184,148,90,0.12) 300px),
+    repeating-linear-gradient(90deg, transparent, transparent 299px, rgba(184,148,90,0.12) 299px, rgba(184,148,90,0.12) 300px);
+}
+/* Film grain */
+.arc-grain{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;mix-blend-mode:overlay;
+}
+/* Vignette scrim — dark radial to keep text legible */
+.arc-vignette{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:
+    radial-gradient(ellipse 64% 52% at 50% 42%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.22) 50%, transparent 70%),
+    radial-gradient(ellipse 96% 96% at center, transparent 48%, rgba(11,22,17,0.96) 100%);
+}
+/* Skyline container — pins to lower ~40% of hero */
+.arc-skyline-wrap{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:52%;
+  pointer-events:none;
+  z-index:3;
+  display:flex;align-items:flex-end;
+}
+.arc-skyline-svg{
+  width:100%;height:auto;
+  display:block;
+  overflow:visible;
+  filter:drop-shadow(0 0 12px rgba(184,148,90,0.5));
+}
+/* Draw-in animation via stroke-dasharray */
+.arc-skyline-path{
+  stroke-dasharray:9000;
+  stroke-dashoffset:9000;
+  animation:arc-draw 4.2s cubic-bezier(.4,0,.2,1) 0.4s forwards;
+}
+@keyframes arc-draw{
+  to{stroke-dashoffset:0;}
+}
+/* Text layer above everything */
+.arc-inner{
+  position:relative;
+  z-index:4;
+  display:flex;flex-direction:column;align-items:center;
+  margin-bottom:80px; /* lift text above skyline */
+}
+.arc-eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:32px;
+}
+.arc-title{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(4rem,12vw,10rem);
+  line-height:0.9;letter-spacing:-3px;
+  color:#F8F6F1;
+  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+  margin-bottom:40px;
+}
+.arc-title em{
+  font-style:italic;color:var(--gold);
+}
+.arc-count{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(3rem,8vw,7rem);
+  line-height:1;letter-spacing:-2px;
+  color:#F8F6F1;
+  text-shadow:0 2px 60px rgba(0,0,0,0.55);
+  margin-bottom:28px;
+}
+.arc-count-label{
+  font-size:0.55em;letter-spacing:0;color:var(--gold);font-style:italic;
+}
+.arc-sub{
+  font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(1.1rem,2.4vw,1.8rem);
+  color:rgba(248,246,241,0.88);
+  max-width:680px;line-height:1.4;
+  text-shadow:0 1px 40px rgba(0,0,0,0.55);
+}
+/* Position scrollcue above skyline */
+.arc-hero .scrollcue{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);z-index:5;
+}
+/* Reduced motion: show skyline fully drawn, no animation */
+@media (prefers-reduced-motion:reduce){
+  .arc-skyline-path{
+    stroke-dashoffset:0;
+    animation:none;
+  }
+}
+@media (max-width:768px){
+  .arc-inner{margin-bottom:60px;}
+  .arc-title{letter-spacing:-1px;}
+  .arc-skyline-wrap{height:30%;}
+}
 </style>
 </head>
 <body>
@@ -254,14 +368,27 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">The Largest Series in the Collection</div>
-    <div class="htitle">Architecture <span class="g">Series</span></div>
-    <div class="sub">Forty-five North American cities across <span class="it">two formats.</span></div>
-    <div class="dates">186118&ndash;576998 &ensp;&middot;&ensp; 2006&ndash;PRESENT &ensp;&middot;&ensp; ~50 PIECES</div>
+<header class="arc-hero" aria-label="Architecture Series hero">
+  <!-- Film grain overlay -->
+  <div class="arc-grain" aria-hidden="true"></div>
+  <!-- Blueprint grid (CSS repeating-linear-gradient via background on .arc-hero) -->
+  <!-- Vignette scrim -->
+  <div class="arc-vignette" aria-hidden="true"></div>
+  <!-- Self-drawing gold skyline SVG -->
+  <div class="arc-skyline-wrap" aria-hidden="true">
+    <svg class="arc-skyline-svg" viewBox="0 0 1400 260" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+      <path class="arc-skyline-path" d="
+        M0,260
+        L0,190 L18,190 L18,160 L24,160 L24,120 L30,120 L30,100 L36,100 L36,90 L42,90 L42,60 L48,60 L48,90 L54,90 L54,100 L60,100 L60,80 L66,80 L66,60 L72,60 L72,80 L78,80 L78,100 L84,100 L84,130 L90,130 L90,110 L96,110 L96,95 L102,95 L102,70 L108,70 L108,55 L114,55 L114,40 L120,40 L120,55 L126,55 L126,70 L132,70 L132,95 L138,95 L138,110 L144,110 L144,130 L150,130 L150,150 L170,150 L170,130 L176,130 L176,100 L182,100 L182,80 L188,80 L188,60 L194,60 L194,45 L200,45 L200,30 L206,30 L206,20 L212,20 L212,30 L218,30 L218,45 L224,45 L224,60 L230,60 L230,80 L236,80 L236,100 L242,100 L242,130 L248,130 L248,150 L268,150 L268,125 L274,125 L274,100 L280,100 L280,80 L286,80 L286,65 L292,65 L292,50 L298,50 L298,35 L304,35 L304,50 L310,50 L310,65 L316,65 L316,80 L322,80 L322,100 L328,100 L328,125 L334,125 L334,150 L360,150 L360,170 L366,170 L366,140 L372,140 L372,115 L378,115 L378,95 L384,95 L384,75 L390,75 L390,55 L396,55 L396,75 L402,75 L402,95 L408,95 L408,115 L414,115 L414,140 L420,140 L420,160 L440,160 L440,135 L446,135 L446,105 L452,105 L452,80 L458,80 L458,55 L464,55 L464,35 L470,35 L470,20 L476,20 L476,10 L482,10 L482,20 L488,20 L488,35 L494,35 L494,55 L500,55 L500,80 L506,80 L506,105 L512,105 L512,135 L518,135 L518,160 L540,160 L540,175 L546,175 L546,145 L552,145 L552,120 L558,120 L558,100 L564,100 L564,80 L570,80 L570,65 L576,65 L576,80 L582,80 L582,100 L588,100 L588,120 L594,120 L594,145 L600,145 L600,165 L620,165 L620,140 L626,140 L626,110 L632,110 L632,85 L638,85 L638,65 L644,65 L644,45 L650,45 L650,30 L656,30 L656,15 L662,15 L662,30 L668,30 L668,45 L674,45 L674,65 L680,65 L680,85 L686,85 L686,110 L692,110 L692,140 L698,140 L698,165 L720,165 L720,180 L726,180 L726,155 L732,155 L732,130 L738,130 L738,108 L744,108 L744,88 L750,88 L750,70 L756,70 L756,55 L762,55 L762,70 L768,70 L768,88 L774,88 L774,108 L780,108 L780,130 L786,130 L786,155 L792,155 L792,175 L810,175 L810,150 L816,150 L816,120 L822,120 L822,95 L828,95 L828,72 L834,72 L834,52 L840,52 L840,35 L846,35 L846,22 L852,22 L852,35 L858,35 L858,52 L864,52 L864,72 L870,72 L870,95 L876,95 L876,120 L882,120 L882,150 L888,150 L888,170 L910,170 L910,148 L916,148 L916,120 L922,120 L922,96 L928,96 L928,75 L934,75 L934,58 L940,58 L940,75 L946,75 L946,96 L952,96 L952,120 L958,120 L958,148 L964,148 L964,165 L984,165 L984,138 L990,138 L990,108 L996,108 L996,80 L1002,80 L1002,55 L1008,55 L1008,35 L1014,35 L1014,18 L1020,18 L1020,8 L1026,8 L1026,18 L1032,18 L1032,35 L1038,35 L1038,55 L1044,55 L1044,80 L1050,80 L1050,108 L1056,108 L1056,138 L1062,138 L1062,160 L1082,160 L1082,175 L1088,175 L1088,148 L1094,148 L1094,122 L1100,122 L1100,98 L1106,98 L1106,78 L1112,78 L1112,60 L1118,60 L1118,78 L1124,78 L1124,98 L1130,98 L1130,122 L1136,122 L1136,148 L1142,148 L1142,170 L1160,170 L1160,148 L1166,148 L1166,118 L1172,118 L1172,88 L1178,88 L1178,62 L1184,62 L1184,40 L1190,40 L1190,22 L1196,22 L1196,10 L1202,10 L1202,22 L1208,22 L1208,40 L1214,40 L1214,62 L1220,62 L1220,88 L1226,88 L1226,118 L1232,118 L1232,148 L1238,148 L1238,165 L1260,165 L1260,145 L1266,145 L1266,118 L1272,118 L1272,95 L1278,95 L1278,72 L1284,72 L1284,55 L1290,55 L1290,72 L1296,72 L1296,95 L1302,95 L1302,118 L1308,118 L1308,145 L1314,145 L1314,162 L1340,162 L1340,178 L1346,178 L1346,158 L1352,158 L1352,138 L1358,138 L1358,118 L1364,118 L1364,100 L1370,100 L1370,118 L1376,118 L1376,138 L1382,138 L1382,158 L1388,158 L1388,175 L1400,175 L1400,260 Z
+      " fill="none" stroke="#CBA258" stroke-width="3" stroke-linejoin="miter"/>
+    </svg>
+  </div>
+  <!-- Text content -->
+  <div class="arc-inner">
+    <div class="arc-eyebrow">The Largest Series in the Collection</div>
+    <h1 class="arc-title">Architecture <em>Series</em></h1>
+    <div class="arc-count"><span data-to="45">45</span> <span class="arc-count-label">cities</span></div>
+    <p class="arc-sub">Forty-five North American cities, across two formats &mdash; the most geographically comprehensive section of the archive.</p>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>

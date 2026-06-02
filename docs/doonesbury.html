@@ -234,6 +234,130 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== DOO HERO — "Number 47 of 1,500" ===== */
+#doo-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 32px 100px;
+  background:#163026;
+  overflow:hidden;
+}
+/* canvas fills hero behind everything */
+#doo-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+/* radial dark scrim — keeps text legible */
+.doo-scrim{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 50%, transparent 72%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+/* film grain overlay */
+.doo-grain{
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:2;
+}
+/* text content sits above everything */
+.doo-inner{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+.doo-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:32px;
+}
+.doo-title{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(4rem,14vw,13rem);
+  line-height:0.88;
+  letter-spacing:-3px;
+  color:#F8F6F1;
+  text-shadow:0 4px 100px rgba(0,0,0,0.7);
+  margin:0 0 36px;
+}
+.doo-sub{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(1.2rem,2.6vw,1.9rem);
+  color:rgba(248,246,241,0.88);
+  max-width:720px;
+  line-height:1.35;
+  text-shadow:0 2px 40px rgba(0,0,0,0.65);
+  margin:0 0 52px;
+}
+/* "#47 / 1500" callout badge */
+.doo-badge{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  border:1px solid rgba(184,148,90,0.5);
+  padding:28px 52px;
+  background:rgba(11,22,17,0.55);
+  backdrop-filter:blur(6px);
+}
+.doo-badge-num{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(2.6rem,6vw,4.8rem);
+  color:#E0C083;
+  letter-spacing:1px;
+  line-height:1;
+  text-shadow:0 0 40px rgba(224,192,131,0.55);
+}
+.doo-badge-label{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:rgba(248,246,241,0.65);
+}
+/* scrollcue stays at bottom — z-index above canvas */
+#doo-hero .scrollcue{
+  z-index:3;
+}
+/* beacon pulse keyframe */
+@keyframes doo-pulse{
+  0%,100%{ opacity:1; box-shadow:0 0 6px 2px rgba(224,192,131,0.5), 0 0 18px 6px rgba(184,148,90,0.3); }
+  50%{     opacity:0.72; box-shadow:0 0 14px 5px rgba(224,192,131,0.85), 0 0 36px 14px rgba(184,148,90,0.55), 0 0 60px 24px rgba(184,148,90,0.18); }
+}
+/* reduced motion: no pulse, no parallax */
+@media (prefers-reduced-motion:reduce){
+  .doo-beacon{ animation:none !important; }
+}
+@media (max-width:600px){
+  .doo-badge{ padding:22px 28px; }
+  .doo-title{ letter-spacing:-1px; }
+}
 </style>
 </head>
 <body>
@@ -254,14 +378,22 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">The Complete Set</div>
-    <div class="htitle">Doonesbury <span class="g">LE</span></div>
-    <div class="sub">Ten of ten. Complete and intact.</div>
-    <div class="dates">SKUs 168501 &ndash; 168510 &nbsp;&middot;&nbsp; Never Reissued</div>
+<header id="doo-hero" aria-label="Doonesbury Limited Edition hero">
+  <!-- 1,500-tick grid canvas -->
+  <canvas id="doo-canvas" aria-hidden="true"></canvas>
+  <!-- radial scrim so text is always legible -->
+  <div class="doo-scrim" aria-hidden="true"></div>
+  <!-- film grain (reuse pattern from brief) -->
+  <div class="doo-grain" aria-hidden="true"></div>
+  <!-- text overlay -->
+  <div class="doo-inner">
+    <div class="doo-eyebrow">Pulitzer-Winner Numbered LEs</div>
+    <h1 class="doo-title">Doonesbury</h1>
+    <p class="doo-sub">Garry Trudeau, individually numbered out of 1,500 &mdash; never reissued.</p>
+    <div class="doo-badge">
+      <span class="doo-badge-num">#47 / 1500</span>
+      <span class="doo-badge-label">The Java Pump Statue &nbsp;&middot;&nbsp; 10 of 10 complete</span>
+    </div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
@@ -473,6 +605,173 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
+<script>
+/* ===== DOO HERO — 1,500-tick grid, beacon #47 ===== */
+(function(){
+  var canvas = document.getElementById('doo-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var TOTAL = 1500;
+  var BEACON = 47; // 1-indexed
+  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // colours
+  var C_BG      = '#163026';
+  var C_DIM     = 'rgba(140,100,40,0.22)';   // faint deep-gold tick (dim)
+  var C_BEACON  = '#E0C083';                  // bright gold beacon
+  var C_RING    = 'rgba(224,192,131,0.18)';   // soft halo ring
+
+  var ticks = [];       // {x, y, sz}
+  var beaconTick = null;
+  var pulseT = 0;
+
+  function layout(){
+    var W = canvas.offsetWidth, H = canvas.offsetHeight;
+    canvas.width  = W;
+    canvas.height = H;
+
+    // figure out a grid that holds exactly TOTAL ticks
+    // cols * rows >= TOTAL, roughly square cells
+    var aspect = W / H;
+    var rows = Math.round(Math.sqrt(TOTAL / aspect));
+    var cols = Math.ceil(TOTAL / rows);
+    // actual cell size
+    var cw = W / cols, ch = H / rows;
+    var sz = Math.max(2, Math.min(Math.floor(Math.min(cw, ch) * 0.38), 5));
+
+    ticks = [];
+    for(var i = 0; i < TOTAL; i++){
+      var col = i % cols;
+      var row = Math.floor(i / cols);
+      var x = (col + 0.5) * cw;
+      var y = (row + 0.5) * ch;
+      ticks.push({ x: x, y: y, sz: sz });
+    }
+    beaconTick = ticks[BEACON - 1]; // #47 is index 46
+  }
+
+  function drawFrame(ts){
+    if(!canvas.width) return;
+    var W = canvas.width, H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    // background
+    ctx.fillStyle = C_BG;
+    ctx.fillRect(0, 0, W, H);
+
+    // pulse factor for beacon
+    var pulse = 1;
+    if(!REDUCE){
+      pulseT = ts / 1800; // period ~1.8 s
+      pulse = 0.72 + 0.28 * (0.5 + 0.5 * Math.sin(pulseT * Math.PI * 2));
+    }
+
+    // draw all dim ticks first
+    ctx.fillStyle = C_DIM;
+    for(var i = 0; i < TOTAL; i++){
+      if(i === BEACON - 1) continue;
+      var t = ticks[i];
+      var h = t.sz;
+      ctx.fillRect(t.x - h/2, t.y - h/2, h, h);
+    }
+
+    // draw beacon #47 — bright, pulsing glow
+    if(beaconTick){
+      var bx = beaconTick.x, by = beaconTick.y;
+      var bs = beaconTick.sz;
+
+      if(!REDUCE){
+        // outer soft halo — large, very faint
+        var halo2 = ctx.createRadialGradient(bx, by, bs * 2, bx, by, bs * 18);
+        halo2.addColorStop(0, 'rgba(224,192,131,' + (0.13 * pulse).toFixed(3) + ')');
+        halo2.addColorStop(1, 'rgba(224,192,131,0)');
+        ctx.fillStyle = halo2;
+        ctx.beginPath();
+        ctx.arc(bx, by, bs * 18, 0, Math.PI * 2);
+        ctx.fill();
+
+        // inner bright halo
+        var halo = ctx.createRadialGradient(bx, by, 0, bx, by, bs * 7);
+        halo.addColorStop(0, 'rgba(224,192,131,' + (0.72 * pulse).toFixed(3) + ')');
+        halo.addColorStop(0.5, 'rgba(184,148,90,' + (0.32 * pulse).toFixed(3) + ')');
+        halo.addColorStop(1, 'rgba(184,148,90,0)');
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(bx, by, bs * 7, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // the tick square itself — always bright
+      var bright = REDUCE ? 1 : pulse;
+      ctx.fillStyle = 'rgba(224,192,131,' + bright.toFixed(3) + ')';
+      ctx.fillRect(bx - bs/2, by - bs/2, bs, bs);
+
+      // tiny crosshair lines to draw the eye (subtle, faint)
+      if(!REDUCE){
+        ctx.strokeStyle = 'rgba(224,192,131,' + (0.22 * pulse).toFixed(3) + ')';
+        ctx.lineWidth = 0.5;
+        ctx.setLineDash([3, 4]);
+        ctx.beginPath();
+        ctx.moveTo(bx, by - bs * 3.5);
+        ctx.lineTo(bx, by - bs * 1.2);
+        ctx.moveTo(bx, by + bs * 1.2);
+        ctx.lineTo(bx, by + bs * 3.5);
+        ctx.moveTo(bx - bs * 3.5, by);
+        ctx.lineTo(bx - bs * 1.2, by);
+        ctx.moveTo(bx + bs * 1.2, by);
+        ctx.lineTo(bx + bs * 3.5, by);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+  }
+
+  var animRunning = false;
+  function loop(ts){
+    drawFrame(ts);
+    if(!REDUCE) requestAnimationFrame(loop);
+  }
+
+  function init(){
+    layout();
+    requestAnimationFrame(function(ts){
+      drawFrame(ts);
+      if(!REDUCE){ animRunning = true; requestAnimationFrame(loop); }
+    });
+  }
+
+  init();
+
+  // resize
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      layout();
+      if(REDUCE) requestAnimationFrame(drawFrame);
+    }, 200);
+  });
+
+  // parallax on scroll
+  if(!REDUCE){
+    var hero = document.getElementById('doo-hero');
+    var inner = hero && hero.querySelector('.doo-inner');
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var hh = hero ? hero.offsetHeight : window.innerHeight;
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        var p = Math.min(Math.max(y / hh, 0), 1);
+        if(canvas){ canvas.style.transform = 'scale(' + (1 + 0.12 * p).toFixed(3) + ')'; canvas.style.opacity = (1 - p * 0.8).toFixed(3); }
+        if(inner){ inner.style.transform = 'translateY(' + (-60 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.3).toFixed(3); }
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+})();
+</script>
 <script>
 document.documentElement.classList.add('js');
 var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

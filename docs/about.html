@@ -234,6 +234,143 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== ABOUT — bespoke drifting-wall hero (prefix: abt-) ===== */
+.abt-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 32px 90px;
+  background:#163026;
+  overflow:hidden;
+}
+
+/* wall of drifting rows */
+.abt-wall{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  pointer-events:none;
+  /* clip so marquees never overflow the hero */
+}
+
+.abt-row{
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:1;
+  display:flex;
+}
+
+/* each .abt-rtext is a full-width band — we duplicate content inside via JS */
+.abt-rtext{
+  display:inline-block;
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(0.85rem,1.6vw,1.35rem);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  /* base style: cream at very low opacity */
+  color:rgba(248,246,241,0.11);
+  padding:0.55em 0;
+}
+
+/* alternate rows get a gold tint */
+.abt-row:nth-child(even) .abt-rtext{
+  color:rgba(203,162,88,0.12);
+}
+
+/* animation: rightward */
+@keyframes abt-drift-r{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+/* animation: leftward */
+@keyframes abt-drift-l{
+  from{transform:translateX(-50%)}
+  to{transform:translateX(0)}
+}
+
+/* assign speeds & directions — odd rows drift right, even rows left */
+.abt-row--1  .abt-rtext{animation:abt-drift-r 38s linear infinite}
+.abt-row--2  .abt-rtext{animation:abt-drift-l 52s linear infinite}
+.abt-row--3  .abt-rtext{animation:abt-drift-r 44s linear infinite}
+.abt-row--4  .abt-rtext{animation:abt-drift-l 34s linear infinite}
+.abt-row--5  .abt-rtext{animation:abt-drift-r 60s linear infinite}
+.abt-row--6  .abt-rtext{animation:abt-drift-l 42s linear infinite}
+.abt-row--7  .abt-rtext{animation:abt-drift-r 30s linear infinite}
+.abt-row--8  .abt-rtext{animation:abt-drift-l 56s linear infinite}
+.abt-row--9  .abt-rtext{animation:abt-drift-r 48s linear infinite}
+.abt-row--10 .abt-rtext{animation:abt-drift-l 36s linear infinite}
+
+/* radial scrim — keeps centred text always legible */
+.abt-scrim{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 62% 55% at 50% 50%,rgba(11,22,17,0.88) 0%,rgba(11,22,17,0.45) 44%,transparent 68%),
+    radial-gradient(ellipse 95% 95% at 50% 50%,transparent 50%,rgba(11,22,17,0.96) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+
+/* film grain */
+.abt-grain{
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:2;
+}
+
+/* centred copy */
+.abt-inner{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.abt-hero .eyebrow{margin-bottom:40px}
+
+.abt-title{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(4rem,14vw,16rem);
+  line-height:0.88;
+  letter-spacing:-4px;
+  color:#F8F6F1;
+  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+}
+
+.abt-sub{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(1.1rem,2.6vw,1.9rem);
+  font-style:italic;
+  color:rgba(248,246,241,0.85);
+  max-width:760px;
+  margin:36px auto 0;
+  line-height:1.35;
+  text-shadow:0 1px 40px rgba(0,0,0,0.55);
+}
+
+/* ensure scrollcue sits above everything */
+.abt-hero .scrollcue{z-index:4}
+
+/* reduced-motion: freeze all rows */
+@media (prefers-reduced-motion:reduce){
+  .abt-rtext{animation:none !important}
+}
 </style>
 </head>
 <body>
@@ -254,13 +391,30 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
+<header class="abt-hero" aria-label="Hero — The Archive">
+  <!-- drifting marquee wall -->
+  <div class="abt-wall" aria-hidden="true">
+    <!-- rows injected by JS; CSS fallback rows for no-JS / reduced-motion -->
+    <div class="abt-row abt-row--1"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--2"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--3"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--4"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--5"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--6"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--7"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--8"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--9"><span class="abt-rtext"></span></div>
+    <div class="abt-row abt-row--10"><span class="abt-rtext"></span></div>
+  </div>
+  <!-- radial scrim over the wall -->
+  <div class="abt-scrim"></div>
+  <!-- film grain -->
+  <div class="abt-grain"></div>
+  <!-- centered copy -->
+  <div class="abt-inner">
     <div class="eyebrow">The Archive</div>
-    <div class="htitle">One intact <span class="g">collection.</span></div>
-    <div class="sub">Fifty-three years. One archive.</div>
+    <h1 class="abt-title">One intact collection.</h1>
+    <p class="abt-sub">Fifty-three years. 2,468 pieces. 106 series. Documented in entirety.</p>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
@@ -407,6 +561,32 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
+<script>
+/* abt-hero: fill marquee rows with series names */
+(function(){
+  var SERIES = [
+    'Global Icon Series','City Mug Collector','Barista Bears','You Are Here','Japan',
+    'Architecture Series','Skyline GIANTS','Doonesbury','Charity Edition','Relief Series',
+    'States of Bean','Brand Heritage Logos','Been There Series','Ornament Collection',
+    'Picasso Art','Reserve Roastery','Anniversary Edition','Siren Logo Evolution',
+    'Holiday Classics','Cold Cup Series','Pike Place','Reserve Collection',
+    'City Tumblers','Artist Series','Stainless Icon','Origins Blend','Seasonal Picks',
+    'Pearl Lustre','Monochrome Set','Script Heritage'
+  ];
+  var rows = document.querySelectorAll('.abt-row .abt-rtext');
+  if(!rows.length) return;
+  /* build a long string (~6–8 repeats) so the 50% translate creates a seamless loop */
+  rows.forEach(function(span, i){
+    /* rotate the series list by row index for visual variety */
+    var offset = (i * 4) % SERIES.length;
+    var names = SERIES.slice(offset).concat(SERIES.slice(0, offset));
+    /* repeat enough to ensure the rendered width > 200vw */
+    var chunk = names.join('   ·   ');
+    var full = (chunk + '   ·   ').repeat(8);
+    span.textContent = full;
+  });
+})();
+</script>
 <script>
 document.documentElement.classList.add('js');
 var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

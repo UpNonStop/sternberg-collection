@@ -234,6 +234,171 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== CHARITY EDITION BESPOKE HERO ===== */
+.cha-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 32px 100px;
+  background:#163026;
+  overflow:hidden;
+}
+.cha-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:1;
+}
+.cha-bg{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%, #0B1611 0%, #102A1F 40%, #163026 70%, #1C3A2D 100%);
+  pointer-events:none;
+}
+.cha-vignette{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 56% 42% at 50% 50%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 44%, transparent 64%),
+    radial-gradient(ellipse 92% 92% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+.cha-ring-wrap{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:3;
+  pointer-events:none;
+}
+.cha-ring-svg{
+  position:absolute;
+  width:min(72vmin, 580px);
+  height:min(72vmin, 580px);
+  overflow:visible;
+}
+.cha-arc-track{
+  fill:none;
+  stroke:rgba(184,148,90,0.13);
+  stroke-width:1.5;
+}
+.cha-arc-fill{
+  fill:none;
+  stroke:url(#chaGoldGrad);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-dasharray:0 10000;
+  transition:none;
+}
+.cha-ring-svg.complete .cha-arc-fill{
+  filter:drop-shadow(0 0 7px rgba(203,162,88,0.65));
+}
+.cha-point{
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  transform:translate(-50%, -50%);
+  pointer-events:none;
+}
+.cha-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#CBA258;
+  opacity:0;
+  transform:scale(0.2);
+  transition:opacity 0.55s ease, transform 0.55s cubic-bezier(.16,1,.3,1), box-shadow 0.55s ease;
+  will-change:opacity,transform,box-shadow;
+}
+.cha-dot.lit{
+  opacity:1;
+  transform:scale(1);
+  box-shadow:0 0 10px 4px rgba(203,162,88,0.55), 0 0 24px 8px rgba(184,148,90,0.2);
+}
+.cha-city{
+  font-family:var(--mono);
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(224,192,131,0.72);
+  white-space:nowrap;
+  opacity:0;
+  transition:opacity 0.5s ease 0.2s;
+  line-height:1;
+}
+.cha-point.lit .cha-city{ opacity:1; }
+.cha-inner{
+  position:relative;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.cha-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.cha-numeral{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(5rem,20vw,16rem);
+  line-height:0.85;
+  letter-spacing:-4px;
+  color:#F8F6F1;
+  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+}
+.cha-numeral .cha-denom{
+  font-size:0.34em;
+  letter-spacing:-1px;
+  color:var(--gold);
+  vertical-align:baseline;
+}
+.cha-complete-label{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:rgba(248,246,241,0.5);
+  margin-top:14px;
+}
+.cha-tagline{
+  font-family:var(--serif);
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(1.1rem,2.4vw,1.75rem);
+  color:rgba(248,246,241,0.82);
+  max-width:620px;
+  margin:26px auto 0;
+  line-height:1.35;
+  text-shadow:0 1px 40px rgba(0,0,0,0.5);
+}
+@media (prefers-reduced-motion:reduce){
+  .cha-dot{
+    opacity:1 !important;
+    transform:scale(1) !important;
+    box-shadow:0 0 8px 3px rgba(203,162,88,0.4) !important;
+    transition:none !important;
+  }
+  .cha-city{ opacity:1 !important; transition:none !important; }
+  .cha-arc-fill{ transition:none !important; }
+}
 </style>
 </head>
 <body>
@@ -254,15 +419,37 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">The Complete Set</div>
-    <div class="htitle">Charity <span class="g">Edition</span></div>
-    <div class="figure" style="font-size:clamp(5rem,18vw,15rem);margin-top:24px"><span data-to="16">16</span><span class="u">&nbsp;/&nbsp;16</span></div>
-    <div class="sub">Sixteen cities. Sixteen local charities. <span class="it">Complete.</span></div>
+<header class="cha-hero" id="cha-hero">
+  <div class="cha-bg" aria-hidden="true"></div>
+  <div class="cha-vignette" aria-hidden="true"></div>
+
+  <!-- Ring layer: SVG arc + JS-positioned city points -->
+  <div class="cha-ring-wrap" aria-hidden="true">
+    <svg class="cha-ring-svg" id="chaRingSvg" viewBox="-300 -300 600 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="chaGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#B8945A"/>
+          <stop offset="50%" stop-color="#E0C083"/>
+          <stop offset="100%" stop-color="#CBA258"/>
+        </linearGradient>
+      </defs>
+      <!-- track circle -->
+      <circle class="cha-arc-track" cx="0" cy="0" r="230"/>
+      <!-- animated fill arc -->
+      <circle class="cha-arc-fill" id="chaArcFill" cx="0" cy="0" r="230"
+        transform="rotate(-90)"
+        stroke-dasharray="0 1445"/>
+    </svg>
+    <!-- city points injected by JS into .cha-ring-wrap -->
   </div>
+
+  <div class="cha-inner">
+    <div class="cha-eyebrow">The Complete Set</div>
+    <div class="cha-numeral"><span data-to="16">16</span><span class="cha-denom">&nbsp;/&nbsp;16</span></div>
+    <div class="cha-complete-label">Complete</div>
+    <div class="cha-tagline">Sixteen US cities. Sixteen local charities. <em>Never split.</em></div>
+  </div>
+
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
@@ -361,6 +548,128 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   <div class="ft">In memory of Chaim Sternberg &middot; 1944&ndash;2024</div>
   <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
+
+<script>
+/* ===== CHARITY EDITION RING-OF-GIVING HERO ===== */
+(function(){
+  var CITIES = [
+    'Philadelphia','Phoenix','New York','San Antonio',
+    'San Francisco','San Diego','Seattle','Las Vegas',
+    'Boston','Washington DC','Chicago','Atlanta',
+    'Miami','Austin','Dallas','Houston'
+  ];
+  var N = CITIES.length; // 16
+  var CIRCUMFERENCE = 2 * Math.PI * 230; // ~1445.1
+
+  var hero   = document.getElementById('cha-hero');
+  var svgEl  = document.getElementById('chaRingSvg');
+  var arcFill= document.getElementById('chaArcFill');
+  var ringWrap = hero ? hero.querySelector('.cha-ring-wrap') : null;
+  if (!hero || !svgEl || !arcFill || !ringWrap) return;
+
+  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- size helpers --- */
+  function ringRadius(){
+    /* keep ring radius proportional to the rendered SVG size */
+    return 230; // SVG units, viewBox is 600x600 centred
+  }
+
+  /* --- Build city points --- */
+  var frag = document.createDocumentFragment();
+  var points = [];
+  for (var i = 0; i < N; i++) {
+    var pt = document.createElement('div');
+    pt.className = 'cha-point';
+    var dot = document.createElement('div');
+    dot.className = 'cha-dot';
+    var lbl = document.createElement('div');
+    lbl.className = 'cha-city';
+    lbl.textContent = CITIES[i];
+    pt.appendChild(dot);
+    pt.appendChild(lbl);
+    frag.appendChild(pt);
+    points.push({ el: pt, dot: dot, index: i });
+  }
+  ringWrap.appendChild(frag);
+
+  /* --- Position points around the ring --- */
+  function positionPoints() {
+    var wrap = ringWrap.getBoundingClientRect();
+    var cx = wrap.width  / 2;
+    var cy = wrap.height / 2;
+    /* ring visual radius in px — match SVG rendering */
+    var svgRect = svgEl.getBoundingClientRect();
+    var scale   = svgRect.width / 600; // viewBox width=600
+    var rPx     = 230 * scale;
+
+    for (var i = 0; i < N; i++) {
+      var angle = (2 * Math.PI * i / N) - Math.PI / 2; // start top
+      var x = cx + rPx * Math.cos(angle);
+      var y = cy + rPx * Math.sin(angle);
+      points[i].el.style.left = x + 'px';
+      points[i].el.style.top  = y + 'px';
+    }
+  }
+
+  /* set arc fill circumference accurately */
+  arcFill.style.strokeDasharray = '0 ' + CIRCUMFERENCE.toFixed(1);
+
+  function setArcProgress(fraction) {
+    var drawn = CIRCUMFERENCE * Math.min(fraction, 1);
+    arcFill.style.strokeDasharray = drawn.toFixed(2) + ' ' + CIRCUMFERENCE.toFixed(1);
+  }
+
+  /* --- Reduced motion: show everything lit instantly --- */
+  if (REDUCE) {
+    positionPoints();
+    setArcProgress(1);
+    svgEl.classList.add('complete');
+    points.forEach(function(p){ p.el.classList.add('lit'); p.dot.classList.add('lit'); });
+    /* resize */
+    window.addEventListener('resize', function(){ positionPoints(); }, { passive: true });
+    return;
+  }
+
+  /* --- Animated ignite sequence --- */
+  var DELAY_BETWEEN = 220; // ms between each ignite
+  var LIT_COUNT = 0;
+
+  function ignitePoint(idx) {
+    var p = points[idx];
+    p.dot.classList.add('lit');
+    p.el.classList.add('lit');
+    LIT_COUNT++;
+    /* advance arc: each point covers 1/16 of circumference */
+    setArcProgress(LIT_COUNT / N);
+    if (LIT_COUNT === N) {
+      /* small pause, then add complete glow */
+      setTimeout(function(){ svgEl.classList.add('complete'); }, 300);
+    }
+  }
+
+  /* Kick off after a brief entry pause */
+  var START_DELAY = 600;
+  positionPoints();
+
+  var timers = [];
+  for (var j = 0; j < N; j++) {
+    (function(idx){
+      var t = setTimeout(function(){
+        ignitePoint(idx);
+      }, START_DELAY + idx * DELAY_BETWEEN);
+      timers.push(t);
+    })(j);
+  }
+
+  /* resize: reposition (keep lit state) */
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(positionPoints, 120);
+  }, { passive: true });
+})();
+</script>
 
 <script>
 document.documentElement.classList.add('js');

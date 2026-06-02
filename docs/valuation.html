@@ -234,6 +234,261 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   .nav-links{gap:12px;font-size:11px;justify-content:center}
   footer .container{justify-content:center;text-align:center}
 }
+
+/* ===== VAL HERO — "The Number" financial crescendo ===== */
+.val-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 32px 100px;
+  background:#163026;
+  overflow:hidden;
+}
+/* layered background depth */
+.val-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, #0B1611 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, #102A1F 0%, transparent 80%),
+    #163026;
+  pointer-events:none;
+}
+/* film grain */
+.val-grain{
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:0.05;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:1;
+}
+/* centre scrim — keeps number legible over bars */
+.val-scrim{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 48%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.30) 45%, transparent 65%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 50%, rgba(11,22,17,0.88) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+
+/* gold bars */
+.val-bars{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:62%;
+  display:flex;
+  align-items:flex-end;
+  gap:clamp(3px,0.6vw,10px);
+  padding:0 clamp(8px,2vw,32px);
+  pointer-events:none;
+  z-index:1;
+}
+.val-bar{
+  flex:1;
+  height:0;
+  min-width:0;
+  border-radius:2px 2px 0 0;
+  background:linear-gradient(to top, #CBA258 0%, #E0C083 40%, #B8945A 80%, #A07C44 100%);
+  opacity:0.22;
+  transition:height 1.4s cubic-bezier(0.16,1,0.3,1);
+  transition-delay:var(--val-bar-d,0s);
+}
+.val-bar--accent{
+  opacity:0.38;
+  background:linear-gradient(to top, #E0C083 0%, #F5DFA0 40%, #CBA258 80%, #B8945A 100%);
+}
+.val-hero.val-bars-up .val-bar{
+  height:var(--val-bar-h,60%);
+}
+/* faint floor baseline */
+.val-baseline{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(to right, transparent 0%, rgba(184,148,90,0.35) 20%, rgba(203,162,88,0.55) 50%, rgba(184,148,90,0.35) 80%, transparent 100%);
+  z-index:3;
+  pointer-events:none;
+}
+
+/* centre content stack */
+.val-inner{
+  position:relative;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+.val-eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:44px;
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+.val-hero.val-bars-up .val-eyebrow{
+  opacity:1;
+  transform:none;
+}
+
+/* the colossal number */
+.val-number-wrap{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  line-height:0.85;
+  letter-spacing:-3px;
+  color:#F8F6F1;
+  text-shadow:0 4px 120px rgba(0,0,0,0.7), 0 0 60px rgba(184,148,90,0.12);
+}
+.val-dollar{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(2.8rem,6vw,7rem);
+  color:#E0C083;
+  margin-right:0.06em;
+  vertical-align:baseline;
+  letter-spacing:0;
+}
+.val-odometer{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(4.5rem,14vw,14rem);
+  line-height:0.85;
+  display:inline-block;
+  min-width:6ch;
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+  color:#F8F6F1;
+}
+
+/* the resolved final form — shown after count-up */
+.val-resolve{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(3rem,8vw,8rem);
+  line-height:0.85;
+  color:#E0C083;
+  letter-spacing:-2px;
+  opacity:0;
+  transform:scale(0.94) translateY(8px);
+  transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  pointer-events:none;
+  position:absolute;
+  /* layered on top of the odometer when revealed */
+}
+.val-resolve.val-resolve--show{
+  opacity:1;
+  transform:scale(1) translateY(0);
+  position:static;
+  pointer-events:auto;
+}
+/* hide odometer once resolved */
+.val-number-wrap.val-done{
+  opacity:0;
+  transition:opacity 0.4s ease;
+  pointer-events:none;
+  position:absolute;
+  /* keep layout: push resolve into its place */
+}
+
+/* italic subtitle */
+.val-serif{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(1.3rem,2.8vw,2rem);
+  color:rgba(248,246,241,0.88);
+  max-width:680px;
+  margin-top:36px;
+  line-height:1.35;
+  text-shadow:0 1px 40px rgba(0,0,0,0.5);
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+}
+.val-hero.val-bars-up .val-serif{
+  opacity:1;
+  transform:none;
+}
+
+/* endpoint mono labels */
+.val-endpoints{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:22px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
+}
+.val-hero.val-bars-up .val-endpoints{
+  opacity:1;
+  transform:none;
+}
+.val-ep{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:2px;
+  color:rgba(248,246,241,0.55);
+  text-transform:uppercase;
+}
+.val-ep--hi{
+  color:var(--gold);
+}
+.val-ep-sep{
+  font-family:var(--mono);
+  font-size:11px;
+  color:rgba(248,246,241,0.3);
+}
+
+/* scrollcue inherits theme styles; keep it above bars */
+.val-hero .scrollcue{z-index:4;}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion:reduce){
+  .val-bar{
+    transition:none;
+    height:var(--val-bar-h,60%) !important;
+  }
+  .val-eyebrow,.val-serif,.val-endpoints{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+  .val-number-wrap{display:none !important;}
+  .val-resolve{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+    position:static !important;
+    pointer-events:auto !important;
+  }
+}
+
+@media (max-width:600px){
+  .val-bars{height:46%;}
+  .val-dollar{font-size:clamp(2rem,7vw,4rem);}
+  .val-odometer{font-size:clamp(3.5rem,16vw,8rem);}
+  .val-resolve{font-size:clamp(2.6rem,14vw,6rem);}
+  .val-endpoints{flex-direction:column;gap:6px;}
+}
 </style>
 </head>
 <body>
@@ -254,15 +509,55 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   </div>
 </div></nav>
 
-<header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">100% of items valued. Every range defensible.</div>
-    <div class="htitle">Valuation</div>
-    <div class="sub">Per-piece comp work for all 2,468 items. Three buyer scenarios.</div>
-    <div class="dates">FLOOR &middot; ENTHUSIAST &middot; STORY</div>
+<header class="val-hero" aria-label="Valuation hero">
+  <!-- deep background layers -->
+  <div class="val-bg" aria-hidden="true"></div>
+  <div class="val-grain" aria-hidden="true"></div>
+  <div class="val-scrim" aria-hidden="true"></div>
+
+  <!-- gold bars rising from the floor -->
+  <div class="val-bars" aria-hidden="true">
+    <div class="val-bar" style="--val-bar-h:72%;--val-bar-d:0.00s"></div>
+    <div class="val-bar" style="--val-bar-h:55%;--val-bar-d:0.08s"></div>
+    <div class="val-bar" style="--val-bar-h:88%;--val-bar-d:0.16s"></div>
+    <div class="val-bar" style="--val-bar-h:44%;--val-bar-d:0.24s"></div>
+    <div class="val-bar" style="--val-bar-h:96%;--val-bar-d:0.32s"></div>
+    <div class="val-bar" style="--val-bar-h:61%;--val-bar-d:0.40s"></div>
+    <div class="val-bar" style="--val-bar-h:78%;--val-bar-d:0.48s"></div>
+    <div class="val-bar" style="--val-bar-h:50%;--val-bar-d:0.56s"></div>
+    <div class="val-bar" style="--val-bar-h:83%;--val-bar-d:0.64s"></div>
+    <div class="val-bar" style="--val-bar-h:67%;--val-bar-d:0.72s"></div>
+    <div class="val-bar" style="--val-bar-h:40%;--val-bar-d:0.12s"></div>
+    <div class="val-bar" style="--val-bar-h:91%;--val-bar-d:0.20s"></div>
+    <div class="val-bar" style="--val-bar-h:58%;--val-bar-d:0.28s"></div>
+    <div class="val-bar" style="--val-bar-h:75%;--val-bar-d:0.36s"></div>
+    <div class="val-bar" style="--val-bar-h:47%;--val-bar-d:0.44s"></div>
+    <div class="val-bar val-bar--accent" style="--val-bar-h:100%;--val-bar-d:0.52s"></div>
+    <div class="val-bar" style="--val-bar-h:63%;--val-bar-d:0.60s"></div>
+    <div class="val-bar" style="--val-bar-h:85%;--val-bar-d:0.68s"></div>
+    <div class="val-bar" style="--val-bar-h:53%;--val-bar-d:0.76s"></div>
+    <div class="val-bar" style="--val-bar-h:38%;--val-bar-d:0.04s"></div>
   </div>
+  <div class="val-baseline" aria-hidden="true"></div>
+
+  <!-- centrepiece content -->
+  <div class="val-inner">
+    <div class="val-eyebrow">100% of items valued &middot; every range defensible</div>
+
+    <div class="val-number-wrap" aria-label="Total valuation: one million one hundred seventy-nine thousand nine hundred eighty-six dollars">
+      <span class="val-dollar" aria-hidden="true">$</span><span class="val-odometer" id="valOdometer" aria-hidden="true">0</span>
+    </div>
+
+    <div class="val-resolve" id="valResolve" aria-hidden="true">$1.2M+</div>
+
+    <div class="val-serif">Per-piece comp work across all 2,468 items &mdash; three buyer scenarios.</div>
+    <div class="val-endpoints">
+      <span class="val-ep">$360,542 base</span>
+      <span class="val-ep-sep">&rarr;</span>
+      <span class="val-ep val-ep--hi">$1.2M+ ceiling</span>
+    </div>
+  </div>
+
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
@@ -456,6 +751,78 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
   <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
+<script>
+/* val-hero count-up — dedicated, does NOT use data-to */
+(function(){
+  var hero    = document.querySelector('.val-hero');
+  var wrap    = document.querySelector('.val-number-wrap');
+  var odometer = document.getElementById('valOdometer');
+  var resolve = document.getElementById('valResolve');
+  if(!hero || !odometer || !resolve) return;
+
+  var TARGET  = 1179986;
+  var DURATION = 2200; /* ms */
+  var REDUCE  = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* format with leading $ and thousands commas — dollar sign is a separate element */
+  function fmt(n){
+    return Math.floor(n).toLocaleString('en-US');
+  }
+
+  /* ease-out-expo gives a financial-crescendo feel: fast start, dramatic deceleration */
+  function easeOutExpo(t){
+    return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function triggerBars(){
+    hero.classList.add('val-bars-up');
+  }
+
+  function runCountUp(){
+    if(REDUCE){
+      /* reduced motion: skip animation, show final resolved form */
+      odometer.textContent = fmt(TARGET);
+      return;
+    }
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var elapsed = ts - start;
+      var progress = Math.min(elapsed / DURATION, 1);
+      var eased = easeOutExpo(progress);
+      odometer.textContent = fmt(eased * TARGET);
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        /* count-up finished — flip to resolved $1.2M+ */
+        odometer.textContent = fmt(TARGET);
+        setTimeout(function(){
+          wrap.classList.add('val-done');
+          resolve.classList.add('val-resolve--show');
+        }, 280);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* kick off once the hero enters the viewport (covers slow connections) */
+  if(typeof IntersectionObserver !== 'undefined'){
+    var once = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        once.disconnect();
+        triggerBars();
+        /* slight delay so bars are visibly rising as the number starts */
+        setTimeout(runCountUp, 180);
+      }
+    }, { threshold: 0.15 });
+    once.observe(hero);
+  } else {
+    /* fallback for ancient browsers */
+    triggerBars();
+    setTimeout(runCountUp, 180);
+  }
+})();
+</script>
 <script>
 document.documentElement.classList.add('js');
 var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
