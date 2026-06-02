@@ -14,76 +14,231 @@
 <meta name="twitter:description" content="Per-piece comp work for all 2,468 items across three buyer scenarios: floor, enthusiast, and story.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+/* STERNBERG-CINEMATIC-THEME v1 — shared verbatim across all pages */
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#15130F;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px}
-.container{max-width:780px;margin:0 auto;padding:0 32px}
-.wide{max-width:1100px}
-nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:var(--bg);z-index:10}
-nav .container{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px;overflow-x:hidden}
+
+/* nav — shared site-wide */
+nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
-.nav-links{display:flex;gap:28px;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
-.nav-links a{color:var(--ink);text-decoration:none}
-header.page-hero{padding:120px 0 80px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(184,148,90,0.08) 100%)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
-h1{font-family:var(--serif);font-size:72px;font-weight:400;line-height:1.05;letter-spacing:-1px;margin-bottom:24px}
-.subtitle{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--muted);max-width:640px;margin:0 auto}
-.tier-rollup{padding:80px 0;background:rgba(184,148,90,0.04)}
-.rollup-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:1100px;margin:0 auto;border-top:1px solid rgba(26,26,26,0.1);border-left:1px solid rgba(26,26,26,0.1)}
-.rollup-cell{padding:24px;border-right:1px solid rgba(26,26,26,0.1);border-bottom:1px solid rgba(26,26,26,0.1);background:white}
-.rollup-cell.header{background:var(--ink);color:var(--bg)}
-.rollup-cell .tier-name{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
-.rollup-cell .count{font-family:var(--serif);font-size:36px;font-weight:400;line-height:1;margin-bottom:4px}
-.rollup-cell .count-label{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
-.rollup-cell .value-row{font-family:var(--mono);font-size:13px;display:flex;justify-content:space-between;padding:6px 0;border-top:1px dotted rgba(26,26,26,0.15)}
-.rollup-cell .value-row .label{color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase}
-.rollup-cell.header .tier-name,.rollup-cell.header .count-label,.rollup-cell.header .value-row .label{color:rgba(184,148,90,0.8)}
-.rollup-cell.header .count{color:var(--bg)}
-.rollup-cell.total{background:rgba(184,148,90,0.1);border-top:3px solid var(--gold)}
-article{padding:80px 0}
-article p{margin-bottom:32px}
-article p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.85;margin:8px 14px 0 0;color:var(--gold)}
-h2{font-family:var(--serif);font-size:48px;font-weight:400;margin:60px 0 32px;letter-spacing:-0.5px}
-.callout{border-left:3px solid var(--gold);padding:24px 32px;margin:48px 0;background:rgba(184,148,90,0.05);font-family:var(--serif);font-size:20px;font-style:italic;color:var(--muted)}
-.buildup{padding:100px 0;background:var(--ink);color:var(--bg)}
-.buildup h2{color:var(--bg)}
-.buildup-table{max-width:900px;margin:0 auto}
-.buildup-row{display:grid;grid-template-columns:60px 1fr 200px 220px;gap:24px;padding:20px 0;border-bottom:1px solid rgba(248,246,241,0.15);align-items:baseline}
-.buildup-row:last-child{border-bottom:none;background:rgba(184,148,90,0.15);padding:24px;border-top:3px solid var(--gold);margin-top:8px;border-radius:0}
-.buildup-row .step{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px}
-.buildup-row .name{font-family:var(--serif);font-size:18px}
-.buildup-row .multiplier{font-family:var(--mono);font-size:13px;color:rgba(248,246,241,0.7);text-align:right;letter-spacing:1px}
-.buildup-row .value{font-family:var(--serif);font-size:24px;font-weight:400;text-align:right}
-.buildup-row:last-child .value{color:var(--gold);font-size:32px}
-.scenarios{padding:120px 0}
-.scenarios h2{text-align:center;margin-bottom:60px}
-.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto}
-.scenario-card{padding:48px 36px;background:white;border:1px solid rgba(26,26,26,0.08);text-align:center}
-.scenario-card.floor{border-top:4px solid var(--muted)}
-.scenario-card.enthusiast{border-top:4px solid var(--gold)}
-.scenario-card.story{border-top:4px solid var(--ink);background:var(--ink);color:var(--bg)}
-.scenario-card .label{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
-.scenario-card.story .label{color:var(--gold)}
-.scenario-card .range{font-family:var(--serif);font-size:42px;font-weight:400;margin-bottom:16px;line-height:1.1}
-.scenario-card .who{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--muted);margin-bottom:16px}
-.scenario-card.story .who{color:rgba(248,246,241,0.7)}
-.scenario-card .desc{font-size:14px;line-height:1.5}
-.risk-band{padding:80px 0;background:rgba(184,148,90,0.04)}
-.risk-band h2{text-align:center;margin-bottom:48px}
-.risk-table{max-width:900px;margin:0 auto;background:white;border:1px solid rgba(26,26,26,0.1)}
-.risk-row{display:grid;grid-template-columns:1fr 100px 120px 140px;gap:16px;padding:16px 24px;border-bottom:1px solid rgba(26,26,26,0.08)}
-.risk-row.header{background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.risk-row.total{background:rgba(184,148,90,0.08);font-family:var(--serif);font-size:18px;border-top:3px solid var(--gold);font-weight:500}
-.risk-row .cat{font-family:var(--serif);font-size:16px}
-.risk-row .num{font-family:var(--mono);font-size:13px;text-align:right}
-footer{padding:60px 0 40px;border-top:1px solid rgba(26,26,26,0.08);text-align:center}
-.footer-text{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
-@media (max-width:768px){h1{font-size:42px}h2{font-size:32px}.rollup-grid{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.buildup-row{grid-template-columns:40px 1fr 1fr;gap:12px}.buildup-row .multiplier{display:none}.risk-row{grid-template-columns:1fr 80px;gap:8px;padding:12px}.risk-row .num:nth-of-type(2),.risk-row .num:nth-of-type(3){display:none}nav .container{flex-direction:column;align-items:center}.nav-links{gap:14px;font-size:11px;justify-content:center}}
+.nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
+.nav-links a:hover{color:var(--gold)}
+
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+.narrow{max-width:820px;margin:0 auto;padding:0 32px}
+
+/* section rhythm */
+section{padding:clamp(100px,15vh,190px) 0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:36px}
+.serif{font-family:var(--serif)}
+.it{font-style:italic}
+.dark{background:var(--ink);color:var(--bg);position:relative}
+.dark .eyebrow{color:var(--gold)}
+.soft{background:rgba(184,148,90,0.04)}
+
+/* scroll reveals (gated to JS so no-JS shows everything) */
+html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+html.js .reveal.in{opacity:1;transform:none}
+
+/* ===== HERO — animated tile mosaic ===== */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 32px 90px;background:var(--deep);overflow:hidden}
+.hero.short{min-height:82vh}
+.hero .mosaic{position:absolute;inset:-2px;display:grid;gap:2px;opacity:0.92;will-change:transform,opacity}
+.hero .mosaic i{display:block;width:100%;height:100%;border-radius:2px;opacity:0;transform:scale(.3)}
+.hero .mosaic i.lit{opacity:1;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
+.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 75% 75% at center,transparent 0%,rgba(21,19,15,0.5) 55%,var(--deep) 100%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity}
+.hero .eyebrow{margin-bottom:40px}
+.hero .figure{font-family:var(--serif);font-weight:300;line-height:0.85;letter-spacing:-4px;font-size:clamp(6rem,22vw,20rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
+.hero .htitle{font-family:var(--serif);font-weight:300;line-height:0.92;letter-spacing:-2px;font-size:clamp(3.4rem,9vw,8rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
+.hero .htitle .u{font-size:0.34em;letter-spacing:0;color:var(--gold);vertical-align:baseline}
+.hero .sub{font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,3.4vw,2.4rem);font-style:italic;color:rgba(248,246,241,0.9);max-width:760px;margin:36px auto 0;line-height:1.3;text-shadow:0 1px 40px rgba(0,0,0,0.6)}
+.hero .sub .it,.hero .htitle .g{color:var(--gold);font-style:italic}
+.hero .dates{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:rgba(248,246,241,0.6);margin-top:28px}
+.scrollcue{position:absolute;z-index:2;bottom:44px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:14px}
+.scrollcue span{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.6)}
+.scrollcue .line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold));animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(8px);opacity:1}}
+
+/* film grain on dark sections */
+.dark::after,.hero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:0.05;pointer-events:none;mix-blend-mode:overlay;z-index:1}
+.dark>.container,.dark>.narrow{position:relative;z-index:2}
+
+/* big editorial statements */
+.statement{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.2vw,4.6rem);line-height:1.08;letter-spacing:-1px}
+.statement .it{color:var(--gold);font-style:italic}
+.statement.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* editorial prose */
+.prose{max-width:760px}
+.prose.center{margin:0 auto}
+.prose p{font-size:clamp(1.05rem,1.5vw,1.25rem);margin-bottom:28px;color:var(--ink);font-weight:300}
+.prose .lead{font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.5;margin-bottom:36px}
+.prose p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.78;margin:10px 14px 0 0;color:var(--gold)}
+.prose .em{color:var(--gold);font-weight:500}
+.dark .prose p{color:rgba(248,246,241,0.8)}
+.divider{height:1px;background:rgba(26,26,26,0.12);margin:56px 0;max-width:160px}
+.dark .divider{background:rgba(248,246,241,0.18)}
+
+/* epigraph — centered italic over rules */
+.epigraph{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.3;color:var(--muted);max-width:840px;margin:0 auto;padding:8px 0}
+
+/* two-column editorial */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:64px}
+.cols.top{align-items:start}
+.pullquote{border-left:2px solid var(--gold);padding-left:36px}
+.pullquote .q{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.2;font-weight:400;margin-bottom:28px}
+.dark .pullquote .q{color:var(--bg)}
+.colcard{border-left:2px solid var(--gold);padding-left:36px}
+.colcard .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.colcard h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:20px}
+
+/* big-number band (dark) */
+.bignums{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center}
+.bignum .n{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,11vw,9rem);line-height:0.9;color:var(--bg)}
+.bignum .l{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.bignum .s{font-size:14px;color:rgba(248,246,241,0.55);margin-top:8px}
+.substats{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;text-align:center;border-top:1px solid rgba(248,246,241,0.14);padding-top:64px;margin-top:88px}
+.substat .n{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1;color:var(--bg)}
+.substat .l{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(248,246,241,0.55);margin-top:12px}
+/* light variant for stat grids on cream sections */
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;text-align:center}
+.statgrid .n{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4rem);font-weight:400;line-height:1;color:var(--ink)}
+.statgrid .l{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+/* spec band (dark) — for anchor specs */
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.spec .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.spec .v{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--bg)}
+
+/* feature / headline list — airy rows */
+.pieces{margin-top:72px}
+.piece{display:grid;grid-template-columns:80px 1fr;gap:40px;padding:52px 0;border-top:1px solid rgba(26,26,26,0.1);align-items:start}
+.dark .piece{border-color:rgba(248,246,241,0.16)}
+.piece .num{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--gold);line-height:0.9}
+.piece .tag{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.dark .piece .tag{color:rgba(248,246,241,0.55)}
+.piece h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;margin-bottom:20px}
+.piece p{max-width:680px;color:var(--ink);font-weight:300;margin-bottom:24px}
+.dark .piece p{color:rgba(248,246,241,0.8)}
+.piece .meta{display:flex;gap:48px;flex-wrap:wrap}
+.piece .meta .k{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.piece .meta .val{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.piece .meta .val.plain{color:var(--ink)}
+.dark .piece .meta .val.plain{color:var(--bg)}
+
+/* quiet rows with thin bars (composition / series) */
+.comp-rows{margin-top:64px;display:flex;flex-direction:column}
+.comp-row{display:grid;grid-template-columns:1fr 2fr 90px;gap:28px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(26,26,26,0.08)}
+.dark .comp-row{border-color:rgba(248,246,241,0.14)}
+.comp-row .nm{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:400}
+.comp-row .track{height:2px;background:rgba(26,26,26,0.1);position:relative}
+.dark .comp-row .track{background:rgba(248,246,241,0.16)}
+.comp-row .fill{position:absolute;left:0;top:0;height:100%;background:var(--gold);width:0;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
+html.js .comp-row.in .fill{width:var(--w)}
+html:not(.js) .comp-row .fill{width:var(--w)}
+.comp-row .ct{font-family:var(--serif);font-size:1.5rem;text-align:right;color:var(--muted)}
+.dark .comp-row .ct{color:var(--gold)}
+
+/* cards grid */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.card{padding:36px;background:#fff;border:1px solid rgba(26,26,26,0.08);text-decoration:none;color:var(--ink);display:block;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.card h3{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:500;line-height:1.15;margin-bottom:12px}
+.card p{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.card .more{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.chip{padding:22px 20px;background:rgba(184,148,90,0.05);border-left:3px solid var(--gold);font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.4rem);font-weight:400}
+.dark .chip{background:rgba(248,246,241,0.05)}
+.chip .c{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block}
+
+/* callout */
+.callout{border-left:3px solid var(--gold);padding:28px 36px;margin:8px 0;background:rgba(184,148,90,0.06);font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);font-style:italic;color:var(--muted);line-height:1.35}
+.dark .callout{background:rgba(248,246,241,0.05);color:rgba(248,246,241,0.85)}
+
+/* ledger — re-skinned data rows (valuation rollup/buildup/risk) */
+.ledger{margin-top:56px;max-width:920px}
+.ledger.center{margin-left:auto;margin-right:auto}
+.ledger-row{display:grid;grid-template-columns:60px 1fr auto;gap:28px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(248,246,241,0.15)}
+.ledger-row .step{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold)}
+.ledger-row .name{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem)}
+.ledger-row .amt{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);text-align:right;white-space:nowrap}
+.ledger-row.total{border-bottom:none;border-top:2px solid var(--gold);margin-top:8px;padding-top:28px}
+.ledger-row.total .amt{color:var(--gold);font-size:clamp(1.8rem,3.4vw,2.6rem)}
+/* light ledger variant */
+.dark .ledger-row{border-color:rgba(248,246,241,0.15)}
+section:not(.dark) .ledger-row{border-color:rgba(26,26,26,0.1)}
+
+/* value box (range reveal) */
+.valbox{text-align:center;padding:8px 0}
+.valbox .k{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.valbox .range{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9vw,6.5rem);line-height:0.95;color:var(--bg)}
+.valbox .note{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(248,246,241,0.6);max-width:640px;margin:24px auto 0}
+section:not(.dark) .valbox .range{color:var(--ink)}
+section:not(.dark) .valbox .note{color:var(--muted)}
+
+/* valuation tiers — designed sequence */
+.tiers{margin-top:72px;display:flex;flex-direction:column}
+.tier{display:grid;grid-template-columns:200px 1fr;gap:48px;padding:52px 0;border-top:1px solid rgba(248,246,241,0.16);align-items:baseline}
+.tier .label{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.tier .range{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,8vw,6rem);line-height:0.95;color:var(--bg)}
+.tier .who{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.8rem);color:rgba(248,246,241,0.75);margin:12px 0 18px}
+.tier .desc{max-width:640px;color:rgba(248,246,241,0.6);font-weight:300}
+.tier.climax .range,.tier.climax .label{color:var(--gold)}
+
+/* link out */
+.linkout{display:inline-block;margin-top:52px;font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:5px}
+.linkout:hover{opacity:0.6}
+.dark .linkout:hover{color:var(--bg);border-color:var(--bg);opacity:1}
+
+/* the window — closing punch */
+.window{text-align:center}
+.window .big{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,7vw,6rem);line-height:1.04;letter-spacing:-1px;max-width:1000px;margin:0 auto}
+.window .big .it{color:var(--gold);font-style:italic}
+.window .coda{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,2rem);color:var(--muted);max-width:720px;margin:44px auto 0;line-height:1.3}
+
+/* inquiries CTA (dark) */
+.cta{text-align:center}
+.cta .head{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,13vw,11rem);line-height:0.9;letter-spacing:-2px;color:var(--bg)}
+.cta .head .it{color:var(--gold);font-style:italic}
+.cta .lede{font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,2.8vw,2rem);color:rgba(248,246,241,0.85);max-width:680px;margin:44px auto 52px;line-height:1.35}
+.cta .card-cta{display:inline-block;border:1px solid var(--gold);padding:40px 56px;background:transparent}
+.cta .card-cta .k{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.cta .card-cta .nm{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);color:var(--bg)}
+.cta .card-cta .ref{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:rgba(248,246,241,0.55);margin-top:14px}
+
+/* footer (dark) */
+footer{padding:64px 0 48px;background:var(--ink);border-top:1px solid rgba(248,246,241,0.1)}
+footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
+
+@media (max-width:768px){
+  .cols{grid-template-columns:1fr;gap:48px}
+  .bignums{grid-template-columns:1fr;gap:56px}
+  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+  .cards{grid-template-columns:1fr}
+  .chips{grid-template-columns:repeat(2,1fr)}
+  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+  .piece .meta{gap:32px}
+  .comp-row{grid-template-columns:1fr 70px;gap:16px}
+  .comp-row .track{display:none}
+  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+  .ledger-row{grid-template-columns:1fr auto;gap:16px}
+  .ledger-row .step{display:none}
+  nav .container,nav .narrow{flex-direction:column;align-items:center}
+  .nav-links{gap:12px;font-size:11px;justify-content:center}
+  footer .container{justify-content:center;text-align:center}
+}
 </style>
 </head>
 <body>
 
-<nav><div class="container wide">
+<nav><div class="container">
   <div class="logo">The Sternberg Collection</div>
   <div class="nav-links">
     <a href="./index.html">Home</a>
@@ -99,225 +254,283 @@ footer{padding:60px 0 40px;border-top:1px solid rgba(26,26,26,0.08);text-align:c
   </div>
 </div></nav>
 
-<header class="page-hero"><div class="container">
-  <div class="eyebrow">100% of items valued. Every range defensible.</div>
-  <h1>Valuation</h1>
-  <div class="subtitle">Per-piece comp work for all 2,468 items. Premium build-up applied to the lot. Three buyer scenarios &mdash; floor, enthusiast, story.</div>
-</div></header>
+<header class="hero short">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="vignette"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">100% of items valued. Every range defensible.</div>
+    <div class="htitle">Valuation</div>
+    <div class="sub">Per-piece comp work for all 2,468 items. Three buyer scenarios.</div>
+    <div class="dates">FLOOR &middot; ENTHUSIAST &middot; STORY</div>
+  </div>
+  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+</header>
 
-<section class="tier-rollup"><div class="container wide">
-  <h2 style="text-align:center;margin-bottom:48px">Per-piece rollup &mdash; all 2,468 items valued</h2>
-  <div class="rollup-grid">
-    <div class="rollup-cell header">
-      <div class="tier-name">Tier A+</div>
-      <div class="count">30</div>
-      <div class="count-label">Holy Grails</div>
-      <div class="value-row"><span class="label">Low</span><span>$13.4K</span></div>
-      <div class="value-row"><span class="label">Mid</span><span>$25K</span></div>
-      <div class="value-row"><span class="label">High</span><span>$44K</span></div>
+<section>
+  <div class="narrow">
+    <h2 class="reveal statement">Every item in the collection has a <span class="it">defensible value</span> &mdash; not a placeholder, not a deferral, a number.</h2>
+    <div class="prose" style="margin-top:56px">
+      <p class="lead reveal">The per-piece sum prices all 2,468 inventory lines, each bounded by a low, mid, and high comp band, anchored to identifiable comp sources.</p>
+      <p class="reveal">The Tier A+ Holy Grails carry the highest per-piece values. The Tier A Premium Anchors include the Skyline GIANTS and Doonesbury LE set. The Tier B/C items cover specialty and mid-tier pieces, and the Tier D standard items make up the volume of the collection at modest individual values but meaningful aggregate weight.</p>
     </div>
-    <div class="rollup-cell header">
-      <div class="tier-name">Tier A</div>
-      <div class="count">120</div>
-      <div class="count-label">Premium Anchor</div>
-      <div class="value-row"><span class="label">Low</span><span>$24.9K</span></div>
-      <div class="value-row"><span class="label">Mid</span><span>$35.3K</span></div>
-      <div class="value-row"><span class="label">High</span><span>$62.8K</span></div>
-    </div>
-    <div class="rollup-cell header">
-      <div class="tier-name">Tier B</div>
-      <div class="count">180</div>
-      <div class="count-label">Strong Collector</div>
-      <div class="value-row"><span class="label">Low</span><span>$14.6K</span></div>
-      <div class="value-row"><span class="label">Mid</span><span>$24.6K</span></div>
-      <div class="value-row"><span class="label">High</span><span>$41.6K</span></div>
-    </div>
-    <div class="rollup-cell header">
-      <div class="tier-name">Tier C</div>
-      <div class="count">580</div>
-      <div class="count-label">Mid-Tier</div>
-      <div class="value-row"><span class="label">Low</span><span>$30K</span></div>
-      <div class="value-row"><span class="label">Mid</span><span>$47K</span></div>
-      <div class="value-row"><span class="label">High</span><span>$84.8K</span></div>
-    </div>
-    <div class="rollup-cell header">
-      <div class="tier-name">Tier D</div>
-      <div class="count">1,577</div>
-      <div class="count-label">Standard</div>
-      <div class="value-row"><span class="label">Low</span><span>$33.7K</span></div>
-      <div class="value-row"><span class="label">Mid</span><span>$67.8K</span></div>
-      <div class="value-row"><span class="label">High</span><span>$127K</span></div>
-    </div>
-    <div class="rollup-cell total" style="grid-column:1/6">
-      <div style="display:grid;grid-template-columns:1fr 200px 200px 200px;gap:24px;align-items:baseline">
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="reveal eyebrow" style="text-align:center">Per-piece rollup &mdash; all 2,468 items valued</div>
+    <h2 class="reveal statement center" style="color:var(--bg)">Five tiers. <span class="it">One number for every line.</span></h2>
+
+    <div class="pieces">
+      <div class="reveal piece">
+        <div class="num">A+</div>
         <div>
-          <div class="tier-name" style="color:var(--gold)">Per-piece sum</div>
-          <div class="count">2,468 items</div>
-          <div class="count-label">100% coverage</div>
+          <div class="tag">30 items &middot; Holy Grails</div>
+          <h3>Tier A+</h3>
+          <p>The rarest pieces in the collection, carrying the highest per-piece values.</p>
+          <div class="meta">
+            <div><div class="k">Low</div><div class="val">$13.4K</div></div>
+            <div><div class="k">Mid</div><div class="val">$25K</div></div>
+            <div><div class="k">High</div><div class="val">$44K</div></div>
+          </div>
         </div>
-        <div style="text-align:right">
-          <div class="tier-name" style="color:var(--muted)">Low</div>
-          <div style="font-family:var(--serif);font-size:32px">$117K</div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">A</div>
+        <div>
+          <div class="tag">120 items &middot; Premium Anchor</div>
+          <h3>Tier A</h3>
+          <p>Premium anchors including the Skyline GIANTS and the Doonesbury LE set.</p>
+          <div class="meta">
+            <div><div class="k">Low</div><div class="val">$24.9K</div></div>
+            <div><div class="k">Mid</div><div class="val">$35.3K</div></div>
+            <div><div class="k">High</div><div class="val">$62.8K</div></div>
+          </div>
         </div>
-        <div style="text-align:right">
-          <div class="tier-name" style="color:var(--muted)">Mid</div>
-          <div style="font-family:var(--serif);font-size:32px">$199K</div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">B</div>
+        <div>
+          <div class="tag">180 items &middot; Strong Collector</div>
+          <h3>Tier B</h3>
+          <p>Strong collector pieces spanning specialty series across the archive.</p>
+          <div class="meta">
+            <div><div class="k">Low</div><div class="val">$14.6K</div></div>
+            <div><div class="k">Mid</div><div class="val">$24.6K</div></div>
+            <div><div class="k">High</div><div class="val">$41.6K</div></div>
+          </div>
         </div>
-        <div style="text-align:right">
-          <div class="tier-name" style="color:var(--gold)">High w/ series premiums</div>
-          <div style="font-family:var(--serif);font-size:32px;color:var(--gold)">$360K</div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">C</div>
+        <div>
+          <div class="tag">580 items &middot; Mid-Tier</div>
+          <h3>Tier C</h3>
+          <p>Mid-tier pieces, comping at modest individual values with broad coverage.</p>
+          <div class="meta">
+            <div><div class="k">Low</div><div class="val">$30K</div></div>
+            <div><div class="k">Mid</div><div class="val">$47K</div></div>
+            <div><div class="k">High</div><div class="val">$84.8K</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">D</div>
+        <div>
+          <div class="tag">1,577 items &middot; Standard</div>
+          <h3>Tier D</h3>
+          <p>The volume of the collection &mdash; modest individual values, meaningful aggregate weight.</p>
+          <div class="meta">
+            <div><div class="k">Low</div><div class="val">$33.7K</div></div>
+            <div><div class="k">Mid</div><div class="val">$67.8K</div></div>
+            <div><div class="k">High</div><div class="val">$127K</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger" style="margin-top:72px;margin-left:auto;margin-right:auto">
+      <div class="reveal ledger-row"><div class="step">Low</div><div class="name">Per-piece sum &mdash; 2,468 items, 100% coverage</div><div class="amt">$117K</div></div>
+      <div class="reveal ledger-row"><div class="step">Mid</div><div class="name">Per-piece sum &mdash; conservative through balanced</div><div class="amt">$199K</div></div>
+      <div class="reveal ledger-row total"><div class="step">High</div><div class="name">Per-piece sum with series premiums</div><div class="amt">$360K</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <div class="reveal callout">The per-piece sum is the floor of the buyer-scenario stack. From there, lot-level premiums multiply the value &mdash; not because the pieces are worth more individually, but because the intact collection carries its own value as an artifact.</div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="reveal eyebrow" style="text-align:center">Premium build-up &mdash; how $360K becomes $1.2M</div>
+    <h2 class="reveal statement center" style="color:var(--bg)">Seven steps from the per-piece sum to the <span class="it">story-buyer ceiling.</span></h2>
+    <div class="ledger center">
+      <div class="reveal ledger-row"><div class="step">Step 1</div><div class="name">Per-piece high with series premiums <span style="color:rgba(248,246,241,0.5)">&middot; baseline</span></div><div class="amt">$360,542</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 2</div><div class="name">Completion premium &mdash; 16/16 Charity + 10/10 Doonesbury + intact GIANTS <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.40</span></div><div class="amt">$504,759</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 3</div><div class="name">Provenance premium &mdash; 9,872 photos + IG archive + Tier 3 cross-ref <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.20</span></div><div class="amt">$605,711</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 4</div><div class="name">NIB-at-scale premium &mdash; 2,468 items new-in-box <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.15</span></div><div class="amt">$696,568</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 5</div><div class="name">Memorial narrative &mdash; Chaim 1944&ndash;2024 53-year archive <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.10</span></div><div class="amt">$766,225</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 6</div><div class="name">Exhibition single-lot &mdash; sold as ONE not 2,468 <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.10</span></div><div class="amt">$842,847</div></div>
+      <div class="reveal ledger-row"><div class="step">Step 7</div><div class="name">Buyer story multiplier &mdash; Documentary / Heritage / Museum <span style="color:rgba(248,246,241,0.5)">&middot; &times; 1.40</span></div><div class="amt">$1,179,986</div></div>
+      <div class="reveal ledger-row total"><div class="step">Target</div><div class="name">Story-buyer ceiling &mdash; institutional acquisition</div><div class="amt">$1.2M+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark soft">
+  <div class="container">
+    <div class="reveal eyebrow" style="text-align:center">Three buyer scenarios</div>
+    <h2 class="reveal statement center" style="color:var(--bg)">Floor, enthusiast, <span class="it">story.</span></h2>
+    <div class="tiers">
+      <div class="reveal tier">
+        <div class="label">Floor</div>
+        <div>
+          <div class="range">$100K&ndash;$150K</div>
+          <div class="who">Dealer / liquidator</div>
+          <div class="desc">Buyer purchases at conservative comp values, resells pieces individually over 12&ndash;24 months. Realistic for a dealer with strong eBay and Replacements channels. The seller&rsquo;s hard &ldquo;no go below&rdquo; line.</div>
+        </div>
+      </div>
+      <div class="reveal tier">
+        <div class="label">Enthusiast</div>
+        <div>
+          <div class="range">$500K&ndash;$800K</div>
+          <div class="who">Auction house sealed bid</div>
+          <div class="desc">Intact-lot sealed bid via Heritage Auctions, Bonhams, or Christie&rsquo;s brand-memorabilia channel. Premium build-up through Step 4&ndash;5. Realistic if 2&ndash;3 serious bidders compete.</div>
+        </div>
+      </div>
+      <div class="reveal tier climax">
+        <div class="label">Story buyer</div>
+        <div>
+          <div class="range">$1.2M+</div>
+          <div class="who">Institutional / Museum</div>
+          <div class="desc">Acquisition by museum, brand archive, or documentary buyer. Full premium build-up. Requires NYT feature, sole-archive provenance, intact-series completion. Speculative but defensible given documentation depth.</div>
         </div>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<article><div class="container">
-  <p class="drop">Every item in the Sternberg Collection has a defensible value. Not a placeholder, not a "see appraiser" deferral, not a "to be determined" &mdash; a number, bounded by a low, mid, and high comp band, anchored to identifiable comp sources.</p>
-  <p>The work above is the per-piece sum: 2,468 inventory lines, each priced. The Tier A+ Holy Grails carry the highest per-piece values, the Tier A Premium Anchors include the Skyline GIANTS and Doonesbury LE set, the Tier B/C items cover specialty and mid-tier pieces, and the Tier D standard items make up the volume of the collection at modest individual values but meaningful aggregate weight.</p>
-  <div class="callout">The per-piece sum is the floor of the buyer-scenario stack. From there, lot-level premiums multiply the value &mdash; not because the pieces are worth more individually, but because the intact collection carries its own value as an artifact.</div>
-</div></article>
+<section>
+  <div class="container">
+    <div class="reveal eyebrow" style="text-align:center">Risk-adjusted downside &mdash; published, not hidden</div>
+    <h2 class="reveal statement center">A buyer sees the floor, the enthusiast, the story &mdash; <span class="it">and the downside math.</span></h2>
+    <div class="ledger center">
+      <div class="reveal ledger-row"><div class="step">38</div><div class="name">Architecture Demitasse comp tightening <span style="color:var(--muted)">&middot; $72 &rarr; $40</span></div><div class="amt">&minus;$1,216</div></div>
+      <div class="reveal ledger-row"><div class="step">50</div><div class="name">States of Bean secondary market <span style="color:var(--muted)">&middot; $104 &rarr; $70</span></div><div class="amt">&minus;$1,700</div></div>
+      <div class="reveal ledger-row"><div class="step">~50</div><div class="name">Bearista oversupply <span style="color:var(--muted)">&middot; $28 &rarr; $15</span></div><div class="amt">&minus;$650</div></div>
+      <div class="reveal ledger-row"><div class="step">8</div><div class="name">Russian dead-format comp uncertainty <span style="color:var(--muted)">&middot; $66 &rarr; $45</span></div><div class="amt">&minus;$168</div></div>
+      <div class="reveal ledger-row"><div class="step">~1,000</div><div class="name">Other Tier C/D unverified items <span style="color:var(--muted)">&middot; &minus;$20 each</span></div><div class="amt">&minus;$20,000</div></div>
+      <div class="reveal ledger-row total"><div class="step">~1,150</div><div class="name">Total downside adjustment <span style="color:var(--muted)">&middot; vs $199K mid</span></div><div class="amt">&minus;$23,700</div></div>
+    </div>
+    <p class="epigraph reveal" style="margin-top:48px">Risk-adjusted SOP mid: <span class="it" style="color:var(--ink);font-style:normal;font-weight:500">$175K&ndash;$200K</span> &mdash; the honest floor before lot-level premiums apply.</p>
+  </div>
+</section>
 
-<section class="buildup"><div class="container wide">
-  <h2 style="text-align:center;margin-bottom:60px">Premium build-up &mdash; how $360K becomes $1.2M</h2>
-  <div class="buildup-table">
-    <div class="buildup-row">
-      <div class="step">Step 1</div>
-      <div class="name">Per-piece high with series premiums</div>
-      <div class="multiplier">baseline</div>
-      <div class="value">$360,542</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 2</div>
-      <div class="name">Completion premium &mdash; 16/16 Charity + 10/10 Doonesbury + intact GIANTS</div>
-      <div class="multiplier">&times; 1.40</div>
-      <div class="value">$504,759</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 3</div>
-      <div class="name">Provenance premium &mdash; 9,872 photos + IG archive + Tier 3 cross-ref</div>
-      <div class="multiplier">&times; 1.20</div>
-      <div class="value">$605,711</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 4</div>
-      <div class="name">NIB-at-scale premium &mdash; 2,468 items new-in-box</div>
-      <div class="multiplier">&times; 1.15</div>
-      <div class="value">$696,568</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 5</div>
-      <div class="name">Memorial narrative &mdash; Chaim 1944-2024 53-year archive</div>
-      <div class="multiplier">&times; 1.10</div>
-      <div class="value">$766,225</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 6</div>
-      <div class="name">Exhibition single-lot &mdash; sold as ONE not 2,468</div>
-      <div class="multiplier">&times; 1.10</div>
-      <div class="value">$842,847</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Step 7</div>
-      <div class="name">Buyer story multiplier &mdash; Documentary / Heritage / Museum</div>
-      <div class="multiplier">&times; 1.40</div>
-      <div class="value">$1,179,986</div>
-    </div>
-    <div class="buildup-row">
-      <div class="step">Target</div>
-      <div class="name">Story-buyer ceiling</div>
-      <div class="multiplier">institutional acquisition</div>
-      <div class="value">$1.2M+</div>
+<section class="dark">
+  <div class="container">
+    <div class="reveal eyebrow" style="text-align:center">What makes this defensible</div>
+    <h2 class="reveal statement center" style="color:var(--bg)">The cross-reference spreadsheet <span class="it">is the artifact.</span></h2>
+    <div class="prose center" style="margin-top:56px">
+      <p class="reveal"><span class="em">Every item has a number.</span> No gaps in coverage. The seller can answer &ldquo;what&rsquo;s it worth&rdquo; for any of 2,468 inventory lines, anywhere in the collection, on demand.</p>
+      <p class="reveal"><span class="em">Three bands per item.</span> Low, mid, high. Conservative through aggressive. Each anchored to identifiable comp sources &mdash; eBay Sold, Heritage Auctions realized, specialty dealer asking prices, Replacements.com.</p>
+      <p class="reveal"><span class="em">Series-completion premiums where defensible.</span> Intact 16/16 Charity Edition gets a 30% premium. Complete 10/10 Doonesbury LE gets a 50% premium. 12-of-50 States of Bean gets a partial premium scaled to completion. The mechanics are transparent.</p>
+      <p class="reveal"><span class="em">Premium build-up is multiplicative on the lot, not on pieces.</span> This is how auction houses actually value intact archives. Each step is a documented premium type with auction-house precedent.</p>
+      <p class="reveal"><span class="em">Risk-adjusted downside is published.</span> The seller is transparent about comp-tightening risk. A buyer sees the floor, the enthusiast, the story, AND the downside math. Nothing hidden.</p>
+      <p class="reveal"><span class="em">100% coverage.</span> No item left without a value. No &ldquo;TBD&rdquo; or &ldquo;see appraiser&rdquo; in the master. The cross-reference spreadsheet is the artifact.</p>
     </div>
   </div>
+</section>
+
+<section id="inquiries" class="dark cta"><div class="narrow">
+  <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
+  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
+  <p class="reveal lede">Offered intact to a single buyer &mdash; per-piece valued, premium-built, and downside-published &mdash; under NDA.</p>
+  <a class="reveal linkout" href="./index.html#inquiries">Begin an inquiry &rarr;</a>
 </div></section>
 
-<section class="scenarios"><div class="container wide">
-  <h2>Three buyer scenarios</h2>
-  <div class="scenario-grid">
-    <div class="scenario-card floor">
-      <div class="label">Floor</div>
-      <div class="range">$100K&ndash;$150K</div>
-      <div class="who">Dealer / liquidator</div>
-      <div class="desc">Buyer purchases at conservative comp values, resells pieces individually over 12-24 months. Realistic for a dealer with strong eBay and Replacements channels. The seller's hard "no go below" line.</div>
-    </div>
-    <div class="scenario-card enthusiast">
-      <div class="label">Enthusiast</div>
-      <div class="range">$500K&ndash;$800K</div>
-      <div class="who">Auction house sealed bid</div>
-      <div class="desc">Intact-lot sealed bid via Heritage Auctions, Bonhams, or Christie's brand-memorabilia channel. Premium build-up through Step 4-5. Realistic if 2-3 serious bidders compete.</div>
-    </div>
-    <div class="scenario-card story">
-      <div class="label">Story buyer</div>
-      <div class="range">$1.2M+</div>
-      <div class="who">Institutional / Museum</div>
-      <div class="desc">Acquisition by museum, brand archive, or documentary buyer. Full premium build-up. Requires NYT feature, sole-archive provenance, intact-series completion. Speculative but defensible given documentation depth.</div>
-    </div>
-  </div>
-</div></section>
-
-<section class="risk-band"><div class="container wide">
-  <h2>Risk-adjusted downside &mdash; published, not hidden</h2>
-  <div class="risk-table">
-    <div class="risk-row header">
-      <div>Comp Risk Category</div>
-      <div class="num">Items</div>
-      <div class="num">vs Mid</div>
-      <div class="num">Downside</div>
-    </div>
-    <div class="risk-row">
-      <div class="cat">Architecture Demitasse comp tightening</div>
-      <div class="num">38</div>
-      <div class="num">$72 &rarr; $40</div>
-      <div class="num">&minus;$1,216</div>
-    </div>
-    <div class="risk-row">
-      <div class="cat">States of Bean secondary market</div>
-      <div class="num">50</div>
-      <div class="num">$104 &rarr; $70</div>
-      <div class="num">&minus;$1,700</div>
-    </div>
-    <div class="risk-row">
-      <div class="cat">Bearista oversupply</div>
-      <div class="num">~50</div>
-      <div class="num">$28 &rarr; $15</div>
-      <div class="num">&minus;$650</div>
-    </div>
-    <div class="risk-row">
-      <div class="cat">Russian dead-format comp uncertainty</div>
-      <div class="num">8</div>
-      <div class="num">$66 &rarr; $45</div>
-      <div class="num">&minus;$168</div>
-    </div>
-    <div class="risk-row">
-      <div class="cat">Other Tier C/D unverified items</div>
-      <div class="num">~1,000</div>
-      <div class="num">&minus;$20 each</div>
-      <div class="num">&minus;$20,000</div>
-    </div>
-    <div class="risk-row total">
-      <div class="cat">Total downside adjustment</div>
-      <div class="num">~1,150</div>
-      <div class="num">vs $199K mid</div>
-      <div class="num">&minus;$23,700</div>
-    </div>
-  </div>
-  <p style="text-align:center;margin-top:32px;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px">Risk-adjusted SOP mid: <strong style="color:var(--ink);font-weight:500">$175K&ndash;$200K</strong> &mdash; the honest floor before lot-level premiums apply</p>
-</div></section>
-
-<article><div class="container">
-  <h2>What makes this defensible</h2>
-  <p><strong style="font-weight:500;color:var(--gold)">Every item has a number.</strong> No gaps in coverage. The seller can answer "what's it worth" for any of 2,468 inventory lines, anywhere in the collection, on demand.</p>
-  <p><strong style="font-weight:500;color:var(--gold)">Three bands per item.</strong> Low, mid, high. Conservative through aggressive. Each anchored to identifiable comp sources &mdash; eBay Sold, Heritage Auctions realized, specialty dealer asking prices, Replacements.com.</p>
-  <p><strong style="font-weight:500;color:var(--gold)">Series-completion premiums where defensible.</strong> Intact 16/16 Charity Edition gets a 30% premium. Complete 10/10 Doonesbury LE gets a 50% premium. 12-of-50 States of Bean gets a partial premium scaled to completion. The mechanics are transparent.</p>
-  <p><strong style="font-weight:500;color:var(--gold)">Premium build-up is multiplicative on the lot, not on pieces.</strong> This is how auction houses actually value intact archives. Each step is a documented premium type with auction-house precedent.</p>
-  <p><strong style="font-weight:500;color:var(--gold)">Risk-adjusted downside is published.</strong> The seller is transparent about comp-tightening risk. A buyer sees the floor, the enthusiast, the story, AND the downside math. Nothing hidden.</p>
-  <p><strong style="font-weight:500;color:var(--gold)">100% coverage.</strong> No item left without a value. No "TBD" or "see appraiser" in the master. The cross-reference spreadsheet is the artifact.</p>
-</div></article>
-
-<footer><div class="container wide">
-  <div class="footer-text">The Sternberg Collection &mdash; STERNBERG-LOT-2026</div>
+<footer><div class="container">
+  <div class="ft">In memory of Chaim Sternberg &middot; 1944&ndash;2024</div>
+  <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
+<script>
+document.documentElement.classList.add('js');
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* hero tile mosaic — animated grid in the site palette */
+(function(){
+  var host = document.getElementById('mosaic');
+  if(!host) return;
+  var PALETTE = ['#B8945A','#A07C44','#CBA258','#8A6B38','#5B6B5B','#46524A','#3A453C','#5C2E1A','#6B3422','#3C1E12','#4A2418','#A04A1F','#8B3D15','#1A1A1A','#262626','#15130F','#F1E9D9','#E8DCC0','#D9C9A8','#F8F6F1'];
+  function build(){
+    var w = host.clientWidth, h = host.clientHeight;
+    if(!w || !h) return;
+    var target = w < 640 ? 24 : 32;
+    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+    var n = cols * rows, frag = document.createDocumentFragment();
+    for(var i = 0; i < n; i++){
+      var t = document.createElement('i');
+      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+      frag.appendChild(t);
+    }
+    host.innerHTML = '';
+    host.appendChild(frag);
+    var tiles = host.querySelectorAll('i');
+    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      tiles.forEach(function(t){ t.classList.add('lit'); });
+    }); });
+  }
+  build();
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+  if(REDUCE) return;
+  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+      var p = Math.min(Math.max(y / hh, 0), 1);
+      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+      host.style.opacity = (0.92 * (1 - p * 0.85)).toFixed(3);
+      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+
+/* scroll reveals + count-up numbers */
+(function(){
+  var reveal = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+
+  function countTo(el){
+    var to = parseFloat(el.getAttribute('data-to'));
+    var dur = 1500, start = null;
+    function frame(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+      if(p < 1){ requestAnimationFrame(frame); }
+      else { el.textContent = to.toLocaleString('en-US'); }
+    }
+    requestAnimationFrame(frame);
+  }
+  var counters = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+})();
+</script>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </body>
 </html>

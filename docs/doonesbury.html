@@ -14,113 +14,540 @@
 <meta name="twitter:description" content="The complete ten-piece Doonesbury Limited Edition series, illustrated by Garry Trudeau and never reissued.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+/* STERNBERG-CINEMATIC-THEME v1 — shared verbatim across all pages */
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#15130F;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px}
-.container{max-width:780px;margin:0 auto;padding:0 32px}
-.wide{max-width:1100px}
-nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:var(--bg);z-index:10}
-nav .container{display:flex;justify-content:space-between;align-items:baseline}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px;overflow-x:hidden}
+
+/* nav — shared site-wide */
+nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
-.nav-links{display:flex;gap:36px;font-size:14px;text-transform:uppercase;letter-spacing:1.5px}
-.nav-links a{color:var(--ink);text-decoration:none}
-header.page-hero{padding:120px 0 80px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(184,148,90,0.08) 100%)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
-h1{font-family:var(--serif);font-size:72px;font-weight:400;line-height:1.05;letter-spacing:-1px;margin-bottom:24px}
-.subtitle{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--muted);max-width:600px;margin:0 auto}
-.completion-banner{padding:48px 0;background:var(--gold);color:white;text-align:center}
-.completion-banner .label{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
-.completion-banner .stat{font-family:var(--serif);font-size:54px;font-weight:400;line-height:1}
-.completion-banner .note{font-family:var(--serif);font-size:18px;font-style:italic;margin-top:12px}
-article{padding:100px 0}
-article p{margin-bottom:32px}
-article p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.85;margin:8px 14px 0 0;color:var(--gold)}
-h2{font-family:var(--serif);font-size:48px;font-weight:400;margin:60px 0 32px;letter-spacing:-0.5px}
-.callout{border-left:3px solid var(--gold);padding:24px 32px;margin:48px 0;background:rgba(184,148,90,0.05);font-family:var(--serif);font-size:20px;font-style:italic;color:var(--muted)}
-.divider{height:1px;background:rgba(26,26,26,0.1);margin:48px auto;max-width:120px}
-.pieces-grid{padding:80px 0;background:rgba(184,148,90,0.04)}
-.pieces-grid h3{font-family:var(--serif);font-size:36px;text-align:center;margin-bottom:48px;font-weight:400}
-.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:900px;margin:0 auto}
-.piece{aspect-ratio:1;background:white;border:1px solid rgba(26,26,26,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
-.piece .num{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
-.piece .name{font-family:var(--serif);font-size:14px;text-align:center;line-height:1.2;color:var(--ink)}
-.value-box{padding:60px 0;background:var(--ink);color:var(--bg);text-align:center}
-.value-box .label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
-.value-box .range{font-family:var(--serif);font-size:48px;font-weight:400;margin-bottom:12px}
-.value-box .note{font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(248,246,241,0.7)}
-footer{padding:60px 0 40px;border-top:1px solid rgba(26,26,26,0.08);text-align:center}
-.footer-text{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
-@media (max-width:768px){h1{font-size:42px}h2{font-size:32px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}nav .container{flex-direction:column;gap:16px;align-items:center}.nav-links{gap:16px;font-size:11px}}
+.nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
+.nav-links a:hover{color:var(--gold)}
+
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+.narrow{max-width:820px;margin:0 auto;padding:0 32px}
+
+/* section rhythm */
+section{padding:clamp(100px,15vh,190px) 0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:36px}
+.serif{font-family:var(--serif)}
+.it{font-style:italic}
+.dark{background:var(--ink);color:var(--bg);position:relative}
+.dark .eyebrow{color:var(--gold)}
+.soft{background:rgba(184,148,90,0.04)}
+
+/* scroll reveals (gated to JS so no-JS shows everything) */
+html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+html.js .reveal.in{opacity:1;transform:none}
+
+/* ===== HERO — animated tile mosaic ===== */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 32px 90px;background:var(--deep);overflow:hidden}
+.hero.short{min-height:82vh}
+.hero .mosaic{position:absolute;inset:-2px;display:grid;gap:2px;opacity:0.92;will-change:transform,opacity}
+.hero .mosaic i{display:block;width:100%;height:100%;border-radius:2px;opacity:0;transform:scale(.3)}
+.hero .mosaic i.lit{opacity:1;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
+.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 75% 75% at center,transparent 0%,rgba(21,19,15,0.5) 55%,var(--deep) 100%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity}
+.hero .eyebrow{margin-bottom:40px}
+.hero .figure{font-family:var(--serif);font-weight:300;line-height:0.85;letter-spacing:-4px;font-size:clamp(6rem,22vw,20rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
+.hero .htitle{font-family:var(--serif);font-weight:300;line-height:0.92;letter-spacing:-2px;font-size:clamp(3.4rem,9vw,8rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
+.hero .htitle .u{font-size:0.34em;letter-spacing:0;color:var(--gold);vertical-align:baseline}
+.hero .sub{font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,3.4vw,2.4rem);font-style:italic;color:rgba(248,246,241,0.9);max-width:760px;margin:36px auto 0;line-height:1.3;text-shadow:0 1px 40px rgba(0,0,0,0.6)}
+.hero .sub .it,.hero .htitle .g{color:var(--gold);font-style:italic}
+.hero .dates{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:rgba(248,246,241,0.6);margin-top:28px}
+.scrollcue{position:absolute;z-index:2;bottom:44px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:14px}
+.scrollcue span{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.6)}
+.scrollcue .line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--gold));animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(8px);opacity:1}}
+
+/* film grain on dark sections */
+.dark::after,.hero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:0.05;pointer-events:none;mix-blend-mode:overlay;z-index:1}
+.dark>.container,.dark>.narrow{position:relative;z-index:2}
+
+/* big editorial statements */
+.statement{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.2vw,4.6rem);line-height:1.08;letter-spacing:-1px}
+.statement .it{color:var(--gold);font-style:italic}
+.statement.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* editorial prose */
+.prose{max-width:760px}
+.prose.center{margin:0 auto}
+.prose p{font-size:clamp(1.05rem,1.5vw,1.25rem);margin-bottom:28px;color:var(--ink);font-weight:300}
+.prose .lead{font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.5;margin-bottom:36px}
+.prose p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.78;margin:10px 14px 0 0;color:var(--gold)}
+.prose .em{color:var(--gold);font-weight:500}
+.dark .prose p{color:rgba(248,246,241,0.8)}
+.divider{height:1px;background:rgba(26,26,26,0.12);margin:56px 0;max-width:160px}
+.dark .divider{background:rgba(248,246,241,0.18)}
+
+/* epigraph — centered italic over rules */
+.epigraph{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.3;color:var(--muted);max-width:840px;margin:0 auto;padding:8px 0}
+
+/* two-column editorial */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:64px}
+.cols.top{align-items:start}
+.pullquote{border-left:2px solid var(--gold);padding-left:36px}
+.pullquote .q{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.2;font-weight:400;margin-bottom:28px}
+.dark .pullquote .q{color:var(--bg)}
+.colcard{border-left:2px solid var(--gold);padding-left:36px}
+.colcard .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.colcard h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:20px}
+
+/* big-number band (dark) */
+.bignums{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center}
+.bignum .n{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,11vw,9rem);line-height:0.9;color:var(--bg)}
+.bignum .l{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.bignum .s{font-size:14px;color:rgba(248,246,241,0.55);margin-top:8px}
+.substats{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;text-align:center;border-top:1px solid rgba(248,246,241,0.14);padding-top:64px;margin-top:88px}
+.substat .n{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1;color:var(--bg)}
+.substat .l{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(248,246,241,0.55);margin-top:12px}
+/* light variant for stat grids on cream sections */
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;text-align:center}
+.statgrid .n{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4rem);font-weight:400;line-height:1;color:var(--ink)}
+.statgrid .l{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+/* spec band (dark) — for anchor specs */
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.spec .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.spec .v{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--bg)}
+
+/* feature / headline list — airy rows */
+.pieces{margin-top:72px}
+.piece{display:grid;grid-template-columns:80px 1fr;gap:40px;padding:52px 0;border-top:1px solid rgba(26,26,26,0.1);align-items:start}
+.dark .piece{border-color:rgba(248,246,241,0.16)}
+.piece .num{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--gold);line-height:0.9}
+.piece .tag{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.dark .piece .tag{color:rgba(248,246,241,0.55)}
+.piece h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;margin-bottom:20px}
+.piece p{max-width:680px;color:var(--ink);font-weight:300;margin-bottom:24px}
+.dark .piece p{color:rgba(248,246,241,0.8)}
+.piece .meta{display:flex;gap:48px;flex-wrap:wrap}
+.piece .meta .k{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.piece .meta .val{font-family:var(--serif);font-size:1.5rem;color:var(--gold)}
+.piece .meta .val.plain{color:var(--ink)}
+.dark .piece .meta .val.plain{color:var(--bg)}
+
+/* quiet rows with thin bars (composition / series) */
+.comp-rows{margin-top:64px;display:flex;flex-direction:column}
+.comp-row{display:grid;grid-template-columns:1fr 2fr 90px;gap:28px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(26,26,26,0.08)}
+.dark .comp-row{border-color:rgba(248,246,241,0.14)}
+.comp-row .nm{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:400}
+.comp-row .track{height:2px;background:rgba(26,26,26,0.1);position:relative}
+.dark .comp-row .track{background:rgba(248,246,241,0.16)}
+.comp-row .fill{position:absolute;left:0;top:0;height:100%;background:var(--gold);width:0;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
+html.js .comp-row.in .fill{width:var(--w)}
+html:not(.js) .comp-row .fill{width:var(--w)}
+.comp-row .ct{font-family:var(--serif);font-size:1.5rem;text-align:right;color:var(--muted)}
+.dark .comp-row .ct{color:var(--gold)}
+
+/* cards grid */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.card{padding:36px;background:#fff;border:1px solid rgba(26,26,26,0.08);text-decoration:none;color:var(--ink);display:block;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.card h3{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:500;line-height:1.15;margin-bottom:12px}
+.card p{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.card .more{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.chip{padding:22px 20px;background:rgba(184,148,90,0.05);border-left:3px solid var(--gold);font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.4rem);font-weight:400}
+.dark .chip{background:rgba(248,246,241,0.05)}
+.chip .c{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block}
+
+/* callout */
+.callout{border-left:3px solid var(--gold);padding:28px 36px;margin:8px 0;background:rgba(184,148,90,0.06);font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);font-style:italic;color:var(--muted);line-height:1.35}
+.dark .callout{background:rgba(248,246,241,0.05);color:rgba(248,246,241,0.85)}
+
+/* ledger — re-skinned data rows (valuation rollup/buildup/risk) */
+.ledger{margin-top:56px;max-width:920px}
+.ledger.center{margin-left:auto;margin-right:auto}
+.ledger-row{display:grid;grid-template-columns:60px 1fr auto;gap:28px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(248,246,241,0.15)}
+.ledger-row .step{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold)}
+.ledger-row .name{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem)}
+.ledger-row .amt{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);text-align:right;white-space:nowrap}
+.ledger-row.total{border-bottom:none;border-top:2px solid var(--gold);margin-top:8px;padding-top:28px}
+.ledger-row.total .amt{color:var(--gold);font-size:clamp(1.8rem,3.4vw,2.6rem)}
+/* light ledger variant */
+.dark .ledger-row{border-color:rgba(248,246,241,0.15)}
+section:not(.dark) .ledger-row{border-color:rgba(26,26,26,0.1)}
+
+/* value box (range reveal) */
+.valbox{text-align:center;padding:8px 0}
+.valbox .k{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.valbox .range{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9vw,6.5rem);line-height:0.95;color:var(--bg)}
+.valbox .note{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(248,246,241,0.6);max-width:640px;margin:24px auto 0}
+section:not(.dark) .valbox .range{color:var(--ink)}
+section:not(.dark) .valbox .note{color:var(--muted)}
+
+/* valuation tiers — designed sequence */
+.tiers{margin-top:72px;display:flex;flex-direction:column}
+.tier{display:grid;grid-template-columns:200px 1fr;gap:48px;padding:52px 0;border-top:1px solid rgba(248,246,241,0.16);align-items:baseline}
+.tier .label{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.tier .range{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,8vw,6rem);line-height:0.95;color:var(--bg)}
+.tier .who{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.8rem);color:rgba(248,246,241,0.75);margin:12px 0 18px}
+.tier .desc{max-width:640px;color:rgba(248,246,241,0.6);font-weight:300}
+.tier.climax .range,.tier.climax .label{color:var(--gold)}
+
+/* link out */
+.linkout{display:inline-block;margin-top:52px;font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:5px}
+.linkout:hover{opacity:0.6}
+.dark .linkout:hover{color:var(--bg);border-color:var(--bg);opacity:1}
+
+/* the window — closing punch */
+.window{text-align:center}
+.window .big{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,7vw,6rem);line-height:1.04;letter-spacing:-1px;max-width:1000px;margin:0 auto}
+.window .big .it{color:var(--gold);font-style:italic}
+.window .coda{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,2rem);color:var(--muted);max-width:720px;margin:44px auto 0;line-height:1.3}
+
+/* inquiries CTA (dark) */
+.cta{text-align:center}
+.cta .head{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,13vw,11rem);line-height:0.9;letter-spacing:-2px;color:var(--bg)}
+.cta .head .it{color:var(--gold);font-style:italic}
+.cta .lede{font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,2.8vw,2rem);color:rgba(248,246,241,0.85);max-width:680px;margin:44px auto 52px;line-height:1.35}
+.cta .card-cta{display:inline-block;border:1px solid var(--gold);padding:40px 56px;background:transparent}
+.cta .card-cta .k{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.cta .card-cta .nm{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);color:var(--bg)}
+.cta .card-cta .ref{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:rgba(248,246,241,0.55);margin-top:14px}
+
+/* footer (dark) */
+footer{padding:64px 0 48px;background:var(--ink);border-top:1px solid rgba(248,246,241,0.1)}
+footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
+
+@media (max-width:768px){
+  .cols{grid-template-columns:1fr;gap:48px}
+  .bignums{grid-template-columns:1fr;gap:56px}
+  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+  .cards{grid-template-columns:1fr}
+  .chips{grid-template-columns:repeat(2,1fr)}
+  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+  .piece .meta{gap:32px}
+  .comp-row{grid-template-columns:1fr 70px;gap:16px}
+  .comp-row .track{display:none}
+  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+  .ledger-row{grid-template-columns:1fr auto;gap:16px}
+  .ledger-row .step{display:none}
+  nav .container,nav .narrow{flex-direction:column;align-items:center}
+  .nav-links{gap:12px;font-size:11px;justify-content:center}
+  footer .container{justify-content:center;text-align:center}
+}
 </style>
 </head>
 <body>
 
-<nav><div class="container wide">
+<nav><div class="container">
   <div class="logo">The Sternberg Collection</div>
   <div class="nav-links">
     <a href="./index.html">Home</a>
     <a href="./about.html">About</a>
-    <a href="./collector.html">The Collector</a>
+    <a href="./collector.html">Collector</a>
     <a href="./giant-abbey.html">Giant Abbey</a>
     <a href="./doonesbury.html">Doonesbury</a>
-    <a href="./index.html#inquiries">Inquiries</a>
+    <a href="./charity-edition.html">Charity</a>
+    <a href="./giants.html">Giants</a>
+    <a href="./architecture.html">Architecture</a>
+    <a href="./verification.html">Verification</a>
+    <a href="./valuation.html">Valuation</a>
   </div>
 </div></nav>
 
-<header class="page-hero"><div class="container">
-  <div class="eyebrow">The Complete Set</div>
-  <h1>Doonesbury Limited Edition</h1>
-  <div class="subtitle">Garry Trudeau-illustrated, ten-piece collector series. Never reissued.</div>
-</div></header>
-
-<div class="completion-banner"><div class="container">
-  <div class="label">Series completion</div>
-  <div class="stat">10 of 10</div>
-  <div class="note">Complete, intact, never split</div>
-</div></div>
-
-<article><div class="container">
-  <p class="drop">In the late 1990s, Starbucks released a limited edition collector series illustrated by Garry Trudeau, the Pulitzer Prize-winning cartoonist behind Doonesbury. Ten pieces. Limited production. No reissue. The set was sold piece by piece through select Starbucks retail channels and quickly disappeared from circulation.</p>
-  <p>Today, complete intact Doonesbury LE sets are vanishingly rare. Individual pieces surface occasionally on resale markets at modest prices. The full ten-piece set, with all original pieces preserved and provenance intact, is the rarity that institutional brand-memorabilia collectors actively seek.</p>
-  <p>The Sternberg Collection holds all ten. Each piece has been photographed, catalogued, and matched to its original ticket number in the master inventory. The set has not been split. It will not be split.</p>
-  <div class="callout">A complete intact LE set is not a sum of its parts. The completion premium typically runs 2x to 3x the per-piece secondary market value &mdash; reflecting the difficulty of reassembly and the value of provenance preservation.</div>
-  <h2>The pieces</h2>
-</div></article>
-
-<section class="pieces-grid"><div class="container wide">
-  <h3>All ten verified and intact</h3>
-  <div class="grid">
-    <div class="piece"><div class="num">168501</div><div class="name">Doonesbury LE 1</div></div>
-    <div class="piece"><div class="num">168502</div><div class="name">Doonesbury LE 2</div></div>
-    <div class="piece"><div class="num">168503</div><div class="name">Doonesbury LE 3</div></div>
-    <div class="piece"><div class="num">168504</div><div class="name">Doonesbury LE 4</div></div>
-    <div class="piece"><div class="num">168505</div><div class="name">Doonesbury LE 5</div></div>
-    <div class="piece"><div class="num">168506</div><div class="name">Doonesbury LE 6</div></div>
-    <div class="piece"><div class="num">168507</div><div class="name">Doonesbury LE 7</div></div>
-    <div class="piece"><div class="num">168508</div><div class="name">Doonesbury LE 8</div></div>
-    <div class="piece"><div class="num">168509</div><div class="name">Doonesbury LE 9</div></div>
-    <div class="piece"><div class="num">168510</div><div class="name">Doonesbury LE 10</div></div>
+<header class="hero short">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="vignette"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">The Complete Set</div>
+    <div class="htitle">Doonesbury <span class="g">LE</span></div>
+    <div class="sub">Ten of ten. Complete and intact.</div>
+    <div class="dates">SKUs 168501 &ndash; 168510 &nbsp;&middot;&nbsp; Never Reissued</div>
   </div>
+  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+</header>
+
+<!-- STATEMENT — dark -->
+<section class="dark">
+  <div class="narrow">
+    <h2 class="reveal statement center">Garry Trudeau. <span class="it">Pulitzer Prize.</span><br>Designed exclusively for Starbucks.</h2>
+    <p class="reveal" style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);color:rgba(248,246,241,0.75);text-align:center;max-width:680px;margin:48px auto 0;font-weight:300;line-height:1.6;">Each piece individually numbered out of 1,500. Ten pieces released through select retail channels in the late 1990s and never reissued. The complete ten-piece set &mdash; intact, provenance preserved &mdash; is the rarity that institutional brand-memorabilia collectors actively seek.</p>
+  </div>
+</section>
+
+<!-- PROSE BODY — light -->
+<section>
+  <div class="narrow">
+    <div class="prose center">
+      <p class="lead reveal">In the late 1990s, Starbucks released a limited edition collector series illustrated by Garry Trudeau, the Pulitzer Prize-winning cartoonist behind Doonesbury. Ten pieces. Limited production. No reissue. The set was sold piece by piece through select Starbucks retail channels and quickly disappeared from circulation.</p>
+      <p class="drop reveal">Today, complete intact Doonesbury LE sets are vanishingly rare. Individual pieces surface occasionally on resale markets at modest prices. The full ten-piece set, with all original pieces preserved and provenance intact, is the rarity that institutional brand-memorabilia collectors actively seek.</p>
+      <p class="reveal">The Sternberg Collection holds all ten. Each piece has been photographed, catalogued, and matched to its original ticket number in the master inventory. The set has not been split. It will not be split.</p>
+      <div class="divider"></div>
+      <p class="reveal">The Doonesbury LE was Starbucks&rsquo; first major licensed-illustration collaboration with a Pulitzer-winning artist. The pieces sit at the intersection of two collector universes &mdash; Starbucks brand memorabilia and Trudeau-licensed work &mdash; making complete sets attractive to a wider buyer pool than typical brand pieces.</p>
+      <p class="reveal">For a museum or institutional buyer, the set represents a documented moment in late-1990s American brand-culture history: when a publicly-traded retailer commissioned a satirist whose work specifically critiqued corporate culture, and released the result as collector pieces. The cultural commentary is the artifact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALLOUT + COMPLETION — soft -->
+<section class="soft">
+  <div class="narrow">
+    <div class="reveal callout">A complete intact LE set is not a sum of its parts. The completion premium typically runs 2&times; to 3&times; the per-piece secondary market value &mdash; reflecting the difficulty of reassembly and the value of provenance preservation.</div>
+
+    <div style="margin-top:80px;text-align:center;">
+      <div class="reveal eyebrow">Series Completion</div>
+      <div class="reveal" style="font-family:var(--serif);font-weight:300;font-size:clamp(5rem,18vw,12rem);line-height:0.85;letter-spacing:-4px;color:var(--ink);">10<span style="font-size:0.38em;letter-spacing:0;color:var(--gold);vertical-align:baseline;">&nbsp;/ 10</span></div>
+      <div class="reveal" style="font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--muted);margin-top:20px;">Complete, intact, never split</div>
+    </div>
+  </div>
+</section>
+
+<!-- PIECES FEATURE LIST — light -->
+<section>
+  <div class="container">
+    <div class="reveal eyebrow">All Ten Verified &amp; Intact</div>
+    <h2 class="reveal statement" style="max-width:720px;">The pieces. <span class="it">SKUs 168501&ndash;168510.</span></h2>
+    <div class="pieces">
+      <div class="reveal piece">
+        <div class="num">01</div>
+        <div>
+          <div class="tag">SKU 168501</div>
+          <h3>Doonesbury LE 1</h3>
+          <p>First piece in the series. Photo-verified, bottom-stamp OCR confirmed, storage box mapped and cross-referenced to the Instagram archive.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">02</div>
+        <div>
+          <div class="tag">SKU 168502</div>
+          <h3>Doonesbury LE 2</h3>
+          <p>Photo-verified. Side artwork matches Trudeau&rsquo;s licensed series. Catalogued in master inventory.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">03</div>
+        <div>
+          <div class="tag">SKU 168503</div>
+          <h3>Doonesbury LE 3</h3>
+          <p>Photo-verified. Each piece&rsquo;s storage box is mapped, color-coded, and cross-referenced to the public Instagram archive.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">04</div>
+        <div>
+          <div class="tag">SKU 168504</div>
+          <h3>Doonesbury LE 4</h3>
+          <p>Photo-verified. Bottom-stamp OCR confirms ticket number. Provenance intact.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">05</div>
+        <div>
+          <div class="tag">SKU 168505</div>
+          <h3>Doonesbury LE 5</h3>
+          <p>Photo-verified. Side artwork confirmed. Catalogued in master inventory.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">06</div>
+        <div>
+          <div class="tag">SKU 168506</div>
+          <h3>Doonesbury LE 6</h3>
+          <p>Photo-verified. Storage box mapped and color-coded. Cross-referenced to public archive.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">07</div>
+        <div>
+          <div class="tag">SKU 168507</div>
+          <h3>Doonesbury LE 7</h3>
+          <p>Photo-verified. Bottom-stamp OCR confirmed. Trudeau licensed artwork intact.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">08</div>
+        <div>
+          <div class="tag">SKU 168508</div>
+          <h3>Doonesbury LE 8</h3>
+          <p>Photo-verified. Catalogued in master inventory. Storage box mapped.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">09</div>
+        <div>
+          <div class="tag">SKU 168509</div>
+          <h3>Doonesbury LE 9</h3>
+          <p>Photo-verified. Side artwork matches licensed series. Cross-referenced to Instagram archive.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+      <div class="reveal piece">
+        <div class="num">10</div>
+        <div>
+          <div class="tag">SKU 168510</div>
+          <h3>Doonesbury LE 10</h3>
+          <p>Final piece in the series. Completes the set. Photo-verified, catalogued, provenance fully documented. The tenth piece that makes this the rarity.</p>
+          <div class="meta"><div><div class="k">Comp value</div><div class="val">$285 &ndash; $800</div></div><div><div class="k">Status</div><div class="val plain">Intact</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JAVA PUMP CALLOUT — dark -->
+<section class="dark">
+  <div class="narrow">
+    <div class="reveal eyebrow">Ultra-Rare</div>
+    <h2 class="reveal statement" style="max-width:820px;">The Java Pump Statue. <span class="it">Number 47 of 1,500.</span></h2>
+    <div class="reveal callout" style="margin-top:52px;">The collection includes a Doonesbury Java Pump statue numbered <strong style="color:var(--gold);font-style:normal;">#47&nbsp;/&nbsp;1,500</strong> &mdash; among the earliest production impressions of an already scarce edition. A piece that surfaces at the intersection of Starbucks brand history and Trudeau&rsquo;s cultural legacy, individually numbered and never reissued.</div>
+    <div class="cols top" style="margin-top:64px;">
+      <div class="reveal">
+        <div class="eyebrow">Provenance</div>
+        <p style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.4rem);color:rgba(248,246,241,0.8);line-height:1.6;">Edition size: 1,500. Individual number: 47. Among the first fifty produced. Photo-verified and catalogued in the master inventory alongside the ten-piece mug series.</p>
+      </div>
+      <div class="reveal pullquote">
+        <div class="q">&ldquo;Number 47 of 1,500 &mdash; among the earliest impressions of an already finite edition.&rdquo;</div>
+        <p style="color:rgba(248,246,241,0.65);">The completion premium on a numbered statue this early in the sequence is substantial. The set and statue together represent the broadest possible Doonesbury LE holding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTATION — light -->
+<section>
+  <div class="narrow">
+    <div class="reveal eyebrow">Documentation</div>
+    <h2 class="reveal statement" style="max-width:680px;">Photo-verified. <span class="it">Every piece accounted for.</span></h2>
+    <div class="prose center" style="margin-top:52px;">
+      <p class="reveal">All ten pieces are photo-verified and catalogued in the master inventory. Bottom-stamp OCR confirms ticket numbers 168501&ndash;168510. Side artwork matches Trudeau&rsquo;s licensed series. Each piece&rsquo;s storage box is mapped, color-coded, and cross-referenced to the public Instagram archive.</p>
+      <p class="reveal">The Sternberg Collection Instagram (@starbucks.mug.collection) documents <span class="em">2,466 posts</span> across the full 2,468-piece holding. The Doonesbury LE is among the most completely documented sub-series in the collection &mdash; photographed, catalogued, and cross-referenced in the 18-day sprint that produced the master inventory.</p>
+    </div>
+    <div class="statgrid" style="margin-top:80px;">
+      <div class="reveal"><div class="n"><span data-to="10">10</span></div><div class="l">Pieces</div></div>
+      <div class="reveal"><div class="n"><span data-to="10">10</span></div><div class="l">Verified</div></div>
+      <div class="reveal"><div class="n">1,500</div><div class="l">Edition Size</div></div>
+      <div class="reveal"><div class="n">47</div><div class="l">Java Pump #</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE BOX — dark -->
+<section class="dark">
+  <div class="narrow">
+    <div class="reveal eyebrow" style="text-align:center;">Set Value</div>
+    <div class="reveal valbox" style="margin-top:16px;">
+      <div class="k">Per-item comp range</div>
+      <div class="range">$285 &ndash; $800 <span style="font-size:0.38em;color:var(--gold);letter-spacing:0;">each</span></div>
+      <div class="note">Set value with completion premium: $12,000 &ndash; $18,000. A complete intact LE set commands 2&times; to 3&times; the per-piece secondary market rate &mdash; reflecting the near-impossibility of reassembling all ten from the secondary market. As part of the intact Sternberg lot, the Doonesbury LE contributes meaningfully to the overall valuation framework.</div>
+    </div>
+    <a class="reveal linkout" href="./valuation.html">See the full valuation breakdown &rarr;</a>
+  </div>
+</section>
+
+<!-- WINDOW — light closing punch -->
+<section class="window">
+  <div class="narrow">
+    <div class="reveal eyebrow" style="text-align:center;">The Only Set</div>
+    <p class="reveal big">Ten pieces. One collection.<br><span class="it">Intact since the day it was assembled.</span></p>
+    <p class="reveal coda">The cultural commentary is the artifact. The set will not be split.</p>
+  </div>
+</section>
+
+<!-- INQUIRIES CTA — dark -->
+<section id="inquiries" class="dark cta"><div class="narrow">
+  <div class="reveal eyebrow" style="text-align:center;">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
+  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
+  <p class="reveal lede">The Doonesbury LE is offered only as part of the intact Sternberg Collection &mdash; 2,468 pieces, one buyer, under NDA.</p>
+  <a class="reveal linkout" href="./index.html#inquiries">Begin an inquiry &rarr;</a>
 </div></section>
 
-<article><div class="container">
-  <h2>Why this set matters</h2>
-  <p>The Doonesbury LE was Starbucks' first major licensed-illustration collaboration with a Pulitzer-winning artist. The pieces sit at the intersection of two collector universes &mdash; Starbucks brand memorabilia and Trudeau-licensed work &mdash; making complete sets attractive to a wider buyer pool than typical brand pieces.</p>
-  <p>For a museum or institutional buyer, the set represents a documented moment in late-1990s American brand-culture history: when a publicly-traded retailer commissioned a satirist whose work specifically critiqued corporate culture, and released the result as collector pieces. The cultural commentary is the artifact.</p>
-  <div class="divider"></div>
-  <h2>Documentation</h2>
-  <p>All ten pieces are photo-verified and catalogued in the master inventory. Bottom-stamp OCR confirms ticket numbers 168501-168510. Side artwork matches Trudeau's licensed series. Each piece's storage box is mapped, color-coded, and cross-referenced to the public Instagram archive.</p>
-</div></article>
-
-<section class="value-box"><div class="container">
-  <div class="label">Set value with completion premium</div>
-  <div class="range">$12,000 &mdash; $18,000</div>
-  <div class="note">Standalone set. As part of the intact lot, the Doonesbury LE contributes meaningfully to the overall valuation framework.</div>
-</div></section>
-
-<footer><div class="container wide">
-  <div class="footer-text">The Sternberg Collection &mdash; STERNBERG-LOT-2026</div>
+<footer><div class="container">
+  <div class="ft">In memory of Chaim Sternberg &middot; 1944&ndash;2024</div>
+  <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
+<script>
+document.documentElement.classList.add('js');
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* hero tile mosaic — animated grid in the site palette */
+(function(){
+  var host = document.getElementById('mosaic');
+  if(!host) return;
+  var PALETTE = ['#B8945A','#A07C44','#CBA258','#8A6B38','#5B6B5B','#46524A','#3A453C','#5C2E1A','#6B3422','#3C1E12','#4A2418','#A04A1F','#8B3D15','#1A1A1A','#262626','#15130F','#F1E9D9','#E8DCC0','#D9C9A8','#F8F6F1'];
+  function build(){
+    var w = host.clientWidth, h = host.clientHeight;
+    if(!w || !h) return;
+    var target = w < 640 ? 24 : 32;
+    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+    var n = cols * rows, frag = document.createDocumentFragment();
+    for(var i = 0; i < n; i++){
+      var t = document.createElement('i');
+      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+      frag.appendChild(t);
+    }
+    host.innerHTML = '';
+    host.appendChild(frag);
+    var tiles = host.querySelectorAll('i');
+    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      tiles.forEach(function(t){ t.classList.add('lit'); });
+    }); });
+  }
+  build();
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+  if(REDUCE) return;
+  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+      var p = Math.min(Math.max(y / hh, 0), 1);
+      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+      host.style.opacity = (0.92 * (1 - p * 0.85)).toFixed(3);
+      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+
+/* scroll reveals + count-up numbers */
+(function(){
+  var reveal = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+
+  function countTo(el){
+    var to = parseFloat(el.getAttribute('data-to'));
+    var dur = 1500, start = null;
+    function frame(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+      if(p < 1){ requestAnimationFrame(frame); }
+      else { el.textContent = to.toLocaleString('en-US'); }
+    }
+    requestAnimationFrame(frame);
+  }
+  var counters = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+})();
+</script>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </body>
 </html>

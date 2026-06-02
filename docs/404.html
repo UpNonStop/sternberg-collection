@@ -7,32 +7,73 @@
 <title>Page Not Found — The Sternberg Collection</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+/* STERNBERG-CINEMATIC-THEME v1 — 404 (self-contained subset) */
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#15130F;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:17px;min-height:100vh;display:flex;flex-direction:column}
-main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 32px}
-.code{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:32px}
-h1{font-family:var(--serif);font-size:84px;font-weight:400;line-height:1.05;letter-spacing:-1.5px;margin-bottom:24px}
-.message{font-family:var(--serif);font-size:24px;font-weight:300;font-style:italic;color:var(--muted);max-width:560px;margin:0 auto 48px}
-.return-link{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);padding:14px 28px;display:inline-block;transition:background 0.2s,color 0.2s}
-.return-link:hover{background:var(--gold);color:var(--ink)}
-footer{padding:40px 0;text-align:center}
-.footer-text{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
-@media (max-width:768px){h1{font-size:54px}.message{font-size:20px}}
+body{background:var(--deep);color:var(--bg);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:18px;overflow-x:hidden}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 32px;background:var(--deep);overflow:hidden}
+.hero .mosaic{position:absolute;inset:-2px;display:grid;gap:2px;opacity:0.9}
+.hero .mosaic i{display:block;width:100%;height:100%;border-radius:2px;opacity:0;transform:scale(.3)}
+.hero .mosaic i.lit{opacity:1;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
+.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 75% 75% at center,transparent 0%,rgba(21,19,15,0.55) 55%,var(--deep) 100%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:0.05;pointer-events:none;mix-blend-mode:overlay;z-index:1}
+.inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.code{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+.figure{font-family:var(--serif);font-weight:300;line-height:0.85;letter-spacing:-4px;font-size:clamp(7rem,26vw,18rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
+.msg{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3.2vw,2.2rem);color:rgba(248,246,241,0.85);max-width:560px;margin:24px auto 48px;line-height:1.3;text-shadow:0 1px 40px rgba(0,0,0,0.6)}
+.return{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--gold);padding:14px 28px;display:inline-block;transition:background .2s,color .2s}
+.return:hover{background:var(--gold);color:var(--ink)}
+.ft{position:absolute;z-index:2;bottom:40px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.45)}
 </style>
 </head>
 <body>
 
-<main>
-  <div class="code">Error 404</div>
-  <h1>Page not found</h1>
-  <div class="message">The page you were looking for is not part of the archive. It may have moved, or it may never have existed.</div>
-  <a href="./index.html" class="return-link">Return to the collection &rarr;</a>
-</main>
+<header class="hero">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="vignette"></div>
+  <div class="inner">
+    <div class="code">Error 404</div>
+    <div class="figure">404</div>
+    <div class="msg">The page you were looking for is not part of the archive. It may have moved, or it may never have existed.</div>
+    <a href="./index.html" class="return">Return to the collection &rarr;</a>
+  </div>
+  <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
+</header>
 
-<footer>
-  <div class="footer-text">The Sternberg Collection &mdash; STERNBERG-LOT-2026</div>
-</footer>
+<script>
+document.documentElement.classList.add('js');
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){
+  var host = document.getElementById('mosaic');
+  if(!host) return;
+  var PALETTE = ['#B8945A','#A07C44','#CBA258','#8A6B38','#5B6B5B','#46524A','#3A453C','#5C2E1A','#6B3422','#3C1E12','#4A2418','#A04A1F','#8B3D15','#1A1A1A','#262626','#15130F','#F1E9D9','#E8DCC0','#D9C9A8','#F8F6F1'];
+  function build(){
+    var w = host.clientWidth, h = host.clientHeight;
+    if(!w || !h) return;
+    var target = w < 640 ? 24 : 32;
+    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+    var n = cols * rows, frag = document.createDocumentFragment();
+    for(var i = 0; i < n; i++){
+      var t = document.createElement('i');
+      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+      frag.appendChild(t);
+    }
+    host.innerHTML = '';
+    host.appendChild(frag);
+    var tiles = host.querySelectorAll('i');
+    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      tiles.forEach(function(t){ t.classList.add('lit'); });
+    }); });
+  }
+  build();
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+})();
+</script>
 
 </body>
 </html>
