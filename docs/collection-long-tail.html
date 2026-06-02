@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Collections &middot; The Sternberg Collection</title>
+<title>The Long Tail &middot; The Sternberg Collection</title>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Collections &middot; The Sternberg Collection">
-<meta property="og:description" content="Every piece in the Sternberg Collection, organized by collection and photographed, ticket by ticket.">
-<meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/collections.html">
+<meta property="og:title" content="The Long Tail &middot; The Sternberg Collection">
+<meta property="og:description" content="The everyday City Mug line and the thousand pieces that belong to no single series. The deepest, widest part of the archive.">
+<meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/collection-long-tail.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Collections &middot; The Sternberg Collection">
-<meta name="twitter:description" content="Every piece in the Sternberg Collection, organized by collection and photographed, ticket by ticket.">
+<meta name="twitter:title" content="The Long Tail &middot; The Sternberg Collection">
+<meta name="twitter:description" content="The everyday City Mug line and the thousand pieces that belong to no single series. The deepest, widest part of the archive.">
 <link rel="icon" type="image/svg+xml" href="./logo-mark.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="apple-touch-icon" href="./favicon-180.png">
@@ -399,17 +399,17 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 .gnote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:var(--ink);margin-bottom:16px;font-weight:300;max-width:none}
 .gnote .em{color:var(--gold);font-weight:500}.gnote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);margin:4px 0 0}
 
-.col-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
-.col-card{position:relative;aspect-ratio:4/3;border-radius:2px;overflow:hidden;text-decoration:none;display:flex;align-items:flex-end;background:linear-gradient(135deg,#163026,#0F2419);border:1px solid rgba(184,148,90,0.18);transition:transform .3s,border-color .3s}
-.col-card.has::before{content:"";position:absolute;inset:0;background:var(--img) center/cover;filter:brightness(0.72) saturate(0.92)}
-.col-card.has::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,17,0.94),rgba(11,22,17,0.05) 62%)}
-.col-card .cc-body{position:relative;z-index:2;padding:24px}
-.col-card .cc-k{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.col-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,2rem);margin:0 0 5px;color:#F8F6F1}
-.col-card .cc-n{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:rgba(248,246,241,0.6)}
-.col-card.soon{opacity:0.6}
-a.col-card:hover{border-color:var(--gold);transform:translateY(-4px)}
-@media(max-width:768px){.col-cards{grid-template-columns:1fr}}
+.mug-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.mug-grid figure{margin:0}
+.mug-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:#e9e7e2;box-shadow:0 10px 30px rgba(26,26,26,0.12);transition:transform .3s}
+.mug-grid figure:hover img{transform:translateY(-4px)}
+.mug-grid figcaption{margin-top:11px;font-family:var(--serif);font-size:clamp(1rem,1.4vw,1.25rem);color:var(--ink)}
+.mug-grid figcaption span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.gnote{max-width:760px;margin:0 auto;background:rgba(184,148,90,0.06);border:1px solid rgba(184,148,90,0.28);border-left:3px solid var(--gold);padding:clamp(28px,4vw,48px)}
+.gnote .nk{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.gnote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:var(--ink);margin-bottom:16px;font-weight:300;max-width:none}
+.gnote .em{color:var(--gold);font-weight:500}.gnote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);margin:4px 0 0}
+@media(max-width:768px){.mug-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -435,35 +435,57 @@ a.col-card:hover{border-color:var(--gold);transform:translateY(-4px)}
   <div class="mosaic" id="mosaic" aria-hidden="true"></div>
   <div class="vignette"></div>
   <div class="hero-inner">
-    <div class="eyebrow">The Collection</div>
-    <div class="htitle">Every piece, <span class="g">by collection.</span></div>
-    <div class="sub">2,468 items across 106 series. Photographed, ticketed, and where there is a story, told.</div>
+    <div class="eyebrow">The Long Tail</div>
+    <div class="htitle">A thousand more, <span class="g">and still counting.</span></div>
+    <div class="sub">The everyday City Mug line and the pieces that belong to no single series. The widest, deepest part of the whole archive.</div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
-<section><div class="container">
-  <div class="reveal eyebrow">Browse the archive</div>
-  <h2 class="reveal statement" style="max-width:900px">Sixteen collections. <span class="it">One intact record.</span></h2>
-  <div class="col-cards">
-      <a class="col-card has" href="./giant-abbey.html" style="--img:url(./img/giant-abbey.jpg)"><div class="cc-body"><div class="cc-k">The Anchor</div><h3>Giant Abbey</h3><div class="cc-n">1 piece</div></div></a>
-      <a class="col-card has" href="./charity-edition.html" style="--img:url(./img/charity/seattle.jpg)"><div class="cc-body"><div class="cc-k">16 of 16 complete</div><h3>Charity Edition</h3><div class="cc-n">16 city mugs</div></div></a>
-      <a class="col-card has" href="./giants.html" style="--img:url(./img/skyline-giants/pike-place.jpg)"><div class="cc-body"><div class="cc-k">Skyline Series One Oversized</div><h3>Skyline GIANTS</h3><div class="cc-n">16 cities + Tahoe</div></div></a>
-      <a class="col-card has" href="./collection-architecture.html" style="--img:url(./img/architecture/2004-first-logo-demitasse-3oz.jpg)"><div class="cc-body"><div class="cc-k">Line-drawn skylines</div><h3>The Architecture Series</h3><div class="cc-n">29 of 160</div></div></a>
-      <a class="col-card has" href="./doonesbury.html" style="--img:url(./img/doonesbury/java-pump.jpg)"><div class="cc-body"><div class="cc-k">Pulitzer-Winner LEs</div><h3>Doonesbury</h3><div class="cc-n">Java Pump #47/1500</div></div></a>
-      <a class="col-card has" href="./collection-city-mug.html" style="--img:url(./img/city-mug/acapulco-city-mug-collector-series.jpg)"><div class="cc-body"><div class="cc-k">325 destinations</div><h3>City Mug Collector Series</h3><div class="cc-n">24 of 325</div></div></a></div>
-      <a class="col-card has" href="./collection-global-icon.html" style="--img:url(./img/global-icon/aachen-global-icon-collectible-mug-16oz.jpg)"><div class="cc-body"><div class="cc-k">The largest category</div><h3>The Global Icon Series</h3><div class="cc-n">29 photographed</div></div></a></div>
-      <a class="col-card has" href="./collection-bearista.html" style="--img:url(./img/bearista/2002-summer-beach-bear.jpg)"><div class="cc-body"><div class="cc-k">Plush, since 1997</div><h3>Bearista Bears</h3><div class="cc-n">21 of 205</div></div></a></div>
-      <a class="col-card has" href="./collection-japan.html" style="--img:url(./img/japan/2009-japan-bear.jpg)"><div class="cc-body"><div class="cc-k">23 sub-series</div><h3>Japan &amp; Asia</h3><div class="cc-n">31 of 100+</div></div></a></div>
-      <a class="col-card has" href="./collection-equipment.html" style="--img:url(./img/equipment/2004-stainless-steel-mug-with-lid.jpg)"><div class="cc-body"><div class="cc-k">Tumblers &amp; travelers</div><h3>Equipment &amp; Tumblers</h3><div class="cc-n">20 photographed</div></div></a></div>
-      <a class="col-card has" href="./collection-you-are-here.html" style="--img:url(./img/you-are-here/animal-kingdom-you-are-here-collection-14oz.jpg)"><div class="cc-body"><div class="cc-k">Living inventory since 2013</div><h3>You Are Here</h3><div class="cc-n">28 of 115</div></div></a></div>
-      <a class="col-card has" href="./collection-holiday.html" style="--img:url(./img/holiday/2010-paris-joyeux-noel-christmas-mug-16oz.jpg)"><div class="cc-body"><div class="cc-k">Red cups &amp; ornaments</div><h3>Holiday &amp; Ornaments</h3><div class="cc-n">25 of 99</div></div></a></div>
-      <a class="col-card has" href="./collection-relief.html" style="--img:url(./img/relief/amsterdam-relief-series-2011-16oz.jpg)"><div class="cc-body"><div class="cc-k">Sculpted &middot; 2013</div><h3>Relief Series</h3><div class="cc-n">23 photographed</div></div></a></div>
-      <a class="col-card has" href="./collection-heritage.html" style="--img:url(./img/heritage/10-year-anniversary-mug.jpg)"><div class="cc-body"><div class="cc-k">The logo over time</div><h3>Heritage</h3><div class="cc-n">20 photographed</div></div></a></div>
-      <a class="col-card has" href="./collection-states-of-bean.html" style="--img:url(./img/states-of-bean/california.jpg)"><div class="cc-body"><div class="cc-k">Designed 1997</div><h3>States of Bean</h3><div class="cc-n">16 states</div></div></a>
-      <a class="col-card has" href="./collection-long-tail.html" style="--img:url(./img/long-tail/2012-blue-fox-1-2-set-8oz.jpg)"><div class="cc-body"><div class="cc-k">The everyday City Mug line</div><h3>The Long Tail</h3><div class="cc-n">1,000+ pieces</div></div></a></div>
+<section class="soft"><div class="narrow">
+  <div class="gnote reveal">
+    <div class="nk">From Ohad&rsquo;s notebook</div>
+    <p>Every great collection has a long tail, and ours is enormous. Past the famous series sits the plain <span class="em">City Mug</span> line, the simple bold-name cups that Starbucks made for what feels like every airport and high street on earth. Boston, Brisbane, Bangkok, Singapore, Wellington, Melbourne, Chengdu, Jeju. On their own each is modest; together they are a world map a thousand cups wide.</p>
+    <p>This is the part collectors underestimate and museums love, because <span class="em">completeness lives here</span>. Anyone can chase the headline rarities. Holding the long tail, the unglamorous everyday cups in this kind of depth, is what turns a pile of mugs into an archive. There are over a thousand pieces in this bucket alone.</p>
+    <p class="sign">Ohad</p>
   </div>
-  <p class="reveal" style="margin-top:48px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Photography is being added collection by collection. Charity, Skyline GIANTS, and the Giant Abbey are live now.</p>
+</div></section>
+
+<section><div class="container">
+  <div class="reveal eyebrow">The world map</div>
+  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">A thousand cups, <span class="it">one archive.</span></h2>
+  <div class="mug-grid">
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-blue-fox-1-2-set-8oz.jpg" alt="2012 Blue Fox (1/2 set) 8oz, Starbucks City Mug"><figcaption>2012 Blue Fox (1/2 set) 8oz<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-busan-city-mug.jpg" alt="2012 Busan, Starbucks City Mug"><figcaption>2012 Busan<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-incheon-city-mug.jpg" alt="2012 Incheon, Starbucks City Mug"><figcaption>2012 Incheon<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-jeju-city-mug.jpg" alt="2012 Jeju, Starbucks City Mug"><figcaption>2012 Jeju<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-red-fox-2-2-set-8oz.jpg" alt="2012 Red Fox (2/2 set) 8oz, Starbucks City Mug"><figcaption>2012 Red Fox (2/2 set) 8oz<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-seoul-day-city-mug.jpg" alt="2012 Seoul Day, Starbucks City Mug"><figcaption>2012 Seoul Day<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2012-seoul-night-city-mug.jpg" alt="2012 Seoul Night, Starbucks City Mug"><figcaption>2012 Seoul Night<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2013-gyeongju-korea-drive-thru-city-mug.jpg" alt="2013 Gyeongju Korea, Drive-Thru, Starbucks City Mug"><figcaption>2013 Gyeongju Korea, Drive-Thru<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2013-kanazawa-city-mug-400-ml.jpg" alt="2013 KANAZAWA, Starbucks City Mug"><figcaption>2013 KANAZAWA<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2014-new-year-blue-horse-355ml-mug-set-card.jpg" alt="2014 New Year Blue Horse 355ml M, Starbucks City Mug"><figcaption>2014 New Year Blue Horse 355ml M<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2014-year-of-the-horse.jpg" alt="2014 Year of the Horse, Starbucks City Mug"><figcaption>2014 Year of the Horse<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/2017-thailand-songkran-festival.jpg" alt="2017 Thailand Songkran Festival, Starbucks City Mug"><figcaption>2017 Thailand Songkran Festival<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/auckland-city-mug.jpg" alt="Auckland, Starbucks City Mug"><figcaption>Auckland<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/bangkok-city-mug.jpg" alt="Bangkok, Starbucks City Mug"><figcaption>Bangkok<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/boston-city-mug.jpg" alt="Boston, Starbucks City Mug"><figcaption>Boston<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/brisbane-city-mug.jpg" alt="Brisbane, Starbucks City Mug"><figcaption>Brisbane<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/busan-city-mug.jpg" alt="Busan, Starbucks City Mug"><figcaption>Busan<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/chengdu-city-mug.jpg" alt="Chengdu, Starbucks City Mug"><figcaption>Chengdu<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/guangzhou-city-mug.jpg" alt="Guangzhou, Starbucks City Mug"><figcaption>Guangzhou<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/gyeongju-city-mug.jpg" alt="Gyeongju, Starbucks City Mug"><figcaption>Gyeongju<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/jeju-city-mug.jpg" alt="Jeju, Starbucks City Mug"><figcaption>Jeju<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/melbourne-city-mug.jpg" alt="Melbourne, Starbucks City Mug"><figcaption>Melbourne<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/red-bird-houses-over-snow.jpg" alt="Red Bird Houses Over Snow, Starbucks City Mug"><figcaption>Red Bird Houses Over Snow<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/shenzhen-city-mug.jpg" alt="Shenzhen, Starbucks City Mug"><figcaption>Shenzhen<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/singapore-city-mug.jpg" alt="Singapore, Starbucks City Mug"><figcaption>Singapore<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/sydney-city-mug.jpg" alt="Sydney, Starbucks City Mug"><figcaption>Sydney<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/wellington-city-mug.jpg" alt="Wellington, Starbucks City Mug"><figcaption>Wellington<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/white-stars-on-red-background-mug.jpg" alt="White Stars on Red Background Mu, Starbucks City Mug"><figcaption>White Stars on Red Background Mu<span>City Mug</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/long-tail/xian-city-mug.jpg" alt="Xian, Starbucks City Mug"><figcaption>Xian<span>City Mug</span></figcaption></figure>
+  </div>
+  <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full long tail of 1,000-plus is being photographed in.</p>
 </div></section>
 
 <footer><div class="container">
