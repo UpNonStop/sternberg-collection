@@ -385,6 +385,19 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 
 .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo-mark{width:28px;height:28px;display:block;flex:none}
+
+.mug-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.mug-grid figure{margin:0}
+.mug-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:#e9e7e2;box-shadow:0 10px 30px rgba(26,26,26,0.12);transition:transform .3s,box-shadow .3s}
+.mug-grid figure:hover img{transform:translateY(-4px);box-shadow:0 18px 44px rgba(26,26,26,0.18)}
+.mug-grid figcaption{margin-top:12px;font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.35rem);color:var(--ink);line-height:1.15}
+.mug-grid figcaption span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.mug-grid .nophoto{aspect-ratio:1/1;display:flex;align-items:flex-end;padding:16px;background:linear-gradient(135deg,#163026,#0F2419);border:1px solid rgba(184,148,90,0.2);border-radius:2px;font-family:var(--serif);font-size:1.2rem;color:#F8F6F1;flex-direction:column;justify-content:flex-end;align-items:flex-start}
+.mug-grid .nophoto span{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.gnote{max-width:760px;margin:64px auto 0;background:rgba(184,148,90,0.06);border:1px solid rgba(184,148,90,0.28);border-left:3px solid var(--gold);padding:clamp(28px,4vw,48px)}
+.gnote .nk{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.gnote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:var(--ink);margin-bottom:16px;font-weight:300;max-width:none}
+.gnote .em{color:var(--gold);font-weight:500}.gnote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);margin:4px 0 0}
 </style>
 </head>
 <body>
@@ -394,6 +407,7 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
   <div class="nav-links">
     <a href="./index.html">Home</a>
     <a href="./about.html">About</a>
+    <a href="./collections.html">Collections</a>
     <a href="./collector.html">Collector</a>
     <a href="./giant-abbey.html">Giant Abbey</a>
     <a href="./doonesbury.html">Doonesbury</a>
@@ -471,27 +485,33 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
     <div class="reveal eyebrow">The Series, 16 Cities + 1 Regional Variant</div>
     <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">14 of 16 cities <span class="it">verified.</span> Three pending visual inspection. One regional Tahoe variant confirmed.</h2>
 
-    <div class="chips" style="margin-top:64px;grid-template-columns:repeat(4,1fr)">
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 179240</span>Pike Place</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177574</span>Seattle</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 179241</span>Portland</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 179243</span>Denver</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177xxx</span>Washington DC</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177577</span>San Diego</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177576</span>Los Angeles</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177579</span>New York</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177580</span>New Orleans</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177xxx</span>Dallas</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177572</span>Vancouver</div>
-      <div class="reveal chip"><span class="c">OCR&nbsp;&#10003; &nbsp;SKU 177573</span>Victoria</div>
-      <div class="reveal chip"><span class="c">Regional &nbsp;SKU 183158</span>Tahoe</div>
-      <div class="reveal chip" style="opacity:0.6"><span class="c">Pending Tier A</span>Chicago</div>
-      <div class="reveal chip" style="opacity:0.6"><span class="c">Pending Tier A</span>Miami</div>
-      <div class="reveal chip" style="opacity:0.6"><span class="c">Pending Tier A</span>San Francisco</div>
+    <div class="mug-grid">
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/pike-place.jpg" alt="Pike Place Skyline GIANT oversized mug"><figcaption>Pike Place<span>SKU 179240</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/seattle.jpg" alt="Seattle Skyline GIANT oversized mug"><figcaption>Seattle<span>SKU 177574</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/portland.jpg" alt="Portland Skyline GIANT oversized mug"><figcaption>Portland<span>SKU 179241</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/denver.jpg" alt="Denver Skyline GIANT oversized mug"><figcaption>Denver<span>SKU 179243</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/washington-dc.jpg" alt="Washington D.C. Skyline GIANT oversized mug"><figcaption>Washington D.C.<span>SKU 177xxx</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/san-diego.jpg" alt="San Diego Skyline GIANT oversized mug"><figcaption>San Diego<span>SKU 177577</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/los-angeles.jpg" alt="Los Angeles Skyline GIANT oversized mug"><figcaption>Los Angeles<span>SKU 177576</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/new-york.jpg" alt="New York Skyline GIANT oversized mug"><figcaption>New York<span>SKU 177579</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/dallas.jpg" alt="Dallas Skyline GIANT oversized mug"><figcaption>Dallas<span>SKU 177xxx</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/vancouver.jpg" alt="Vancouver Skyline GIANT oversized mug"><figcaption>Vancouver<span>SKU 177572</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/victoria.jpg" alt="Victoria Skyline GIANT oversized mug"><figcaption>Victoria<span>SKU 177573</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/lake-tahoe.jpg" alt="Tahoe Skyline GIANT oversized mug"><figcaption>Tahoe<span>Regional &middot; 183158</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/chicago.jpg" alt="Chicago Skyline GIANT oversized mug"><figcaption>Chicago<span>Oversized</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/miami.jpg" alt="Miami Skyline GIANT oversized mug"><figcaption>Miami<span>Oversized</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/skyline-giants/san-francisco.jpg" alt="San Francisco Skyline GIANT oversized mug"><figcaption>San Francisco<span>Oversized</span></figcaption></figure>
+      <figure class="reveal"><div class="nophoto">New Orleans<span>SKU 177580 &middot; in the box walk</span></div></figure>
     </div>
 
     <div class="reveal callout" style="margin-top:64px">
       Pike Place is the most sought-after single piece, the home-city flagship vessel, the origin-point of the entire brand, in the oversized format. Fewer confirmed NIB examples are known than any other city in the series.
+    </div>
+    <div class="gnote reveal">
+      <div class="nk">From Ohad&rsquo;s notebook</div>
+      <p>Look closely at the Pike Place GIANT and you can read it around the rim: <span class="em">&ldquo;The Birthplace of Starbucks Coffee.&rdquo;</span> That is not marketing on my end, it is printed on the mug. This is the first store, blown up to the largest format the series ever came in.</p>
+      <p>The oversized Skylines were a 2002 display run that, per the collector record, went out <span class="em">only to the highest-volume stores</span>, which is why so few survive boxed. I have sixteen cities of them plus the Lake Tahoe regional, the one that quietly proves the series ran past the sixteen everyone lists. Every red ticket in these photos is its own inventory line.</p>
+      <p class="sign">Ohad</p>
     </div>
   </div>
 </section>
