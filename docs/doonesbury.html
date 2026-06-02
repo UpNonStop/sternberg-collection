@@ -370,6 +370,18 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 
 .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo-mark{width:28px;height:28px;display:block;flex:none}
+
+.mug-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.mug-grid figure{margin:0}.mug-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:#e9e7e2;box-shadow:0 10px 30px rgba(26,26,26,0.12);transition:transform .3s}
+.mug-grid figure:hover img{transform:translateY(-4px)}
+.mug-grid figcaption{margin-top:12px;font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--ink)}
+.mug-grid figcaption span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.doo-shot{max-width:520px;margin:48px auto 0}.doo-shot img{width:100%;border-radius:3px;display:block;box-shadow:0 30px 70px rgba(0,0,0,0.5)}
+.doonote{max-width:760px;margin:56px auto 0;background:rgba(184,148,90,0.08);border:1px solid rgba(184,148,90,0.3);border-left:3px solid var(--gold);padding:clamp(28px,4vw,44px)}
+.doonote .nk{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.doonote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:rgba(248,246,241,0.88);margin-bottom:16px;font-weight:300;max-width:none}
+.doonote .em{color:var(--gold);font-weight:500}.doonote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:rgba(248,246,241,0.6);margin:4px 0 0}
+@media(max-width:768px){.mug-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 </style>
 </head>
 <body>
@@ -546,11 +558,27 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
   </div>
 </section>
 
+<section><div class="container">
+  <div class="reveal eyebrow">The Trudeau pieces</div>
+  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Designed by a <span class="it">Pulitzer Prize winner.</span></h2>
+  <div class="mug-grid">
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/java-pump.jpg" alt="Java Pump Statue"><figcaption>Java Pump Statue<span>#47 / 1500</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/ranger.jpg" alt="Starbucks Ranger"><figcaption>Starbucks Ranger<span>SKU 160168</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/sands-of-java.jpg" alt="Sands of Java"><figcaption>Sands of Java<span>1999</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/catch-the-buzz.jpg" alt="Catch the Buzz"><figcaption>Catch the Buzz<span>Duke</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/tour-de-java.jpg" alt="Tour de Java"><figcaption>Tour de Java<span>Caf&eacute; Buzz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/duke-for-prez.jpg" alt="Duke for Prez"><figcaption>Duke for Prez<span>Limited Edition</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/clouds.jpg" alt="Clouds in the Coffee"><figcaption>Clouds in the Coffee<span>Limited Edition</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/doonesbury/coasters.jpg" alt="Four Coasters"><figcaption>Four Coasters<span>SKU 155270</span></figcaption></figure>
+  </div>
+</div></section>
+
 <!-- JAVA PUMP CALLOUT, dark -->
 <section class="dark">
   <div class="narrow">
     <div class="reveal eyebrow">Ultra-Rare</div>
     <h2 class="reveal statement" style="max-width:820px;">The Java Pump Statue. <span class="it">Number 47 of 1,500.</span></h2>
+    <figure class="doo-shot reveal"><img loading="lazy" src="./img/doonesbury/java-pump.jpg" alt="Doonesbury Java Pump statue, Duke at Duke's Super Hi-Test Java, numbered 47 of 1500, ticket 186167"></figure>
     <div class="reveal callout" style="margin-top:52px;">The collection includes a Doonesbury Java Pump statue numbered <strong style="color:var(--gold);font-style:normal;">#47&nbsp;/&nbsp;1,500</strong>, among the earliest production impressions of an already scarce edition. A piece that surfaces at the intersection of Starbucks brand history and Trudeau&rsquo;s cultural legacy, individually numbered and never reissued.</div>
     <div class="cols top" style="margin-top:64px;">
       <div class="reveal">
@@ -561,6 +589,12 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
         <div class="q">&ldquo;Number 47 of 1,500, among the earliest impressions of an already finite edition.&rdquo;</div>
         <p style="color:rgba(248,246,241,0.65);">The completion premium on a numbered statue this early in the sequence is substantial. The set and statue together represent the broadest possible Doonesbury LE holding.</p>
       </div>
+    </div>
+    <div class="doonote reveal">
+      <div class="nk">From Ohad&rsquo;s notebook</div>
+      <p>This is the one non-collectors do a double take on. Garry Trudeau, the Pulitzer Prize winning cartoonist behind Doonesbury, is the only comic artist Starbucks ever handed the keys to. The Java Pump is his character Duke, in coveralls, filling up at &ldquo;Duke&rsquo;s Super Hi-Test Java.&rdquo; Catch the buzz.</p>
+      <p>Every one of these was hand-numbered out of 1,500. Mine is <span class="em">number 47</span>, forty-seventh off the line of an edition that never ran again. The hang tag still reads &ldquo;Doonesbury Starbucks,&rdquo; the red ticket says 186167, and I have eight of the Trudeau pieces in total. It is the broadest Doonesbury holding I have ever seen offered as one lot.</p>
+      <p class="sign">Ohad</p>
     </div>
   </div>
 </section>
