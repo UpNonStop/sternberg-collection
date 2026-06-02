@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Collections &middot; The Sternberg Collection</title>
+<title>States of Bean &middot; The Sternberg Collection</title>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Collections &middot; The Sternberg Collection">
-<meta property="og:description" content="Every piece in the Sternberg Collection, organized by collection and photographed, ticket by ticket.">
-<meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/collections.html">
+<meta property="og:title" content="States of Bean &middot; The Sternberg Collection">
+<meta property="og:description" content="The 1997 Starbucks States of Bean series, designed by Daleet Zigelboim and Jan Belson. Sixteen states, photographed.">
+<meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/collection-states-of-bean.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Collections &middot; The Sternberg Collection">
-<meta name="twitter:description" content="Every piece in the Sternberg Collection, organized by collection and photographed, ticket by ticket.">
+<meta name="twitter:title" content="States of Bean &middot; The Sternberg Collection">
+<meta name="twitter:description" content="The 1997 Starbucks States of Bean series, designed by Daleet Zigelboim and Jan Belson. Sixteen states, photographed.">
 <link rel="icon" type="image/svg+xml" href="./logo-mark.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="apple-touch-icon" href="./favicon-180.png">
@@ -399,17 +399,17 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 .gnote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:var(--ink);margin-bottom:16px;font-weight:300;max-width:none}
 .gnote .em{color:var(--gold);font-weight:500}.gnote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);margin:4px 0 0}
 
-.col-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
-.col-card{position:relative;aspect-ratio:4/3;border-radius:2px;overflow:hidden;text-decoration:none;display:flex;align-items:flex-end;background:linear-gradient(135deg,#163026,#0F2419);border:1px solid rgba(184,148,90,0.18);transition:transform .3s,border-color .3s}
-.col-card.has::before{content:"";position:absolute;inset:0;background:var(--img) center/cover;filter:brightness(0.72) saturate(0.92)}
-.col-card.has::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,17,0.94),rgba(11,22,17,0.05) 62%)}
-.col-card .cc-body{position:relative;z-index:2;padding:24px}
-.col-card .cc-k{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.col-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,2rem);margin:0 0 5px;color:#F8F6F1}
-.col-card .cc-n{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:rgba(248,246,241,0.6)}
-.col-card.soon{opacity:0.6}
-a.col-card:hover{border-color:var(--gold);transform:translateY(-4px)}
-@media(max-width:768px){.col-cards{grid-template-columns:1fr}}
+.mug-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.mug-grid figure{margin:0}
+.mug-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:#e9e7e2;box-shadow:0 10px 30px rgba(26,26,26,0.12);transition:transform .3s,box-shadow .3s}
+.mug-grid figure:hover img{transform:translateY(-4px)}
+.mug-grid figcaption{margin-top:12px;font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.35rem);color:var(--ink)}
+.mug-grid figcaption span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:5px}
+@media(max-width:768px){.mug-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+.gnote{max-width:760px;margin:0 auto;background:rgba(184,148,90,0.06);border:1px solid rgba(184,148,90,0.28);border-left:3px solid var(--gold);padding:clamp(28px,4vw,48px)}
+.gnote .nk{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.gnote p{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7;color:var(--ink);margin-bottom:16px;font-weight:300;max-width:none}
+.gnote .em{color:var(--gold);font-weight:500}.gnote .sign{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--muted);margin:4px 0 0}
 </style>
 </head>
 <body>
@@ -435,35 +435,43 @@ a.col-card:hover{border-color:var(--gold);transform:translateY(-4px)}
   <div class="mosaic" id="mosaic" aria-hidden="true"></div>
   <div class="vignette"></div>
   <div class="hero-inner">
-    <div class="eyebrow">The Collection</div>
-    <div class="htitle">Every piece, <span class="g">by collection.</span></div>
-    <div class="sub">2,468 items across 106 series. Photographed, ticketed, and where there is a story, told.</div>
+    <div class="eyebrow">States of Bean &middot; 1997</div>
+    <div class="htitle">Sixteen states, <span class="g">one designer&rsquo;s hand.</span></div>
+    <div class="sub">A 20-ounce almanac of the United States, drawn for Starbucks in 1997.</div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
-<section><div class="container">
-  <div class="reveal eyebrow">Browse the archive</div>
-  <h2 class="reveal statement" style="max-width:900px">Sixteen collections. <span class="it">One intact record.</span></h2>
-  <div class="col-cards">
-      <a class="col-card has" href="./giant-abbey.html" style="--img:url(./img/giant-abbey.jpg)"><div class="cc-body"><div class="cc-k">The Anchor</div><h3>Giant Abbey</h3><div class="cc-n">1 piece</div></div></a>
-      <a class="col-card has" href="./charity-edition.html" style="--img:url(./img/charity/seattle.jpg)"><div class="cc-body"><div class="cc-k">16 of 16 complete</div><h3>Charity Edition</h3><div class="cc-n">16 city mugs</div></div></a>
-      <a class="col-card has" href="./giants.html" style="--img:url(./img/skyline-giants/pike-place.jpg)"><div class="cc-body"><div class="cc-k">Skyline Series One Oversized</div><h3>Skyline GIANTS</h3><div class="cc-n">16 cities + Tahoe</div></div></a>
-      <a class="col-card" href="./architecture.html"><div class="cc-body"><div class="cc-k">The Largest Series</div><h3>Architecture Series</h3><div class="cc-n">160 pieces</div></div></a>
-      <a class="col-card" href="./doonesbury.html"><div class="cc-body"><div class="cc-k">Pulitzer-Winner LEs</div><h3>Doonesbury</h3><div class="cc-n">Java Pump #47/1500</div></div></a>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>City Mug Collector</h3><div class="cc-n">337 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Global Icon</h3><div class="cc-n">295 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Bearista Bears</h3><div class="cc-n">202 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Japan & Asia</h3><div class="cc-n">137 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Equipment & Tumblers</h3><div class="cc-n">123 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>You Are Here</h3><div class="cc-n">109 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Holiday & Ornaments</h3><div class="cc-n">78 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Relief Series</h3><div class="cc-n">51 pieces</div></div></div>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>Anniversary & Heritage</h3><div class="cc-n">28 pieces</div></div></div>
-      <a class="col-card has" href="./collection-states-of-bean.html" style="--img:url(./img/states-of-bean/california.jpg)"><div class="cc-body"><div class="cc-k">Designed 1997</div><h3>States of Bean</h3><div class="cc-n">16 states</div></div></a>
-      <div class="col-card soon"><div class="cc-body"><div class="cc-k">Photographing</div><h3>The Long Tail</h3><div class="cc-n">823 more</div></div></div>
+<section class="soft"><div class="narrow">
+  <div class="gnote reveal">
+    <div class="nk">From Ohad&rsquo;s notebook</div>
+    <p>People skip right past these, and I understand why. They were the cheap ones, twenty dollars on a shelf in 1997. But look at who signed them. The States of Bean series was designed for Starbucks by <span class="em">Daleet Zigelboim and Jan Belson</span>, the same Belson whose name turns up on the rarest Middle East city mugs anywhere in this archive.</p>
+    <p>Each one is a tiny illustrated almanac of its state, made in Thailand, 20 ounces. I have sixteen, including <span class="em">Washington D.C. and British Columbia</span>, which technically are not states at all. That is exactly the kind of detail that tells you this set was put together by someone paying attention.</p>
+    <p class="sign">Ohad</p>
   </div>
-  <p class="reveal" style="margin-top:48px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Photography is being added collection by collection. Charity, Skyline GIANTS, and the Giant Abbey are live now.</p>
+</div></section>
+
+<section><div class="container">
+  <div class="reveal eyebrow">The set</div>
+  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Drawn by hand, <span class="it">state by state.</span></h2>
+  <div class="mug-grid">
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/california.jpg" alt="California States of Bean mug, 1997"><figcaption>California<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/oregon.jpg" alt="Oregon States of Bean mug, 1997"><figcaption>Oregon<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/virginia.jpg" alt="Virginia States of Bean mug, 1997"><figcaption>Virginia<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/washington.jpg" alt="Washington States of Bean mug, 1997"><figcaption>Washington<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/washington-dc.jpg" alt="Washington D.C. States of Bean mug, 1997"><figcaption>Washington D.C.<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/ohio.jpg" alt="Ohio States of Bean mug, 1997"><figcaption>Ohio<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/pennsylvania.jpg" alt="Pennsylvania States of Bean mug, 1997"><figcaption>Pennsylvania<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/new-york.jpg" alt="New York States of Bean mug, 1997"><figcaption>New York<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/connecticut.jpg" alt="Connecticut States of Bean mug, 1997"><figcaption>Connecticut<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/texas.jpg" alt="Texas States of Bean mug, 1997"><figcaption>Texas<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/florida.jpg" alt="Florida States of Bean mug, 1997"><figcaption>Florida<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/british-columbia.jpg" alt="British Columbia States of Bean mug, 1997"><figcaption>British Columbia<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/massachusetts.jpg" alt="Massachusetts States of Bean mug, 1997"><figcaption>Massachusetts<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/new-jersey.jpg" alt="New Jersey States of Bean mug, 1997"><figcaption>New Jersey<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/north-carolina.jpg" alt="North Carolina States of Bean mug, 1997"><figcaption>North Carolina<span>1997 &middot; 20 oz</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/states-of-bean/colorado.jpg" alt="Colorado States of Bean mug, 1997"><figcaption>Colorado<span>1997 &middot; 20 oz</span></figcaption></figure>
+  </div>
 </div></section>
 
 <footer><div class="container">
