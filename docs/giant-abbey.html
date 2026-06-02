@@ -241,7 +241,11 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
 }
 
 /* ---- Giant Abbey signature hero: concentric vessel ripple-rings ---- */
-.ghero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 32px;background:#163026;overflow:hidden}
+.ghero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:120px 32px clamp(74px,12vh,130px);background:#0B1611;overflow:hidden}
+.ghero .gphoto{position:absolute;inset:0;background:url("./img/giant-abbey.jpg") center 40%/cover no-repeat;filter:saturate(0.86) contrast(1.05) brightness(0.92)}
+.ghero .gscrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 64% 54% at 50% 37%,rgba(184,148,90,0.16) 0%,transparent 56%),radial-gradient(ellipse 112% 96% at 50% 35%,transparent 32%,rgba(11,22,17,0.64) 100%),linear-gradient(to bottom,rgba(11,22,17,0.5) 0%,rgba(11,22,17,0.05) 24%,rgba(11,22,17,0.32) 56%,rgba(11,22,17,0.97) 100%)}
+.ghero .gname{font-family:var(--serif);font-weight:300;line-height:0.96;letter-spacing:-2px;font-size:clamp(3.2rem,9vw,7rem);color:#F8F6F1;text-shadow:0 2px 70px rgba(0,0,0,0.75)}
+.ghero .gname .u2{color:var(--gold)}
 .ghero .rings{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .ghero .rings span{position:absolute;width:34vmin;height:34vmin;border:1.5px solid rgba(184,148,90,0.6);border-radius:50%;opacity:0;transform:scale(.4)}
 html.js .ghero .rings span{animation:ripple 6s cubic-bezier(.16,1,.3,1) infinite}
@@ -259,8 +263,8 @@ html.js .ghero .rings span{animation:ripple 6s cubic-bezier(.16,1,.3,1) infinite
 .ghero .eyebrow{margin-bottom:36px}
 .ghero .gfigure{font-family:var(--serif);font-weight:300;line-height:0.82;letter-spacing:-4px;font-size:clamp(7rem,26vw,22rem);color:#F8F6F1;text-shadow:0 2px 90px rgba(0,0,0,0.5)}
 .ghero .gfigure .u{font-size:0.26em;letter-spacing:0;color:var(--gold);vertical-align:baseline;margin-left:.12em}
-.ghero .gtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);color:rgba(248,246,241,0.82);margin-top:18px;max-width:680px;line-height:1.25}
-.ghero .gsub{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:26px}
+.ghero .gtitle{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.8vw,1.95rem);color:rgba(248,246,241,0.92);margin-top:16px;max-width:680px;line-height:1.3;text-shadow:0 1px 30px rgba(0,0,0,0.8)}
+.ghero .gsub{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:20px;text-shadow:0 1px 20px rgba(0,0,0,0.85)}
 @media (prefers-reduced-motion:reduce){.ghero .rings span{animation:none;opacity:.22;transform:scale(1)}}
 
 /* legibility guard: cream components must darken on light sections */
@@ -290,14 +294,13 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 </div></nav>
 
 <header class="ghero">
-  <div class="rings"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-  <div class="core"></div>
-  <div class="vignette"></div>
+  <div class="gphoto"></div>
+  <div class="gscrim"></div>
   <div class="ghero-inner">
     <div class="eyebrow">The Anchor Piece</div>
-    <div class="gfigure"><span data-to="138">138</span><span class="u">oz</span></div>
-    <div class="gtitle">Giant Abbey, the largest production Starbucks vessel ever made</div>
-    <div class="gsub">SKU 168515 &middot; 15 lbs &middot; New in box</div>
+    <div class="gname">Giant Abbey <span class="u2">138 oz</span></div>
+    <div class="gtitle">The largest production Starbucks vessel ever made, preserved new in box.</div>
+    <div class="gsub">SKU 168515 &middot; 15 lbs &middot; 2001</div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
@@ -397,7 +400,7 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 </div></section>
 
 <footer><div class="container">
-  <div class="ft">In memory of Chaim Sternberg &middot; 1940&ndash;2024</div>
+  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940&ndash;2024</div>
   <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </div></footer>
 
