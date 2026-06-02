@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Page Not Found — The Sternberg Collection</title>
+<title>Page Not Found &middot; The Sternberg Collection</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-/* STERNBERG-CINEMATIC-THEME v1 — 404 (self-contained subset) */
+/* STERNBERG-CINEMATIC-THEME v1&ndash;404 (self-contained subset) */
 :root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--deep:#163026;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--deep);color:var(--bg);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:18px;overflow-x:hidden}
@@ -24,6 +24,10 @@ body{background:var(--deep);color:var(--bg);font-family:var(--sans);font-weight:
 .return{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--gold);padding:14px 28px;display:inline-block;transition:background .2s,color .2s}
 .return:hover{background:var(--gold);color:var(--ink)}
 .ft{position:absolute;z-index:2;bottom:40px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.45)}
+
+/* legibility guard: cream components must darken on light sections */
+section:not(.dark) .bignum .n,section:not(.dark) .substat .n,section:not(.dark) .spec .v,section:not(.dark) .tier .range,section:not(.dark) .cta .head,section:not(.dark) .valbox .range{color:var(--ink)}
+section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) .tier .who,section:not(.dark) .tier .desc,section:not(.dark) .cta .lede,section:not(.dark) .valbox .note{color:var(--muted)}
 </style>
 </head>
 <body>
