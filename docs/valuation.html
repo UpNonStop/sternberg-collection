@@ -47,10 +47,10 @@ html.js .reveal.in{opacity:1;transform:none}
 /* ===== HERO — animated tile mosaic ===== */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 32px 90px;background:var(--deep);overflow:hidden}
 .hero.short{min-height:82vh}
-.hero .mosaic{position:absolute;inset:-2px;display:grid;gap:2px;opacity:0.92;will-change:transform,opacity}
+.hero .mosaic{position:absolute;inset:-3px;display:grid;gap:3px;opacity:1;will-change:transform,opacity}
 .hero .mosaic i{display:block;width:100%;height:100%;border-radius:2px;opacity:0;transform:scale(.3)}
 .hero .mosaic i.lit{opacity:1;transform:scale(1);transition:opacity .7s ease-out,transform .7s ease-out}
-.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 75% 75% at center,transparent 0%,rgba(21,19,15,0.5) 55%,var(--deep) 100%);pointer-events:none}
+.hero .vignette{position:absolute;inset:0;background:radial-gradient(ellipse 58% 44% at center,rgba(15,13,10,0.66) 0%,rgba(15,13,10,0.22) 46%,transparent 66%),radial-gradient(ellipse 92% 92% at center,transparent 52%,rgba(15,13,10,0.92) 100%);pointer-events:none}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity}
 .hero .eyebrow{margin-bottom:40px}
 .hero .figure{font-family:var(--serif);font-weight:300;line-height:0.85;letter-spacing:-4px;font-size:clamp(6rem,22vw,20rem);color:#F8F6F1;text-shadow:0 2px 80px rgba(0,0,0,0.55)}
@@ -464,11 +464,11 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 (function(){
   var host = document.getElementById('mosaic');
   if(!host) return;
-  var PALETTE = ['#B8945A','#A07C44','#CBA258','#8A6B38','#5B6B5B','#46524A','#3A453C','#5C2E1A','#6B3422','#3C1E12','#4A2418','#A04A1F','#8B3D15','#1A1A1A','#262626','#15130F','#F1E9D9','#E8DCC0','#D9C9A8','#F8F6F1'];
+  var PALETTE = ['#0F0D0A','#15130F','#1C1813','#241E16','#0F0D0A','#15130F','#1C1813','#211C16','#15130F','#0F0D0A','#1C1813','#15130F','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
   function build(){
     var w = host.clientWidth, h = host.clientHeight;
     if(!w || !h) return;
-    var target = w < 640 ? 24 : 32;
+    var target = w < 640 ? 30 : 46;
     var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
     host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
     host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
@@ -498,7 +498,7 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
       var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
       var p = Math.min(Math.max(y / hh, 0), 1);
       host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (0.92 * (1 - p * 0.85)).toFixed(3);
+      host.style.opacity = (1 - p * 0.85).toFixed(3);
       if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
       ticking = false;
     });
