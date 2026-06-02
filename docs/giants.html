@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyline GIANTS — The Sternberg Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px}
+.container{max-width:780px;margin:0 auto;padding:0 32px}
+.wide{max-width:1100px}
+nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:var(--bg);z-index:10}
+nav .container{display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
+.nav-links{display:flex;gap:36px;font-size:14px;text-transform:uppercase;letter-spacing:1.5px}
+.nav-links a{color:var(--ink);text-decoration:none}
+header.page-hero{padding:120px 0 80px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(184,148,90,0.08) 100%)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+h1{font-family:var(--serif);font-size:72px;font-weight:400;line-height:1.05;letter-spacing:-1px;margin-bottom:24px}
+.subtitle{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--muted);max-width:600px;margin:0 auto}
+.completion-banner{padding:48px 0;background:var(--gold);color:white;text-align:center}
+.completion-banner .label{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.completion-banner .stat{font-family:var(--serif);font-size:54px;font-weight:400;line-height:1}
+.completion-banner .note{font-family:var(--serif);font-size:18px;font-style:italic;margin-top:12px}
+.spec-band{padding:60px 0;background:var(--ink);color:var(--bg)}
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.spec .label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.spec .value{font-family:var(--serif);font-size:32px;font-weight:400}
+article{padding:80px 0}
+article p{margin-bottom:32px}
+article p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.85;margin:8px 14px 0 0;color:var(--gold)}
+h2{font-family:var(--serif);font-size:48px;font-weight:400;margin:60px 0 32px;letter-spacing:-0.5px}
+.cities-grid{padding:80px 0;background:rgba(184,148,90,0.04)}
+.cities-grid h3{font-family:var(--serif);font-size:36px;text-align:center;margin-bottom:48px;font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:980px;margin:0 auto}
+.city-card{padding:24px;background:white;border:1px solid rgba(26,26,26,0.08);position:relative}
+.city-card.pending{background:rgba(26,26,26,0.03);border-style:dashed}
+.city-card .ticket{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+.city-card.pending .ticket{color:var(--muted)}
+.city-card .city{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.2;margin-bottom:8px}
+.city-card .sku{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px}
+.city-card .status{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.city-card.pending .status{color:var(--muted)}
+.callout{border-left:3px solid var(--gold);padding:24px 32px;margin:48px 0;background:rgba(184,148,90,0.05);font-family:var(--serif);font-size:20px;font-style:italic;color:var(--muted)}
+.value-box{padding:60px 0;background:var(--ink);color:var(--bg);text-align:center}
+.value-box .label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.value-box .range{font-family:var(--serif);font-size:48px;font-weight:400;margin-bottom:12px}
+.value-box .note{font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(248,246,241,0.7)}
+footer{padding:60px 0 40px;border-top:1px solid rgba(26,26,26,0.08);text-align:center}
+.footer-text{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+@media (max-width:768px){h1{font-size:42px}h2{font-size:32px}.grid{grid-template-columns:repeat(2,1fr);gap:16px}.spec-grid{grid-template-columns:repeat(2,1fr);gap:32px}.spec .value{font-size:24px}nav .container{flex-direction:column;gap:16px;align-items:center}.nav-links{gap:14px;font-size:11px;flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+
+<nav><div class="container wide">
+  <div class="logo">The Sternberg Collection</div>
+  <div class="nav-links">
+    <a href="./index.html">Home</a>
+    <a href="./collector.html">Collector</a>
+    <a href="./giant-abbey.html">Giant Abbey</a>
+    <a href="./doonesbury.html">Doonesbury</a>
+    <a href="./charity-edition.html">Charity</a>
+    <a href="./giants.html">Giants</a>
+    <a href="./architecture.html">Architecture</a>
+  </div>
+</div></nav>
+
+<header class="page-hero"><div class="container">
+  <div class="eyebrow">Skyline Series One Oversized</div>
+  <h1>The GIANTS</h1>
+  <div class="subtitle">Oversized city skyline vessels. Sixteen cities and one regional variant. Among the rarest production pieces in the Starbucks brand-merchandise archive.</div>
+</div></header>
+
+<div class="completion-banner"><div class="container">
+  <div class="label">Series completion</div>
+  <div class="stat">14 of 16 cities verified + Tahoe</div>
+  <div class="note">13 cities OCR-confirmed via bottom-stamp SKU. Plus Tahoe regional variant. 3 cities pending visual inspection.</div>
+</div></div>
+
+<div class="spec-band"><div class="container wide">
+  <div class="spec-grid">
+    <div class="spec"><div class="label">Capacity</div><div class="value">22 oz oversized</div></div>
+    <div class="spec"><div class="label">SKU range</div><div class="value">177xxx / 179xxx</div></div>
+    <div class="spec"><div class="label">Copyright</div><div class="value">&copy;2002</div></div>
+    <div class="spec"><div class="label">Original retail</div><div class="value">$49.95 USA</div></div>
+  </div>
+</div></div>
+
+<article><div class="container">
+  <p class="drop">In 2002, Starbucks produced the Skyline Series One Oversized collection &mdash; 22-ounce ceramic vessels featuring the silhouettes and architectural skylines of sixteen major North American cities. The series was distributed through flagship Starbucks stores in each respective city, plus select corporate channels. Original retail was $49.95 USD per piece.</p>
+  <p>The Skyline GIANTS were never high-volume retail items. They were a manufacturing exercise in vessel scale, distributed in limited quantities. Most extant examples have been used as decorative vessels, scratched in transit, or broken. Surviving NIB examples represent a small fraction of original production.</p>
+  <p>The Sternberg Collection holds 13 city GIANTS confirmed via bottom-stamp OCR, with bottom-stamp evidence including SKU numbers, copyright year, and original $49.95 USA retail markings. The collection additionally includes a Tahoe Skyline GIANT (SKU 183158) &mdash; a regional variant that extends the series beyond pure cities, confirming the GIANT series is larger than the original 16-city framework suggested.</p>
+  <div class="callout">Three city GIANTS &mdash; Chicago, Miami, San Francisco &mdash; are documented in the inventory but their bottom stamps have not yet surfaced through Drive OCR. They are pending Tier A visual inspection. Once confirmed, the collection's GIANT count exceeds 17 pieces, making this the most comprehensive documented GIANT series in private hands.</div>
+  <h2>All verified GIANTS</h2>
+</div></article>
+
+<section class="cities-grid"><div class="container wide">
+  <h3>The series</h3>
+  <div class="grid">
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186242</div><div class="city">Pike Place</div><div class="sku">SKU 179240</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186243</div><div class="city">Denver</div><div class="sku">SKU 179243</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186244</div><div class="city">Tahoe regional</div><div class="sku">SKU 183158</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186245</div><div class="city">Portland</div><div class="sku">SKU 179241</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186246</div><div class="city">Seattle</div><div class="sku">SKU 177574</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186247</div><div class="city">Washington DC</div><div class="sku">SKU 177xxx</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186248</div><div class="city">San Diego</div><div class="sku">SKU 177577</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186249</div><div class="city">Dallas</div><div class="sku">SKU 177xxx</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186250</div><div class="city">Vancouver</div><div class="sku">SKU 177572 / $59.95 CAN</div></div>
+    <div class="city-card pending"><div class="status">pending visual</div><div class="ticket">186251</div><div class="city">Chicago</div><div class="sku">Tier A inspection</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186252</div><div class="city">Victoria</div><div class="sku">SKU 177573</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186253</div><div class="city">New Orleans</div><div class="sku">SKU 177580</div></div>
+    <div class="city-card pending"><div class="status">pending visual</div><div class="ticket">186254</div><div class="city">Miami</div><div class="sku">Tier A inspection</div></div>
+    <div class="city-card pending"><div class="status">pending visual</div><div class="ticket">186255</div><div class="city">San Francisco</div><div class="sku">Tier A inspection</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186256</div><div class="city">Los Angeles</div><div class="sku">SKU 177576</div></div>
+    <div class="city-card"><div class="status">OCR-verified</div><div class="ticket">186257</div><div class="city">New York</div><div class="sku">SKU 177579</div></div>
+  </div>
+</div></section>
+
+<article><div class="container">
+  <h2>Why this series matters</h2>
+  <p>The Skyline GIANTS sit in a particular niche: they are the largest piece of the Skyline collection family (the same series produced 18oz "Regular" mugs at $9.95-$12.95 retail), they are oversized enough to function as display objects rather than drinkware, and they were tied to specific flagship-city distribution &mdash; meaning a complete set was always geographically hard to assemble.</p>
+  <p>For a brand-history archive, the GIANT series documents Starbucks' geographic identity at a specific moment: 2002, post-1996 IPO expansion phase, before international skylines became the dominant collector theme. The cities chosen were the company's flagship US and Canadian markets. The series tells the story of "where Starbucks saw itself" at that moment.</p>
+  <p>For a private collector, completing the 16-city set has been functionally impossible without specialized brokers &mdash; making a substantially complete intact set (14 OCR-verified + 3 pending + Tahoe regional) one of the strongest series anchors in the Sternberg Collection.</p>
+</div></article>
+
+<section class="value-box"><div class="container">
+  <div class="label">Series value with completion premium</div>
+  <div class="range">$8,450 &mdash; $13,000</div>
+  <div class="note">Per-piece $450-$813 with intact-collection premium. Each pending Tier A item verified adds ~$650-$813.</div>
+</div></section>
+
+<footer><div class="container wide">
+  <div class="footer-text">The Sternberg Collection &mdash; STERNBERG-LOT-2026</div>
+</div></footer>
+
+</body>
+</html>

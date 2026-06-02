@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture Series — The Sternberg Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;font-size:18px}
+.container{max-width:780px;margin:0 auto;padding:0 32px}
+.wide{max-width:1100px}
+nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:var(--bg);z-index:10}
+nav .container{display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
+.nav-links{display:flex;gap:36px;font-size:14px;text-transform:uppercase;letter-spacing:1.5px}
+.nav-links a{color:var(--ink);text-decoration:none}
+header.page-hero{padding:120px 0 80px;text-align:center;background:linear-gradient(180deg,var(--bg) 0%,rgba(184,148,90,0.08) 100%)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+h1{font-family:var(--serif);font-size:72px;font-weight:400;line-height:1.05;letter-spacing:-1px;margin-bottom:24px}
+.subtitle{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--muted);max-width:600px;margin:0 auto}
+.stats-band{padding:48px 0;background:rgba(184,148,90,0.08);text-align:center}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:900px;margin:0 auto}
+.stat .num{font-family:var(--serif);font-size:48px;font-weight:400;line-height:1}
+.stat .label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:8px}
+article{padding:80px 0}
+article p{margin-bottom:32px}
+article p.drop::first-letter{font-family:var(--serif);font-size:78px;font-weight:500;float:left;line-height:0.85;margin:8px 14px 0 0;color:var(--gold)}
+h2{font-family:var(--serif);font-size:48px;font-weight:400;margin:60px 0 32px;letter-spacing:-0.5px}
+.callout{border-left:3px solid var(--gold);padding:24px 32px;margin:48px 0;background:rgba(184,148,90,0.05);font-family:var(--serif);font-size:20px;font-style:italic;color:var(--muted)}
+.region-block{padding:60px 0;background:rgba(184,148,90,0.04)}
+.region-block h3{font-family:var(--serif);font-size:32px;text-align:center;margin-bottom:32px;font-weight:400}
+.cities-list{max-width:880px;margin:0 auto;columns:3;column-gap:32px;font-family:var(--serif);font-size:17px;line-height:1.9}
+.cities-list .city{break-inside:avoid;display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dotted rgba(26,26,26,0.1)}
+.cities-list .city .name{color:var(--ink)}
+.cities-list .city .ticket{font-family:var(--mono);font-size:10px;color:var(--gold);letter-spacing:1px}
+.value-box{padding:60px 0;background:var(--ink);color:var(--bg);text-align:center}
+.value-box .label{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.value-box .range{font-family:var(--serif);font-size:48px;font-weight:400;margin-bottom:12px}
+.value-box .note{font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(248,246,241,0.7)}
+footer{padding:60px 0 40px;border-top:1px solid rgba(26,26,26,0.08);text-align:center}
+.footer-text{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+@media (max-width:768px){h1{font-size:42px}h2{font-size:32px}.stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}.cities-list{columns:1}nav .container{flex-direction:column;gap:16px;align-items:center}.nav-links{gap:14px;font-size:11px;flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+
+<nav><div class="container wide">
+  <div class="logo">The Sternberg Collection</div>
+  <div class="nav-links">
+    <a href="./index.html">Home</a>
+    <a href="./collector.html">Collector</a>
+    <a href="./giant-abbey.html">Giant Abbey</a>
+    <a href="./doonesbury.html">Doonesbury</a>
+    <a href="./charity-edition.html">Charity</a>
+    <a href="./giants.html">Giants</a>
+    <a href="./architecture.html">Architecture</a>
+  </div>
+</div></nav>
+
+<header class="page-hero"><div class="container">
+  <div class="eyebrow">The Largest Series in the Collection</div>
+  <h1>Architecture Series</h1>
+  <div class="subtitle">Forty-five North American cities documented across two formats. The most geographically comprehensive section of the Sternberg archive.</div>
+</div></header>
+
+<div class="stats-band"><div class="container wide">
+  <div class="stats-grid">
+    <div class="stat"><div class="num">45+</div><div class="label">Cities verified</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">Format variants</div></div>
+    <div class="stat"><div class="num">3</div><div class="label">Production eras</div></div>
+    <div class="stat"><div class="num">~50</div><div class="label">Pieces total</div></div>
+  </div>
+</div></div>
+
+<article><div class="container">
+  <p class="drop">The Architecture Series is the largest and most geographically diverse section of the Sternberg Collection. Across roughly fifty pieces, it documents forty-five North American cities through a consistent visual language: city skyline silhouettes, incorporation dates, elevation and land area metrics, and architectural-detail demitasse cups paired with larger 18-ounce mugs.</p>
+  <p>The series spans multiple production eras. The earliest pieces, in the 186118-186130 ticket range, date to a 2006-era release with the classic "ARCHITECTURAL SERIES" bottom stamp. A later production run uses the 455xxx ticket range with refined design language. The 18-ounce regular format carries SKU codes in the 195xxx range and includes original $9.95 USD retail markings, while the demitasse format anchors at $7.95-$9.95 retail.</p>
+  <p>Each piece carries side-art metrics: city incorporation date, elevation above sea level, land area in square miles, average annual rainfall, average daily temperature in January and July, and the city's geographic situation. Read as a set, the Architecture Series is a quantitative atlas of late-1990s and 2000s North American urban identity, rendered in ceramic.</p>
+  <div class="callout">For a buyer, the Architecture Series is the workhorse of the collection: documented geographic breadth, consistent design language, multi-format completeness, and a unique cross-referential structure where each piece relates to every other through the same metric vocabulary.</div>
+  <h2>Verified cities</h2>
+</div></article>
+
+<section class="region-block"><div class="container wide">
+  <h3>West Coast</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">Seattle</span><span class="ticket">186122</span></div>
+    <div class="city"><span class="name">Portland</span><span class="ticket">455009</span></div>
+    <div class="city"><span class="name">San Francisco</span><span class="ticket">186121 / 576986</span></div>
+    <div class="city"><span class="name">Los Angeles</span><span class="ticket">186125</span></div>
+    <div class="city"><span class="name">San Diego</span><span class="ticket">186123</span></div>
+    <div class="city"><span class="name">Sacramento</span><span class="ticket">455011</span></div>
+    <div class="city"><span class="name">San Jose</span><span class="ticket">455028</span></div>
+    <div class="city"><span class="name">Spokane</span><span class="ticket">455010</span></div>
+  </div>
+</div></section>
+
+<section class="region-block"><div class="container wide">
+  <h3>Mountain &amp; Southwest</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">Denver</span><span class="ticket">455027 / 995096</span></div>
+    <div class="city"><span class="name">Phoenix</span><span class="ticket">576998</span></div>
+    <div class="city"><span class="name">Tucson</span><span class="ticket">455005</span></div>
+    <div class="city"><span class="name">Salt Lake City</span><span class="ticket">181204</span></div>
+    <div class="city"><span class="name">Houston</span><span class="ticket">455004</span></div>
+    <div class="city"><span class="name">Dallas</span><span class="ticket">576989</span></div>
+    <div class="city"><span class="name">New Mexico</span><span class="ticket">576978</span></div>
+    <div class="city"><span class="name">Alaska</span><span class="ticket">455007</span></div>
+  </div>
+</div></section>
+
+<section class="region-block"><div class="container wide">
+  <h3>Midwest</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">Chicago</span><span class="ticket">186118</span></div>
+    <div class="city"><span class="name">Detroit</span><span class="ticket">577000</span></div>
+    <div class="city"><span class="name">St Louis</span><span class="ticket">576981</span></div>
+    <div class="city"><span class="name">Indianapolis</span><span class="ticket">455039 / 455051</span></div>
+    <div class="city"><span class="name">Cincinnati</span><span class="ticket">455029</span></div>
+    <div class="city"><span class="name">Columbus</span><span class="ticket">455003</span></div>
+    <div class="city"><span class="name">Cleveland</span><span class="ticket">455025</span></div>
+    <div class="city"><span class="name">Pittsburgh</span><span class="ticket">455001</span></div>
+    <div class="city"><span class="name">Twin Cities</span><span class="ticket">576987</span></div>
+    <div class="city"><span class="name">Fargo</span><span class="ticket">455036</span></div>
+  </div>
+</div></section>
+
+<section class="region-block"><div class="container wide">
+  <h3>South &amp; Southeast</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">Atlanta</span><span class="ticket">455020 / 455437</span></div>
+    <div class="city"><span class="name">Charlotte</span><span class="ticket">455015 / 455490</span></div>
+    <div class="city"><span class="name">Raleigh</span><span class="ticket">455031 / 455038</span></div>
+    <div class="city"><span class="name">Nashville</span><span class="ticket">455026</span></div>
+    <div class="city"><span class="name">Memphis</span><span class="ticket">576982</span></div>
+    <div class="city"><span class="name">New Orleans</span><span class="ticket">455019 / 455035</span></div>
+    <div class="city"><span class="name">Tampa</span><span class="ticket">455040</span></div>
+    <div class="city"><span class="name">Jacksonville</span><span class="ticket">455008</span></div>
+    <div class="city"><span class="name">Orlando</span><span class="ticket">576991</span></div>
+    <div class="city"><span class="name">Miami</span><span class="ticket">576997</span></div>
+    <div class="city"><span class="name">Fort Lauderdale</span><span class="ticket">576995</span></div>
+    <div class="city"><span class="name">West Palm Beach</span><span class="ticket">576983</span></div>
+  </div>
+</div></section>
+
+<section class="region-block"><div class="container wide">
+  <h3>Northeast &amp; Atlantic</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">New York City</span><span class="ticket">186124</span></div>
+    <div class="city"><span class="name">Boston</span><span class="ticket">455016</span></div>
+    <div class="city"><span class="name">Washington DC</span><span class="ticket">186119 / 576985</span></div>
+    <div class="city"><span class="name">Philadelphia</span><span class="ticket">455018</span></div>
+    <div class="city"><span class="name">Niagara Falls</span><span class="ticket">576980</span></div>
+    <div class="city"><span class="name">Pike Place HQ</span><span class="ticket">186120 / 455014</span></div>
+  </div>
+</div></section>
+
+<section class="region-block"><div class="container wide">
+  <h3>Canada</h3>
+  <div class="cities-list">
+    <div class="city"><span class="name">Toronto</span><span class="ticket">455041 / 455045</span></div>
+    <div class="city"><span class="name">Calgary</span><span class="ticket">576990</span></div>
+  </div>
+</div></section>
+
+<article><div class="container">
+  <h2>Why this matters</h2>
+  <p>The Architecture Series is the connective tissue of the collection. Where the Charity Edition tells a philanthropic story across sixteen cities and the GIANTS tell a flagship-city story across sixteen pieces, the Architecture Series documents Starbucks' actual urban footprint at scale &mdash; forty-five cities, multiple formats, multiple production eras, all in the same design language.</p>
+  <p>For a brand-history archive, it is the closest thing to a complete geographic record. For a museum buyer, it offers natural display variety while maintaining series coherence. For a private collector, the breadth and ticket-level documentation make it the most defensible value-per-piece section of the collection.</p>
+</div></article>
+
+<section class="value-box"><div class="container">
+  <div class="label">Series value with completion premium</div>
+  <div class="range">$5,200 &mdash; $7,000</div>
+  <div class="note">Demitasse $72-$100 each, 18oz $90-$120 each, with series-breadth premium reflecting near-complete geographic coverage.</div>
+</div></section>
+
+<footer><div class="container wide">
+  <div class="footer-text">The Sternberg Collection &mdash; STERNBERG-LOT-2026</div>
+</div></footer>
+
+</body>
+</html>
