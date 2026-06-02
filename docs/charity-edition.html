@@ -411,6 +411,14 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 
 .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo-mark{width:28px;height:28px;display:block;flex:none}
+
+.cha-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.cha-grid figure{margin:0}
+.cha-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px;background:#e9e7e2;box-shadow:0 10px 30px rgba(26,26,26,0.10);transition:transform .3s ease,box-shadow .3s ease}
+.cha-grid figure:hover img{transform:translateY(-4px);box-shadow:0 18px 44px rgba(26,26,26,0.16)}
+.cha-grid figcaption{margin-top:14px;font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.35rem);color:var(--ink);line-height:1.15}
+.cha-grid figcaption span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-top:5px;line-height:1.45}
+@media(max-width:768px){.cha-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 </style>
 </head>
 <body>
@@ -490,23 +498,23 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
   <div class="container">
     <div class="reveal eyebrow" style="text-align:center">All Sixteen Cities &amp; Beneficiaries</div>
     <h2 class="reveal statement center" style="margin-bottom:56px">Complete <span class="it">and intact.</span></h2>
-    <div class="chips">
-      <div class="reveal chip"><span class="c">455144, Philadelphia</span>Philadelphia Cares</div>
-      <div class="reveal chip"><span class="c">455145, Phoenix</span>Arizona Clean &amp; Beautiful</div>
-      <div class="reveal chip"><span class="c">455146, New York City</span>Variety Children&rsquo;s Charity</div>
-      <div class="reveal chip"><span class="c">455151, San Antonio</span>Paseo del R&iacute;o River Walk</div>
-      <div class="reveal chip"><span class="c">455152, San Francisco</span>SF Mayor&rsquo;s Neighborhood Beautification</div>
-      <div class="reveal chip"><span class="c">455153, San Diego</span>Surfrider Foundation</div>
-      <div class="reveal chip"><span class="c">455155, Seattle</span>Refugee Women&rsquo;s Alliance</div>
-      <div class="reveal chip"><span class="c">455158, Las Vegas</span>Classroom On Wheels</div>
-      <div class="reveal chip"><span class="c">455160, Boston</span>First Night&rsquo;s Neighborhood Network</div>
-      <div class="reveal chip"><span class="c">455161, Washington DC</span>Martha&rsquo;s Table</div>
-      <div class="reveal chip"><span class="c">455162, Chicago</span>Reach Out and Read literacy</div>
-      <div class="reveal chip"><span class="c">455163, Atlanta</span>Trees Atlanta</div>
-      <div class="reveal chip"><span class="c">455164, Miami</span>Audubon Everglades</div>
-      <div class="reveal chip"><span class="c">455165, Austin</span>Keep Austin Beautiful</div>
-      <div class="reveal chip"><span class="c">455168, Dallas</span>Dallas Arboretum</div>
-      <div class="reveal chip"><span class="c">455169, Houston</span>Keep Houston Beautiful</div>
+    <div class="cha-grid">
+      <figure class="reveal"><img loading="lazy" src="./img/charity/philadelphia.jpg" alt="Philadelphia Charity Edition mug, with charity card and inventory ticket"><figcaption>Philadelphia<span>455144 &middot; Philadelphia Cares</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/phoenix.jpg" alt="Phoenix Charity Edition mug, with charity card and inventory ticket"><figcaption>Phoenix<span>455145 &middot; Arizona Clean &amp; Beautiful</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/new-york.jpg" alt="New York City Charity Edition mug, with charity card and inventory ticket"><figcaption>New York City<span>455146 &middot; Variety Children&rsquo;s Charity</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/san-antonio.jpg" alt="San Antonio Charity Edition mug, with charity card and inventory ticket"><figcaption>San Antonio<span>455151 &middot; Paseo del R&iacute;o River Walk</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/san-francisco.jpg" alt="San Francisco Charity Edition mug, with charity card and inventory ticket"><figcaption>San Francisco<span>455152 &middot; SF Mayor&rsquo;s Neighborhood Beautification</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/san-diego.jpg" alt="San Diego Charity Edition mug, with charity card and inventory ticket"><figcaption>San Diego<span>455153 &middot; Surfrider Foundation</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/seattle.jpg" alt="Seattle Charity Edition mug, with charity card and inventory ticket"><figcaption>Seattle<span>455155 &middot; Refugee Women&rsquo;s Alliance</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/las-vegas.jpg" alt="Las Vegas Charity Edition mug, with charity card and inventory ticket"><figcaption>Las Vegas<span>455158 &middot; Classroom On Wheels</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/boston.jpg" alt="Boston Charity Edition mug, with charity card and inventory ticket"><figcaption>Boston<span>455160 &middot; First Night&rsquo;s Neighborhood Network</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/washington-dc.jpg" alt="Washington D.C. Charity Edition mug, with charity card and inventory ticket"><figcaption>Washington D.C.<span>455161 &middot; Martha&rsquo;s Table</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/chicago.jpg" alt="Chicago Charity Edition mug, with charity card and inventory ticket"><figcaption>Chicago<span>455162 &middot; Reach Out and Read</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/atlanta.jpg" alt="Atlanta Charity Edition mug, with charity card and inventory ticket"><figcaption>Atlanta<span>455163 &middot; Trees Atlanta</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/miami.jpg" alt="Miami Charity Edition mug, with charity card and inventory ticket"><figcaption>Miami<span>455164 &middot; Audubon Everglades</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/austin.jpg" alt="Austin Charity Edition mug, with charity card and inventory ticket"><figcaption>Austin<span>455165 &middot; Keep Austin Beautiful</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/dallas.jpg" alt="Dallas Charity Edition mug, with charity card and inventory ticket"><figcaption>Dallas<span>455168 &middot; Dallas Arboretum</span></figcaption></figure>
+      <figure class="reveal"><img loading="lazy" src="./img/charity/houston.jpg" alt="Houston Charity Edition mug, with charity card and inventory ticket"><figcaption>Houston<span>455169 &middot; Keep Houston Beautiful</span></figcaption></figure>
     </div>
   </div>
 </section>
