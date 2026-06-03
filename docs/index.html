@@ -7,11 +7,11 @@
 <title>The Sternberg Collection</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Sternberg Collection">
-<meta property="og:description" content="The largest documented Starbucks collection ever assembled, 2,468 pieces built over fifty-three years by one man, offered intact to a single buyer.">
+<meta property="og:description" content="The largest documented Starbucks collection ever assembled, 2,468 pieces built over fifty-three years by one man.">
 <meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Sternberg Collection">
-<meta name="twitter:description" content="The largest documented Starbucks collection ever assembled, 2,468 pieces built over fifty-three years by one man, offered intact to a single buyer.">
+<meta name="twitter:description" content="The largest documented Starbucks collection ever assembled, 2,468 pieces built over fifty-three years by one man.">
 <link rel="icon" type="image/svg+xml" href="./logo-mark.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="apple-touch-icon" href="./favicon-180.png">
@@ -177,6 +177,21 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 
 .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo-mark{width:28px;height:28px;display:block;flex:none}
+
+/* condensed landing additions */
+.lead{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;color:var(--muted);max-width:820px;margin:32px auto 0;line-height:1.4;text-align:center}
+.filmstrip{display:flex;gap:14px;overflow-x:auto;padding:8px 0 22px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.filmstrip::-webkit-scrollbar{height:0}
+.filmstrip img{flex:0 0 auto;width:clamp(150px,38vw,230px);aspect-ratio:1/1;object-fit:cover;border-radius:3px;scroll-snap-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.18)}
+.explore{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:16px 30px;border-radius:100px;transition:all .25s}
+.btn.solid{background:var(--gold);color:#0B1611}
+.btn.solid:hover{background:#cba258}
+.btn.ghost{border:1px solid var(--gold);color:var(--gold)}
+.btn.ghost:hover{background:var(--gold);color:#0B1611}
+.story-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.4;color:rgba(248,246,241,0.9);max-width:780px;margin:0 auto;text-align:center}
+.story-quote .sign{display:block;font-size:0.7em;color:var(--gold);margin-top:28px;font-style:normal;letter-spacing:1px}
+@media(max-width:768px){.bignums{gap:40px}}
 </style>
 </head>
 <body>
@@ -199,185 +214,82 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
   <div class="vignette"></div>
   <div class="hero-inner">
     <div class="figure"><span data-to="2468">2,468</span></div>
-    <div class="sub">The largest documented Starbucks collection ever offered for private sale. <span class="it">Built by one man.</span></div>
+    <div class="sub">The largest documented Starbucks collection ever assembled. <span class="it">Built by one man, over fifty-three years.</span></div>
   </div>
   <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
-<!-- I. THE COLLECTOR -->
+<!-- THE SCALE -->
 <section><div class="container">
-  <div class="reveal eyebrow">I. The Collector</div>
-  <h2 class="reveal statement">Chaim Sternberg spent fifty-three years quietly building <span class="it">what no museum, no corporation,</span> and no other private individual on record has ever assembled.</h2>
-  <div class="cols">
-    <div class="reveal">
-      <p>He passed on <span class="it">the 29th of February, 2024</span>, a date that exists once every four years.</p>
-      <p>In the weeks that followed, his son <span class="it">Ohad</span> committed to honoring him through the work itself: eighteen days, two thousand four hundred and sixty-eight items, each individually ticketed, each photographed from four angles.</p>
-    </div>
-    <div class="reveal pullquote">
-      <div class="q serif">&ldquo;The cataloging is now its own artifact.&rdquo;</div>
-      <p>The closest known comparable private holding is an Austrian collector with 409 <span class="it serif">You Are Here</span> mugs. The Sternberg Collection is <span class="em">six times larger</span>, spans every major series Starbucks has ever produced, and includes pieces from markets the company has since abandoned.</p>
-    </div>
+  <div class="reveal eyebrow" style="text-align:center">The Collection</div>
+  <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Fifty-three years of chasing the siren around the world, <span class="it">ticketed and photographed down to the last cup.</span></h2>
+  <div class="bignums" style="margin-top:96px">
+    <div class="reveal bignum"><div class="n"><span data-to="2468">2,468</span></div><div class="l">Pieces</div><div class="s">Every one individually ticketed</div></div>
+    <div class="reveal bignum"><div class="n"><span data-to="53">53</span></div><div class="l">Years</div><div class="s">One unbroken hunt, 1971 to 2024</div></div>
+    <div class="reveal bignum"><div class="n"><span data-to="6216">6,216</span></div><div class="l">Photographs</div><div class="s">Each piece from every angle</div></div>
   </div>
-</div></section>
-
-<!-- II. THE SCALE -->
-<section class="dark"><div class="container">
-  <div class="reveal eyebrow">II. The Scale</div>
-  <h2 class="reveal statement" style="margin-bottom:96px;max-width:900px">A geography of <span class="it">obsession.</span></h2>
-  <div class="bignums">
-    <div class="reveal bignum"><div class="n"><span data-to="2468">2,468</span></div><div class="l">Pieces</div><div class="s">Individually ticketed</div></div>
-    <div class="reveal bignum"><div class="n"><span data-to="53">53</span></div><div class="l">Years</div><div class="s">One unbroken acquisition</div></div>
-    <div class="reveal bignum"><div class="n"><span data-to="106">106</span></div><div class="l">Series</div><div class="s">Distinct lines represented</div></div>
-  </div>
-  <div class="substats">
-    <div class="reveal substat"><div class="n"><span data-to="9872">9,872</span></div><div class="l">Photographs</div></div>
+  <div class="substats" style="border-top:1px solid rgba(26,26,26,0.1)">
     <div class="reveal substat"><div class="n"><span data-to="89">89</span></div><div class="l">Storage boxes</div></div>
     <div class="reveal substat"><div class="n"><span data-to="216">216</span></div><div class="l">Cities</div></div>
-    <div class="reveal substat"><div class="n"><span data-to="18">18</span></div><div class="l">Day catalog sprint</div></div>
+    <div class="reveal substat"><div class="n"><span data-to="16">16</span></div><div class="l">Collections</div></div>
+    <div class="reveal substat"><div class="n"><span data-to="19">19</span></div><div class="l">Item types</div></div>
   </div>
 </div></section>
 
-<!-- III. THE GIANT ABBEY -->
+<!-- THE ANCHOR -->
 <section class="abbey"><div class="container">
-  <div class="reveal eyebrow">III. The Anchor</div>
+  <div class="reveal eyebrow">The Anchor</div>
   <div class="reveal grail">&ldquo;The Holy Grail of Starbucks collectibles.&rdquo;</div>
   <div class="reveal vessel"><span data-to="138">138</span><span class="u">&nbsp;oz</span></div>
   <div class="reveal name">The Giant Abbey</div>
-  <p class="reveal body">The largest production Starbucks vessel ever made. Released in 2001 as a limited store-display piece, it sits at the outer edge of what the brand has ever manufactured. The collection&rsquo;s example is preserved New-In-Box, the singular anchor that pulls the whole archive into focus.</p>
-  <div class="reveal comp">
-    <div><div class="k">Recent sold comp</div><div class="v">$700</div></div>
-    <div><div class="k">Current asking</div><div class="v">$3,000</div></div>
-    <div><div class="k">In collection</div><div class="v">1 specimen</div></div>
-  </div>
-  <a class="reveal linkout" href="./giant-abbey.html">Read the full provenance &rarr;</a>
+  <p class="reveal body">The largest production vessel Starbucks ever made, released in 2001 as a limited store-display piece at the outer edge of what the brand ever manufactured. This one is preserved new in box, the singular anchor that pulls the whole archive into focus.</p>
+  <a class="reveal linkout" href="./collections.html">See it in the collections &rarr;</a>
 </div></section>
 
-<!-- IV. THE HEADLINE PIECES -->
+<!-- HIGHLIGHTS -->
 <section><div class="container">
-  <div class="reveal eyebrow">IV. The Headline Pieces</div>
-  <h2 class="reveal statement" style="max-width:1000px">Beyond the anchor, a handful of pieces that <span class="it">justify the collection</span> on their own.</h2>
+  <div class="reveal eyebrow" style="text-align:center">A Few of the Stories</div>
+  <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Pieces that would make a collection <span class="it">on their own.</span></h2>
   <div class="pieces">
-
-    <div class="reveal piece">
-      <div class="num">01</div>
-      <div>
-        <div class="tag">The Banned Mug</div>
-        <h3>Bahrain v1, Pearl Monument</h3>
-        <p>It depicted the Pearl Roundabout, demolished by the Bahraini government in 2011 during the Arab Spring, after which all depictions were declared illegal and production halted. One of the rarest pieces in the entire Starbucks universe. The Sternberg Collection contains three.</p>
-        <div class="meta">
-          <div><div class="k">Comp value</div><div class="val">$900 each</div></div>
-          <div><div class="k">In collection</div><div class="val plain">3 specimens</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal piece">
-      <div class="num">02</div>
-      <div>
-        <div class="tag">The Foundational Year</div>
-        <h3>The 1994 Originals</h3>
-        <p>The very first Starbucks City Mug Series ever produced. Documented high-value pieces include Minneapolis/St&nbsp;Paul 1994 (sold $2,020), New Orleans 1994 ($361 NIB), and the Firenze Italian Edition II ($501), specimens from the year Starbucks collecting itself began.</p>
-        <div class="meta">
-          <div><div class="k">Comp value</div><div class="val">$300&ndash;$2,020</div></div>
-          <div><div class="k">In collection</div><div class="val plain">Multiple</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal piece">
-      <div class="num">03</div>
-      <div>
-        <div class="tag">2.5 Gallons of Display Glory</div>
-        <h3>2002 Oversized Skyline GIANTS</h3>
-        <p>Ceramic display pieces released, in the company&rsquo;s own words, &ldquo;in a very limited edition to only the highest-volume stores.&rdquo; The Pike Place version is the most sought-after. The collection contains sixteen cities of these giants.</p>
-        <div class="meta">
-          <div><div class="k">Comp value</div><div class="val">$500&ndash;$650 each</div></div>
-          <div><div class="k">In collection</div><div class="val plain">16 specimens</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reveal piece">
-      <div class="num">04</div>
-      <div>
-        <div class="tag">Pulitzer-Winner Numbered LEs</div>
-        <h3>Doonesbury &times; Garry Trudeau</h3>
-        <p>Designed exclusively for Starbucks by the Pulitzer-winning cartoonist, each piece individually numbered out of 1,500, including the ultra-rare Java Pump statue, #47/1500, an exceptionally low number in the series.</p>
-        <div class="meta">
-          <div><div class="k">Comp value</div><div class="val">$285&ndash;$800 each</div></div>
-          <div><div class="k">In collection</div><div class="val plain">14 specimens</div></div>
-        </div>
-      </div>
-    </div>
-
+    <div class="reveal piece"><div class="num">01</div><div>
+      <div class="tag">Where it all began</div>
+      <h3>The 1994 Originals</h3>
+      <p>The very first Starbucks City Mug series ever produced, the year Starbucks collecting itself began. The Minneapolis and St. Paul 1994 is the one people chase, an early city mug that has quietly traded for around two thousand dollars.</p>
+    </div></div>
+    <div class="reveal piece"><div class="num">02</div><div>
+      <div class="tag">A complete set of giants</div>
+      <h3>The 2002 Oversized GIANTS</h3>
+      <p>Twenty-four ounce ceramic display pieces released, in the company&rsquo;s own words, to only the highest-volume stores. The Pike Place version is the most sought after. The collection holds all sixteen cities, the complete set.</p>
+    </div></div>
+    <div class="reveal piece"><div class="num">03</div><div>
+      <div class="tag">A Pulitzer winner&rsquo;s coffee gag</div>
+      <h3>Doonesbury &times; Garry Trudeau</h3>
+      <p>Designed for Starbucks by the Pulitzer-winning cartoonist, each piece numbered out of 1,500, including the Java Pump statue at number 47, an exceptionally low number in the run.</p>
+    </div></div>
+    <div class="reveal piece"><div class="num">04</div><div>
+      <div class="tag">A country that treats it as craft</div>
+      <h3>The Japan corpus</h3>
+      <p>Twenty-three separate sub-series under one country, from the worldwide Global Icon cities to the JIMOTO regional line made in real Kutani porcelain. Over a hundred Japan pieces, the deepest national section in the whole archive.</p>
+    </div></div>
   </div>
 </div></section>
 
-<!-- V. THE COMPOSITION -->
-<section style="background:rgba(184,148,90,0.04)"><div class="container">
-  <div class="reveal eyebrow">V. The Composition</div>
-  <h2 class="reveal statement" style="max-width:900px">Brand history, <span class="it">sorted into 106 series.</span></h2>
-  <div class="comp-rows">
-    <div class="reveal comp-row"><div class="nm">Global Icon Series</div><div class="track"><div class="fill" style="--w:100%"></div></div><div class="ct">544</div></div>
-    <div class="reveal comp-row"><div class="nm">City Mug Collector</div><div class="track"><div class="fill" style="--w:56%"></div></div><div class="ct">303</div></div>
-    <div class="reveal comp-row"><div class="nm">Barista Bears</div><div class="track"><div class="fill" style="--w:38%"></div></div><div class="ct">209</div></div>
-    <div class="reveal comp-row"><div class="nm">You Are Here</div><div class="track"><div class="fill" style="--w:22%"></div></div><div class="ct">119</div></div>
-    <div class="reveal comp-row"><div class="nm serif">Japan, 23 sub-series</div><div class="track"><div class="fill" style="--w:19%"></div></div><div class="ct">102</div></div>
-    <div class="reveal comp-row"><div class="nm">Architecture Series</div><div class="track"><div class="fill" style="--w:16%"></div></div><div class="ct">85</div></div>
-    <div class="reveal comp-row"><div class="nm">Skyline &amp; Oversized Giants</div><div class="track"><div class="fill" style="--w:12%"></div></div><div class="ct">64</div></div>
+<!-- WALK IT -->
+<section style="background:rgba(184,148,90,0.05)"><div class="container">
+  <div class="reveal eyebrow" style="text-align:center">Every Piece, Every Angle</div>
+  <h2 class="reveal statement" style="text-align:center;max-width:900px;margin:0 auto 12px">Walk the whole archive <span class="it">on one page.</span></h2>
+  <p class="reveal lead">Two thousand four hundred and sixty-eight pieces, each with a researched note, in true ticket order.</p>
+  <div class="reveal filmstrip" style="margin-top:48px"><img loading="lazy" src="./img/giant-abbey.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/doonesbury/java-pump.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-giants/pike-place.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/charity/seattle.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/states-of-bean/california.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/japan/2009-japan-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/holiday/2010-paris-joyeux-noel-christmas-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/global-icon/abu-dhabi-global-icon-collectible-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/bearista/2002-summer-beach-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-series/alaska-skyline-series.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/relief/amsterdam-relief-series-2011-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/architecture/2004-first-logo-demitasse-3oz.jpg" alt="A piece from the collection"></div>
+  <div class="reveal explore">
+    <a class="btn solid" href="./grid.html">Enter The Grid &rarr;</a>
+    <a class="btn ghost" href="./collections.html">Browse by collection</a>
   </div>
 </div></section>
 
-<!-- VI. THE VALUATION -->
-<section class="dark"><div class="container">
-  <div class="reveal eyebrow">VI. The Valuation</div>
-  <h2 class="reveal statement" style="max-width:1000px">Every one of 2,468 items carries a defensible number. <span class="it">Three ways the lot resolves.</span></h2>
-  <div class="tiers">
-    <div class="reveal tier">
-      <div class="label">Floor</div>
-      <div>
-        <div class="range">$100K&ndash;$150K</div>
-        <div class="who">Dealer / liquidator</div>
-        <div class="desc">Conservative per-piece comp values, resold individually over 12&ndash;24 months. The seller&rsquo;s hard floor, the number below which the collection does not move.</div>
-      </div>
-    </div>
-    <div class="reveal tier">
-      <div class="label">Enthusiast</div>
-      <div>
-        <div class="range">$500K&ndash;$800K</div>
-        <div class="who">Auction-house sealed bid</div>
-        <div class="desc">An intact-lot sealed bid via Heritage, Bonhams, or Christie&rsquo;s brand-memorabilia channel, with completion and provenance premiums layered on. Realistic with two or three serious bidders.</div>
-      </div>
-    </div>
-    <div class="reveal tier climax">
-      <div class="label">Story buyer</div>
-      <div>
-        <div class="range">$1.2M+</div>
-        <div class="who">Institutional &middot; museum &middot; brand archive</div>
-        <div class="desc">Full premium build-up against sole-archive provenance, intact-series completion, and a memorial narrative. Speculative, but defensible on documentation depth alone.</div>
-      </div>
-    </div>
-  </div>
-  <a class="reveal linkout" href="./valuation.html">See the per-piece breakdown &rarr;</a>
-</div></section>
-
-<!-- VII. THE WINDOW -->
-<section class="window"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">VII. The Window</div>
-  <p class="reveal big">Fifty-three years to assemble. Closed in 2024. <span class="it">Intact exactly once.</span></p>
-  <p class="reveal coda">You either acquire this, or you spend the next thirty years trying to replicate it, and never finish.</p>
-</div></section>
-
-<!-- INQUIRIES -->
-<section id="inquiries" class="dark cta"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
-  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
-  <p class="reveal lede">Offered intact to a single buyer. Conditional terms preserve the work&rsquo;s integrity as a memorial archive. Qualified buyers receive full inventory documentation, imagery, and provenance under NDA.</p>
-  <div class="reveal card">
-    <div class="k">Direct inquiry</div>
-    <div class="nm">The Sternberg Collection</div>
-    <div class="ref">Reference STERNBERG-LOT-2026</div>
-  </div>
+<!-- THE STORY -->
+<section class="dark"><div class="narrow">
+  <div class="reveal eyebrow" style="text-align:center">In Memory</div>
+  <p class="reveal story-quote">Chaim Sternberg spent fifty-three years quietly building what no museum and no other private collector on record ever has. When he passed on the 29th of February, 2024, his son Ohad set out to honor him the only way that felt right: by documenting every last piece, so the whole of it could be seen at once.<span class="sign">In loving memory of Chaim Sternberg, 1940 to 2024</span></p>
 </div></section>
 
 <footer><div class="container">
