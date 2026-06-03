@@ -7,11 +7,11 @@
 <title>Charity Edition 16/16 &middot; The Sternberg Collection</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Charity Edition 16/16 &middot; The Sternberg Collection">
-<meta property="og:description" content="The complete intact Charity Edition series: sixteen US cities, sixteen local charities, never split or sold piecemeal.">
+<meta property="og:description" content="The complete intact Charity Edition series: sixteen US cities, sixteen local charities, the complete set kept together.">
 <meta property="og:url" content="https://upnonstop.github.io/sternberg-collection/charity-edition.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Charity Edition 16/16 &middot; The Sternberg Collection">
-<meta name="twitter:description" content="The complete intact Charity Edition series: sixteen US cities, sixteen local charities, never split or sold piecemeal.">
+<meta name="twitter:description" content="The complete intact Charity Edition series: sixteen US cities, sixteen local charities, the complete set kept together.">
 <link rel="icon" type="image/svg+xml" href="./logo-mark.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="apple-touch-icon" href="./favicon-180.png">
@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,186 +223,186 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== CHARITY EDITION BESPOKE HERO ===== */
 .cha-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:140px 32px 100px;
-  background:#163026;
-  overflow:hidden;
+ position:relative;
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:140px 32px 100px;
+ background:#163026;
+ overflow:hidden;
 }
 .cha-hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;
-  mix-blend-mode:overlay;
-  pointer-events:none;
-  z-index:1;
+ content:'';
+ position:absolute;
+ inset:0;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;
+ mix-blend-mode:overlay;
+ pointer-events:none;
+ z-index:1;
 }
 .cha-bg{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse 70% 70% at 50% 50%, #0B1611 0%, #102A1F 40%, #163026 70%, #1C3A2D 100%);
-  pointer-events:none;
+ position:absolute;
+ inset:0;
+ background:radial-gradient(ellipse 70% 70% at 50% 50%, #0B1611 0%, #102A1F 40%, #163026 70%, #1C3A2D 100%);
+ pointer-events:none;
 }
 .cha-vignette{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse 56% 42% at 50% 50%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 44%, transparent 64%),
-    radial-gradient(ellipse 92% 92% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
-  pointer-events:none;
-  z-index:2;
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(ellipse 56% 42% at 50% 50%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 44%, transparent 64%),
+ radial-gradient(ellipse 92% 92% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+ pointer-events:none;
+ z-index:2;
 }
 .cha-ring-wrap{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:3;
-  pointer-events:none;
+ position:absolute;
+ inset:0;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ z-index:3;
+ pointer-events:none;
 }
 .cha-ring-svg{
-  position:absolute;
-  width:min(72vmin, 580px);
-  height:min(72vmin, 580px);
-  overflow:visible;
+ position:absolute;
+ width:min(72vmin, 580px);
+ height:min(72vmin, 580px);
+ overflow:visible;
 }
 .cha-arc-track{
-  fill:none;
-  stroke:rgba(184,148,90,0.13);
-  stroke-width:1.5;
+ fill:none;
+ stroke:rgba(184,148,90,0.13);
+ stroke-width:1.5;
 }
 .cha-arc-fill{
-  fill:none;
-  stroke:url(#chaGoldGrad);
-  stroke-width:2.5;
-  stroke-linecap:round;
-  stroke-dasharray:0 10000;
-  transition:none;
+ fill:none;
+ stroke:url(#chaGoldGrad);
+ stroke-width:2.5;
+ stroke-linecap:round;
+ stroke-dasharray:0 10000;
+ transition:none;
 }
 .cha-ring-svg.complete .cha-arc-fill{
-  filter:drop-shadow(0 0 7px rgba(203,162,88,0.65));
+ filter:drop-shadow(0 0 7px rgba(203,162,88,0.65));
 }
 .cha-point{
-  position:absolute;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-  transform:translate(-50%, -50%);
-  pointer-events:none;
+ position:absolute;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:6px;
+ transform:translate(-50%, -50%);
+ pointer-events:none;
 }
 .cha-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#CBA258;
-  opacity:0;
-  transform:scale(0.2);
-  transition:opacity 0.55s ease, transform 0.55s cubic-bezier(.16,1,.3,1), box-shadow 0.55s ease;
-  will-change:opacity,transform,box-shadow;
+ width:10px;
+ height:10px;
+ border-radius:50%;
+ background:#CBA258;
+ opacity:0;
+ transform:scale(0.2);
+ transition:opacity 0.55s ease, transform 0.55s cubic-bezier(.16,1,.3,1), box-shadow 0.55s ease;
+ will-change:opacity,transform,box-shadow;
 }
 .cha-dot.lit{
-  opacity:1;
-  transform:scale(1);
-  box-shadow:0 0 10px 4px rgba(203,162,88,0.55), 0 0 24px 8px rgba(184,148,90,0.2);
+ opacity:1;
+ transform:scale(1);
+ box-shadow:0 0 10px 4px rgba(203,162,88,0.55), 0 0 24px 8px rgba(184,148,90,0.2);
 }
 .cha-city{
-  font-family:var(--mono);
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:rgba(224,192,131,0.72);
-  white-space:nowrap;
-  opacity:0;
-  transition:opacity 0.5s ease 0.2s;
-  line-height:1;
+ font-family:var(--mono);
+ font-size:9px;
+ letter-spacing:1.5px;
+ text-transform:uppercase;
+ color:rgba(224,192,131,0.72);
+ white-space:nowrap;
+ opacity:0;
+ transition:opacity 0.5s ease 0.2s;
+ line-height:1;
 }
 .cha-point.lit .cha-city{ opacity:1; }
 .cha-inner{
-  position:relative;
-  z-index:4;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+ position:relative;
+ z-index:4;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
 }
 .cha-eyebrow{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:20px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ color:var(--gold);
+ margin-bottom:20px;
 }
 .cha-numeral{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,20vw,16rem);
-  line-height:0.85;
-  letter-spacing:-4px;
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,20vw,16rem);
+ line-height:0.85;
+ letter-spacing:-4px;
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
 }
 .cha-numeral .cha-denom{
-  font-size:0.34em;
-  letter-spacing:-1px;
-  color:var(--gold);
-  vertical-align:baseline;
+ font-size:0.34em;
+ letter-spacing:-1px;
+ color:var(--gold);
+ vertical-align:baseline;
 }
 .cha-complete-label{
-  font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:rgba(248,246,241,0.5);
-  margin-top:14px;
+ font-family:var(--mono);
+ font-size:11px;
+ letter-spacing:4px;
+ text-transform:uppercase;
+ color:rgba(248,246,241,0.5);
+ margin-top:14px;
 }
 .cha-tagline{
-  font-family:var(--serif);
-  font-weight:300;
-  font-style:italic;
-  font-size:clamp(1.1rem,2.4vw,1.75rem);
-  color:rgba(248,246,241,0.82);
-  max-width:620px;
-  margin:26px auto 0;
-  line-height:1.35;
-  text-shadow:0 1px 40px rgba(0,0,0,0.5);
+ font-family:var(--serif);
+ font-weight:300;
+ font-style:italic;
+ font-size:clamp(1.1rem,2.4vw,1.75rem);
+ color:rgba(248,246,241,0.82);
+ max-width:620px;
+ margin:26px auto 0;
+ line-height:1.35;
+ text-shadow:0 1px 40px rgba(0,0,0,0.5);
 }
 @media (prefers-reduced-motion:reduce){
-  .cha-dot{
-    opacity:1 !important;
-    transform:scale(1) !important;
-    box-shadow:0 0 8px 3px rgba(203,162,88,0.4) !important;
-    transition:none !important;
-  }
-  .cha-city{ opacity:1 !important; transition:none !important; }
-  .cha-arc-fill{ transition:none !important; }
+ .cha-dot{
+ opacity:1 !important;
+ transform:scale(1) !important;
+ box-shadow:0 0 8px 3px rgba(203,162,88,0.4) !important;
+ transition:none !important;
+ }
+ .cha-city{ opacity:1 !important; transition:none !important; }
+ .cha-arc-fill{ transition:none !important; }
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -423,266 +423,266 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="cha-hero" id="cha-hero">
-  <div class="cha-bg" aria-hidden="true"></div>
-  <div class="cha-vignette" aria-hidden="true"></div>
+ <div class="cha-bg" aria-hidden="true"></div>
+ <div class="cha-vignette" aria-hidden="true"></div>
 
-  <!-- Ring layer: SVG arc + JS-positioned city points -->
-  <div class="cha-ring-wrap" aria-hidden="true">
-    <svg class="cha-ring-svg" id="chaRingSvg" viewBox="-300 -300 600 600" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="chaGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#B8945A"/>
-          <stop offset="50%" stop-color="#E0C083"/>
-          <stop offset="100%" stop-color="#CBA258"/>
-        </linearGradient>
-      </defs>
-      <!-- track circle -->
-      <circle class="cha-arc-track" cx="0" cy="0" r="230"/>
-      <!-- animated fill arc -->
-      <circle class="cha-arc-fill" id="chaArcFill" cx="0" cy="0" r="230"
-        transform="rotate(-90)"
-        stroke-dasharray="0 1445"/>
-    </svg>
-    <!-- city points injected by JS into .cha-ring-wrap -->
-  </div>
+ <!-- Ring layer: SVG arc + JS-positioned city points -->
+ <div class="cha-ring-wrap" aria-hidden="true">
+ <svg class="cha-ring-svg" id="chaRingSvg" viewBox="-300 -300 600 600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="chaGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+ <stop offset="0%" stop-color="#B8945A"/>
+ <stop offset="50%" stop-color="#E0C083"/>
+ <stop offset="100%" stop-color="#CBA258"/>
+ </linearGradient>
+ </defs>
+ <!-- track circle -->
+ <circle class="cha-arc-track" cx="0" cy="0" r="230"/>
+ <!-- animated fill arc -->
+ <circle class="cha-arc-fill" id="chaArcFill" cx="0" cy="0" r="230"
+ transform="rotate(-90)"
+ stroke-dasharray="0 1445"/>
+ </svg>
+ <!-- city points injected by JS into .cha-ring-wrap -->
+ </div>
 
-  <div class="cha-inner">
-    <div class="cha-eyebrow">The Complete Set</div>
-    <div class="cha-numeral"><span data-to="16">16</span><span class="cha-denom">&nbsp;/&nbsp;16</span></div>
-    <div class="cha-complete-label">Complete</div>
-    <div class="cha-tagline">Sixteen US cities. Sixteen local charities. <em>Never split.</em></div>
-  </div>
+ <div class="cha-inner">
+ <div class="cha-eyebrow">The Complete Set</div>
+ <div class="cha-numeral"><span data-to="16">16</span><span class="cha-denom">&nbsp;/&nbsp;16</span></div>
+ <div class="cha-complete-label">Complete</div>
+ <div class="cha-tagline">Sixteen US cities. Sixteen local charities. <em>All together.</em></div>
+ </div>
 
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <!-- REVEAL STATEMENT, light -->
 <section>
-  <div class="narrow">
-    <h2 class="reveal statement center">The set has <span class="it">never been split.</span><br>It will not be split.</h2>
-  </div>
+ <div class="narrow">
+ <h2 class="reveal statement center">The set has <span class="it">never been split.</span><br>It will not be split.</h2>
+ </div>
 </section>
 
 <!-- BODY COPY, light -->
 <section style="padding-top:0">
-  <div class="narrow">
-    <div class="prose center">
-      <p class="lead reveal">In the late 1990s, Starbucks released a sixteen-city Charity Edition collector series. Each mug was tied to a specific US city and a specific local charitable beneficiary, environmental protection, urban beautification, literacy programs, refugee services, children&rsquo;s welfare.</p>
-      <p class="drop reveal">The pieces sold through their respective city Starbucks stores, with a portion of each sale donated to the named local charity. It was a clean commercial-philanthropic exercise. Sixteen cities. Sixteen charities. Limited production. No reissue. The series predates the modern era of cause-marketing collaborations, sits in a clean cultural moment, and represents a documented chapter in late-1990s corporate-philanthropy history.</p>
-      <p class="reveal">Complete intact sets are vanishingly rare. Individual Charity Edition mugs occasionally surface on resale markets at $40&ndash;$120 each, but the full sixteen-piece set with documented beneficiaries and provenance, intact, never split, never used, is a <span class="em">different category of object entirely.</span></p>
-      <div class="divider"></div>
-      <div class="reveal callout">For a buyer, the Charity Edition is one of the cleanest provenance stories in the collection: a finite, named, complete series with a clear cultural and philanthropic context. The 16-of-16 completion premium typically commands 1.5&times; to 2&times; the per-piece secondary market value.</div>
-    </div>
-  </div>
+ <div class="narrow">
+ <div class="prose center">
+ <p class="lead reveal">In the late 1990s, Starbucks released a sixteen-city Charity Edition collector series. Each mug was tied to a specific US city and a specific local charitable beneficiary, environmental protection, urban beautification, literacy programs, refugee services, children&rsquo;s welfare.</p>
+ <p class="drop reveal">The pieces sold through their respective city Starbucks stores, with a portion of each sale donated to the named local charity. It was a clean commercial-philanthropic exercise. Sixteen cities. Sixteen charities. Limited production. No reissue. The series predates the modern era of cause-marketing collaborations, sits in a clean cultural moment, and represents a documented chapter in late-1990s corporate-philanthropy history.</p>
+ <p class="reveal">Complete intact sets are vanishingly rare. Individual Charity Edition mugs occasionally surface on resale markets at $40 to $120 each, but the full sixteen-piece set with documented beneficiaries and provenance, intact and unused, is a <span class="em">different category of object entirely.</span></p>
+ <div class="divider"></div>
+ <div class="reveal callout">The Charity Edition is one of the cleanest provenance stories in the collection: a finite, named, complete series with a clear cultural and philanthropic context. A complete 16-of-16 set typically comps at 1.5&times; to 2&times; the per-piece secondary market value.</div>
+ </div>
+ </div>
 </section>
 
 <!-- SIXTEEN CITIES, light soft -->
 <section class="soft">
-  <div class="container">
-    <div class="reveal eyebrow" style="text-align:center">All Sixteen Cities &amp; Beneficiaries</div>
-    <h2 class="reveal statement center" style="margin-bottom:56px">Complete <span class="it">and intact.</span></h2>
-    <div class="mug-grid">
-      <figure class="reveal"><img loading="lazy" src="./img/charity/philadelphia.jpg" alt="Philadelphia Charity Edition mug, with charity card and inventory ticket"><figcaption>Philadelphia<span>455144 &middot; Philadelphia Cares</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/phoenix.jpg" alt="Phoenix Charity Edition mug, with charity card and inventory ticket"><figcaption>Phoenix<span>455145 &middot; Arizona Clean &amp; Beautiful</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/new-york.jpg" alt="New York City Charity Edition mug, with charity card and inventory ticket"><figcaption>New York City<span>455146 &middot; Variety Children&rsquo;s Charity</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/san-antonio.jpg" alt="San Antonio Charity Edition mug, with charity card and inventory ticket"><figcaption>San Antonio<span>455151 &middot; Paseo del R&iacute;o River Walk</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/san-francisco.jpg" alt="San Francisco Charity Edition mug, with charity card and inventory ticket"><figcaption>San Francisco<span>455152 &middot; SF Mayor&rsquo;s Neighborhood Beautification</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/san-diego.jpg" alt="San Diego Charity Edition mug, with charity card and inventory ticket"><figcaption>San Diego<span>455153 &middot; Surfrider Foundation</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/seattle.jpg" alt="Seattle Charity Edition mug, with charity card and inventory ticket"><figcaption>Seattle<span>455155 &middot; Refugee Women&rsquo;s Alliance</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/las-vegas.jpg" alt="Las Vegas Charity Edition mug, with charity card and inventory ticket"><figcaption>Las Vegas<span>455158 &middot; Classroom On Wheels</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/boston.jpg" alt="Boston Charity Edition mug, with charity card and inventory ticket"><figcaption>Boston<span>455160 &middot; First Night&rsquo;s Neighborhood Network</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/washington-dc.jpg" alt="Washington D.C. Charity Edition mug, with charity card and inventory ticket"><figcaption>Washington D.C.<span>455161 &middot; Martha&rsquo;s Table</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/chicago.jpg" alt="Chicago Charity Edition mug, with charity card and inventory ticket"><figcaption>Chicago<span>455162 &middot; Reach Out and Read</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/atlanta.jpg" alt="Atlanta Charity Edition mug, with charity card and inventory ticket"><figcaption>Atlanta<span>455163 &middot; Trees Atlanta</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/miami.jpg" alt="Miami Charity Edition mug, with charity card and inventory ticket"><figcaption>Miami<span>455164 &middot; Audubon Everglades</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/austin.jpg" alt="Austin Charity Edition mug, with charity card and inventory ticket"><figcaption>Austin<span>455165 &middot; Keep Austin Beautiful</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/dallas.jpg" alt="Dallas Charity Edition mug, with charity card and inventory ticket"><figcaption>Dallas<span>455168 &middot; Dallas Arboretum</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/charity/houston.jpg" alt="Houston Charity Edition mug, with charity card and inventory ticket"><figcaption>Houston<span>455169 &middot; Keep Houston Beautiful</span></figcaption></figure>
-    </div>
-  </div>
+ <div class="container">
+ <div class="reveal eyebrow" style="text-align:center">All Sixteen Cities &amp; Beneficiaries</div>
+ <h2 class="reveal statement center" style="margin-bottom:56px">Complete <span class="it">and intact.</span></h2>
+ <div class="mug-grid">
+ <figure class="reveal"><img loading="lazy" src="./img/charity/philadelphia.jpg" alt="Philadelphia Charity Edition mug, with charity card and inventory ticket"><figcaption>Philadelphia<span>455144 &middot; Philadelphia Cares</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/phoenix.jpg" alt="Phoenix Charity Edition mug, with charity card and inventory ticket"><figcaption>Phoenix<span>455145 &middot; Arizona Clean &amp; Beautiful</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/new-york.jpg" alt="New York City Charity Edition mug, with charity card and inventory ticket"><figcaption>New York City<span>455146 &middot; Variety Children&rsquo;s Charity</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/san-antonio.jpg" alt="San Antonio Charity Edition mug, with charity card and inventory ticket"><figcaption>San Antonio<span>455151 &middot; Paseo del R&iacute;o River Walk</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/san-francisco.jpg" alt="San Francisco Charity Edition mug, with charity card and inventory ticket"><figcaption>San Francisco<span>455152 &middot; SF Mayor&rsquo;s Neighborhood Beautification</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/san-diego.jpg" alt="San Diego Charity Edition mug, with charity card and inventory ticket"><figcaption>San Diego<span>455153 &middot; Surfrider Foundation</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/seattle.jpg" alt="Seattle Charity Edition mug, with charity card and inventory ticket"><figcaption>Seattle<span>455155 &middot; Refugee Women&rsquo;s Alliance</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/las-vegas.jpg" alt="Las Vegas Charity Edition mug, with charity card and inventory ticket"><figcaption>Las Vegas<span>455158 &middot; Classroom On Wheels</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/boston.jpg" alt="Boston Charity Edition mug, with charity card and inventory ticket"><figcaption>Boston<span>455160 &middot; First Night&rsquo;s Neighborhood Network</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/washington-dc.jpg" alt="Washington D.C. Charity Edition mug, with charity card and inventory ticket"><figcaption>Washington D.C.<span>455161 &middot; Martha&rsquo;s Table</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/chicago.jpg" alt="Chicago Charity Edition mug, with charity card and inventory ticket"><figcaption>Chicago<span>455162 &middot; Reach Out and Read</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/atlanta.jpg" alt="Atlanta Charity Edition mug, with charity card and inventory ticket"><figcaption>Atlanta<span>455163 &middot; Trees Atlanta</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/miami.jpg" alt="Miami Charity Edition mug, with charity card and inventory ticket"><figcaption>Miami<span>455164 &middot; Audubon Everglades</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/austin.jpg" alt="Austin Charity Edition mug, with charity card and inventory ticket"><figcaption>Austin<span>455165 &middot; Keep Austin Beautiful</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/dallas.jpg" alt="Dallas Charity Edition mug, with charity card and inventory ticket"><figcaption>Dallas<span>455168 &middot; Dallas Arboretum</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/charity/houston.jpg" alt="Houston Charity Edition mug, with charity card and inventory ticket"><figcaption>Houston<span>455169 &middot; Keep Houston Beautiful</span></figcaption></figure>
+ </div>
+ </div>
 </section>
 
 <!-- WHY THIS SET MATTERS, dark -->
 <section class="dark">
-  <div class="narrow">
-    <div class="reveal eyebrow">Why This Set Matters</div>
-    <div class="cols top">
-      <div class="reveal">
-        <p style="color:rgba(248,246,241,0.8);font-size:clamp(1.05rem,1.5vw,1.25rem);margin-bottom:28px;font-weight:300">The Charity Edition documents a specific cultural moment: a publicly-traded coffee retailer, in its rapid US expansion phase of the late 1990s, formalizing relationships with named local beneficiaries in sixteen of its major markets. Each piece carries the beneficiary information on its side art and provenance documentation, creating a built-in archive of late-1990s American urban philanthropic causes.</p>
-        <p style="color:rgba(248,246,241,0.8);font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:300">For a museum or institutional buyer, the set is a concrete artifact of a particular era of corporate-philanthropic practice. For a brand-history archive, it represents geographic expansion documented through charitable footprint. For a private collector, it&rsquo;s the cleanest complete CMCS series in the collection&rsquo;s American subset.</p>
-      </div>
-      <div class="reveal pullquote">
-        <div class="q">&ldquo;Each piece carries its beneficiary on its side art. The archive is built in.&rdquo;</div>
-        <p style="color:rgba(248,246,241,0.6);font-weight:300">The Sternberg Collection holds all sixteen. Each piece has been catalogued, photographed, and matched to its original ticket number in the master inventory. The set has never been split.</p>
-      </div>
-    </div>
-  </div>
+ <div class="narrow">
+ <div class="reveal eyebrow">Why This Set Matters</div>
+ <div class="cols top">
+ <div class="reveal">
+ <p style="color:rgba(248,246,241,0.8);font-size:clamp(1.05rem,1.5vw,1.25rem);margin-bottom:28px;font-weight:300">The Charity Edition documents a specific cultural moment: a publicly-traded coffee retailer, in its rapid US expansion phase of the late 1990s, formalizing relationships with named local beneficiaries in sixteen of its major markets. Each piece carries the beneficiary information on its side art and provenance documentation, creating a built-in archive of late-1990s American urban philanthropic causes.</p>
+ <p style="color:rgba(248,246,241,0.8);font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:300">For a museum or institutional buyer, the set is a concrete artifact of a particular era of corporate-philanthropic practice. For a brand-history archive, it represents geographic expansion documented through charitable footprint. For a private collector, it&rsquo;s the cleanest complete CMCS series in the collection&rsquo;s American subset.</p>
+ </div>
+ <div class="reveal pullquote">
+ <div class="q">&ldquo;Each piece carries its beneficiary on its side art. The archive is built in.&rdquo;</div>
+ <p style="color:rgba(248,246,241,0.6);font-weight:300">The Sternberg Collection holds all sixteen. Each piece has been catalogued, photographed, and matched to its original ticket number in the master inventory. The set has never been split.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- SET VALUE, dark -->
 <section class="dark" style="padding-top:0;border-top:1px solid rgba(248,246,241,0.08)">
-  <div class="narrow">
-    <div class="reveal valbox">
-      <div class="k">Set value with completion premium</div>
-      <div class="range">$3,200 &ndash; $4,160</div>
-      <div class="note">As a complete intact set within the larger lot. Per-piece values would be $40&ndash;$120 in isolation; the <span style="color:var(--gold)">16-of-16</span> completion is what creates the premium.</div>
-    </div>
-  </div>
+ <div class="narrow">
+ <div class="reveal valbox">
+ <div class="k">Set value with completion premium</div>
+ <div class="range">$3,200 to $4,160</div>
+ <div class="note">Valued as a complete intact set. Per-piece values would be $40 to $120 in isolation; having all <span style="color:var(--gold)">16-of-16</span> is what creates the premium.</div>
+ </div>
+ </div>
 </section>
 
 <!-- WINDOW, light -->
 <section class="window">
-  <div class="narrow">
-    <div class="reveal eyebrow" style="text-align:center">The Collection</div>
-    <p class="reveal big">Sixteen cities. Sixteen charities.<br><span class="it">One intact set, one sale.</span></p>
-    <p class="reveal coda">The Sternberg Collection includes 2,468 pieces across 106 series, and this is among its most documented stories.</p>
-  </div>
+ <div class="narrow">
+ <div class="reveal eyebrow" style="text-align:center">The Collection</div>
+ <p class="reveal big">Sixteen cities. Sixteen charities.<br><span class="it">One complete, intact set.</span></p>
+ <p class="reveal coda">The Sternberg Collection includes 2,468 pieces across 106 series, and this is among its most documented stories.</p>
+ </div>
 </section>
 
 <!-- INQUIRIES CTA -->
 <section id="inquiries" class="dark cta"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
-  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
-  <p class="reveal lede">The complete Charity Edition is offered only as part of the intact Sternberg Collection, to a single buyer, under NDA.</p>
-  <a class="reveal linkout" href="./index.html#inquiries">Begin an inquiry &rarr;</a>
+ <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Charity Edition&ensp;&#9670;</div>
+ <h2 class="reveal head">Sixteen cities,<br><span class="it">one intact set.</span></h2>
+ <p class="reveal lede">The complete North America Charity Edition, every city present, photographed and catalogued in full.</p>
+ <a class="reveal linkout" href="./grid.html">See it in The Grid &rarr;</a>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
 /* ===== CHARITY EDITION RING-OF-GIVING HERO ===== */
 (function(){
-  var CITIES = [
-    'Philadelphia','Phoenix','New York','San Antonio',
-    'San Francisco','San Diego','Seattle','Las Vegas',
-    'Boston','Washington DC','Chicago','Atlanta',
-    'Miami','Austin','Dallas','Houston'
-  ];
-  var N = CITIES.length; // 16
-  var CIRCUMFERENCE = 2 * Math.PI * 230; // ~1445.1
+ var CITIES = [
+ 'Philadelphia','Phoenix','New York','San Antonio',
+ 'San Francisco','San Diego','Seattle','Las Vegas',
+ 'Boston','Washington DC','Chicago','Atlanta',
+ 'Miami','Austin','Dallas','Houston'
+ ];
+ var N = CITIES.length; // 16
+ var CIRCUMFERENCE = 2 * Math.PI * 230; // ~1445.1
 
-  var hero   = document.getElementById('cha-hero');
-  var svgEl  = document.getElementById('chaRingSvg');
-  var arcFill= document.getElementById('chaArcFill');
-  var ringWrap = hero ? hero.querySelector('.cha-ring-wrap') : null;
-  if (!hero || !svgEl || !arcFill || !ringWrap) return;
+ var hero = document.getElementById('cha-hero');
+ var svgEl = document.getElementById('chaRingSvg');
+ var arcFill= document.getElementById('chaArcFill');
+ var ringWrap = hero ? hero.querySelector('.cha-ring-wrap') : null;
+ if (!hero || !svgEl || !arcFill || !ringWrap) return;
 
-  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* --- size helpers --- */
-  function ringRadius(){
-    /* keep ring radius proportional to the rendered SVG size */
-    return 230; // SVG units, viewBox is 600x600 centred
-  }
+ /* --- size helpers --- */
+ function ringRadius(){
+ /* keep ring radius proportional to the rendered SVG size */
+ return 230; // SVG units, viewBox is 600x600 centred
+ }
 
-  /* --- Build city points --- */
-  var frag = document.createDocumentFragment();
-  var points = [];
-  for (var i = 0; i < N; i++) {
-    var pt = document.createElement('div');
-    pt.className = 'cha-point';
-    var dot = document.createElement('div');
-    dot.className = 'cha-dot';
-    var lbl = document.createElement('div');
-    lbl.className = 'cha-city';
-    lbl.textContent = CITIES[i];
-    pt.appendChild(dot);
-    pt.appendChild(lbl);
-    frag.appendChild(pt);
-    points.push({ el: pt, dot: dot, index: i });
-  }
-  ringWrap.appendChild(frag);
+ /* --- Build city points --- */
+ var frag = document.createDocumentFragment();
+ var points = [];
+ for (var i = 0; i < N; i++) {
+ var pt = document.createElement('div');
+ pt.className = 'cha-point';
+ var dot = document.createElement('div');
+ dot.className = 'cha-dot';
+ var lbl = document.createElement('div');
+ lbl.className = 'cha-city';
+ lbl.textContent = CITIES[i];
+ pt.appendChild(dot);
+ pt.appendChild(lbl);
+ frag.appendChild(pt);
+ points.push({ el: pt, dot: dot, index: i });
+ }
+ ringWrap.appendChild(frag);
 
-  /* --- Position points around the ring --- */
-  function positionPoints() {
-    var wrap = ringWrap.getBoundingClientRect();
-    var cx = wrap.width  / 2;
-    var cy = wrap.height / 2;
-    /* ring visual radius in px, match SVG rendering */
-    var svgRect = svgEl.getBoundingClientRect();
-    var scale   = svgRect.width / 600; // viewBox width=600
-    var rPx     = 230 * scale;
+ /* --- Position points around the ring --- */
+ function positionPoints() {
+ var wrap = ringWrap.getBoundingClientRect();
+ var cx = wrap.width / 2;
+ var cy = wrap.height / 2;
+ /* ring visual radius in px, match SVG rendering */
+ var svgRect = svgEl.getBoundingClientRect();
+ var scale = svgRect.width / 600; // viewBox width=600
+ var rPx = 230 * scale;
 
-    for (var i = 0; i < N; i++) {
-      var angle = (2 * Math.PI * i / N) - Math.PI / 2; // start top
-      var x = cx + rPx * Math.cos(angle);
-      var y = cy + rPx * Math.sin(angle);
-      points[i].el.style.left = x + 'px';
-      points[i].el.style.top  = y + 'px';
-    }
-  }
+ for (var i = 0; i < N; i++) {
+ var angle = (2 * Math.PI * i / N) - Math.PI / 2; // start top
+ var x = cx + rPx * Math.cos(angle);
+ var y = cy + rPx * Math.sin(angle);
+ points[i].el.style.left = x + 'px';
+ points[i].el.style.top = y + 'px';
+ }
+ }
 
-  /* set arc fill circumference accurately */
-  arcFill.style.strokeDasharray = '0 ' + CIRCUMFERENCE.toFixed(1);
+ /* set arc fill circumference accurately */
+ arcFill.style.strokeDasharray = '0 ' + CIRCUMFERENCE.toFixed(1);
 
-  function setArcProgress(fraction) {
-    var drawn = CIRCUMFERENCE * Math.min(fraction, 1);
-    arcFill.style.strokeDasharray = drawn.toFixed(2) + ' ' + CIRCUMFERENCE.toFixed(1);
-  }
+ function setArcProgress(fraction) {
+ var drawn = CIRCUMFERENCE * Math.min(fraction, 1);
+ arcFill.style.strokeDasharray = drawn.toFixed(2) + ' ' + CIRCUMFERENCE.toFixed(1);
+ }
 
-  /* --- Reduced motion: show everything lit instantly --- */
-  if (REDUCE) {
-    positionPoints();
-    setArcProgress(1);
-    svgEl.classList.add('complete');
-    points.forEach(function(p){ p.el.classList.add('lit'); p.dot.classList.add('lit'); });
-    /* resize */
-    window.addEventListener('resize', function(){ positionPoints(); }, { passive: true });
-    return;
-  }
+ /* --- Reduced motion: show everything lit instantly --- */
+ if (REDUCE) {
+ positionPoints();
+ setArcProgress(1);
+ svgEl.classList.add('complete');
+ points.forEach(function(p){ p.el.classList.add('lit'); p.dot.classList.add('lit'); });
+ /* resize */
+ window.addEventListener('resize', function(){ positionPoints(); }, { passive: true });
+ return;
+ }
 
-  /* --- Animated ignite sequence --- */
-  var DELAY_BETWEEN = 220; // ms between each ignite
-  var LIT_COUNT = 0;
+ /* --- Animated ignite sequence --- */
+ var DELAY_BETWEEN = 220; // ms between each ignite
+ var LIT_COUNT = 0;
 
-  function ignitePoint(idx) {
-    var p = points[idx];
-    p.dot.classList.add('lit');
-    p.el.classList.add('lit');
-    LIT_COUNT++;
-    /* advance arc: each point covers 1/16 of circumference */
-    setArcProgress(LIT_COUNT / N);
-    if (LIT_COUNT === N) {
-      /* small pause, then add complete glow */
-      setTimeout(function(){ svgEl.classList.add('complete'); }, 300);
-    }
-  }
+ function ignitePoint(idx) {
+ var p = points[idx];
+ p.dot.classList.add('lit');
+ p.el.classList.add('lit');
+ LIT_COUNT++;
+ /* advance arc: each point covers 1/16 of circumference */
+ setArcProgress(LIT_COUNT / N);
+ if (LIT_COUNT === N) {
+ /* small pause, then add complete glow */
+ setTimeout(function(){ svgEl.classList.add('complete'); }, 300);
+ }
+ }
 
-  /* Kick off after a brief entry pause */
-  var START_DELAY = 600;
-  positionPoints();
+ /* Kick off after a brief entry pause */
+ var START_DELAY = 600;
+ positionPoints();
 
-  var timers = [];
-  for (var j = 0; j < N; j++) {
-    (function(idx){
-      var t = setTimeout(function(){
-        ignitePoint(idx);
-      }, START_DELAY + idx * DELAY_BETWEEN);
-      timers.push(t);
-    })(j);
-  }
+ var timers = [];
+ for (var j = 0; j < N; j++) {
+ (function(idx){
+ var t = setTimeout(function(){
+ ignitePoint(idx);
+ }, START_DELAY + idx * DELAY_BETWEEN);
+ timers.push(t);
+ })(j);
+ }
 
-  /* resize: reposition (keep lit state) */
-  var resizeTimer;
-  window.addEventListener('resize', function(){
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(positionPoints, 120);
-  }, { passive: true });
+ /* resize: reposition (keep lit state) */
+ var resizeTimer;
+ window.addEventListener('resize', function(){
+ clearTimeout(resizeTimer);
+ resizeTimer = setTimeout(positionPoints, 120);
+ }, { passive: true });
 })();
 </script>
 
@@ -692,73 +692,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

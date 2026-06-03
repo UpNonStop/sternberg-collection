@@ -12,7 +12,7 @@
 <meta name="twitter:image" content="https://upnonstop.github.io/sternberg-collection/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-/* STERNBERG-CINEMATIC-THEME v1&ndash;404 (self-contained subset) */
+/* STERNBERG-CINEMATIC-THEME v1 to 404 (self-contained subset) */
 :root{--bg:#F8F6F1;--ink:#1A1A1A;--muted:#5B6B5B;--gold:#B8945A;--brand-green:#1E3A2E;--deep:#163026;--serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--deep);color:var(--bg);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:18px;overflow-x:hidden}
@@ -41,49 +41,49 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <header class="hero">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="inner">
-    <div class="code">Error 404</div>
-    <div class="figure">404</div>
-    <div class="msg">The page you were looking for is not part of the archive. It may have moved, or it may never have existed.</div>
-    <a href="./index.html" class="return">Return to the collection &rarr;</a>
-  </div>
-  <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
+ <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+ <div class="vignette"></div>
+ <div class="inner">
+ <div class="code">Error 404</div>
+ <div class="figure">404</div>
+ <div class="msg">The page you were looking for is not part of the archive. It may have moved, or it may never have existed.</div>
+ <a href="./index.html" class="return">Return to the collection &rarr;</a>
+ </div>
+ <div class="ft">The Sternberg Collection &middot; STERNBERG-LOT-2026</div>
 </header>
 
 <script>
 document.documentElement.classList.add('js');
 var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
 })();
 </script>
 

@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,150 +223,150 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== ABOUT, bespoke drifting-wall hero (prefix: abt-) ===== */
 .abt-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:140px 32px 90px;
-  background:#163026;
-  overflow:hidden;
+ position:relative;
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:140px 32px 90px;
+ background:#163026;
+ overflow:hidden;
 }
 
 /* wall of drifting rows */
 .abt-wall{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  pointer-events:none;
-  /* clip so marquees never overflow the hero */
+ position:absolute;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-around;
+ pointer-events:none;
+ /* clip so marquees never overflow the hero */
 }
 
 .abt-row{
-  white-space:nowrap;
-  overflow:hidden;
-  line-height:1;
-  display:flex;
+ white-space:nowrap;
+ overflow:hidden;
+ line-height:1;
+ display:flex;
 }
 
 /* each .abt-rtext is a full-width band, we duplicate content inside via JS */
 .abt-rtext{
-  display:inline-block;
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(0.85rem,1.6vw,1.35rem);
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  white-space:nowrap;
-  /* base style: cream at very low opacity */
-  color:rgba(248,246,241,0.11);
-  padding:0.55em 0;
+ display:inline-block;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(0.85rem,1.6vw,1.35rem);
+ letter-spacing:0.12em;
+ text-transform:uppercase;
+ white-space:nowrap;
+ /* base style: cream at very low opacity */
+ color:rgba(248,246,241,0.11);
+ padding:0.55em 0;
 }
 
 /* alternate rows get a gold tint */
 .abt-row:nth-child(even) .abt-rtext{
-  color:rgba(203,162,88,0.12);
+ color:rgba(203,162,88,0.12);
 }
 
 /* animation: rightward */
 @keyframes abt-drift-r{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
 }
 /* animation: leftward */
 @keyframes abt-drift-l{
-  from{transform:translateX(-50%)}
-  to{transform:translateX(0)}
+ from{transform:translateX(-50%)}
+ to{transform:translateX(0)}
 }
 
 /* assign speeds & directions, odd rows drift right, even rows left */
-.abt-row--1  .abt-rtext{animation:abt-drift-r 38s linear infinite}
-.abt-row--2  .abt-rtext{animation:abt-drift-l 52s linear infinite}
-.abt-row--3  .abt-rtext{animation:abt-drift-r 44s linear infinite}
-.abt-row--4  .abt-rtext{animation:abt-drift-l 34s linear infinite}
-.abt-row--5  .abt-rtext{animation:abt-drift-r 60s linear infinite}
-.abt-row--6  .abt-rtext{animation:abt-drift-l 42s linear infinite}
-.abt-row--7  .abt-rtext{animation:abt-drift-r 30s linear infinite}
-.abt-row--8  .abt-rtext{animation:abt-drift-l 56s linear infinite}
-.abt-row--9  .abt-rtext{animation:abt-drift-r 48s linear infinite}
+.abt-row--1 .abt-rtext{animation:abt-drift-r 38s linear infinite}
+.abt-row--2 .abt-rtext{animation:abt-drift-l 52s linear infinite}
+.abt-row--3 .abt-rtext{animation:abt-drift-r 44s linear infinite}
+.abt-row--4 .abt-rtext{animation:abt-drift-l 34s linear infinite}
+.abt-row--5 .abt-rtext{animation:abt-drift-r 60s linear infinite}
+.abt-row--6 .abt-rtext{animation:abt-drift-l 42s linear infinite}
+.abt-row--7 .abt-rtext{animation:abt-drift-r 30s linear infinite}
+.abt-row--8 .abt-rtext{animation:abt-drift-l 56s linear infinite}
+.abt-row--9 .abt-rtext{animation:abt-drift-r 48s linear infinite}
 .abt-row--10 .abt-rtext{animation:abt-drift-l 36s linear infinite}
 
 /* radial scrim, keeps centred text always legible */
 .abt-scrim{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse 62% 55% at 50% 50%,rgba(11,22,17,0.88) 0%,rgba(11,22,17,0.45) 44%,transparent 68%),
-    radial-gradient(ellipse 95% 95% at 50% 50%,transparent 50%,rgba(11,22,17,0.96) 100%);
-  pointer-events:none;
-  z-index:1;
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(ellipse 62% 55% at 50% 50%,rgba(11,22,17,0.88) 0%,rgba(11,22,17,0.45) 44%,transparent 68%),
+ radial-gradient(ellipse 95% 95% at 50% 50%,transparent 50%,rgba(11,22,17,0.96) 100%);
+ pointer-events:none;
+ z-index:1;
 }
 
 /* film grain */
 .abt-grain{
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;
-  mix-blend-mode:overlay;
-  pointer-events:none;
-  z-index:2;
+ position:absolute;
+ inset:0;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;
+ mix-blend-mode:overlay;
+ pointer-events:none;
+ z-index:2;
 }
 
 /* centred copy */
 .abt-inner{
-  position:relative;
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+ position:relative;
+ z-index:3;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
 }
 
 .abt-hero .eyebrow{margin-bottom:40px}
 
 .abt-title{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(4rem,14vw,16rem);
-  line-height:0.88;
-  letter-spacing:-4px;
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(4rem,14vw,16rem);
+ line-height:0.88;
+ letter-spacing:-4px;
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
 }
 
 .abt-sub{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(1.1rem,2.6vw,1.9rem);
-  font-style:italic;
-  color:rgba(248,246,241,0.85);
-  max-width:760px;
-  margin:36px auto 0;
-  line-height:1.35;
-  text-shadow:0 1px 40px rgba(0,0,0,0.55);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(1.1rem,2.6vw,1.9rem);
+ font-style:italic;
+ color:rgba(248,246,241,0.85);
+ max-width:760px;
+ margin:36px auto 0;
+ line-height:1.35;
+ text-shadow:0 1px 40px rgba(0,0,0,0.55);
 }
 
 /* ensure scrollcue sits above everything */
@@ -374,7 +374,7 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
 
 /* reduced-motion: freeze all rows */
 @media (prefers-reduced-motion:reduce){
-  .abt-rtext{animation:none !important}
+ .abt-rtext{animation:none !important}
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -388,211 +388,185 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="abt-hero" aria-label="Hero, The Archive">
-  <!-- drifting marquee wall -->
-  <div class="abt-wall" aria-hidden="true">
-    <!-- rows injected by JS; CSS fallback rows for no-JS / reduced-motion -->
-    <div class="abt-row abt-row--1"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--2"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--3"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--4"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--5"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--6"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--7"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--8"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--9"><span class="abt-rtext"></span></div>
-    <div class="abt-row abt-row--10"><span class="abt-rtext"></span></div>
-  </div>
-  <!-- radial scrim over the wall -->
-  <div class="abt-scrim"></div>
-  <!-- film grain -->
-  <div class="abt-grain"></div>
-  <!-- centered copy -->
-  <div class="abt-inner">
-    <div class="eyebrow">The Archive</div>
-    <h1 class="abt-title">One intact collection.</h1>
-    <p class="abt-sub">Fifty-three years. 2,468 pieces. 106 series. Documented in entirety.</p>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <!-- drifting marquee wall -->
+ <div class="abt-wall" aria-hidden="true">
+ <!-- rows injected by JS; CSS fallback rows for no-JS / reduced-motion -->
+ <div class="abt-row abt-row--1"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--2"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--3"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--4"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--5"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--6"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--7"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--8"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--9"><span class="abt-rtext"></span></div>
+ <div class="abt-row abt-row--10"><span class="abt-rtext"></span></div>
+ </div>
+ <!-- radial scrim over the wall -->
+ <div class="abt-scrim"></div>
+ <!-- film grain -->
+ <div class="abt-grain"></div>
+ <!-- centered copy -->
+ <div class="abt-inner">
+ <div class="eyebrow">The Archive</div>
+ <h1 class="abt-title">One intact collection.</h1>
+ <p class="abt-sub">Fifty-three years. 2,468 pieces. 106 series. Documented in entirety.</p>
+ </div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <!-- WHAT IT IS, light prose section -->
 <section><div class="container">
-  <div class="eyebrow reveal">The Archive</div>
-  <h2 class="reveal statement">What it <span class="it">is.</span></h2>
-  <div class="prose" style="margin-top:48px">
-    <p class="lead reveal">Across fifty-three years, one collector documented a global brand&rsquo;s evolution piece by piece. The Sternberg Collection now stands as a complete material record, not a curated selection, but the full inventory: every Architecture Demitasse, every Charity Edition city, every Doonesbury limited edition, every State of Bean, assembled, catalogued, photographed, and preserved.</p>
-    <p class="drop reveal">The collection includes <span class="em">45+ verified cities</span> in the Architecture Series, the <span class="em">complete 16-of-16</span> Charity Edition cities, the <span class="em">full 10-of-10</span> Doonesbury limited edition set, <span class="em">14+ Skyline GIANTS</span> confirmed via bottom-stamp OCR, and <span class="em">12+ verified states</span> in the Daleet Zigelboim States of Bean series, alongside the anchor Giant Abbey at 138&nbsp;oz, the largest production Starbucks vessel ever made.</p>
-    <p class="reveal">Every piece has a value, every value has comp evidence, and every inventory line is cross-referenced to box location, photo file, and series. The archive spans 89 boxes, 173 photo-verified items, and 9,872 individual photographs captured across an 18-day catalog sprint.</p>
-    <div class="divider"></div>
-  </div>
+ <div class="eyebrow reveal">The Archive</div>
+ <h2 class="reveal statement">What it <span class="it">is.</span></h2>
+ <div class="prose" style="margin-top:48px">
+ <p class="lead reveal">Across fifty-three years, one collector documented a global brand&rsquo;s evolution piece by piece. The Sternberg Collection now stands as a complete material record, not a curated selection, but the full inventory: every Architecture Demitasse, every Charity Edition city, every Doonesbury limited edition, every State of Bean, assembled, catalogued, photographed, and preserved.</p>
+ <p class="drop reveal">The collection includes <span class="em">45+ verified cities</span> in the Architecture Series, the <span class="em">complete 16-of-16</span> Charity Edition cities, the <span class="em">full 10-of-10</span> Doonesbury limited edition set, <span class="em">14+ Skyline GIANTS</span> confirmed via bottom-stamp OCR, and <span class="em">12+ verified states</span> in the Daleet Zigelboim States of Bean series, alongside the anchor Giant Abbey at 138&nbsp;oz, the largest production Starbucks vessel ever made.</p>
+ <p class="reveal">Every piece has a value, every value has comp evidence, and every inventory line is cross-referenced to box location, photo file, and series. The archive spans 89 boxes, 173 photo-verified items, and 9,872 individual photographs captured across an 18-day catalog sprint.</p>
+ <div class="divider"></div>
+ </div>
 
-  <!-- ANCHOR CARDS -->
-  <div class="eyebrow reveal" style="margin-top:0">Anchors</div>
-  <h2 class="reveal statement" style="font-size:clamp(1.8rem,4vw,3.2rem);margin-bottom:0">The pieces that anchor the lot.</h2>
-  <div class="cards">
-    <a class="reveal card" href="./giant-abbey.html">
-      <div class="k">The vessel</div>
-      <h3>Giant Abbey, 138 oz</h3>
-      <p>The largest production Starbucks vessel ever made. NIB, 15&nbsp;lbs, SKU&nbsp;168515, photographed, documented, standalone value $2,200&ndash;$3,800.</p>
-      <div class="more">Read more &rarr;</div>
-    </a>
-    <a class="reveal card" href="./doonesbury.html">
-      <div class="k">The complete set</div>
-      <h3>Doonesbury LE, 10 of 10</h3>
-      <p>Garry Trudeau&ndash;illustrated limited edition, never reissued. The only confirmed intact 10-of-10 set on the market.</p>
-      <div class="more">Read more &rarr;</div>
-    </a>
-    <a class="reveal card" href="./giants.html">
-      <div class="k">The skyline series</div>
-      <h3>Skyline GIANTS</h3>
-      <p>14+ city Skyline Oversized vessels at 22&nbsp;oz, verified via bottom-stamp OCR. Plus the rare Tahoe regional variant.</p>
-      <div class="more">Read more &rarr;</div>
-    </a>
-  </div>
+ <!-- ANCHOR CARDS -->
+ <div class="eyebrow reveal" style="margin-top:0">Anchors</div>
+ <h2 class="reveal statement" style="font-size:clamp(1.8rem,4vw,3.2rem);margin-bottom:0">The pieces that anchor the lot.</h2>
+ <div class="cards">
+ <a class="reveal card" href="./giant-abbey.html">
+ <div class="k">The vessel</div>
+ <h3>Giant Abbey, 138 oz</h3>
+ <p>The largest production Starbucks vessel ever made. NIB, 15&nbsp;lbs, SKU&nbsp;168515, photographed, documented, standalone value $2,200 to $3,800.</p>
+ <div class="more">Read more &rarr;</div>
+ </a>
+ <a class="reveal card" href="./doonesbury.html">
+ <div class="k">The complete set</div>
+ <h3>Doonesbury LE, 10 of 10</h3>
+ <p>A Garry Trudeau limited edition, never reissued. The only confirmed intact 10-of-10 set on the market.</p>
+ <div class="more">Read more &rarr;</div>
+ </a>
+ <a class="reveal card" href="./giants.html">
+ <div class="k">The skyline series</div>
+ <h3>Skyline GIANTS</h3>
+ <p>14+ city Skyline Oversized vessels at 22&nbsp;oz, verified via bottom-stamp OCR. Plus the rare Tahoe regional variant.</p>
+ <div class="more">Read more &rarr;</div>
+ </a>
+ </div>
 
-  <!-- SERIES CHIPS -->
-  <div class="eyebrow reveal" style="margin-top:88px">Series</div>
-  <h2 class="reveal statement" style="font-size:clamp(1.8rem,4vw,3.2rem);margin-bottom:0">Documented <span class="it">series.</span></h2>
-  <div class="chips">
-    <div class="reveal chip"><span class="c">16 / 16 complete</span>Charity Edition</div>
-    <div class="reveal chip"><span class="c">10 / 10 complete</span>Doonesbury LE</div>
-    <div class="reveal chip"><span class="c">14+ of 16 cities</span>Skyline GIANTS</div>
-    <div class="reveal chip"><span class="c">45+ cities verified</span>Architecture Series</div>
-    <div class="reveal chip"><span class="c">12+ states verified</span>States of Bean</div>
-    <div class="reveal chip"><span class="c">8+ pre-exit verified</span>Russian Dead-Format</div>
-  </div>
+ <!-- SERIES CHIPS -->
+ <div class="eyebrow reveal" style="margin-top:88px">Series</div>
+ <h2 class="reveal statement" style="font-size:clamp(1.8rem,4vw,3.2rem);margin-bottom:0">Documented <span class="it">series.</span></h2>
+ <div class="chips">
+ <div class="reveal chip"><span class="c">16 / 16 complete</span>Charity Edition</div>
+ <div class="reveal chip"><span class="c">10 / 10 complete</span>Doonesbury LE</div>
+ <div class="reveal chip"><span class="c">14+ of 16 cities</span>Skyline GIANTS</div>
+ <div class="reveal chip"><span class="c">45+ cities verified</span>Architecture Series</div>
+ <div class="reveal chip"><span class="c">12+ states verified</span>States of Bean</div>
+ <div class="reveal chip"><span class="c">8+ pre-exit verified</span>Russian Dead-Format</div>
+ </div>
 </div></section>
 
 <!-- BIG NUMBERS, dark section -->
 <section class="dark"><div class="container">
-  <div class="eyebrow reveal" style="text-align:center">By the numbers</div>
-  <div class="bignums" style="margin-top:56px">
-    <div class="reveal bignum">
-      <div class="n"><span data-to="2468">2,468</span></div>
-      <div class="l">Pieces</div>
-      <div class="s">Individually ticketed &amp; valued</div>
-    </div>
-    <div class="reveal bignum">
-      <div class="n"><span data-to="53">53</span></div>
-      <div class="l">Years</div>
-      <div class="s">1971&ndash;2024</div>
-    </div>
-    <div class="reveal bignum">
-      <div class="n"><span data-to="106">106</span></div>
-      <div class="l">Series</div>
-      <div class="s">Distinct product lines</div>
-    </div>
-  </div>
-  <div class="substats">
-    <div class="reveal substat">
-      <div class="n"><span data-to="9872">9,872</span></div>
-      <div class="l">Photographs</div>
-    </div>
-    <div class="reveal substat">
-      <div class="n">45+</div>
-      <div class="l">Architecture cities</div>
-    </div>
-    <div class="reveal substat">
-      <div class="n"><span data-to="89">89</span></div>
-      <div class="l">Storage boxes</div>
-    </div>
-    <div class="reveal substat">
-      <div class="n"><span data-to="173">173</span></div>
-      <div class="l">Photo-verified</div>
-    </div>
-  </div>
+ <div class="eyebrow reveal" style="text-align:center">By the numbers</div>
+ <div class="bignums" style="margin-top:56px">
+ <div class="reveal bignum">
+ <div class="n"><span data-to="2468">2,468</span></div>
+ <div class="l">Pieces</div>
+ <div class="s">Individually ticketed &amp; valued</div>
+ </div>
+ <div class="reveal bignum">
+ <div class="n"><span data-to="53">53</span></div>
+ <div class="l">Years</div>
+ <div class="s">1971 to 2024</div>
+ </div>
+ <div class="reveal bignum">
+ <div class="n"><span data-to="106">106</span></div>
+ <div class="l">Series</div>
+ <div class="s">Distinct product lines</div>
+ </div>
+ </div>
+ <div class="substats">
+ <div class="reveal substat">
+ <div class="n"><span data-to="9872">9,872</span></div>
+ <div class="l">Photographs</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n">45+</div>
+ <div class="l">Architecture cities</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n"><span data-to="89">89</span></div>
+ <div class="l">Storage boxes</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n"><span data-to="173">173</span></div>
+ <div class="l">Photo-verified</div>
+ </div>
+ </div>
 </div></section>
 
-<!-- VALUATION TIERS, dark section -->
+<!-- VALUATION, dark section -->
 <section class="dark"><div class="container">
-  <div class="eyebrow reveal" style="text-align:center">Valuation</div>
-  <h2 class="reveal statement" style="text-align:center;color:var(--bg);max-width:820px;margin:0 auto">Three <span class="it">scenarios.</span></h2>
-  <p class="reveal" style="font-family:var(--serif);font-style:italic;text-align:center;color:rgba(248,246,241,0.6);max-width:680px;margin:28px auto 0;font-size:clamp(1.1rem,2vw,1.5rem)">2,468 items priced. Per-piece sum baseline. Premium build-up applied to the lot.</p>
-  <div class="tiers">
-    <div class="reveal tier">
-      <div class="label">Floor</div>
-      <div>
-        <div class="range">$100K&ndash;$150K</div>
-        <div class="who">Dealer / liquidator</div>
-        <div class="desc">Per-piece liquidation or split-sale scenario. The absolute minimum a motivated seller realizes in a rapid disposition.</div>
-      </div>
-    </div>
-    <div class="reveal tier">
-      <div class="label">Enthusiast</div>
-      <div>
-        <div class="range">$500K&ndash;$800K</div>
-        <div class="who">Auction house sealed bid</div>
-        <div class="desc">Heritage, Bonhams, or Christie&rsquo;s sealed-bid process. Series premiums recognized; lot integrity preserved.</div>
-      </div>
-    </div>
-    <div class="reveal tier climax">
-      <div class="label">Story buyer</div>
-      <div>
-        <div class="range">$1.2M+</div>
-        <div class="who">Museum or institutional archive</div>
-        <div class="desc">The full narrative premium: intact provenance, 53-year continuity, the anchor Giant Abbey, and complete documentation handed to a single custodian.</div>
-      </div>
-    </div>
-  </div>
-  <a class="reveal linkout" href="./valuation.html">See the per-piece breakdown &rarr;</a>
+ <div class="eyebrow reveal" style="text-align:center">Valuation</div>
+ <h2 class="reveal statement" style="text-align:center;color:var(--bg);max-width:820px;margin:0 auto">Every line <span class="it">carries a number.</span></h2>
+ <p class="reveal" style="font-family:var(--serif);font-style:italic;text-align:center;color:rgba(248,246,241,0.6);max-width:700px;margin:28px auto 0;font-size:clamp(1.1rem,2vw,1.5rem)">All 2,468 items are comp valued, each bounded by a low, mid, and high band anchored to real sources. The full per-piece work is set out on the valuation page.</p>
+ <div style="text-align:center"><a class="reveal linkout" href="./valuation.html">See the per-piece breakdown &rarr;</a></div>
 </div></section>
 
 <!-- THE WINDOW, closing punch, light -->
 <section class="window"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">The Window</div>
-  <p class="reveal big">A collection like this is assembled <span class="it">once.</span></p>
-  <p class="reveal coda">Fifty-three years of continuous acquisition ended on 29 February 2024. Nothing will be added. Nothing will be sold piecemeal. The window to acquire the Sternberg Collection intact is open now, and only once.</p>
+ <div class="reveal eyebrow" style="text-align:center">The Window</div>
+ <p class="reveal big">A collection like this is assembled <span class="it">once.</span></p>
+ <p class="reveal coda">Fifty-three years of continuous collecting ended on 29 February 2024. What Chaim built is now complete, documented, and whole, every piece accounted for in his memory.</p>
 </div></section>
 
 <!-- INQUIRIES CTA, dark -->
 <section id="inquiries" class="dark cta"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
-  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
-  <p class="reveal lede">The collection is offered intact to a single buyer. Qualified buyers receive full inventory documentation, 9,872 high-resolution photographs, complete series mappings, and verification provenance under NDA. Reference STERNBERG-LOT-2026.</p>
-  <a class="reveal linkout" href="./index.html#inquiries">Begin an inquiry &rarr;</a>
+ <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;The Record&ensp;&#9670;</div>
+ <h2 class="reveal head">Every piece,<br><span class="it">accounted for.</span></h2>
+ <p class="reveal lede">Two thousand four hundred and sixty-eight pieces, each ticketed, photographed, and catalogued. The record itself is the tribute.</p>
+ <a class="reveal linkout" href="./grid.html">Walk the whole archive &rarr;</a>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
 /* abt-hero: fill marquee rows with series names */
 (function(){
-  var SERIES = [
-    'Global Icon Series','City Mug Collector','Barista Bears','You Are Here','Japan',
-    'Architecture Series','Skyline GIANTS','Doonesbury','Charity Edition','Relief Series',
-    'States of Bean','Brand Heritage Logos','Been There Series','Ornament Collection',
-    'Picasso Art','Reserve Roastery','Anniversary Edition','Siren Logo Evolution',
-    'Holiday Classics','Cold Cup Series','Pike Place','Reserve Collection',
-    'City Tumblers','Artist Series','Stainless Icon','Origins Blend','Seasonal Picks',
-    'Pearl Lustre','Monochrome Set','Script Heritage'
-  ];
-  var rows = document.querySelectorAll('.abt-row .abt-rtext');
-  if(!rows.length) return;
-  /* build a long string (~6–8 repeats) so the 50% translate creates a seamless loop */
-  rows.forEach(function(span, i){
-    /* rotate the series list by row index for visual variety */
-    var offset = (i * 4) % SERIES.length;
-    var names = SERIES.slice(offset).concat(SERIES.slice(0, offset));
-    /* repeat enough to ensure the rendered width > 200vw */
-    var chunk = names.join('   ·   ');
-    var full = (chunk + '   ·   ').repeat(8);
-    span.textContent = full;
-  });
+ var SERIES = [
+ 'Global Icon Series','City Mug Collector','Barista Bears','You Are Here','Japan',
+ 'Architecture Series','Skyline GIANTS','Doonesbury','Charity Edition','Relief Series',
+ 'States of Bean','Brand Heritage Logos','Been There Series','Ornament Collection',
+ 'Picasso Art','Reserve Roastery','Anniversary Edition','Siren Logo Evolution',
+ 'Holiday Classics','Cold Cup Series','Pike Place','Reserve Collection',
+ 'City Tumblers','Artist Series','Stainless Icon','Origins Blend','Seasonal Picks',
+ 'Pearl Lustre','Monochrome Set','Script Heritage'
+ ];
+ var rows = document.querySelectorAll('.abt-row .abt-rtext');
+ if(!rows.length) return;
+ /* build a long string (~6 to 8 repeats) so the 50% translate creates a seamless loop */
+ rows.forEach(function(span, i){
+ /* rotate the series list by row index for visual variety */
+ var offset = (i * 4) % SERIES.length;
+ var names = SERIES.slice(offset).concat(SERIES.slice(0, offset));
+ /* repeat enough to ensure the rendered width > 200vw */
+ var chunk = names.join('  ·  ');
+ var full = (chunk + '  ·  ').repeat(8);
+ span.textContent = full;
+ });
 })();
 </script>
 <script>
@@ -601,73 +575,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

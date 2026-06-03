@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,147 +223,147 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== GIANTS bespoke hero, "OVERSIZED" typographic wall ===== */
 .gnt-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:#163026;
-  overflow:hidden;
+ position:relative;
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ background:#163026;
+ overflow:hidden;
 }
 
 /* typographic wall */
 .gnt-wall{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  pointer-events:none;
-  user-select:none;
+ position:absolute;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-around;
+ pointer-events:none;
+ user-select:none;
 }
 .gnt-row{
-  display:flex;
-  white-space:nowrap;
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,16rem);
-  line-height:0.92;
-  color:rgba(224,192,131,0.13);
-  will-change:transform;
+ display:flex;
+ white-space:nowrap;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,16rem);
+ line-height:0.92;
+ color:rgba(224,192,131,0.13);
+ will-change:transform;
 }
 .gnt-row span{
-  display:inline-block;
-  padding-right:0.25em;
+ display:inline-block;
+ padding-right:0.25em;
 }
 
 /* five rows at slightly different speeds; odd rows drift left, even drift right */
 @keyframes gnt-drift-left{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
 }
 @keyframes gnt-drift-right{
-  from{transform:translateX(-50%)}
-  to{transform:translateX(0)}
+ from{transform:translateX(-50%)}
+ to{transform:translateX(0)}
 }
-.gnt-row--1{animation:gnt-drift-left  38s linear infinite}
+.gnt-row--1{animation:gnt-drift-left 38s linear infinite}
 .gnt-row--2{animation:gnt-drift-right 52s linear infinite;color:rgba(203,162,88,0.10)}
-.gnt-row--3{animation:gnt-drift-left  44s linear infinite;color:rgba(248,246,241,0.07)}
+.gnt-row--3{animation:gnt-drift-left 44s linear infinite;color:rgba(248,246,241,0.07)}
 .gnt-row--4{animation:gnt-drift-right 60s linear infinite;color:rgba(224,192,131,0.12)}
-.gnt-row--5{animation:gnt-drift-left  48s linear infinite;color:rgba(203,162,88,0.09)}
+.gnt-row--5{animation:gnt-drift-left 48s linear infinite;color:rgba(203,162,88,0.09)}
 
 /* radial scrim for legibility over the type wall */
 .gnt-scrim{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
-    radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
-  pointer-events:none;
-  z-index:1;
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
+ radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+ pointer-events:none;
+ z-index:1;
 }
 
 /* film grain */
 .gnt-grain{
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;
-  mix-blend-mode:overlay;
-  pointer-events:none;
-  z-index:2;
+ position:absolute;
+ inset:0;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;
+ mix-blend-mode:overlay;
+ pointer-events:none;
+ z-index:2;
 }
 
 /* centered title content */
 .gnt-inner{
-  position:relative;
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:140px 32px 90px;
+ position:relative;
+ z-index:3;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ padding:140px 32px 90px;
 }
 .gnt-eyebrow{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:36px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ color:var(--gold);
+ margin-bottom:36px;
 }
 .gnt-title{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,14rem);
-  line-height:0.88;
-  letter-spacing:-3px;
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
-  margin:0;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,14rem);
+ line-height:0.88;
+ letter-spacing:-3px;
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ margin:0;
 }
 .gnt-title em{
-  font-style:italic;
-  color:var(--gold);
+ font-style:italic;
+ color:var(--gold);
 }
 .gnt-sub{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(1.3rem,3vw,2.2rem);
-  font-style:italic;
-  color:rgba(248,246,241,0.88);
-  max-width:720px;
-  margin:36px auto 0;
-  line-height:1.3;
-  text-shadow:0 1px 40px rgba(0,0,0,0.6);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(1.3rem,3vw,2.2rem);
+ font-style:italic;
+ color:rgba(248,246,241,0.88);
+ max-width:720px;
+ margin:36px auto 0;
+ line-height:1.3;
+ text-shadow:0 1px 40px rgba(0,0,0,0.6);
 }
 .gnt-spec{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:rgba(248,246,241,0.5);
-  margin-top:24px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:2.5px;
+ text-transform:uppercase;
+ color:rgba(248,246,241,0.5);
+ margin-top:24px;
 }
 
 /* scroll cue sits above the wall */
@@ -371,12 +371,12 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
 
 /* reduced-motion: freeze all rows in place */
 @media (prefers-reduced-motion:reduce){
-  .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
-    animation:none;
-    /* show only the first copy so the row stays in frame */
-    transform:translateX(0);
-  }
-  .gnt-row span + span{display:none}
+ .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
+ animation:none;
+ /* show only the first copy so the row stays in frame */
+ transform:translateX(0);
+ }
+ .gnt-row span + span{display:none}
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -407,131 +407,131 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">Japan &amp; Asia</div>
-    <div class="htitle">A country that treats it <span class="g">as craft.</span></div>
-    <div class="sub">Over a hundred items across twenty-three sub-series, the deepest national section in the archive.</div>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+ <div class="vignette"></div>
+ <div class="hero-inner">
+ <div class="eyebrow">Japan &amp; Asia</div>
+ <div class="htitle">A country that treats it <span class="g">as craft.</span></div>
+ <div class="sub">Over a hundred items across twenty-three sub-series, the deepest national section in the archive.</div>
+ </div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <section class="soft"><div class="narrow">
-  <div class="gnote reveal">
-    <div class="nk">From Ohad&rsquo;s notebook</div>
-    <p>If you want to understand how deep this collection runs, look at Japan. It is not a handful of city mugs, it is <span class="em">twenty-three separate sub-series</span> under one country: the Global Icon cities, the JIMOTO regional line made in real <span class="em">Kutani porcelain</span>, the Roppongi Hills anniversary mugs, the cherry-blossom Reserve pieces, snow globes, card sets.</p>
-    <p>Over a hundred Japan items in all. Japan treats Starbucks merchandise as a craft, and you can feel it in the weight of every piece.</p>
-    <p class="sign">Ohad</p>
-  </div>
+ <div class="gnote reveal">
+ <div class="nk">From Ohad&rsquo;s notebook</div>
+ <p>If you want to understand how deep this collection runs, look at Japan. It is not a handful of city mugs, it is <span class="em">twenty-three separate sub-series</span> under one country: the Global Icon cities, the JIMOTO regional line made in real <span class="em">Kutani porcelain</span>, the Roppongi Hills anniversary mugs, the cherry-blossom Reserve pieces, snow globes, card sets.</p>
+ <p>Over a hundred Japan items in all. Japan treats Starbucks merchandise as a craft, and you can feel it in the weight of every piece.</p>
+ <p class="sign">Ohad</p>
+ </div>
 </div></section>
 
 <section><div class="container">
-  <div class="reveal eyebrow">The corpus</div>
-  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Twenty-three sub-series, <span class="it">one country.</span></h2>
-  <div class="mug-grid">
-      <figure class="reveal"><img loading="lazy" src="./img/japan/10th-starbucks-coffee-japan-tin-box.jpg" alt="10th Starbucks Coffee Japan, Starbucks Japan"><figcaption>10th Starbucks Coffee Japan<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/2009-japan-bear.jpg" alt="2009 Japan Bear, Starbucks Japan"><figcaption>2009 Japan Bear<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/2009-sakura-blossom-mug.jpg" alt="2009 Sakura Blossom, Starbucks Japan"><figcaption>2009 Sakura Blossom<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/2010-japan-bear.jpg" alt="2010 Japan Bear, Starbucks Japan"><figcaption>2010 Japan Bear<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/2012-tokyo-skytree-16oz-mug.jpg" alt="2012, Starbucks Japan"><figcaption>2012<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/400th-store-in-japan-2002-mug.jpg" alt="400th Store in Japan (2002), Starbucks Japan"><figcaption>400th Store in Japan (2002)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/demitasse-sakura.jpg" alt="Demitasse, Starbucks Japan"><figcaption>Demitasse<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/fukuoka-mug-2000.jpg" alt="Fukuoka Mug (2000), Starbucks Japan"><figcaption>Fukuoka Mug (2000)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/fukuoka-mug-2011.jpg" alt="Fukuoka Mug (2011), Starbucks Japan"><figcaption>Fukuoka Mug (2011)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-mug-2008.jpg" alt="Hiroshima Mug (2008), Starbucks Japan"><figcaption>Hiroshima Mug (2008)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-mug-2011.jpg" alt="Hiroshima Mug (2011), Starbucks Japan"><figcaption>Hiroshima Mug (2011)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-our-daily-story.jpg" alt="Hiroshima, Starbucks Japan"><figcaption>Hiroshima<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-10th-anniversary-2006-shibuya-tsutaya-.jpg" alt="Japan 10th Anniversary (2006), Starbucks Japan"><figcaption>Japan 10th Anniversary (2006)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-15th-anniversary-2011-mug.jpg" alt="Japan 15th Anniversary (2011), Starbucks Japan"><figcaption>Japan 15th Anniversary (2011)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2002-blue-mug.jpg" alt="Japan 2002 (Blue), Starbucks Japan"><figcaption>Japan 2002 (Blue)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2002-pink-mug.jpg" alt="Japan 2002 (Pink), Starbucks Japan"><figcaption>Japan 2002 (Pink)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2003-mug.jpg" alt="Japan 2003, Starbucks Japan"><figcaption>Japan 2003<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2004-mug.jpg" alt="Japan 2004, Starbucks Japan"><figcaption>Japan 2004<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2005-mug.jpg" alt="Japan 2005, Starbucks Japan"><figcaption>Japan 2005<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2006-mug.jpg" alt="Japan 2006, Starbucks Japan"><figcaption>Japan 2006<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2007-mug.jpg" alt="Japan 2007, Starbucks Japan"><figcaption>Japan 2007<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2008-mug.jpg" alt="Japan 2008, Starbucks Japan"><figcaption>Japan 2008<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2009-mug.jpg" alt="Japan 2009, Starbucks Japan"><figcaption>Japan 2009<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2010-mug.jpg" alt="Japan 2010, Starbucks Japan"><figcaption>Japan 2010<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2011-demitasse-set-3oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2011-mug.jpg" alt="Japan 2011, Starbucks Japan"><figcaption>Japan 2011<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2012-demitasse.jpg" alt="Japan 2012, Starbucks Japan"><figcaption>Japan 2012<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2012-mug.jpg" alt="Japan 2012, Starbucks Japan"><figcaption>Japan 2012<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-demitasse-set-3oz-area-collectible-dem.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1971.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1987.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1992.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-2011.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-you-are-here-collection-14oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/japan-you-are-here-collection-demitasse-3oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-2010-mug.jpg" alt="Kobe (2010), Starbucks Japan"><figcaption>Kobe (2010)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-mug-1999.jpg" alt="Kobe Mug (1999), Starbucks Japan"><figcaption>Kobe Mug (1999)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-mug-2015.jpg" alt="Kobe Mug (2015), Starbucks Japan"><figcaption>Kobe Mug (2015)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-our-daily-story.jpg" alt="Kobe, Starbucks Japan"><figcaption>Kobe<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-2015-mug.jpg" alt="Kyoto (2015), Starbucks Japan"><figcaption>Kyoto (2015)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-mug-1999.jpg" alt="Kyoto Mug (1999), Starbucks Japan"><figcaption>Kyoto Mug (1999)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-mug-2006.jpg" alt="Kyoto Mug (2006), Starbucks Japan"><figcaption>Kyoto Mug (2006)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-our-daily-story.jpg" alt="Kyoto, Starbucks Japan"><figcaption>Kyoto<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-plastic-tumbler.jpg" alt="Kyoto, Starbucks Japan"><figcaption>Kyoto<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-2000-mug.jpg" alt="Nagoya (2000), Starbucks Japan"><figcaption>Nagoya (2000)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-mug-2010.jpg" alt="Nagoya Mug (2010), Starbucks Japan"><figcaption>Nagoya Mug (2010)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-our-daily-story.jpg" alt="Nagoya, Starbucks Japan"><figcaption>Nagoya<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/okinawa-mug-2002.jpg" alt="Okinawa Mug (2002), Starbucks Japan"><figcaption>Okinawa Mug (2002)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/okinawa-mug-2006.jpg" alt="Okinawa Mug (2006), Starbucks Japan"><figcaption>Okinawa Mug (2006)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-2009-mug.jpg" alt="Osaka (2009), Starbucks Japan"><figcaption>Osaka (2009)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-global-icon-collectible-mug-16oz.jpg" alt="Osaka, Starbucks Japan"><figcaption>Osaka<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-mug-1999.jpg" alt="Osaka Mug (1999), Starbucks Japan"><figcaption>Osaka Mug (1999)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-mug-2009.jpg" alt="Osaka Mug (2009), Starbucks Japan"><figcaption>Osaka Mug (2009)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-our-daily-story.jpg" alt="Osaka, Starbucks Japan"><figcaption>Osaka<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-12th-anniversary-mug-2015.jpg" alt="Roppongi Hills, Starbucks Japan"><figcaption>Roppongi Hills<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-13th-anniversary-mug-2016.jpg" alt="Roppongi Hills, Starbucks Japan"><figcaption>Roppongi Hills<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-mug-2003.jpg" alt="Roppongi Hills Mug (2003), Starbucks Japan"><figcaption>Roppongi Hills Mug (2003)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-mug-2004.jpg" alt="Roppongi Hills Mug (2004), Starbucks Japan"><figcaption>Roppongi Hills Mug (2004)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2005-mug.jpg" alt="Sakura (2005), Starbucks Japan"><figcaption>Sakura (2005)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2006-mug.jpg" alt="Sakura (2006), Starbucks Japan"><figcaption>Sakura (2006)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2009-mug.jpg" alt="Sakura (2009), Starbucks Japan"><figcaption>Sakura (2009)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2011-espresso-mug.jpg" alt="Sakura (2011), Starbucks Japan"><figcaption>Sakura (2011)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2011-mug.jpg" alt="Sakura (2011), Starbucks Japan"><figcaption>Sakura (2011)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2012-mug.jpg" alt="Sakura (2012), Starbucks Japan"><figcaption>Sakura (2012)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2013-mug.jpg" alt="Sakura (2013), Starbucks Japan"><figcaption>Sakura (2013)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2016-mug.jpg" alt="Sakura (2016), Starbucks Japan"><figcaption>Sakura (2016)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2017-mug.jpg" alt="Sakura (2017), Starbucks Japan"><figcaption>Sakura (2017)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-hexagon-mug.jpg" alt="Sakura, Starbucks Japan"><figcaption>Sakura<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-pattern-mug.jpg" alt="Sakura Pattern, Starbucks Japan"><figcaption>Sakura Pattern<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sapporo-global-icon-collectible-mug-16oz.jpg" alt="Sapporo, Starbucks Japan"><figcaption>Sapporo<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/sapporo-mug-2001.jpg" alt="Sapporo Mug (2001), Starbucks Japan"><figcaption>Sapporo Mug (2001)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/shimane-japan-city-mug.jpg" alt="Shimane, Starbucks Japan"><figcaption>Shimane<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/starbucks-us-and-japan-catalogs-articles-and.jpg" alt="Starbucks US and Japan Catalogs, Starbucks Japan"><figcaption>Starbucks US and Japan Catalogs<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-city-mug-collector-series.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-global-icon-collectible-mug-16oz-2008.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-mug-2002.jpg" alt="Tokyo Mug (2002), Starbucks Japan"><figcaption>Tokyo Mug (2002)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-mug-2012.jpg" alt="Tokyo Mug (2012), Starbucks Japan"><figcaption>Tokyo Mug (2012)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-our-daily-story.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-tree-tower-2012-mug.jpg" alt="Tokyo Tree Tower (2012), Starbucks Japan"><figcaption>Tokyo Tree Tower (2012)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/waking-up-tokyo-mug.jpg" alt="Waking Up Tokyo, Starbucks Japan"><figcaption>Waking Up Tokyo<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-mug-1999.jpg" alt="Yokohama Mug (1999), Starbucks Japan"><figcaption>Yokohama Mug (1999)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-mug-2008.jpg" alt="Yokohama Mug (2008), Starbucks Japan"><figcaption>Yokohama Mug (2008)<span>Japan</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-our-daily-story.jpg" alt="Yokohama, Starbucks Japan"><figcaption>Yokohama<span>Japan</span></figcaption></figure>
-  </div>
-  <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full Japan corpus of 100+ is being photographed in.</p>
+ <div class="reveal eyebrow">The corpus</div>
+ <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Twenty-three sub-series, <span class="it">one country.</span></h2>
+ <div class="mug-grid">
+ <figure class="reveal"><img loading="lazy" src="./img/japan/10th-starbucks-coffee-japan-tin-box.jpg" alt="10th Starbucks Coffee Japan, Starbucks Japan"><figcaption>10th Starbucks Coffee Japan<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/2009-japan-bear.jpg" alt="2009 Japan Bear, Starbucks Japan"><figcaption>2009 Japan Bear<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/2009-sakura-blossom-mug.jpg" alt="2009 Sakura Blossom, Starbucks Japan"><figcaption>2009 Sakura Blossom<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/2010-japan-bear.jpg" alt="2010 Japan Bear, Starbucks Japan"><figcaption>2010 Japan Bear<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/2012-tokyo-skytree-16oz-mug.jpg" alt="2012, Starbucks Japan"><figcaption>2012<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/400th-store-in-japan-2002-mug.jpg" alt="400th Store in Japan (2002), Starbucks Japan"><figcaption>400th Store in Japan (2002)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/demitasse-sakura.jpg" alt="Demitasse, Starbucks Japan"><figcaption>Demitasse<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/fukuoka-mug-2000.jpg" alt="Fukuoka Mug (2000), Starbucks Japan"><figcaption>Fukuoka Mug (2000)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/fukuoka-mug-2011.jpg" alt="Fukuoka Mug (2011), Starbucks Japan"><figcaption>Fukuoka Mug (2011)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-mug-2008.jpg" alt="Hiroshima Mug (2008), Starbucks Japan"><figcaption>Hiroshima Mug (2008)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-mug-2011.jpg" alt="Hiroshima Mug (2011), Starbucks Japan"><figcaption>Hiroshima Mug (2011)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/hiroshima-our-daily-story.jpg" alt="Hiroshima, Starbucks Japan"><figcaption>Hiroshima<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-10th-anniversary-2006-shibuya-tsutaya-.jpg" alt="Japan 10th Anniversary (2006), Starbucks Japan"><figcaption>Japan 10th Anniversary (2006)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-15th-anniversary-2011-mug.jpg" alt="Japan 15th Anniversary (2011), Starbucks Japan"><figcaption>Japan 15th Anniversary (2011)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2002-blue-mug.jpg" alt="Japan 2002 (Blue), Starbucks Japan"><figcaption>Japan 2002 (Blue)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2002-pink-mug.jpg" alt="Japan 2002 (Pink), Starbucks Japan"><figcaption>Japan 2002 (Pink)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2003-mug.jpg" alt="Japan 2003, Starbucks Japan"><figcaption>Japan 2003<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2004-mug.jpg" alt="Japan 2004, Starbucks Japan"><figcaption>Japan 2004<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2005-mug.jpg" alt="Japan 2005, Starbucks Japan"><figcaption>Japan 2005<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2006-mug.jpg" alt="Japan 2006, Starbucks Japan"><figcaption>Japan 2006<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2007-mug.jpg" alt="Japan 2007, Starbucks Japan"><figcaption>Japan 2007<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2008-mug.jpg" alt="Japan 2008, Starbucks Japan"><figcaption>Japan 2008<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2009-mug.jpg" alt="Japan 2009, Starbucks Japan"><figcaption>Japan 2009<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2010-mug.jpg" alt="Japan 2010, Starbucks Japan"><figcaption>Japan 2010<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2011-demitasse-set-3oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2011-mug.jpg" alt="Japan 2011, Starbucks Japan"><figcaption>Japan 2011<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2012-demitasse.jpg" alt="Japan 2012, Starbucks Japan"><figcaption>Japan 2012<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-2012-mug.jpg" alt="Japan 2012, Starbucks Japan"><figcaption>Japan 2012<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-demitasse-set-3oz-area-collectible-dem.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1971.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1987.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-1992.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-series-logo-over-time-2011.jpg" alt="Japan Series, Starbucks Japan"><figcaption>Japan Series<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-you-are-here-collection-14oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/japan-you-are-here-collection-demitasse-3oz.jpg" alt="Japan, Starbucks Japan"><figcaption>Japan<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-2010-mug.jpg" alt="Kobe (2010), Starbucks Japan"><figcaption>Kobe (2010)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-mug-1999.jpg" alt="Kobe Mug (1999), Starbucks Japan"><figcaption>Kobe Mug (1999)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-mug-2015.jpg" alt="Kobe Mug (2015), Starbucks Japan"><figcaption>Kobe Mug (2015)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kobe-our-daily-story.jpg" alt="Kobe, Starbucks Japan"><figcaption>Kobe<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-2015-mug.jpg" alt="Kyoto (2015), Starbucks Japan"><figcaption>Kyoto (2015)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-mug-1999.jpg" alt="Kyoto Mug (1999), Starbucks Japan"><figcaption>Kyoto Mug (1999)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-mug-2006.jpg" alt="Kyoto Mug (2006), Starbucks Japan"><figcaption>Kyoto Mug (2006)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-our-daily-story.jpg" alt="Kyoto, Starbucks Japan"><figcaption>Kyoto<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/kyoto-plastic-tumbler.jpg" alt="Kyoto, Starbucks Japan"><figcaption>Kyoto<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-2000-mug.jpg" alt="Nagoya (2000), Starbucks Japan"><figcaption>Nagoya (2000)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-mug-2010.jpg" alt="Nagoya Mug (2010), Starbucks Japan"><figcaption>Nagoya Mug (2010)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/nagoya-our-daily-story.jpg" alt="Nagoya, Starbucks Japan"><figcaption>Nagoya<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/okinawa-mug-2002.jpg" alt="Okinawa Mug (2002), Starbucks Japan"><figcaption>Okinawa Mug (2002)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/okinawa-mug-2006.jpg" alt="Okinawa Mug (2006), Starbucks Japan"><figcaption>Okinawa Mug (2006)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-2009-mug.jpg" alt="Osaka (2009), Starbucks Japan"><figcaption>Osaka (2009)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-global-icon-collectible-mug-16oz.jpg" alt="Osaka, Starbucks Japan"><figcaption>Osaka<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-mug-1999.jpg" alt="Osaka Mug (1999), Starbucks Japan"><figcaption>Osaka Mug (1999)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-mug-2009.jpg" alt="Osaka Mug (2009), Starbucks Japan"><figcaption>Osaka Mug (2009)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/osaka-our-daily-story.jpg" alt="Osaka, Starbucks Japan"><figcaption>Osaka<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-12th-anniversary-mug-2015.jpg" alt="Roppongi Hills, Starbucks Japan"><figcaption>Roppongi Hills<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-13th-anniversary-mug-2016.jpg" alt="Roppongi Hills, Starbucks Japan"><figcaption>Roppongi Hills<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-mug-2003.jpg" alt="Roppongi Hills Mug (2003), Starbucks Japan"><figcaption>Roppongi Hills Mug (2003)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/roppongi-hills-mug-2004.jpg" alt="Roppongi Hills Mug (2004), Starbucks Japan"><figcaption>Roppongi Hills Mug (2004)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2005-mug.jpg" alt="Sakura (2005), Starbucks Japan"><figcaption>Sakura (2005)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2006-mug.jpg" alt="Sakura (2006), Starbucks Japan"><figcaption>Sakura (2006)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2009-mug.jpg" alt="Sakura (2009), Starbucks Japan"><figcaption>Sakura (2009)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2011-espresso-mug.jpg" alt="Sakura (2011), Starbucks Japan"><figcaption>Sakura (2011)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2011-mug.jpg" alt="Sakura (2011), Starbucks Japan"><figcaption>Sakura (2011)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2012-mug.jpg" alt="Sakura (2012), Starbucks Japan"><figcaption>Sakura (2012)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2013-mug.jpg" alt="Sakura (2013), Starbucks Japan"><figcaption>Sakura (2013)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2016-mug.jpg" alt="Sakura (2016), Starbucks Japan"><figcaption>Sakura (2016)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-2017-mug.jpg" alt="Sakura (2017), Starbucks Japan"><figcaption>Sakura (2017)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-hexagon-mug.jpg" alt="Sakura, Starbucks Japan"><figcaption>Sakura<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sakura-pattern-mug.jpg" alt="Sakura Pattern, Starbucks Japan"><figcaption>Sakura Pattern<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sapporo-global-icon-collectible-mug-16oz.jpg" alt="Sapporo, Starbucks Japan"><figcaption>Sapporo<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/sapporo-mug-2001.jpg" alt="Sapporo Mug (2001), Starbucks Japan"><figcaption>Sapporo Mug (2001)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/shimane-japan-city-mug.jpg" alt="Shimane, Starbucks Japan"><figcaption>Shimane<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/starbucks-us-and-japan-catalogs-articles-and.jpg" alt="Starbucks US and Japan Catalogs, Starbucks Japan"><figcaption>Starbucks US and Japan Catalogs<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-city-mug-collector-series.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-global-icon-collectible-mug-16oz-2008.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-mug-2002.jpg" alt="Tokyo Mug (2002), Starbucks Japan"><figcaption>Tokyo Mug (2002)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-mug-2012.jpg" alt="Tokyo Mug (2012), Starbucks Japan"><figcaption>Tokyo Mug (2012)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-our-daily-story.jpg" alt="Tokyo, Starbucks Japan"><figcaption>Tokyo<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/tokyo-tree-tower-2012-mug.jpg" alt="Tokyo Tree Tower (2012), Starbucks Japan"><figcaption>Tokyo Tree Tower (2012)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/waking-up-tokyo-mug.jpg" alt="Waking Up Tokyo, Starbucks Japan"><figcaption>Waking Up Tokyo<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-mug-1999.jpg" alt="Yokohama Mug (1999), Starbucks Japan"><figcaption>Yokohama Mug (1999)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-mug-2008.jpg" alt="Yokohama Mug (2008), Starbucks Japan"><figcaption>Yokohama Mug (2008)<span>Japan</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/japan/yokohama-our-daily-story.jpg" alt="Yokohama, Starbucks Japan"><figcaption>Yokohama<span>Japan</span></figcaption></figure>
+ </div>
+ <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full Japan corpus of 100+ is being photographed in.</p>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
@@ -540,73 +540,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

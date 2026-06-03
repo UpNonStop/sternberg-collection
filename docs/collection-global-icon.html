@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,147 +223,147 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== GIANTS bespoke hero, "OVERSIZED" typographic wall ===== */
 .gnt-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:#163026;
-  overflow:hidden;
+ position:relative;
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ background:#163026;
+ overflow:hidden;
 }
 
 /* typographic wall */
 .gnt-wall{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  pointer-events:none;
-  user-select:none;
+ position:absolute;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-around;
+ pointer-events:none;
+ user-select:none;
 }
 .gnt-row{
-  display:flex;
-  white-space:nowrap;
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,16rem);
-  line-height:0.92;
-  color:rgba(224,192,131,0.13);
-  will-change:transform;
+ display:flex;
+ white-space:nowrap;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,16rem);
+ line-height:0.92;
+ color:rgba(224,192,131,0.13);
+ will-change:transform;
 }
 .gnt-row span{
-  display:inline-block;
-  padding-right:0.25em;
+ display:inline-block;
+ padding-right:0.25em;
 }
 
 /* five rows at slightly different speeds; odd rows drift left, even drift right */
 @keyframes gnt-drift-left{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
 }
 @keyframes gnt-drift-right{
-  from{transform:translateX(-50%)}
-  to{transform:translateX(0)}
+ from{transform:translateX(-50%)}
+ to{transform:translateX(0)}
 }
-.gnt-row--1{animation:gnt-drift-left  38s linear infinite}
+.gnt-row--1{animation:gnt-drift-left 38s linear infinite}
 .gnt-row--2{animation:gnt-drift-right 52s linear infinite;color:rgba(203,162,88,0.10)}
-.gnt-row--3{animation:gnt-drift-left  44s linear infinite;color:rgba(248,246,241,0.07)}
+.gnt-row--3{animation:gnt-drift-left 44s linear infinite;color:rgba(248,246,241,0.07)}
 .gnt-row--4{animation:gnt-drift-right 60s linear infinite;color:rgba(224,192,131,0.12)}
-.gnt-row--5{animation:gnt-drift-left  48s linear infinite;color:rgba(203,162,88,0.09)}
+.gnt-row--5{animation:gnt-drift-left 48s linear infinite;color:rgba(203,162,88,0.09)}
 
 /* radial scrim for legibility over the type wall */
 .gnt-scrim{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
-    radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
-  pointer-events:none;
-  z-index:1;
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
+ radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+ pointer-events:none;
+ z-index:1;
 }
 
 /* film grain */
 .gnt-grain{
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;
-  mix-blend-mode:overlay;
-  pointer-events:none;
-  z-index:2;
+ position:absolute;
+ inset:0;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;
+ mix-blend-mode:overlay;
+ pointer-events:none;
+ z-index:2;
 }
 
 /* centered title content */
 .gnt-inner{
-  position:relative;
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:140px 32px 90px;
+ position:relative;
+ z-index:3;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ padding:140px 32px 90px;
 }
 .gnt-eyebrow{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:36px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ color:var(--gold);
+ margin-bottom:36px;
 }
 .gnt-title{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,14rem);
-  line-height:0.88;
-  letter-spacing:-3px;
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
-  margin:0;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,14rem);
+ line-height:0.88;
+ letter-spacing:-3px;
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ margin:0;
 }
 .gnt-title em{
-  font-style:italic;
-  color:var(--gold);
+ font-style:italic;
+ color:var(--gold);
 }
 .gnt-sub{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(1.3rem,3vw,2.2rem);
-  font-style:italic;
-  color:rgba(248,246,241,0.88);
-  max-width:720px;
-  margin:36px auto 0;
-  line-height:1.3;
-  text-shadow:0 1px 40px rgba(0,0,0,0.6);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(1.3rem,3vw,2.2rem);
+ font-style:italic;
+ color:rgba(248,246,241,0.88);
+ max-width:720px;
+ margin:36px auto 0;
+ line-height:1.3;
+ text-shadow:0 1px 40px rgba(0,0,0,0.6);
 }
 .gnt-spec{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:rgba(248,246,241,0.5);
-  margin-top:24px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:2.5px;
+ text-transform:uppercase;
+ color:rgba(248,246,241,0.5);
+ margin-top:24px;
 }
 
 /* scroll cue sits above the wall */
@@ -371,12 +371,12 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
 
 /* reduced-motion: freeze all rows in place */
 @media (prefers-reduced-motion:reduce){
-  .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
-    animation:none;
-    /* show only the first copy so the row stays in frame */
-    transform:translateX(0);
-  }
-  .gnt-row span + span{display:none}
+ .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
+ animation:none;
+ /* show only the first copy so the row stays in frame */
+ transform:translateX(0);
+ }
+ .gnt-row span + span{display:none}
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -407,410 +407,410 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">The Global Icon Series</div>
-    <div class="htitle">The line that went <span class="g">everywhere.</span></div>
-    <div class="sub">The worldwide city series that succeeded the Collector Series, and the single largest category in the entire archive.</div>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+ <div class="vignette"></div>
+ <div class="hero-inner">
+ <div class="eyebrow">The Global Icon Series</div>
+ <div class="htitle">The line that went <span class="g">everywhere.</span></div>
+ <div class="sub">The worldwide city series that succeeded the Collector Series, and the single largest category in the entire archive.</div>
+ </div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <section class="soft"><div class="narrow">
-  <div class="gnote reveal">
-    <div class="nk">From Ohad&rsquo;s notebook</div>
-    <p>When Starbucks retired the old Collector Series around 2013, they replaced it with this: the <span class="em">Global Icon</span> line, a single worldwide template carrying each city&rsquo;s landmarks in a tidy band of icons. Daegu, Cusco, Katowice, Phuket, St. Petersburg, Oktoberfest. It is the series that finally let the brand mug every city on earth on one consistent design.</p>
-    <p>It is also the <span class="em">largest single category we hold</span>, which makes sense, because it is still in production and still expanding. The collectors I know treat Global Icon as the endgame, the series you never actually finish. That is exactly why a deep run of it matters; depth here is the rarest thing of all.</p>
-    <p class="sign">Ohad</p>
-  </div>
+ <div class="gnote reveal">
+ <div class="nk">From Ohad&rsquo;s notebook</div>
+ <p>When Starbucks retired the old Collector Series around 2013, they replaced it with this: the <span class="em">Global Icon</span> line, a single worldwide template carrying each city&rsquo;s landmarks in a tidy band of icons. Daegu, Cusco, Katowice, Phuket, St. Petersburg, Oktoberfest. It is the series that finally let the brand mug every city on earth on one consistent design.</p>
+ <p>It is also the <span class="em">largest single category we hold</span>, which makes sense, because it is still in production and still expanding. The collectors I know treat Global Icon as the endgame, the series you never actually finish. That is exactly why a deep run of it matters; depth here is the rarest thing of all.</p>
+ <p class="sign">Ohad</p>
+ </div>
 </div></section>
 
 <section><div class="container">
-  <div class="reveal eyebrow">The worldwide line</div>
-  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">One template, <span class="it">the whole planet.</span></h2>
-  <div class="mug-grid">
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/aachen-global-icon-collectible-mug-16oz.jpg" alt="Aachen, Starbucks Global Icon"><figcaption>Aachen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/aarhus-global-icon-collectible-mug-16oz.jpg" alt="Aarhus, Starbucks Global Icon"><figcaption>Aarhus<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/abu-dhabi-global-icon-collectible-mug-16oz.jpg" alt="Abu Dhabi, Starbucks Global Icon"><figcaption>Abu Dhabi<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/acapulco-global-icon-collectible-mug-16oz.jpg" alt="Acapulco, Starbucks Global Icon"><figcaption>Acapulco<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/alaska-global-collectible-mug-16oz.jpg" alt="Alaska, Starbucks Global Icon"><figcaption>Alaska<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/alicante-global-icon-collectible-mug-16oz.jpg" alt="Alicante, Starbucks Global Icon"><figcaption>Alicante<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/amsterdam-global-icon-collectible-mug-16oz.jpg" alt="Amsterdam, Starbucks Global Icon"><figcaption>Amsterdam<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ankara-global-icon-collectible-mug-16oz.jpg" alt="Ankara, Starbucks Global Icon"><figcaption>Ankara<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/antalya-global-icon-collectible-mug-16oz.jpg" alt="Antalya, Starbucks Global Icon"><figcaption>Antalya<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/arequipa-global-icon-collectible-mug-16oz.jpg" alt="Arequipa, Starbucks Global Icon"><figcaption>Arequipa<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/argentina-global-icon-collectible-mug-16oz.jpg" alt="Argentina, Starbucks Global Icon"><figcaption>Argentina<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/arizona-global-collectible-mug-16oz.jpg" alt="Arizona, Starbucks Global Icon"><figcaption>Arizona<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/arnhem-global-collectible-mug-16oz.jpg" alt="Arnhem, Starbucks Global Icon"><figcaption>Arnhem<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/aruba-global-icon-collectible-mug-16oz.jpg" alt="Aruba, Starbucks Global Icon"><figcaption>Aruba<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/athens-global-icon-collectible-mug-16oz.jpg" alt="Athens, Starbucks Global Icon"><figcaption>Athens<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/atlanta-global-collectible-mug-16oz.jpg" alt="Atlanta, Starbucks Global Icon"><figcaption>Atlanta<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/auckland-global-collectible-mug-16oz.jpg" alt="Auckland, Starbucks Global Icon"><figcaption>Auckland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/austin-global-collectible-mug-16oz.jpg" alt="Austin, Starbucks Global Icon"><figcaption>Austin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/australia-global-collectible-mug-16oz.jpg" alt="Australia, Starbucks Global Icon"><figcaption>Australia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/austria-global-icon-collectible-mug-16oz.jpg" alt="Austria, Starbucks Global Icon"><figcaption>Austria<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bacolod-global-collectible-mug-16oz.jpg" alt="Bacolod, Starbucks Global Icon"><figcaption>Bacolod<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/baguio-global-collectible-mug-16oz.jpg" alt="Baguio, Starbucks Global Icon"><figcaption>Baguio<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bahamas-global-collectible-mug-16oz.jpg" alt="Bahamas, Starbucks Global Icon"><figcaption>Bahamas<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bahrain-global-icon-collectible-mug-16oz.jpg" alt="Bahrain, Starbucks Global Icon"><figcaption>Bahrain<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bali-global-collectible-mug-16oz.jpg" alt="Bali, Starbucks Global Icon"><figcaption>Bali<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/banff-global-icon-collectible-mug-16oz.jpg" alt="Banff, Starbucks Global Icon"><figcaption>Banff<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bangkok-global-collectible-mug-16oz.jpg" alt="Bangkok, Starbucks Global Icon"><figcaption>Bangkok<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/barcelona-global-icon-collectible-mug-16oz.jpg" alt="Barcelona, Starbucks Global Icon"><figcaption>Barcelona<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/basel-global-collectible-mug-16oz.jpg" alt="Basel, Starbucks Global Icon"><figcaption>Basel<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/batangas-global-collectible-mug-16oz.jpg" alt="Batangas, Starbucks Global Icon"><figcaption>Batangas<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/beijing-global-collectible-mug-16oz.jpg" alt="Beijing, Starbucks Global Icon"><figcaption>Beijing<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/belfast-global-icon-collectible-mug-16oz.jpg" alt="Belfast, Starbucks Global Icon"><figcaption>Belfast<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/belgium-global-icon-collectible-mug-16oz.jpg" alt="Belgium, Starbucks Global Icon"><figcaption>Belgium<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bergen-global-collectible-mug-16oz.jpg" alt="Bergen, Starbucks Global Icon"><figcaption>Bergen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/berlin-global-icon-collectible-mug-16oz.jpg" alt="Berlin, Starbucks Global Icon"><figcaption>Berlin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/berne-global-collectible-mug-16oz.jpg" alt="Berne, Starbucks Global Icon"><figcaption>Berne<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bielefeld-global-icon-collectible-mug-16oz.jpg" alt="Bielefeld, Starbucks Global Icon"><figcaption>Bielefeld<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bonn-global-icon-collectible-mug-16oz.jpg" alt="Bonn, Starbucks Global Icon"><figcaption>Bonn<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/boracay-global-collectible-mug-16oz.jpg" alt="Boracay, Starbucks Global Icon"><figcaption>Boracay<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/boston-global-collectible-mug-16oz.jpg" alt="Boston, Starbucks Global Icon"><figcaption>Boston<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/brasil-global-icon-collectible-mug-16oz.jpg" alt="Brasil, Starbucks Global Icon"><figcaption>Brasil<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/braunschweig-global-icon-collectible-mug-16o.jpg" alt="Braunschweig, Starbucks Global Icon"><figcaption>Braunschweig<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bremen-global-icon-collectible-mug-16oz.jpg" alt="Bremen, Starbucks Global Icon"><figcaption>Bremen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/brisbane-global-collectible-mug-16oz.jpg" alt="Brisbane, Starbucks Global Icon"><figcaption>Brisbane<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/brugge-global-icon-collectible-mug-16oz.jpg" alt="Brugge, Starbucks Global Icon"><figcaption>Brugge<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/brunei-global-collectible-mug-16oz.jpg" alt="Brunei, Starbucks Global Icon"><figcaption>Brunei<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/brussels-global-icon-collectible-mug-16oz.jpg" alt="Brussels, Starbucks Global Icon"><figcaption>Brussels<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bucharest-global-icon-collectible-mug-16oz.jpg" alt="Bucharest, Starbucks Global Icon"><figcaption>Bucharest<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/budapest-global-icon-collectible-mug-16oz.jpg" alt="Budapest, Starbucks Global Icon"><figcaption>Budapest<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/buenos-aires-global-icon-collectible-mug-16o.jpg" alt="Buenos Aires, Starbucks Global Icon"><figcaption>Buenos Aires<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/bulgaria-global-icon-collectible-mug-16oz.jpg" alt="Bulgaria, Starbucks Global Icon"><figcaption>Bulgaria<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cagayan-de-oro-global-collectible-mug-16oz.jpg" alt="Cagayan de Oro, Starbucks Global Icon"><figcaption>Cagayan de Oro<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cairo-global-collectible-mug-16oz.jpg" alt="Cairo, Starbucks Global Icon"><figcaption>Cairo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/calgary-global-icon-collectible-mug-16oz.jpg" alt="Calgary, Starbucks Global Icon"><figcaption>Calgary<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/california-global-collectible-mug-16oz.jpg" alt="California, Starbucks Global Icon"><figcaption>California<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cambodia-global-collectible-mug-16oz.jpg" alt="Cambodia, Starbucks Global Icon"><figcaption>Cambodia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/canada-global-icon-collectible-mug-16oz.jpg" alt="Canada, Starbucks Global Icon"><figcaption>Canada<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cancun-global-collectible-mug-16oz.jpg" alt="Cancun, Starbucks Global Icon"><figcaption>Cancun<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cardiff-global-collectible-mug-16oz.jpg" alt="Cardiff, Starbucks Global Icon"><figcaption>Cardiff<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cebu-global-collectible-mug-16oz.jpg" alt="Cebu, Starbucks Global Icon"><figcaption>Cebu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/changchun-global-collectible-mug-16oz.jpg" alt="Changchun, Starbucks Global Icon"><figcaption>Changchun<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/changsha-global-collectible-mug-16oz.jpg" alt="Changsha, Starbucks Global Icon"><figcaption>Changsha<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/charlotte-global-icon-collectible-mug-16oz.jpg" alt="Charlotte, global icon Collectible, Starbucks Global Icon"><figcaption>Charlotte, global icon Collectible<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chengdu-global-collectible-mug-16oz.jpg" alt="Chengdu, Starbucks Global Icon"><figcaption>Chengdu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chiangmai-global-collectible-mug-16oz.jpg" alt="Chiangmai, Starbucks Global Icon"><figcaption>Chiangmai<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chiangmai-global-icon-collectible-mug-16oz.jpg" alt="Chiangmai, Starbucks Global Icon"><figcaption>Chiangmai<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chicago-global-collectible-mug-16oz.jpg" alt="Chicago, Starbucks Global Icon"><figcaption>Chicago<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chihuahua-global-icon-collectible-mug-16oz.jpg" alt="Chihuahua, Starbucks Global Icon"><figcaption>Chihuahua<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chile-global-icon-collectible-mug-16oz.jpg" alt="Chile, Starbucks Global Icon"><figcaption>Chile<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/china-global-collectible-mug-16oz.jpg" alt="China, Starbucks Global Icon"><figcaption>China<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/chongqing-global-collectible-mug-16oz.jpg" alt="Chongqing, Starbucks Global Icon"><figcaption>Chongqing<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ciudad-de-mexico-global-icon-collectible-mug.jpg" alt="Ciudad de Mexico, Starbucks Global Icon"><figcaption>Ciudad de Mexico<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cleveland-global-collectible-mug-16oz.jpg" alt="Cleveland, Starbucks Global Icon"><figcaption>Cleveland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/clug-napoca-global-icon-collectible-mug-16oz.jpg" alt="Clug-Napoca, Starbucks Global Icon"><figcaption>Clug-Napoca<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/colombia-global-icon-collectible-mug-16oz.jpg" alt="Colombia, Starbucks Global Icon"><figcaption>Colombia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/colorado-global-collectible-mug-16oz.jpg" alt="Colorado, Starbucks Global Icon"><figcaption>Colorado<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/copenhagen-global-icon-collectible-mug-16oz.jpg" alt="Copenhagen, Starbucks Global Icon"><figcaption>Copenhagen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/corfu-global-icon-collectible-mug-16oz.jpg" alt="Corfu, Starbucks Global Icon"><figcaption>Corfu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/costa-rica-global-icon-collectible-mug-16oz.jpg" alt="Costa Rica, Starbucks Global Icon"><figcaption>Costa Rica<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cozumel-global-icon-collectible-mug-16oz.jpg" alt="Cozumel, Starbucks Global Icon"><figcaption>Cozumel<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/crete-global-icon-collectible-mug-16oz.jpg" alt="Crete, Starbucks Global Icon"><figcaption>Crete<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cura-ao-global-icon-collectible-mug-16oz.jpg" alt="Curaçao, Starbucks Global Icon"><figcaption>Curaçao<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cusco-peru-global-icon-collector-city-series.jpg" alt="Cusco, Peru, Starbucks Global Icon"><figcaption>Cusco, Peru<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/cyprus-global-icon-collectible-mug-16oz.jpg" alt="Cyprus, Starbucks Global Icon"><figcaption>Cyprus<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/czech-republic-global-icon-collectible-mug-1.jpg" alt="Czech Republic, Starbucks Global Icon"><figcaption>Czech Republic<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/d-global-icon-collectible-mug-16oz.jpg" alt="Łódź, Starbucks Global Icon"><figcaption>Łódź<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/d-sseldorf-global-icon-collectible-mug-16oz.jpg" alt="Düsseldorf, Starbucks Global Icon"><figcaption>Düsseldorf<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/daegu-global-icon-city-mug.jpg" alt="Daegu, Starbucks Global Icon"><figcaption>Daegu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dali-city-global-collectible-mug-16oz.jpg" alt="Dali City, Starbucks Global Icon"><figcaption>Dali City<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dalian-global-collectible-mug-16oz.jpg" alt="Dalian, Starbucks Global Icon"><figcaption>Dalian<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dallas-global-collectible-mug-16oz.jpg" alt="Dallas, Starbucks Global Icon"><figcaption>Dallas<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/darmstadt-global-icon-collectible-mug-16oz.jpg" alt="Darmstadt, Starbucks Global Icon"><figcaption>Darmstadt<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/davao-global-collectible-mug-16oz.jpg" alt="Davao, Starbucks Global Icon"><figcaption>Davao<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/den-haag-global-icon-collectible-mug-16oz.jpg" alt="Den Haag, Starbucks Global Icon"><figcaption>Den Haag<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/denmark-global-icon-collectible-mug-16oz.jpg" alt="Denmark, Starbucks Global Icon"><figcaption>Denmark<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/denver-global-collectible-mug-16oz.jpg" alt="Denver, Starbucks Global Icon"><figcaption>Denver<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/detroit-global-collectible-mug-16oz.jpg" alt="Detroit, Starbucks Global Icon"><figcaption>Detroit<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dongguan-global-collectible-mug-16oz.jpg" alt="Dongguan, Starbucks Global Icon"><figcaption>Dongguan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dresden-global-icon-collectible-mug-16oz.jpg" alt="Dresden, Starbucks Global Icon"><figcaption>Dresden<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dubai-global-icon-collectible-mug-16oz.jpg" alt="Dubai, Starbucks Global Icon"><figcaption>Dubai<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/dublin-global-icon-collectible-mug-16oz.jpg" alt="Dublin, Starbucks Global Icon"><figcaption>Dublin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/edinburgh-global-collectible-mug-16oz.jpg" alt="Edinburgh, Starbucks Global Icon"><figcaption>Edinburgh<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/edmonton-global-icon-collectible-mug-16oz.jpg" alt="Edmonton, Starbucks Global Icon"><figcaption>Edmonton<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/egypt-global-collectible-mug-16oz.jpg" alt="Egypt, Starbucks Global Icon"><figcaption>Egypt<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/el-salvador-global-icon-collectible-mug-16oz.jpg" alt="El Salvador, Starbucks Global Icon"><figcaption>El Salvador<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/england-coat-of-arms-global-icon-collectible.jpg" alt="England Coat of Arms, Starbucks Global Icon"><figcaption>England Coat of Arms<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/england-global-icon-collectible-mug-16oz.jpg" alt="England, Starbucks Global Icon"><figcaption>England<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ensenada-global-icon-collectible-mug-16oz.jpg" alt="Ensenada, Starbucks Global Icon"><figcaption>Ensenada<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/finland-global-icon-collectible-mug-16oz.jpg" alt="Finland, Starbucks Global Icon"><figcaption>Finland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/florida-global-icon-collectible-mug-16oz.jpg" alt="Florida, Starbucks Global Icon"><figcaption>Florida<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/fort-worth-global-collectible-mug-16oz.jpg" alt="Fort Worth, Starbucks Global Icon"><figcaption>Fort Worth<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/foshan-global-collectible-mug-16oz.jpg" alt="Foshan, Starbucks Global Icon"><figcaption>Foshan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/france-global-icon-collectible-mug-16oz.jpg" alt="France, Starbucks Global Icon"><figcaption>France<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/frankfurt-global-icon-collectible-mug-16oz.jpg" alt="Frankfurt, Starbucks Global Icon"><figcaption>Frankfurt<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/freiburg-global-icon-collectible-mug-16oz.jpg" alt="Freiburg, Starbucks Global Icon"><figcaption>Freiburg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/fuzhou-global-collectible-mug-16oz.jpg" alt="Fuzhou, Starbucks Global Icon"><figcaption>Fuzhou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/gdansk-global-icon-collectible-mug-16oz.jpg" alt="Gdansk, Starbucks Global Icon"><figcaption>Gdansk<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/gdynia-global-icon-collectible-mug-16oz.jpg" alt="Gdynia, Starbucks Global Icon"><figcaption>Gdynia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/general-santos-global-collectible-mug-16oz.jpg" alt="General Santos, Starbucks Global Icon"><figcaption>General Santos<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/geneva-global-collectible-mug-16oz.jpg" alt="Geneva, Starbucks Global Icon"><figcaption>Geneva<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/gent-global-icon-collectible-mug-16oz.jpg" alt="Gent, Starbucks Global Icon"><figcaption>Gent<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/germany-global-icon-collectible-mug-16oz.jpg" alt="Germany, Starbucks Global Icon"><figcaption>Germany<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/glasgow-global-collectible-mug-16oz.jpg" alt="Glasgow, Starbucks Global Icon"><figcaption>Glasgow<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/gold-coast-global-collectible-mug-16oz.jpg" alt="Gold Coast, Starbucks Global Icon"><figcaption>Gold Coast<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/gothenburg-global-icon-collectible-mug-16oz.jpg" alt="Gothenburg, Starbucks Global Icon"><figcaption>Gothenburg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/greece-global-icon-collectible-mug-16oz.jpg" alt="Greece, Starbucks Global Icon"><figcaption>Greece<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/guadalajara-global-icon-collectible-mug-16oz.jpg" alt="Guadalajara, Starbucks Global Icon"><figcaption>Guadalajara<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/guatemala-global-icon-collectible-mug-16oz.jpg" alt="Guatemala, Starbucks Global Icon"><figcaption>Guatemala<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/guiyang-global-collectible-mug-16oz.jpg" alt="Guiyang, Starbucks Global Icon"><figcaption>Guiyang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/haikou-global-collectible-mug-16oz.jpg" alt="Haikou, Starbucks Global Icon"><figcaption>Haikou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hamburg-global-icon-collectible-mug-16oz.jpg" alt="Hamburg, Starbucks Global Icon"><figcaption>Hamburg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hamptons-global-collectible-mug-16oz.jpg" alt="Hamptons, Starbucks Global Icon"><figcaption>Hamptons<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hangzhou-global-collectible-mug-16oz.jpg" alt="Hangzhou, Starbucks Global Icon"><figcaption>Hangzhou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hannover-global-icon-collectible-mug-16oz.jpg" alt="Hannover, Starbucks Global Icon"><figcaption>Hannover<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hanoi-global-collectible-mug-16oz.jpg" alt="Hanoi, Starbucks Global Icon"><figcaption>Hanoi<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/harbin-global-collectible-mug-16oz.jpg" alt="Harbin, Starbucks Global Icon"><figcaption>Harbin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hawaii-global-collectible-mug-16oz.jpg" alt="Hawaii, Starbucks Global Icon"><figcaption>Hawaii<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hefei-global-collectible-mug-16oz.jpg" alt="Hefei, Starbucks Global Icon"><figcaption>Hefei<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/heidelberg-global-icon-collectible-mug-16oz.jpg" alt="Heidelberg, Starbucks Global Icon"><figcaption>Heidelberg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/helsinki-global-icon-collectible-mug-16oz.jpg" alt="Helsinki, Starbucks Global Icon"><figcaption>Helsinki<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hilversum-global-icon-collectible-mug-16oz.jpg" alt="Hilversum, Starbucks Global Icon"><figcaption>Hilversum<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ho-chi-minh-city-global-collectible-mug-16oz.jpg" alt="Ho Chi Minh City, Starbucks Global Icon"><figcaption>Ho Chi Minh City<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hong-kong-global-collectible-mug-16oz.jpg" alt="Hong Kong, Starbucks Global Icon"><figcaption>Hong Kong<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/houston-global-icon-collectible-mug-16oz.jpg" alt="Houston, Starbucks Global Icon"><figcaption>Houston<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/hungary-global-icon-collectible-mug-16oz.jpg" alt="Hungary, Starbucks Global Icon"><figcaption>Hungary<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/iloilo-global-collectible-mug-16oz.jpg" alt="Iloilo, Starbucks Global Icon"><figcaption>Iloilo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/india-global-icon-collectible-mug-16oz.jpg" alt="India, Starbucks Global Icon"><figcaption>India<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/indianapolis-global-collectible-mug-16oz.jpg" alt="Indianapolis, Starbucks Global Icon"><figcaption>Indianapolis<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/indonesia-global-collectible-mug-16oz.jpg" alt="Indonesia, Starbucks Global Icon"><figcaption>Indonesia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ireland-global-icon-collectible-mug-16oz.jpg" alt="Ireland, Starbucks Global Icon"><figcaption>Ireland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/istanbul-global-icon-collectible-mug-16oz.jpg" alt="Istanbul, Starbucks Global Icon"><figcaption>Istanbul<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/jacksonville-global-collectible-mug-16oz.jpg" alt="Jacksonville, Starbucks Global Icon"><figcaption>Jacksonville<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/jakarta-global-collectible-mug-16oz.jpg" alt="Jakarta, Starbucks Global Icon"><figcaption>Jakarta<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/jeddah-global-icon-collectible-mug-16oz.jpg" alt="Jeddah, Starbucks Global Icon"><figcaption>Jeddah<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/jinan-global-collectible-mug-16oz.jpg" alt="Jinan, Starbucks Global Icon"><figcaption>Jinan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/jordan-global-icon-collectible-mug-16oz.jpg" alt="Jordan, Starbucks Global Icon"><figcaption>Jordan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/k-ln-global-icon-collectible-mug-16oz.jpg" alt="Köln, Starbucks Global Icon"><figcaption>Köln<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kaohsiung-global-collectible-mug-16oz.jpg" alt="Kaohsiung, Starbucks Global Icon"><figcaption>Kaohsiung<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kaohsiung-global-icon-collectible-mug-16oz.jpg" alt="Kaohsiung, Starbucks Global Icon"><figcaption>Kaohsiung<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/karlsruhe-global-icon-collectible-mug-16oz.jpg" alt="Karlsruhe, Starbucks Global Icon"><figcaption>Karlsruhe<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/karneval-global-icon-collectible-mug-16oz.jpg" alt="Karneval, Starbucks Global Icon"><figcaption>Karneval<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kassel-global-icon-collectible-mug-16oz.jpg" alt="Kassel, Starbucks Global Icon"><figcaption>Kassel<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/katowice-poland-global-icon-collector-city-s.jpg" alt="Katowice, Poland, Starbucks Global Icon"><figcaption>Katowice, Poland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kiel-global-icon-collectible-mug-16oz.jpg" alt="Kiel, Starbucks Global Icon"><figcaption>Kiel<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kingdom-of-saudi-arabia-global-icon-collecti.jpg" alt="Kingdom of Saudi Arabia, Starbucks Global Icon"><figcaption>Kingdom of Saudi Arabia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/korea-global-collectible-mug-16oz.jpg" alt="Korea, Starbucks Global Icon"><figcaption>Korea<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/krak-w-global-icon-collectible-mug-16oz.jpg" alt="Kraków, Starbucks Global Icon"><figcaption>Kraków<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/krasnodar-global-collectible-mug-16oz.jpg" alt="Krasnodar, Starbucks Global Icon"><figcaption>Krasnodar<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kuala-lumpur-global-collectible-mug-16oz.jpg" alt="Kuala Lumpur, Starbucks Global Icon"><figcaption>Kuala Lumpur<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kunming-global-collectible-mug-16oz.jpg" alt="Kunming, Starbucks Global Icon"><figcaption>Kunming<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/kuwait-global-icon-collectible-mug-16oz.jpg" alt="Kuwait, Starbucks Global Icon"><figcaption>Kuwait<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lake-tahoe-global-collectible-mug-16oz.jpg" alt="Lake Tahoe, Starbucks Global Icon"><figcaption>Lake Tahoe<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lanzhou-global-collectible-mug-16oz.jpg" alt="Lanzhou, Starbucks Global Icon"><figcaption>Lanzhou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/las-vegas-global-icon-collectible-mug-16oz.jpg" alt="Las Vegas, Global icon Collectible, Starbucks Global Icon"><figcaption>Las Vegas, Global icon Collectible<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lausanne-global-icon-collectible-mug-16oz.jpg" alt="Lausanne, Starbucks Global Icon"><figcaption>Lausanne<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lebanon-global-icon-collectible-mug-16oz.jpg" alt="Lebanon, Starbucks Global Icon"><figcaption>Lebanon<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/leipzig-global-icon-collectible-mug-16oz.jpg" alt="Leipzig, Starbucks Global Icon"><figcaption>Leipzig<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/leon-global-icon-collectible-mug-16oz.jpg" alt="Leon, Starbucks Global Icon"><figcaption>Leon<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/leshan-global-collectible-mug-16oz.jpg" alt="Leshan, Starbucks Global Icon"><figcaption>Leshan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lijiang-global-collectible-mug-16oz.jpg" alt="Lijiang, Starbucks Global Icon"><figcaption>Lijiang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lima-global-icon-collectible-mug-16oz.jpg" alt="Lima, Starbucks Global Icon"><figcaption>Lima<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/london-global-icon-collectible-mug-16oz.jpg" alt="London, Global icon collectible mu, Starbucks Global Icon"><figcaption>London, Global icon collectible mu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/los-angeles-global-collectible-mug-16oz.jpg" alt="Los Angeles, Starbucks Global Icon"><figcaption>Los Angeles<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/los-cabos-global-icon-collectible-mug-16oz.jpg" alt="Los Cabos, Starbucks Global Icon"><figcaption>Los Cabos<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lucerene-global-collectible-mug-16oz.jpg" alt="Lucerene, Starbucks Global Icon"><figcaption>Lucerene<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/lyon-global-icon-collectible-mug-16oz.jpg" alt="Lyon, Starbucks Global Icon"><figcaption>Lyon<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/m-nchen-global-icon-collectible-mug-16oz.jpg" alt="München, Starbucks Global Icon"><figcaption>München<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/m-nster-global-icon-collectible-mug-16oz.jpg" alt="Münster, Starbucks Global Icon"><figcaption>Münster<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/macau-global-collectible-mug-16oz.jpg" alt="Macau, Starbucks Global Icon"><figcaption>Macau<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/madrid-global-icon-collectible-mug-16oz.jpg" alt="Madrid, Starbucks Global Icon"><figcaption>Madrid<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/makati-global-collectible-mug-16oz.jpg" alt="Makati, Starbucks Global Icon"><figcaption>Makati<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/malaga-global-icon-collectible-mug-16oz.jpg" alt="Malaga, Starbucks Global Icon"><figcaption>Malaga<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/malaysia-global-collectible-mug-16oz.jpg" alt="Malaysia, Starbucks Global Icon"><figcaption>Malaysia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/malmo-global-icon-collectible-mug-16oz.jpg" alt="Malmo, Starbucks Global Icon"><figcaption>Malmo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/manchester-global-icon-collectible-mug-16oz.jpg" alt="Manchester, Starbucks Global Icon"><figcaption>Manchester<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/manila-global-collectible-mug-16oz.jpg" alt="Manila, Starbucks Global Icon"><figcaption>Manila<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/mannheim-global-icon-collectible-mug-16oz.jpg" alt="Mannheim, Starbucks Global Icon"><figcaption>Mannheim<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/marseille-global-icon-collectible-mug-16oz.jpg" alt="Marseille, Starbucks Global Icon"><figcaption>Marseille<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/melbourne-global-collectible-mug-16oz.jpg" alt="Melbourne, Starbucks Global Icon"><figcaption>Melbourne<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/memphis-global-collectible-mug-16oz.jpg" alt="Memphis, Starbucks Global Icon"><figcaption>Memphis<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/merida-global-icon-collectible-mug-16oz.jpg" alt="Merida, Starbucks Global Icon"><figcaption>Merida<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/mexico-global-icon-collectible-mug-16oz.jpg" alt="Mexico, Starbucks Global Icon"><figcaption>Mexico<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/miami-global-collectible-mug-16oz.jpg" alt="Miami, Starbucks Global Icon"><figcaption>Miami<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/mianyang-global-collectible-mug-16oz.jpg" alt="Mianyang, Starbucks Global Icon"><figcaption>Mianyang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/moerlia-global-icon-collectible-mug-16oz.jpg" alt="Moerlia, Starbucks Global Icon"><figcaption>Moerlia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/montreal-global-icon-collectible-mug-16oz.jpg" alt="Montreal, Starbucks Global Icon"><figcaption>Montreal<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/morocco-global-icon-collectible-mug-16oz.jpg" alt="Morocco, Starbucks Global Icon"><figcaption>Morocco<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/moscow-global-icon-collectible-mug-16oz.jpg" alt="Moscow, Starbucks Global Icon"><figcaption>Moscow<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/mykonos-global-icon-collectible-mug-16oz.jpg" alt="Mykonos, Starbucks Global Icon"><figcaption>Mykonos<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/n-rnberg-global-icon-collectible-mug-16oz.jpg" alt="Nürnberg, Starbucks Global Icon"><figcaption>Nürnberg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/naga-global-collectible-mug-16oz.jpg" alt="Naga, Starbucks Global Icon"><figcaption>Naga<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/namur-global-icon-collectible-mug-16oz.jpg" alt="Namur, Starbucks Global Icon"><figcaption>Namur<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanchang-global-collectible-mug-16oz.jpg" alt="Nanchang, Starbucks Global Icon"><figcaption>Nanchang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanjing-global-collectible-mug-16oz.jpg" alt="Nanjing, Starbucks Global Icon"><figcaption>Nanjing<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanning-global-collectible-mug-16oz.jpg" alt="Nanning, Starbucks Global Icon"><figcaption>Nanning<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/nashville-global-collectible-mug-16oz.jpg" alt="Nashville, Starbucks Global Icon"><figcaption>Nashville<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/netherlands-global-icon-collectible-mug-16oz.jpg" alt="Netherlands, Starbucks Global Icon"><figcaption>Netherlands<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-mexico-global-collectible-mug-16oz.jpg" alt="New Mexico, Starbucks Global Icon"><figcaption>New Mexico<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-york-city-global-collectible-mug-16oz.jpg" alt="New York City, Starbucks Global Icon"><figcaption>New York City<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-zealand-global-icon-collectible-mug-16oz.jpg" alt="New Zealand, Starbucks Global Icon"><figcaption>New Zealand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/niagara-falls-global-collectible-mug-16oz.jpg" alt="Niagara Falls, Starbucks Global Icon"><figcaption>Niagara Falls<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/niagara-falls-global-icon-collectible-mug-16.jpg" alt="Niagara Falls, Starbucks Global Icon"><figcaption>Niagara Falls<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/nijmgen-global-icon-collectible-mug-16oz.jpg" alt="Nijmgen, Starbucks Global Icon"><figcaption>Nijmgen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ningbo-global-collectible-mug-16oz.jpg" alt="Ningbo, Starbucks Global Icon"><figcaption>Ningbo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/north-carolina-global-collectible-mug-16oz.jpg" alt="North Carolina, Starbucks Global Icon"><figcaption>North Carolina<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/north-island-new-zealand-global-icon-collect.jpg" alt="North Island New Zealand, Starbucks Global Icon"><figcaption>North Island New Zealand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/northern-ireland-global-collectible-mug-16oz.jpg" alt="Northern Ireland, Starbucks Global Icon"><figcaption>Northern Ireland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/norway-global-icon-collectible-mug-16oz.jpg" alt="Norway, Starbucks Global Icon"><figcaption>Norway<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ohio-global-collectible-mug-16oz.jpg" alt="Ohio, Starbucks Global Icon"><figcaption>Ohio<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/oktoberfest-germany-global-icon-collector-16.jpg" alt="Oktoberfest Germany, Starbucks Global Icon"><figcaption>Oktoberfest Germany<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/oktoberfest-global-icon-collectible-mug-16oz.jpg" alt="Oktoberfest, Starbucks Global Icon"><figcaption>Oktoberfest<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/oman-global-icon-collectible-mug-16oz.jpg" alt="Oman, Starbucks Global Icon"><figcaption>Oman<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/orange-county-global-collectible-mug-16oz.jpg" alt="Orange County, Starbucks Global Icon"><figcaption>Orange County<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/orlando-global-collectible-mug-16oz.jpg" alt="Orlando, Starbucks Global Icon"><figcaption>Orlando<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/osaka-global-icon-collectible-mug-16oz.jpg" alt="Osaka, Starbucks Global Icon"><figcaption>Osaka<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/oslo-global-icon-collectible-mug-16oz.jpg" alt="Oslo, Starbucks Global Icon"><figcaption>Oslo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/osnabr-ck-global-icon-collectible-mug-16oz.jpg" alt="Osnabrück, Starbucks Global Icon"><figcaption>Osnabrück<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/ostrava-czech-republic-global-icon-collector.jpg" alt="Ostrava, Czech Republic, Starbucks Global Icon"><figcaption>Ostrava, Czech Republic<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/pampanga-global-collectible-mug-16oz.jpg" alt="Pampanga, Starbucks Global Icon"><figcaption>Pampanga<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/panama-global-icon-collectible-mug-16oz.jpg" alt="Panama, Starbucks Global Icon"><figcaption>Panama<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-1-global-icon-collectible-mug-16oz.jpg" alt="Paris (1), Starbucks Global Icon"><figcaption>Paris (1)<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-2-global-icon-collectible-mug-16oz.jpg" alt="Paris (2), Starbucks Global Icon"><figcaption>Paris (2)<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-global-icon-collectible-mug-16oz.jpg" alt="Paris, Starbucks Global Icon"><figcaption>Paris<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/pattaya-global-collectible-mug-16oz.jpg" alt="Pattaya, Starbucks Global Icon"><figcaption>Pattaya<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/penang-global-collectible-mug-16oz.jpg" alt="Penang, Starbucks Global Icon"><figcaption>Penang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/per-global-icon-collectible-mug-16oz.jpg" alt="Perú, Starbucks Global Icon"><figcaption>Perú<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/philadelphia-global-collectible-mug-16oz.jpg" alt="Philadelphia, Starbucks Global Icon"><figcaption>Philadelphia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/philippines-global-collectible-mug-16oz.jpg" alt="Philippines, Starbucks Global Icon"><figcaption>Philippines<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/phoenix-global-collectible-mug-16oz.jpg" alt="Phoenix, Starbucks Global Icon"><figcaption>Phoenix<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/phuket-thailand-global-collectible-mug-16oz.jpg" alt="Phuket, Thailand, Starbucks Global Icon"><figcaption>Phuket, Thailand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/phuket-thailand-global-icon-collector-city-s.jpg" alt="Phuket, Thailand, Starbucks Global Icon"><figcaption>Phuket, Thailand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/pike-place-market-global-collectible-mug-16o.jpg" alt="Pike Place Market, Starbucks Global Icon"><figcaption>Pike Place Market<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/pittsburgh-global-collectible-mug-16oz.jpg" alt="Pittsburgh, Starbucks Global Icon"><figcaption>Pittsburgh<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/playa-del-carmen-global-icon-collectible-mug.jpg" alt="Playa del Carmen, Starbucks Global Icon"><figcaption>Playa del Carmen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/poland-global-icon-collectible-mug-16oz.jpg" alt="Poland, Starbucks Global Icon"><figcaption>Poland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/portland-global-collectible-mug-16oz.jpg" alt="Portland, Starbucks Global Icon"><figcaption>Portland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/portugal-global-icon-collectible-mug-16oz.jpg" alt="Portugal, Starbucks Global Icon"><figcaption>Portugal<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/potsdam-global-icon-collectible-mug-16oz.jpg" alt="Potsdam, Starbucks Global Icon"><figcaption>Potsdam<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/poznan-global-icon-collectible-mug-16oz.jpg" alt="Poznan, Starbucks Global Icon"><figcaption>Poznan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/prague-global-icon-collectible-mug-16oz.jpg" alt="Prague, Starbucks Global Icon"><figcaption>Prague<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/puebla-global-icon-collectible-mug-16oz.jpg" alt="Puebla, Starbucks Global Icon"><figcaption>Puebla<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/puerto-rico-global-icon-collectible-mug-16oz.jpg" alt="Puerto Rico, Starbucks Global Icon"><figcaption>Puerto Rico<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/puerto-vallarta-global-collectible-mug-16oz.jpg" alt="Puerto Vallarta, Starbucks Global Icon"><figcaption>Puerto Vallarta<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/qatar-global-icon-collectible-mug-16oz.jpg" alt="Qatar, Starbucks Global Icon"><figcaption>Qatar<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/qingdao-global-collectible-mug-16oz.jpg" alt="Qingdao, Starbucks Global Icon"><figcaption>Qingdao<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/quebec-global-icon-collectible-mug-16oz.jpg" alt="Quebec, Starbucks Global Icon"><figcaption>Quebec<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/queretaro-global-icon-collectible-mug-16oz.jpg" alt="Queretaro, Starbucks Global Icon"><figcaption>Queretaro<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/rhodes-global-icon-collectible-mug-16oz.jpg" alt="Rhodes, Starbucks Global Icon"><figcaption>Rhodes<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/rio-de-janeiro-global-icon-collectible-mug-1.jpg" alt="Rio de Janeiro, Starbucks Global Icon"><figcaption>Rio de Janeiro<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/riyadh-global-icon-collectible-mug-16oz.jpg" alt="Riyadh, Starbucks Global Icon"><figcaption>Riyadh<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/romania-global-icon-collectible-mug-16oz.jpg" alt="Romania, Starbucks Global Icon"><figcaption>Romania<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/rosario-global-icon-collectible-mug-16oz.jpg" alt="Rosario, Starbucks Global Icon"><figcaption>Rosario<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/rostov-on-don-global-icon-collectible-mug-16.jpg" alt="Rostov-On-Don, Starbucks Global Icon"><figcaption>Rostov-On-Don<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/rotterdam-global-icon-collectible-mug-16oz.jpg" alt="Rotterdam, Starbucks Global Icon"><figcaption>Rotterdam<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/russia-global-icon-collectible-mug-16oz.jpg" alt="Russia, Starbucks Global Icon"><figcaption>Russia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/s-o-paulo-global-icon-collectible-mug-16oz.jpg" alt="São Paulo, Starbucks Global Icon"><figcaption>São Paulo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/saarbr-cken-global-icon-collectible-mug-16oz.jpg" alt="Saarbrücken, Starbucks Global Icon"><figcaption>Saarbrücken<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sabah-global-collectible-mug-16oz.jpg" alt="Sabah, Starbucks Global Icon"><figcaption>Sabah<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sacramento-global-collectible-mug-16oz.jpg" alt="Sacramento, Starbucks Global Icon"><figcaption>Sacramento<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/salzburg-global-icon-collectible-mug-16oz.jpg" alt="Salzburg, Starbucks Global Icon"><figcaption>Salzburg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/samara-global-icon-collectible-mug-16oz.jpg" alt="Samara, Starbucks Global Icon"><figcaption>Samara<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-antonio-global-collectible-mug-16oz.jpg" alt="San Antonio, Starbucks Global Icon"><figcaption>San Antonio<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-diego-global-collectible-mug-16oz.jpg" alt="San Diego, Starbucks Global Icon"><figcaption>San Diego<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-francisco-global-collectible-mug-16oz.jpg" alt="San Francisco, Starbucks Global Icon"><figcaption>San Francisco<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-miguel-de-allende-global-icon-collectibl.jpg" alt="San Miguel de Allende, Starbucks Global Icon"><figcaption>San Miguel de Allende<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sanya-global-collectible-mug-16oz.jpg" alt="Sanya, Starbucks Global Icon"><figcaption>Sanya<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sao-paulo-global-icon-collectible-mug-16oz.jpg" alt="Sao Paulo, Starbucks Global Icon"><figcaption>Sao Paulo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sapporo-global-icon-collectible-mug-16oz.jpg" alt="Sapporo, Starbucks Global Icon"><figcaption>Sapporo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/scotland-global-collectible-mug-16oz.jpg" alt="Scotland, Starbucks Global Icon"><figcaption>Scotland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/seattle-global-collectible-mug-16oz.jpg" alt="Seattle, Starbucks Global Icon"><figcaption>Seattle<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/seoul-global-collectible-mug-16oz.jpg" alt="Seoul, Starbucks Global Icon"><figcaption>Seoul<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sevilla-global-icon-collectible-mug-16oz.jpg" alt="Sevilla, Starbucks Global Icon"><figcaption>Sevilla<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/seville-global-icon-collectible-mug-16oz.jpg" alt="Seville, Starbucks Global Icon"><figcaption>Seville<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/shanghai-global-collectible-mug-16oz.jpg" alt="Shanghai, Starbucks Global Icon"><figcaption>Shanghai<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sharjah-global-icon-collectible-mug-16oz.jpg" alt="Sharjah, Starbucks Global Icon"><figcaption>Sharjah<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sharm-el-sheikh-global-icon-collectible-mug-.jpg" alt="Sharm El Sheikh, Starbucks Global Icon"><figcaption>Sharm El Sheikh<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/shenyang-global-collectible-mug-16oz.jpg" alt="Shenyang, Starbucks Global Icon"><figcaption>Shenyang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/shenzhen-global-collectible-mug-16oz.jpg" alt="Shenzhen, Starbucks Global Icon"><figcaption>Shenzhen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/shijiazhuang-global-collectible-mug-16oz.jpg" alt="Shijiazhuang, Starbucks Global Icon"><figcaption>Shijiazhuang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/singapore-global-collectible-mug-16oz.jpg" alt="Singapore, Starbucks Global Icon"><figcaption>Singapore<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sochi-global-icon-collectible-mug-16oz.jpg" alt="Sochi, Starbucks Global Icon"><figcaption>Sochi<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/south-africa-global-icon-collectible-mug-16o.jpg" alt="South Africa, Starbucks Global Icon"><figcaption>South Africa<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/south-island-new-zealand-global-collectible-.jpg" alt="South Island New Zealand, Starbucks Global Icon"><figcaption>South Island New Zealand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/spain-global-icon-collectible-mug-16oz.jpg" alt="Spain, Starbucks Global Icon"><figcaption>Spain<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-gallen-global-collectible-mug-16oz.jpg" alt="St. Gallen, Starbucks Global Icon"><figcaption>St. Gallen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-louis-global-collectible-mug-16oz.jpg" alt="St.Louis, Starbucks Global Icon"><figcaption>St.Louis<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-petersburg-russia-2015-city-mug-16oz-glob.jpg" alt="St Petersburg, Russia, Starbucks Global Icon"><figcaption>St Petersburg, Russia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/stockholm-global-icon-collectible-mug-16oz.jpg" alt="Stockholm, Starbucks Global Icon"><figcaption>Stockholm<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/stuttgart-global-icon-collectible-mug-16oz.jpg" alt="Stuttgart, Starbucks Global Icon"><figcaption>Stuttgart<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/suzhou-global-collectible-mug-16oz.jpg" alt="Suzhou, Starbucks Global Icon"><figcaption>Suzhou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sweden-global-collectible-mug-16oz.jpg" alt="Sweden, Starbucks Global Icon"><figcaption>Sweden<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/switzerland-global-collectible-mug-16oz.jpg" alt="Switzerland, Starbucks Global Icon"><figcaption>Switzerland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/switzerland-global-icon-collectible-mug-16oz.jpg" alt="Switzerland, Starbucks Global Icon"><figcaption>Switzerland<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/sydney-global-collectible-mug-16oz.jpg" alt="Sydney, Starbucks Global Icon"><figcaption>Sydney<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/szczecin-global-icon-collectible-mug-16oz.jpg" alt="Szczecin, Starbucks Global Icon"><figcaption>Szczecin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tagaytay-global-collectible-mug-16oz.jpg" alt="Tagaytay, Starbucks Global Icon"><figcaption>Tagaytay<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/taichung-global-collectible-mug-16oz.jpg" alt="Taichung, Starbucks Global Icon"><figcaption>Taichung<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tainan-global-collectible-mug-16oz.jpg" alt="Tainan, Starbucks Global Icon"><figcaption>Tainan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/taiwan-global-collectible-mug-16oz.jpg" alt="Taiwan, Starbucks Global Icon"><figcaption>Taiwan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/taiyuan-global-collectible-mug-16oz.jpg" alt="Taiyuan, Starbucks Global Icon"><figcaption>Taiyuan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tampa-global-collectible-mug-16oz.jpg" alt="Tampa, Starbucks Global Icon"><figcaption>Tampa<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tapiei-global-collectible-mug-16oz.jpg" alt="Tapiei, Starbucks Global Icon"><figcaption>Tapiei<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/thailand-global-collectible-mug-16oz.jpg" alt="Thailand, Starbucks Global Icon"><figcaption>Thailand<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/thessaloniki-global-icon-collectible-mug-16o.jpg" alt="Thessaloniki, Starbucks Global Icon"><figcaption>Thessaloniki<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tianjin-global-collectible-mug-16oz.jpg" alt="Tianjin, Starbucks Global Icon"><figcaption>Tianjin<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tokyo-global-icon-collectible-mug-16oz-2008.jpg" alt="Tokyo, Starbucks Global Icon"><figcaption>Tokyo<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/toronto-global-icon-collectible-mug-16oz.jpg" alt="Toronto, Starbucks Global Icon"><figcaption>Toronto<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/trinidad-tobago-global-icon-collectible-mug-.jpg" alt="Trinidad & Tobago, Starbucks Global Icon"><figcaption>Trinidad & Tobago<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/trondheim-global-collectible-mug-16oz.jpg" alt="Trondheim, Starbucks Global Icon"><figcaption>Trondheim<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/turkey-global-icon-collectible-mug-16oz.jpg" alt="Turkey, Starbucks Global Icon"><figcaption>Turkey<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/twin-cities-global-icon-collectible-mug-16oz.jpg" alt="Twin Cities, Starbucks Global Icon"><figcaption>Twin Cities<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/tyumen-global-collectible-mug-16oz.jpg" alt="Tyumen, Starbucks Global Icon"><figcaption>Tyumen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/united-arab-emirates-global-icon-collectible.jpg" alt="United Arab Emirates, Starbucks Global Icon"><figcaption>United Arab Emirates<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/utah-global-collectible-mug-16oz.jpg" alt="Utah, Starbucks Global Icon"><figcaption>Utah<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/valencia-global-icon-collectible-mug-16oz.jpg" alt="Valencia, Starbucks Global Icon"><figcaption>Valencia<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/vancouver-global-icon-collectible-mug-16oz.jpg" alt="Vancouver, Starbucks Global Icon"><figcaption>Vancouver<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/vancouver-island-global-icon-collectible-mug.jpg" alt="Vancouver Island, Starbucks Global Icon"><figcaption>Vancouver Island<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/veracruz-global-icon-collectible-mug-16oz.jpg" alt="Veracruz, Starbucks Global Icon"><figcaption>Veracruz<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/vienna-global-icon-collectible-mug-16oz.jpg" alt="Vienna, Starbucks Global Icon"><figcaption>Vienna<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/vietnam-global-collectible-mug-16oz.jpg" alt="Vietnam, Starbucks Global Icon"><figcaption>Vietnam<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/villahermosa-global-icon-collectible-mug-16o.jpg" alt="Villahermosa, Starbucks Global Icon"><figcaption>Villahermosa<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/waikiki-global-collectible-mug-16oz.jpg" alt="Waikiki, Starbucks Global Icon"><figcaption>Waikiki<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wales-global-icon-collectible-mug-16oz.jpg" alt="Wales, Starbucks Global Icon"><figcaption>Wales<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/warsaw-global-icon-collectible-mug-16oz.jpg" alt="Warsaw, Starbucks Global Icon"><figcaption>Warsaw<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/washington-d-c-global-collectible-mug-16oz.jpg" alt="Washington D.C., Starbucks Global Icon"><figcaption>Washington D.C.<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/washington-dc-global-icon-collectible-mug-16.jpg" alt="Washington DC, Starbucks Global Icon"><figcaption>Washington DC<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wellington-global-collectible-mug-16oz.jpg" alt="Wellington, Starbucks Global Icon"><figcaption>Wellington<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wellington-global-collectible-mug-16ozwellin.jpg" alt="Wellington, Starbucks Global Icon"><figcaption>Wellington<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/whistler-global-icon-collectible-mug-16oz.jpg" alt="Whistler, Starbucks Global Icon"><figcaption>Whistler<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wiesbaden-global-icon-collectible-mug-16oz.jpg" alt="Wiesbaden, Starbucks Global Icon"><figcaption>Wiesbaden<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wroclaw-global-icon-collectible-mug-16oz.jpg" alt="Wroclaw, Starbucks Global Icon"><figcaption>Wroclaw<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wuhan-global-collectible-mug-16oz.jpg" alt="Wuhan, Starbucks Global Icon"><figcaption>Wuhan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/wuhu-global-collectible-mug-16oz.jpg" alt="Wuhu, Starbucks Global Icon"><figcaption>Wuhu<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/xi-an-global-collectible-mug-16oz.jpg" alt="Xi'an, Starbucks Global Icon"><figcaption>Xi'an<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/xiamen-global-collectible-mug-16oz.jpg" alt="Xiamen, Starbucks Global Icon"><figcaption>Xiamen<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/xiangyang-global-collectible-mug-16oz.jpg" alt="Xiangyang, Starbucks Global Icon"><figcaption>Xiangyang<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/xining-global-collectible-mug-16oz.jpg" alt="Xining, Starbucks Global Icon"><figcaption>Xining<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/yaroslavl-global-collectible-mug-16oz.jpg" alt="Yaroslavl, Starbucks Global Icon"><figcaption>Yaroslavl<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/yekaterinburg-global-collectible-mug-16oz.jpg" alt="Yekaterinburg, Starbucks Global Icon"><figcaption>Yekaterinburg<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/yinchuan-global-collectible-mug-16oz.jpg" alt="Yinchuan, Starbucks Global Icon"><figcaption>Yinchuan<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/zhengzhou-global-collectible-mug-16oz.jpg" alt="Zhengzhou, Starbucks Global Icon"><figcaption>Zhengzhou<span>Global Icon</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/global-icon/zurich-global-icon-collectible-mug-16oz.jpg" alt="Zurich, Starbucks Global Icon"><figcaption>Zurich<span>Global Icon</span></figcaption></figure>
-  </div>
-  <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full Global Icon run, the largest in the archive, is being photographed in.</p>
+ <div class="reveal eyebrow">The worldwide line</div>
+ <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">One template, <span class="it">the whole planet.</span></h2>
+ <div class="mug-grid">
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/aachen-global-icon-collectible-mug-16oz.jpg" alt="Aachen, Starbucks Global Icon"><figcaption>Aachen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/aarhus-global-icon-collectible-mug-16oz.jpg" alt="Aarhus, Starbucks Global Icon"><figcaption>Aarhus<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/abu-dhabi-global-icon-collectible-mug-16oz.jpg" alt="Abu Dhabi, Starbucks Global Icon"><figcaption>Abu Dhabi<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/acapulco-global-icon-collectible-mug-16oz.jpg" alt="Acapulco, Starbucks Global Icon"><figcaption>Acapulco<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/alaska-global-collectible-mug-16oz.jpg" alt="Alaska, Starbucks Global Icon"><figcaption>Alaska<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/alicante-global-icon-collectible-mug-16oz.jpg" alt="Alicante, Starbucks Global Icon"><figcaption>Alicante<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/amsterdam-global-icon-collectible-mug-16oz.jpg" alt="Amsterdam, Starbucks Global Icon"><figcaption>Amsterdam<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ankara-global-icon-collectible-mug-16oz.jpg" alt="Ankara, Starbucks Global Icon"><figcaption>Ankara<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/antalya-global-icon-collectible-mug-16oz.jpg" alt="Antalya, Starbucks Global Icon"><figcaption>Antalya<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/arequipa-global-icon-collectible-mug-16oz.jpg" alt="Arequipa, Starbucks Global Icon"><figcaption>Arequipa<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/argentina-global-icon-collectible-mug-16oz.jpg" alt="Argentina, Starbucks Global Icon"><figcaption>Argentina<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/arizona-global-collectible-mug-16oz.jpg" alt="Arizona, Starbucks Global Icon"><figcaption>Arizona<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/arnhem-global-collectible-mug-16oz.jpg" alt="Arnhem, Starbucks Global Icon"><figcaption>Arnhem<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/aruba-global-icon-collectible-mug-16oz.jpg" alt="Aruba, Starbucks Global Icon"><figcaption>Aruba<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/athens-global-icon-collectible-mug-16oz.jpg" alt="Athens, Starbucks Global Icon"><figcaption>Athens<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/atlanta-global-collectible-mug-16oz.jpg" alt="Atlanta, Starbucks Global Icon"><figcaption>Atlanta<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/auckland-global-collectible-mug-16oz.jpg" alt="Auckland, Starbucks Global Icon"><figcaption>Auckland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/austin-global-collectible-mug-16oz.jpg" alt="Austin, Starbucks Global Icon"><figcaption>Austin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/australia-global-collectible-mug-16oz.jpg" alt="Australia, Starbucks Global Icon"><figcaption>Australia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/austria-global-icon-collectible-mug-16oz.jpg" alt="Austria, Starbucks Global Icon"><figcaption>Austria<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bacolod-global-collectible-mug-16oz.jpg" alt="Bacolod, Starbucks Global Icon"><figcaption>Bacolod<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/baguio-global-collectible-mug-16oz.jpg" alt="Baguio, Starbucks Global Icon"><figcaption>Baguio<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bahamas-global-collectible-mug-16oz.jpg" alt="Bahamas, Starbucks Global Icon"><figcaption>Bahamas<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bahrain-global-icon-collectible-mug-16oz.jpg" alt="Bahrain, Starbucks Global Icon"><figcaption>Bahrain<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bali-global-collectible-mug-16oz.jpg" alt="Bali, Starbucks Global Icon"><figcaption>Bali<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/banff-global-icon-collectible-mug-16oz.jpg" alt="Banff, Starbucks Global Icon"><figcaption>Banff<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bangkok-global-collectible-mug-16oz.jpg" alt="Bangkok, Starbucks Global Icon"><figcaption>Bangkok<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/barcelona-global-icon-collectible-mug-16oz.jpg" alt="Barcelona, Starbucks Global Icon"><figcaption>Barcelona<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/basel-global-collectible-mug-16oz.jpg" alt="Basel, Starbucks Global Icon"><figcaption>Basel<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/batangas-global-collectible-mug-16oz.jpg" alt="Batangas, Starbucks Global Icon"><figcaption>Batangas<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/beijing-global-collectible-mug-16oz.jpg" alt="Beijing, Starbucks Global Icon"><figcaption>Beijing<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/belfast-global-icon-collectible-mug-16oz.jpg" alt="Belfast, Starbucks Global Icon"><figcaption>Belfast<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/belgium-global-icon-collectible-mug-16oz.jpg" alt="Belgium, Starbucks Global Icon"><figcaption>Belgium<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bergen-global-collectible-mug-16oz.jpg" alt="Bergen, Starbucks Global Icon"><figcaption>Bergen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/berlin-global-icon-collectible-mug-16oz.jpg" alt="Berlin, Starbucks Global Icon"><figcaption>Berlin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/berne-global-collectible-mug-16oz.jpg" alt="Berne, Starbucks Global Icon"><figcaption>Berne<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bielefeld-global-icon-collectible-mug-16oz.jpg" alt="Bielefeld, Starbucks Global Icon"><figcaption>Bielefeld<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bonn-global-icon-collectible-mug-16oz.jpg" alt="Bonn, Starbucks Global Icon"><figcaption>Bonn<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/boracay-global-collectible-mug-16oz.jpg" alt="Boracay, Starbucks Global Icon"><figcaption>Boracay<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/boston-global-collectible-mug-16oz.jpg" alt="Boston, Starbucks Global Icon"><figcaption>Boston<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/brasil-global-icon-collectible-mug-16oz.jpg" alt="Brasil, Starbucks Global Icon"><figcaption>Brasil<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/braunschweig-global-icon-collectible-mug-16o.jpg" alt="Braunschweig, Starbucks Global Icon"><figcaption>Braunschweig<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bremen-global-icon-collectible-mug-16oz.jpg" alt="Bremen, Starbucks Global Icon"><figcaption>Bremen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/brisbane-global-collectible-mug-16oz.jpg" alt="Brisbane, Starbucks Global Icon"><figcaption>Brisbane<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/brugge-global-icon-collectible-mug-16oz.jpg" alt="Brugge, Starbucks Global Icon"><figcaption>Brugge<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/brunei-global-collectible-mug-16oz.jpg" alt="Brunei, Starbucks Global Icon"><figcaption>Brunei<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/brussels-global-icon-collectible-mug-16oz.jpg" alt="Brussels, Starbucks Global Icon"><figcaption>Brussels<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bucharest-global-icon-collectible-mug-16oz.jpg" alt="Bucharest, Starbucks Global Icon"><figcaption>Bucharest<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/budapest-global-icon-collectible-mug-16oz.jpg" alt="Budapest, Starbucks Global Icon"><figcaption>Budapest<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/buenos-aires-global-icon-collectible-mug-16o.jpg" alt="Buenos Aires, Starbucks Global Icon"><figcaption>Buenos Aires<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/bulgaria-global-icon-collectible-mug-16oz.jpg" alt="Bulgaria, Starbucks Global Icon"><figcaption>Bulgaria<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cagayan-de-oro-global-collectible-mug-16oz.jpg" alt="Cagayan de Oro, Starbucks Global Icon"><figcaption>Cagayan de Oro<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cairo-global-collectible-mug-16oz.jpg" alt="Cairo, Starbucks Global Icon"><figcaption>Cairo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/calgary-global-icon-collectible-mug-16oz.jpg" alt="Calgary, Starbucks Global Icon"><figcaption>Calgary<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/california-global-collectible-mug-16oz.jpg" alt="California, Starbucks Global Icon"><figcaption>California<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cambodia-global-collectible-mug-16oz.jpg" alt="Cambodia, Starbucks Global Icon"><figcaption>Cambodia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/canada-global-icon-collectible-mug-16oz.jpg" alt="Canada, Starbucks Global Icon"><figcaption>Canada<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cancun-global-collectible-mug-16oz.jpg" alt="Cancun, Starbucks Global Icon"><figcaption>Cancun<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cardiff-global-collectible-mug-16oz.jpg" alt="Cardiff, Starbucks Global Icon"><figcaption>Cardiff<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cebu-global-collectible-mug-16oz.jpg" alt="Cebu, Starbucks Global Icon"><figcaption>Cebu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/changchun-global-collectible-mug-16oz.jpg" alt="Changchun, Starbucks Global Icon"><figcaption>Changchun<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/changsha-global-collectible-mug-16oz.jpg" alt="Changsha, Starbucks Global Icon"><figcaption>Changsha<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/charlotte-global-icon-collectible-mug-16oz.jpg" alt="Charlotte, global icon Collectible, Starbucks Global Icon"><figcaption>Charlotte, global icon Collectible<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chengdu-global-collectible-mug-16oz.jpg" alt="Chengdu, Starbucks Global Icon"><figcaption>Chengdu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chiangmai-global-collectible-mug-16oz.jpg" alt="Chiangmai, Starbucks Global Icon"><figcaption>Chiangmai<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chiangmai-global-icon-collectible-mug-16oz.jpg" alt="Chiangmai, Starbucks Global Icon"><figcaption>Chiangmai<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chicago-global-collectible-mug-16oz.jpg" alt="Chicago, Starbucks Global Icon"><figcaption>Chicago<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chihuahua-global-icon-collectible-mug-16oz.jpg" alt="Chihuahua, Starbucks Global Icon"><figcaption>Chihuahua<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chile-global-icon-collectible-mug-16oz.jpg" alt="Chile, Starbucks Global Icon"><figcaption>Chile<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/china-global-collectible-mug-16oz.jpg" alt="China, Starbucks Global Icon"><figcaption>China<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/chongqing-global-collectible-mug-16oz.jpg" alt="Chongqing, Starbucks Global Icon"><figcaption>Chongqing<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ciudad-de-mexico-global-icon-collectible-mug.jpg" alt="Ciudad de Mexico, Starbucks Global Icon"><figcaption>Ciudad de Mexico<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cleveland-global-collectible-mug-16oz.jpg" alt="Cleveland, Starbucks Global Icon"><figcaption>Cleveland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/clug-napoca-global-icon-collectible-mug-16oz.jpg" alt="Clug-Napoca, Starbucks Global Icon"><figcaption>Clug-Napoca<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/colombia-global-icon-collectible-mug-16oz.jpg" alt="Colombia, Starbucks Global Icon"><figcaption>Colombia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/colorado-global-collectible-mug-16oz.jpg" alt="Colorado, Starbucks Global Icon"><figcaption>Colorado<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/copenhagen-global-icon-collectible-mug-16oz.jpg" alt="Copenhagen, Starbucks Global Icon"><figcaption>Copenhagen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/corfu-global-icon-collectible-mug-16oz.jpg" alt="Corfu, Starbucks Global Icon"><figcaption>Corfu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/costa-rica-global-icon-collectible-mug-16oz.jpg" alt="Costa Rica, Starbucks Global Icon"><figcaption>Costa Rica<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cozumel-global-icon-collectible-mug-16oz.jpg" alt="Cozumel, Starbucks Global Icon"><figcaption>Cozumel<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/crete-global-icon-collectible-mug-16oz.jpg" alt="Crete, Starbucks Global Icon"><figcaption>Crete<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cura-ao-global-icon-collectible-mug-16oz.jpg" alt="Curaçao, Starbucks Global Icon"><figcaption>Curaçao<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cusco-peru-global-icon-collector-city-series.jpg" alt="Cusco, Peru, Starbucks Global Icon"><figcaption>Cusco, Peru<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/cyprus-global-icon-collectible-mug-16oz.jpg" alt="Cyprus, Starbucks Global Icon"><figcaption>Cyprus<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/czech-republic-global-icon-collectible-mug-1.jpg" alt="Czech Republic, Starbucks Global Icon"><figcaption>Czech Republic<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/d-global-icon-collectible-mug-16oz.jpg" alt="Łódź, Starbucks Global Icon"><figcaption>Łódź<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/d-sseldorf-global-icon-collectible-mug-16oz.jpg" alt="Düsseldorf, Starbucks Global Icon"><figcaption>Düsseldorf<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/daegu-global-icon-city-mug.jpg" alt="Daegu, Starbucks Global Icon"><figcaption>Daegu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dali-city-global-collectible-mug-16oz.jpg" alt="Dali City, Starbucks Global Icon"><figcaption>Dali City<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dalian-global-collectible-mug-16oz.jpg" alt="Dalian, Starbucks Global Icon"><figcaption>Dalian<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dallas-global-collectible-mug-16oz.jpg" alt="Dallas, Starbucks Global Icon"><figcaption>Dallas<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/darmstadt-global-icon-collectible-mug-16oz.jpg" alt="Darmstadt, Starbucks Global Icon"><figcaption>Darmstadt<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/davao-global-collectible-mug-16oz.jpg" alt="Davao, Starbucks Global Icon"><figcaption>Davao<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/den-haag-global-icon-collectible-mug-16oz.jpg" alt="Den Haag, Starbucks Global Icon"><figcaption>Den Haag<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/denmark-global-icon-collectible-mug-16oz.jpg" alt="Denmark, Starbucks Global Icon"><figcaption>Denmark<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/denver-global-collectible-mug-16oz.jpg" alt="Denver, Starbucks Global Icon"><figcaption>Denver<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/detroit-global-collectible-mug-16oz.jpg" alt="Detroit, Starbucks Global Icon"><figcaption>Detroit<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dongguan-global-collectible-mug-16oz.jpg" alt="Dongguan, Starbucks Global Icon"><figcaption>Dongguan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dresden-global-icon-collectible-mug-16oz.jpg" alt="Dresden, Starbucks Global Icon"><figcaption>Dresden<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dubai-global-icon-collectible-mug-16oz.jpg" alt="Dubai, Starbucks Global Icon"><figcaption>Dubai<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/dublin-global-icon-collectible-mug-16oz.jpg" alt="Dublin, Starbucks Global Icon"><figcaption>Dublin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/edinburgh-global-collectible-mug-16oz.jpg" alt="Edinburgh, Starbucks Global Icon"><figcaption>Edinburgh<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/edmonton-global-icon-collectible-mug-16oz.jpg" alt="Edmonton, Starbucks Global Icon"><figcaption>Edmonton<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/egypt-global-collectible-mug-16oz.jpg" alt="Egypt, Starbucks Global Icon"><figcaption>Egypt<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/el-salvador-global-icon-collectible-mug-16oz.jpg" alt="El Salvador, Starbucks Global Icon"><figcaption>El Salvador<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/england-coat-of-arms-global-icon-collectible.jpg" alt="England Coat of Arms, Starbucks Global Icon"><figcaption>England Coat of Arms<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/england-global-icon-collectible-mug-16oz.jpg" alt="England, Starbucks Global Icon"><figcaption>England<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ensenada-global-icon-collectible-mug-16oz.jpg" alt="Ensenada, Starbucks Global Icon"><figcaption>Ensenada<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/finland-global-icon-collectible-mug-16oz.jpg" alt="Finland, Starbucks Global Icon"><figcaption>Finland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/florida-global-icon-collectible-mug-16oz.jpg" alt="Florida, Starbucks Global Icon"><figcaption>Florida<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/fort-worth-global-collectible-mug-16oz.jpg" alt="Fort Worth, Starbucks Global Icon"><figcaption>Fort Worth<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/foshan-global-collectible-mug-16oz.jpg" alt="Foshan, Starbucks Global Icon"><figcaption>Foshan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/france-global-icon-collectible-mug-16oz.jpg" alt="France, Starbucks Global Icon"><figcaption>France<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/frankfurt-global-icon-collectible-mug-16oz.jpg" alt="Frankfurt, Starbucks Global Icon"><figcaption>Frankfurt<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/freiburg-global-icon-collectible-mug-16oz.jpg" alt="Freiburg, Starbucks Global Icon"><figcaption>Freiburg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/fuzhou-global-collectible-mug-16oz.jpg" alt="Fuzhou, Starbucks Global Icon"><figcaption>Fuzhou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/gdansk-global-icon-collectible-mug-16oz.jpg" alt="Gdansk, Starbucks Global Icon"><figcaption>Gdansk<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/gdynia-global-icon-collectible-mug-16oz.jpg" alt="Gdynia, Starbucks Global Icon"><figcaption>Gdynia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/general-santos-global-collectible-mug-16oz.jpg" alt="General Santos, Starbucks Global Icon"><figcaption>General Santos<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/geneva-global-collectible-mug-16oz.jpg" alt="Geneva, Starbucks Global Icon"><figcaption>Geneva<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/gent-global-icon-collectible-mug-16oz.jpg" alt="Gent, Starbucks Global Icon"><figcaption>Gent<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/germany-global-icon-collectible-mug-16oz.jpg" alt="Germany, Starbucks Global Icon"><figcaption>Germany<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/glasgow-global-collectible-mug-16oz.jpg" alt="Glasgow, Starbucks Global Icon"><figcaption>Glasgow<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/gold-coast-global-collectible-mug-16oz.jpg" alt="Gold Coast, Starbucks Global Icon"><figcaption>Gold Coast<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/gothenburg-global-icon-collectible-mug-16oz.jpg" alt="Gothenburg, Starbucks Global Icon"><figcaption>Gothenburg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/greece-global-icon-collectible-mug-16oz.jpg" alt="Greece, Starbucks Global Icon"><figcaption>Greece<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/guadalajara-global-icon-collectible-mug-16oz.jpg" alt="Guadalajara, Starbucks Global Icon"><figcaption>Guadalajara<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/guatemala-global-icon-collectible-mug-16oz.jpg" alt="Guatemala, Starbucks Global Icon"><figcaption>Guatemala<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/guiyang-global-collectible-mug-16oz.jpg" alt="Guiyang, Starbucks Global Icon"><figcaption>Guiyang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/haikou-global-collectible-mug-16oz.jpg" alt="Haikou, Starbucks Global Icon"><figcaption>Haikou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hamburg-global-icon-collectible-mug-16oz.jpg" alt="Hamburg, Starbucks Global Icon"><figcaption>Hamburg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hamptons-global-collectible-mug-16oz.jpg" alt="Hamptons, Starbucks Global Icon"><figcaption>Hamptons<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hangzhou-global-collectible-mug-16oz.jpg" alt="Hangzhou, Starbucks Global Icon"><figcaption>Hangzhou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hannover-global-icon-collectible-mug-16oz.jpg" alt="Hannover, Starbucks Global Icon"><figcaption>Hannover<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hanoi-global-collectible-mug-16oz.jpg" alt="Hanoi, Starbucks Global Icon"><figcaption>Hanoi<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/harbin-global-collectible-mug-16oz.jpg" alt="Harbin, Starbucks Global Icon"><figcaption>Harbin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hawaii-global-collectible-mug-16oz.jpg" alt="Hawaii, Starbucks Global Icon"><figcaption>Hawaii<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hefei-global-collectible-mug-16oz.jpg" alt="Hefei, Starbucks Global Icon"><figcaption>Hefei<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/heidelberg-global-icon-collectible-mug-16oz.jpg" alt="Heidelberg, Starbucks Global Icon"><figcaption>Heidelberg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/helsinki-global-icon-collectible-mug-16oz.jpg" alt="Helsinki, Starbucks Global Icon"><figcaption>Helsinki<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hilversum-global-icon-collectible-mug-16oz.jpg" alt="Hilversum, Starbucks Global Icon"><figcaption>Hilversum<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ho-chi-minh-city-global-collectible-mug-16oz.jpg" alt="Ho Chi Minh City, Starbucks Global Icon"><figcaption>Ho Chi Minh City<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hong-kong-global-collectible-mug-16oz.jpg" alt="Hong Kong, Starbucks Global Icon"><figcaption>Hong Kong<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/houston-global-icon-collectible-mug-16oz.jpg" alt="Houston, Starbucks Global Icon"><figcaption>Houston<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/hungary-global-icon-collectible-mug-16oz.jpg" alt="Hungary, Starbucks Global Icon"><figcaption>Hungary<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/iloilo-global-collectible-mug-16oz.jpg" alt="Iloilo, Starbucks Global Icon"><figcaption>Iloilo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/india-global-icon-collectible-mug-16oz.jpg" alt="India, Starbucks Global Icon"><figcaption>India<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/indianapolis-global-collectible-mug-16oz.jpg" alt="Indianapolis, Starbucks Global Icon"><figcaption>Indianapolis<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/indonesia-global-collectible-mug-16oz.jpg" alt="Indonesia, Starbucks Global Icon"><figcaption>Indonesia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ireland-global-icon-collectible-mug-16oz.jpg" alt="Ireland, Starbucks Global Icon"><figcaption>Ireland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/istanbul-global-icon-collectible-mug-16oz.jpg" alt="Istanbul, Starbucks Global Icon"><figcaption>Istanbul<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/jacksonville-global-collectible-mug-16oz.jpg" alt="Jacksonville, Starbucks Global Icon"><figcaption>Jacksonville<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/jakarta-global-collectible-mug-16oz.jpg" alt="Jakarta, Starbucks Global Icon"><figcaption>Jakarta<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/jeddah-global-icon-collectible-mug-16oz.jpg" alt="Jeddah, Starbucks Global Icon"><figcaption>Jeddah<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/jinan-global-collectible-mug-16oz.jpg" alt="Jinan, Starbucks Global Icon"><figcaption>Jinan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/jordan-global-icon-collectible-mug-16oz.jpg" alt="Jordan, Starbucks Global Icon"><figcaption>Jordan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/k-ln-global-icon-collectible-mug-16oz.jpg" alt="Köln, Starbucks Global Icon"><figcaption>Köln<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kaohsiung-global-collectible-mug-16oz.jpg" alt="Kaohsiung, Starbucks Global Icon"><figcaption>Kaohsiung<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kaohsiung-global-icon-collectible-mug-16oz.jpg" alt="Kaohsiung, Starbucks Global Icon"><figcaption>Kaohsiung<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/karlsruhe-global-icon-collectible-mug-16oz.jpg" alt="Karlsruhe, Starbucks Global Icon"><figcaption>Karlsruhe<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/karneval-global-icon-collectible-mug-16oz.jpg" alt="Karneval, Starbucks Global Icon"><figcaption>Karneval<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kassel-global-icon-collectible-mug-16oz.jpg" alt="Kassel, Starbucks Global Icon"><figcaption>Kassel<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/katowice-poland-global-icon-collector-city-s.jpg" alt="Katowice, Poland, Starbucks Global Icon"><figcaption>Katowice, Poland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kiel-global-icon-collectible-mug-16oz.jpg" alt="Kiel, Starbucks Global Icon"><figcaption>Kiel<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kingdom-of-saudi-arabia-global-icon-collecti.jpg" alt="Kingdom of Saudi Arabia, Starbucks Global Icon"><figcaption>Kingdom of Saudi Arabia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/korea-global-collectible-mug-16oz.jpg" alt="Korea, Starbucks Global Icon"><figcaption>Korea<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/krak-w-global-icon-collectible-mug-16oz.jpg" alt="Kraków, Starbucks Global Icon"><figcaption>Kraków<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/krasnodar-global-collectible-mug-16oz.jpg" alt="Krasnodar, Starbucks Global Icon"><figcaption>Krasnodar<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kuala-lumpur-global-collectible-mug-16oz.jpg" alt="Kuala Lumpur, Starbucks Global Icon"><figcaption>Kuala Lumpur<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kunming-global-collectible-mug-16oz.jpg" alt="Kunming, Starbucks Global Icon"><figcaption>Kunming<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/kuwait-global-icon-collectible-mug-16oz.jpg" alt="Kuwait, Starbucks Global Icon"><figcaption>Kuwait<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lake-tahoe-global-collectible-mug-16oz.jpg" alt="Lake Tahoe, Starbucks Global Icon"><figcaption>Lake Tahoe<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lanzhou-global-collectible-mug-16oz.jpg" alt="Lanzhou, Starbucks Global Icon"><figcaption>Lanzhou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/las-vegas-global-icon-collectible-mug-16oz.jpg" alt="Las Vegas, Global icon Collectible, Starbucks Global Icon"><figcaption>Las Vegas, Global icon Collectible<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lausanne-global-icon-collectible-mug-16oz.jpg" alt="Lausanne, Starbucks Global Icon"><figcaption>Lausanne<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lebanon-global-icon-collectible-mug-16oz.jpg" alt="Lebanon, Starbucks Global Icon"><figcaption>Lebanon<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/leipzig-global-icon-collectible-mug-16oz.jpg" alt="Leipzig, Starbucks Global Icon"><figcaption>Leipzig<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/leon-global-icon-collectible-mug-16oz.jpg" alt="Leon, Starbucks Global Icon"><figcaption>Leon<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/leshan-global-collectible-mug-16oz.jpg" alt="Leshan, Starbucks Global Icon"><figcaption>Leshan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lijiang-global-collectible-mug-16oz.jpg" alt="Lijiang, Starbucks Global Icon"><figcaption>Lijiang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lima-global-icon-collectible-mug-16oz.jpg" alt="Lima, Starbucks Global Icon"><figcaption>Lima<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/london-global-icon-collectible-mug-16oz.jpg" alt="London, Global icon collectible mu, Starbucks Global Icon"><figcaption>London, Global icon collectible mu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/los-angeles-global-collectible-mug-16oz.jpg" alt="Los Angeles, Starbucks Global Icon"><figcaption>Los Angeles<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/los-cabos-global-icon-collectible-mug-16oz.jpg" alt="Los Cabos, Starbucks Global Icon"><figcaption>Los Cabos<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lucerene-global-collectible-mug-16oz.jpg" alt="Lucerene, Starbucks Global Icon"><figcaption>Lucerene<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/lyon-global-icon-collectible-mug-16oz.jpg" alt="Lyon, Starbucks Global Icon"><figcaption>Lyon<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/m-nchen-global-icon-collectible-mug-16oz.jpg" alt="München, Starbucks Global Icon"><figcaption>München<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/m-nster-global-icon-collectible-mug-16oz.jpg" alt="Münster, Starbucks Global Icon"><figcaption>Münster<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/macau-global-collectible-mug-16oz.jpg" alt="Macau, Starbucks Global Icon"><figcaption>Macau<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/madrid-global-icon-collectible-mug-16oz.jpg" alt="Madrid, Starbucks Global Icon"><figcaption>Madrid<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/makati-global-collectible-mug-16oz.jpg" alt="Makati, Starbucks Global Icon"><figcaption>Makati<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/malaga-global-icon-collectible-mug-16oz.jpg" alt="Malaga, Starbucks Global Icon"><figcaption>Malaga<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/malaysia-global-collectible-mug-16oz.jpg" alt="Malaysia, Starbucks Global Icon"><figcaption>Malaysia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/malmo-global-icon-collectible-mug-16oz.jpg" alt="Malmo, Starbucks Global Icon"><figcaption>Malmo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/manchester-global-icon-collectible-mug-16oz.jpg" alt="Manchester, Starbucks Global Icon"><figcaption>Manchester<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/manila-global-collectible-mug-16oz.jpg" alt="Manila, Starbucks Global Icon"><figcaption>Manila<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/mannheim-global-icon-collectible-mug-16oz.jpg" alt="Mannheim, Starbucks Global Icon"><figcaption>Mannheim<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/marseille-global-icon-collectible-mug-16oz.jpg" alt="Marseille, Starbucks Global Icon"><figcaption>Marseille<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/melbourne-global-collectible-mug-16oz.jpg" alt="Melbourne, Starbucks Global Icon"><figcaption>Melbourne<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/memphis-global-collectible-mug-16oz.jpg" alt="Memphis, Starbucks Global Icon"><figcaption>Memphis<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/merida-global-icon-collectible-mug-16oz.jpg" alt="Merida, Starbucks Global Icon"><figcaption>Merida<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/mexico-global-icon-collectible-mug-16oz.jpg" alt="Mexico, Starbucks Global Icon"><figcaption>Mexico<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/miami-global-collectible-mug-16oz.jpg" alt="Miami, Starbucks Global Icon"><figcaption>Miami<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/mianyang-global-collectible-mug-16oz.jpg" alt="Mianyang, Starbucks Global Icon"><figcaption>Mianyang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/moerlia-global-icon-collectible-mug-16oz.jpg" alt="Moerlia, Starbucks Global Icon"><figcaption>Moerlia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/montreal-global-icon-collectible-mug-16oz.jpg" alt="Montreal, Starbucks Global Icon"><figcaption>Montreal<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/morocco-global-icon-collectible-mug-16oz.jpg" alt="Morocco, Starbucks Global Icon"><figcaption>Morocco<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/moscow-global-icon-collectible-mug-16oz.jpg" alt="Moscow, Starbucks Global Icon"><figcaption>Moscow<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/mykonos-global-icon-collectible-mug-16oz.jpg" alt="Mykonos, Starbucks Global Icon"><figcaption>Mykonos<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/n-rnberg-global-icon-collectible-mug-16oz.jpg" alt="Nürnberg, Starbucks Global Icon"><figcaption>Nürnberg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/naga-global-collectible-mug-16oz.jpg" alt="Naga, Starbucks Global Icon"><figcaption>Naga<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/namur-global-icon-collectible-mug-16oz.jpg" alt="Namur, Starbucks Global Icon"><figcaption>Namur<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanchang-global-collectible-mug-16oz.jpg" alt="Nanchang, Starbucks Global Icon"><figcaption>Nanchang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanjing-global-collectible-mug-16oz.jpg" alt="Nanjing, Starbucks Global Icon"><figcaption>Nanjing<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/nanning-global-collectible-mug-16oz.jpg" alt="Nanning, Starbucks Global Icon"><figcaption>Nanning<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/nashville-global-collectible-mug-16oz.jpg" alt="Nashville, Starbucks Global Icon"><figcaption>Nashville<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/netherlands-global-icon-collectible-mug-16oz.jpg" alt="Netherlands, Starbucks Global Icon"><figcaption>Netherlands<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-mexico-global-collectible-mug-16oz.jpg" alt="New Mexico, Starbucks Global Icon"><figcaption>New Mexico<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-york-city-global-collectible-mug-16oz.jpg" alt="New York City, Starbucks Global Icon"><figcaption>New York City<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/new-zealand-global-icon-collectible-mug-16oz.jpg" alt="New Zealand, Starbucks Global Icon"><figcaption>New Zealand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/niagara-falls-global-collectible-mug-16oz.jpg" alt="Niagara Falls, Starbucks Global Icon"><figcaption>Niagara Falls<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/niagara-falls-global-icon-collectible-mug-16.jpg" alt="Niagara Falls, Starbucks Global Icon"><figcaption>Niagara Falls<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/nijmgen-global-icon-collectible-mug-16oz.jpg" alt="Nijmgen, Starbucks Global Icon"><figcaption>Nijmgen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ningbo-global-collectible-mug-16oz.jpg" alt="Ningbo, Starbucks Global Icon"><figcaption>Ningbo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/north-carolina-global-collectible-mug-16oz.jpg" alt="North Carolina, Starbucks Global Icon"><figcaption>North Carolina<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/north-island-new-zealand-global-icon-collect.jpg" alt="North Island New Zealand, Starbucks Global Icon"><figcaption>North Island New Zealand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/northern-ireland-global-collectible-mug-16oz.jpg" alt="Northern Ireland, Starbucks Global Icon"><figcaption>Northern Ireland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/norway-global-icon-collectible-mug-16oz.jpg" alt="Norway, Starbucks Global Icon"><figcaption>Norway<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ohio-global-collectible-mug-16oz.jpg" alt="Ohio, Starbucks Global Icon"><figcaption>Ohio<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/oktoberfest-germany-global-icon-collector-16.jpg" alt="Oktoberfest Germany, Starbucks Global Icon"><figcaption>Oktoberfest Germany<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/oktoberfest-global-icon-collectible-mug-16oz.jpg" alt="Oktoberfest, Starbucks Global Icon"><figcaption>Oktoberfest<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/oman-global-icon-collectible-mug-16oz.jpg" alt="Oman, Starbucks Global Icon"><figcaption>Oman<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/orange-county-global-collectible-mug-16oz.jpg" alt="Orange County, Starbucks Global Icon"><figcaption>Orange County<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/orlando-global-collectible-mug-16oz.jpg" alt="Orlando, Starbucks Global Icon"><figcaption>Orlando<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/osaka-global-icon-collectible-mug-16oz.jpg" alt="Osaka, Starbucks Global Icon"><figcaption>Osaka<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/oslo-global-icon-collectible-mug-16oz.jpg" alt="Oslo, Starbucks Global Icon"><figcaption>Oslo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/osnabr-ck-global-icon-collectible-mug-16oz.jpg" alt="Osnabrück, Starbucks Global Icon"><figcaption>Osnabrück<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/ostrava-czech-republic-global-icon-collector.jpg" alt="Ostrava, Czech Republic, Starbucks Global Icon"><figcaption>Ostrava, Czech Republic<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/pampanga-global-collectible-mug-16oz.jpg" alt="Pampanga, Starbucks Global Icon"><figcaption>Pampanga<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/panama-global-icon-collectible-mug-16oz.jpg" alt="Panama, Starbucks Global Icon"><figcaption>Panama<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-1-global-icon-collectible-mug-16oz.jpg" alt="Paris (1), Starbucks Global Icon"><figcaption>Paris (1)<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-2-global-icon-collectible-mug-16oz.jpg" alt="Paris (2), Starbucks Global Icon"><figcaption>Paris (2)<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/paris-global-icon-collectible-mug-16oz.jpg" alt="Paris, Starbucks Global Icon"><figcaption>Paris<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/pattaya-global-collectible-mug-16oz.jpg" alt="Pattaya, Starbucks Global Icon"><figcaption>Pattaya<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/penang-global-collectible-mug-16oz.jpg" alt="Penang, Starbucks Global Icon"><figcaption>Penang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/per-global-icon-collectible-mug-16oz.jpg" alt="Perú, Starbucks Global Icon"><figcaption>Perú<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/philadelphia-global-collectible-mug-16oz.jpg" alt="Philadelphia, Starbucks Global Icon"><figcaption>Philadelphia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/philippines-global-collectible-mug-16oz.jpg" alt="Philippines, Starbucks Global Icon"><figcaption>Philippines<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/phoenix-global-collectible-mug-16oz.jpg" alt="Phoenix, Starbucks Global Icon"><figcaption>Phoenix<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/phuket-thailand-global-collectible-mug-16oz.jpg" alt="Phuket, Thailand, Starbucks Global Icon"><figcaption>Phuket, Thailand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/phuket-thailand-global-icon-collector-city-s.jpg" alt="Phuket, Thailand, Starbucks Global Icon"><figcaption>Phuket, Thailand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/pike-place-market-global-collectible-mug-16o.jpg" alt="Pike Place Market, Starbucks Global Icon"><figcaption>Pike Place Market<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/pittsburgh-global-collectible-mug-16oz.jpg" alt="Pittsburgh, Starbucks Global Icon"><figcaption>Pittsburgh<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/playa-del-carmen-global-icon-collectible-mug.jpg" alt="Playa del Carmen, Starbucks Global Icon"><figcaption>Playa del Carmen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/poland-global-icon-collectible-mug-16oz.jpg" alt="Poland, Starbucks Global Icon"><figcaption>Poland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/portland-global-collectible-mug-16oz.jpg" alt="Portland, Starbucks Global Icon"><figcaption>Portland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/portugal-global-icon-collectible-mug-16oz.jpg" alt="Portugal, Starbucks Global Icon"><figcaption>Portugal<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/potsdam-global-icon-collectible-mug-16oz.jpg" alt="Potsdam, Starbucks Global Icon"><figcaption>Potsdam<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/poznan-global-icon-collectible-mug-16oz.jpg" alt="Poznan, Starbucks Global Icon"><figcaption>Poznan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/prague-global-icon-collectible-mug-16oz.jpg" alt="Prague, Starbucks Global Icon"><figcaption>Prague<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/puebla-global-icon-collectible-mug-16oz.jpg" alt="Puebla, Starbucks Global Icon"><figcaption>Puebla<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/puerto-rico-global-icon-collectible-mug-16oz.jpg" alt="Puerto Rico, Starbucks Global Icon"><figcaption>Puerto Rico<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/puerto-vallarta-global-collectible-mug-16oz.jpg" alt="Puerto Vallarta, Starbucks Global Icon"><figcaption>Puerto Vallarta<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/qatar-global-icon-collectible-mug-16oz.jpg" alt="Qatar, Starbucks Global Icon"><figcaption>Qatar<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/qingdao-global-collectible-mug-16oz.jpg" alt="Qingdao, Starbucks Global Icon"><figcaption>Qingdao<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/quebec-global-icon-collectible-mug-16oz.jpg" alt="Quebec, Starbucks Global Icon"><figcaption>Quebec<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/queretaro-global-icon-collectible-mug-16oz.jpg" alt="Queretaro, Starbucks Global Icon"><figcaption>Queretaro<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/rhodes-global-icon-collectible-mug-16oz.jpg" alt="Rhodes, Starbucks Global Icon"><figcaption>Rhodes<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/rio-de-janeiro-global-icon-collectible-mug-1.jpg" alt="Rio de Janeiro, Starbucks Global Icon"><figcaption>Rio de Janeiro<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/riyadh-global-icon-collectible-mug-16oz.jpg" alt="Riyadh, Starbucks Global Icon"><figcaption>Riyadh<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/romania-global-icon-collectible-mug-16oz.jpg" alt="Romania, Starbucks Global Icon"><figcaption>Romania<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/rosario-global-icon-collectible-mug-16oz.jpg" alt="Rosario, Starbucks Global Icon"><figcaption>Rosario<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/rostov-on-don-global-icon-collectible-mug-16.jpg" alt="Rostov-On-Don, Starbucks Global Icon"><figcaption>Rostov-On-Don<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/rotterdam-global-icon-collectible-mug-16oz.jpg" alt="Rotterdam, Starbucks Global Icon"><figcaption>Rotterdam<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/russia-global-icon-collectible-mug-16oz.jpg" alt="Russia, Starbucks Global Icon"><figcaption>Russia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/s-o-paulo-global-icon-collectible-mug-16oz.jpg" alt="São Paulo, Starbucks Global Icon"><figcaption>São Paulo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/saarbr-cken-global-icon-collectible-mug-16oz.jpg" alt="Saarbrücken, Starbucks Global Icon"><figcaption>Saarbrücken<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sabah-global-collectible-mug-16oz.jpg" alt="Sabah, Starbucks Global Icon"><figcaption>Sabah<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sacramento-global-collectible-mug-16oz.jpg" alt="Sacramento, Starbucks Global Icon"><figcaption>Sacramento<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/salzburg-global-icon-collectible-mug-16oz.jpg" alt="Salzburg, Starbucks Global Icon"><figcaption>Salzburg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/samara-global-icon-collectible-mug-16oz.jpg" alt="Samara, Starbucks Global Icon"><figcaption>Samara<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-antonio-global-collectible-mug-16oz.jpg" alt="San Antonio, Starbucks Global Icon"><figcaption>San Antonio<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-diego-global-collectible-mug-16oz.jpg" alt="San Diego, Starbucks Global Icon"><figcaption>San Diego<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-francisco-global-collectible-mug-16oz.jpg" alt="San Francisco, Starbucks Global Icon"><figcaption>San Francisco<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/san-miguel-de-allende-global-icon-collectibl.jpg" alt="San Miguel de Allende, Starbucks Global Icon"><figcaption>San Miguel de Allende<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sanya-global-collectible-mug-16oz.jpg" alt="Sanya, Starbucks Global Icon"><figcaption>Sanya<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sao-paulo-global-icon-collectible-mug-16oz.jpg" alt="Sao Paulo, Starbucks Global Icon"><figcaption>Sao Paulo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sapporo-global-icon-collectible-mug-16oz.jpg" alt="Sapporo, Starbucks Global Icon"><figcaption>Sapporo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/scotland-global-collectible-mug-16oz.jpg" alt="Scotland, Starbucks Global Icon"><figcaption>Scotland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/seattle-global-collectible-mug-16oz.jpg" alt="Seattle, Starbucks Global Icon"><figcaption>Seattle<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/seoul-global-collectible-mug-16oz.jpg" alt="Seoul, Starbucks Global Icon"><figcaption>Seoul<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sevilla-global-icon-collectible-mug-16oz.jpg" alt="Sevilla, Starbucks Global Icon"><figcaption>Sevilla<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/seville-global-icon-collectible-mug-16oz.jpg" alt="Seville, Starbucks Global Icon"><figcaption>Seville<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/shanghai-global-collectible-mug-16oz.jpg" alt="Shanghai, Starbucks Global Icon"><figcaption>Shanghai<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sharjah-global-icon-collectible-mug-16oz.jpg" alt="Sharjah, Starbucks Global Icon"><figcaption>Sharjah<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sharm-el-sheikh-global-icon-collectible-mug-.jpg" alt="Sharm El Sheikh, Starbucks Global Icon"><figcaption>Sharm El Sheikh<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/shenyang-global-collectible-mug-16oz.jpg" alt="Shenyang, Starbucks Global Icon"><figcaption>Shenyang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/shenzhen-global-collectible-mug-16oz.jpg" alt="Shenzhen, Starbucks Global Icon"><figcaption>Shenzhen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/shijiazhuang-global-collectible-mug-16oz.jpg" alt="Shijiazhuang, Starbucks Global Icon"><figcaption>Shijiazhuang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/singapore-global-collectible-mug-16oz.jpg" alt="Singapore, Starbucks Global Icon"><figcaption>Singapore<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sochi-global-icon-collectible-mug-16oz.jpg" alt="Sochi, Starbucks Global Icon"><figcaption>Sochi<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/south-africa-global-icon-collectible-mug-16o.jpg" alt="South Africa, Starbucks Global Icon"><figcaption>South Africa<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/south-island-new-zealand-global-collectible-.jpg" alt="South Island New Zealand, Starbucks Global Icon"><figcaption>South Island New Zealand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/spain-global-icon-collectible-mug-16oz.jpg" alt="Spain, Starbucks Global Icon"><figcaption>Spain<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-gallen-global-collectible-mug-16oz.jpg" alt="St. Gallen, Starbucks Global Icon"><figcaption>St. Gallen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-louis-global-collectible-mug-16oz.jpg" alt="St.Louis, Starbucks Global Icon"><figcaption>St.Louis<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/st-petersburg-russia-2015-city-mug-16oz-glob.jpg" alt="St Petersburg, Russia, Starbucks Global Icon"><figcaption>St Petersburg, Russia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/stockholm-global-icon-collectible-mug-16oz.jpg" alt="Stockholm, Starbucks Global Icon"><figcaption>Stockholm<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/stuttgart-global-icon-collectible-mug-16oz.jpg" alt="Stuttgart, Starbucks Global Icon"><figcaption>Stuttgart<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/suzhou-global-collectible-mug-16oz.jpg" alt="Suzhou, Starbucks Global Icon"><figcaption>Suzhou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sweden-global-collectible-mug-16oz.jpg" alt="Sweden, Starbucks Global Icon"><figcaption>Sweden<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/switzerland-global-collectible-mug-16oz.jpg" alt="Switzerland, Starbucks Global Icon"><figcaption>Switzerland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/switzerland-global-icon-collectible-mug-16oz.jpg" alt="Switzerland, Starbucks Global Icon"><figcaption>Switzerland<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/sydney-global-collectible-mug-16oz.jpg" alt="Sydney, Starbucks Global Icon"><figcaption>Sydney<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/szczecin-global-icon-collectible-mug-16oz.jpg" alt="Szczecin, Starbucks Global Icon"><figcaption>Szczecin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tagaytay-global-collectible-mug-16oz.jpg" alt="Tagaytay, Starbucks Global Icon"><figcaption>Tagaytay<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/taichung-global-collectible-mug-16oz.jpg" alt="Taichung, Starbucks Global Icon"><figcaption>Taichung<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tainan-global-collectible-mug-16oz.jpg" alt="Tainan, Starbucks Global Icon"><figcaption>Tainan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/taiwan-global-collectible-mug-16oz.jpg" alt="Taiwan, Starbucks Global Icon"><figcaption>Taiwan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/taiyuan-global-collectible-mug-16oz.jpg" alt="Taiyuan, Starbucks Global Icon"><figcaption>Taiyuan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tampa-global-collectible-mug-16oz.jpg" alt="Tampa, Starbucks Global Icon"><figcaption>Tampa<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tapiei-global-collectible-mug-16oz.jpg" alt="Tapiei, Starbucks Global Icon"><figcaption>Tapiei<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/thailand-global-collectible-mug-16oz.jpg" alt="Thailand, Starbucks Global Icon"><figcaption>Thailand<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/thessaloniki-global-icon-collectible-mug-16o.jpg" alt="Thessaloniki, Starbucks Global Icon"><figcaption>Thessaloniki<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tianjin-global-collectible-mug-16oz.jpg" alt="Tianjin, Starbucks Global Icon"><figcaption>Tianjin<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tokyo-global-icon-collectible-mug-16oz-2008.jpg" alt="Tokyo, Starbucks Global Icon"><figcaption>Tokyo<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/toronto-global-icon-collectible-mug-16oz.jpg" alt="Toronto, Starbucks Global Icon"><figcaption>Toronto<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/trinidad-tobago-global-icon-collectible-mug-.jpg" alt="Trinidad & Tobago, Starbucks Global Icon"><figcaption>Trinidad & Tobago<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/trondheim-global-collectible-mug-16oz.jpg" alt="Trondheim, Starbucks Global Icon"><figcaption>Trondheim<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/turkey-global-icon-collectible-mug-16oz.jpg" alt="Turkey, Starbucks Global Icon"><figcaption>Turkey<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/twin-cities-global-icon-collectible-mug-16oz.jpg" alt="Twin Cities, Starbucks Global Icon"><figcaption>Twin Cities<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/tyumen-global-collectible-mug-16oz.jpg" alt="Tyumen, Starbucks Global Icon"><figcaption>Tyumen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/united-arab-emirates-global-icon-collectible.jpg" alt="United Arab Emirates, Starbucks Global Icon"><figcaption>United Arab Emirates<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/utah-global-collectible-mug-16oz.jpg" alt="Utah, Starbucks Global Icon"><figcaption>Utah<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/valencia-global-icon-collectible-mug-16oz.jpg" alt="Valencia, Starbucks Global Icon"><figcaption>Valencia<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/vancouver-global-icon-collectible-mug-16oz.jpg" alt="Vancouver, Starbucks Global Icon"><figcaption>Vancouver<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/vancouver-island-global-icon-collectible-mug.jpg" alt="Vancouver Island, Starbucks Global Icon"><figcaption>Vancouver Island<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/veracruz-global-icon-collectible-mug-16oz.jpg" alt="Veracruz, Starbucks Global Icon"><figcaption>Veracruz<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/vienna-global-icon-collectible-mug-16oz.jpg" alt="Vienna, Starbucks Global Icon"><figcaption>Vienna<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/vietnam-global-collectible-mug-16oz.jpg" alt="Vietnam, Starbucks Global Icon"><figcaption>Vietnam<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/villahermosa-global-icon-collectible-mug-16o.jpg" alt="Villahermosa, Starbucks Global Icon"><figcaption>Villahermosa<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/waikiki-global-collectible-mug-16oz.jpg" alt="Waikiki, Starbucks Global Icon"><figcaption>Waikiki<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wales-global-icon-collectible-mug-16oz.jpg" alt="Wales, Starbucks Global Icon"><figcaption>Wales<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/warsaw-global-icon-collectible-mug-16oz.jpg" alt="Warsaw, Starbucks Global Icon"><figcaption>Warsaw<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/washington-d-c-global-collectible-mug-16oz.jpg" alt="Washington D.C., Starbucks Global Icon"><figcaption>Washington D.C.<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/washington-dc-global-icon-collectible-mug-16.jpg" alt="Washington DC, Starbucks Global Icon"><figcaption>Washington DC<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wellington-global-collectible-mug-16oz.jpg" alt="Wellington, Starbucks Global Icon"><figcaption>Wellington<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wellington-global-collectible-mug-16ozwellin.jpg" alt="Wellington, Starbucks Global Icon"><figcaption>Wellington<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/whistler-global-icon-collectible-mug-16oz.jpg" alt="Whistler, Starbucks Global Icon"><figcaption>Whistler<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wiesbaden-global-icon-collectible-mug-16oz.jpg" alt="Wiesbaden, Starbucks Global Icon"><figcaption>Wiesbaden<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wroclaw-global-icon-collectible-mug-16oz.jpg" alt="Wroclaw, Starbucks Global Icon"><figcaption>Wroclaw<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wuhan-global-collectible-mug-16oz.jpg" alt="Wuhan, Starbucks Global Icon"><figcaption>Wuhan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/wuhu-global-collectible-mug-16oz.jpg" alt="Wuhu, Starbucks Global Icon"><figcaption>Wuhu<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/xi-an-global-collectible-mug-16oz.jpg" alt="Xi'an, Starbucks Global Icon"><figcaption>Xi'an<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/xiamen-global-collectible-mug-16oz.jpg" alt="Xiamen, Starbucks Global Icon"><figcaption>Xiamen<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/xiangyang-global-collectible-mug-16oz.jpg" alt="Xiangyang, Starbucks Global Icon"><figcaption>Xiangyang<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/xining-global-collectible-mug-16oz.jpg" alt="Xining, Starbucks Global Icon"><figcaption>Xining<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/yaroslavl-global-collectible-mug-16oz.jpg" alt="Yaroslavl, Starbucks Global Icon"><figcaption>Yaroslavl<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/yekaterinburg-global-collectible-mug-16oz.jpg" alt="Yekaterinburg, Starbucks Global Icon"><figcaption>Yekaterinburg<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/yinchuan-global-collectible-mug-16oz.jpg" alt="Yinchuan, Starbucks Global Icon"><figcaption>Yinchuan<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/zhengzhou-global-collectible-mug-16oz.jpg" alt="Zhengzhou, Starbucks Global Icon"><figcaption>Zhengzhou<span>Global Icon</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/global-icon/zurich-global-icon-collectible-mug-16oz.jpg" alt="Zurich, Starbucks Global Icon"><figcaption>Zurich<span>Global Icon</span></figcaption></figure>
+ </div>
+ <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full Global Icon run, the largest in the archive, is being photographed in.</p>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
@@ -819,73 +819,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

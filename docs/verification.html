@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,170 +223,170 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== VERIFICATION HERO, "Authenticated" forensic seal ===== */
 .ver-hero{
-  position:relative;min-height:100vh;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;text-align:center;
-  padding:140px 32px 90px;
-  background:#163026;
-  overflow:hidden;
+ position:relative;min-height:100vh;display:flex;flex-direction:column;
+ justify-content:center;align-items:center;text-align:center;
+ padding:140px 32px 90px;
+ background:#163026;
+ overflow:hidden;
 }
 
 /* film grain */
 .ver-grain{
-  position:absolute;inset:0;pointer-events:none;z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;mix-blend-mode:overlay;
+ position:absolute;inset:0;pointer-events:none;z-index:1;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;mix-blend-mode:overlay;
 }
 
 /* vignette */
 .ver-vignette{
-  position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:
-    radial-gradient(ellipse 55% 42% at 50% 44%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 44%, transparent 64%),
-    radial-gradient(ellipse 90% 90% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+ position:absolute;inset:0;pointer-events:none;z-index:2;
+ background:
+ radial-gradient(ellipse 55% 42% at 50% 44%, rgba(11,22,17,0.72) 0%, rgba(11,22,17,0.28) 44%, transparent 64%),
+ radial-gradient(ellipse 90% 90% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
 }
 
 /* seal wrapper, centred, fixed square */
 .ver-seal-wrap{
-  position:absolute;
-  top:50%;left:50%;
-  width:clamp(280px, 38vmin, 480px);
-  height:clamp(280px, 38vmin, 480px);
-  transform:translate(-50%, -50%);
-  z-index:3;
+ position:absolute;
+ top:50%;left:50%;
+ width:clamp(280px, 38vmin, 480px);
+ height:clamp(280px, 38vmin, 480px);
+ transform:translate(-50%, -50%);
+ z-index:3;
 }
 
 /* the SVG seal itself */
 .ver-seal{
-  width:100%;height:100%;
-  display:block;
-  filter:drop-shadow(0 0 18px rgba(184,148,90,0.18));
+ width:100%;height:100%;
+ display:block;
+ filter:drop-shadow(0 0 18px rgba(184,148,90,0.18));
 }
 
 /* rings, default dim, light up via JS classes */
 .ver-ring{
-  opacity:0.22;
-  transition:opacity 0.7s ease, filter 0.7s ease;
+ opacity:0.22;
+ transition:opacity 0.7s ease, filter 0.7s ease;
 }
 .ver-ring.ver-lit{
-  opacity:1;
-  filter:drop-shadow(0 0 6px #CBA258);
+ opacity:1;
+ filter:drop-shadow(0 0 6px #CBA258);
 }
 
 /* rim text */
 .ver-rim-text{
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:2.5px;
-  fill:#B8945A;
-  opacity:0.7;
-  text-transform:uppercase;
+ font-family:var(--mono);
+ font-size:10px;
+ letter-spacing:2.5px;
+ fill:#B8945A;
+ opacity:0.7;
+ text-transform:uppercase;
 }
 
 /* centre type */
 .ver-sku{
-  font-family:var(--mono);
-  font-size:13px;
-  letter-spacing:3px;
-  fill:#CBA258;
-  text-transform:uppercase;
+ font-family:var(--mono);
+ font-size:13px;
+ letter-spacing:3px;
+ fill:#CBA258;
+ text-transform:uppercase;
 }
 .ver-auth-word{
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:4px;
-  fill:#B8945A;
-  opacity:0.65;
-  text-transform:uppercase;
+ font-family:var(--mono);
+ font-size:10px;
+ letter-spacing:4px;
+ fill:#B8945A;
+ opacity:0.65;
+ text-transform:uppercase;
 }
 
 /* scan line, sweeps vertically within the seal wrapper */
 .ver-scan{
-  position:absolute;
-  left:0;right:0;
-  top:0;
-  height:2px;
-  background:linear-gradient(to right, transparent 0%, #E0C083 30%, #F8F0D0 50%, #E0C083 70%, transparent 100%);
-  box-shadow:0 0 8px 2px rgba(224,192,131,0.6);
-  pointer-events:none;
-  animation:ver-sweep 2.8s cubic-bezier(0.45,0,0.55,1) infinite;
+ position:absolute;
+ left:0;right:0;
+ top:0;
+ height:2px;
+ background:linear-gradient(to right, transparent 0%, #E0C083 30%, #F8F0D0 50%, #E0C083 70%, transparent 100%);
+ box-shadow:0 0 8px 2px rgba(224,192,131,0.6);
+ pointer-events:none;
+ animation:ver-sweep 2.8s cubic-bezier(0.45,0,0.55,1) infinite;
 }
 .ver-scan-glow{
-  position:absolute;
-  left:-12px;right:-12px;
-  top:0;
-  height:6px;
-  background:linear-gradient(to right, transparent 0%, rgba(224,192,131,0.15) 20%, rgba(248,240,208,0.35) 50%, rgba(224,192,131,0.15) 80%, transparent 100%);
-  filter:blur(4px);
-  pointer-events:none;
-  animation:ver-sweep 2.8s cubic-bezier(0.45,0,0.55,1) infinite;
+ position:absolute;
+ left:-12px;right:-12px;
+ top:0;
+ height:6px;
+ background:linear-gradient(to right, transparent 0%, rgba(224,192,131,0.15) 20%, rgba(248,240,208,0.35) 50%, rgba(224,192,131,0.15) 80%, transparent 100%);
+ filter:blur(4px);
+ pointer-events:none;
+ animation:ver-sweep 2.8s cubic-bezier(0.45,0,0.55,1) infinite;
 }
 
 @keyframes ver-sweep{
-  0%   { top:0%;   opacity:0; }
-  6%   { opacity:1; }
-  50%  { top:100%; opacity:1; }
-  56%  { top:100%; opacity:0; }
-  57%  { top:0%;   opacity:0; }
-  100% { top:0%;   opacity:0; }
+ 0% { top:0%; opacity:0; }
+ 6% { opacity:1; }
+ 50% { top:100%; opacity:1; }
+ 56% { top:100%; opacity:0; }
+ 57% { top:0%; opacity:0; }
+ 100% { top:0%; opacity:0; }
 }
 
 /* text overlay */
 .ver-inner{
-  position:relative;z-index:10;
-  display:flex;flex-direction:column;align-items:center;
-  pointer-events:none;
+ position:relative;z-index:10;
+ display:flex;flex-direction:column;align-items:center;
+ pointer-events:none;
 }
 .ver-eyebrow{
-  font-family:var(--mono);
-  font-size:12px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:32px;
+ font-family:var(--mono);
+ font-size:12px;letter-spacing:3px;text-transform:uppercase;
+ color:var(--gold);
+ margin-bottom:32px;
 }
 .ver-title{
-  font-family:var(--serif);
-  font-weight:300;
-  line-height:0.9;
-  letter-spacing:-2px;
-  font-size:clamp(4rem,14vw,16rem);
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
-  margin:0 0 32px;
+ font-family:var(--serif);
+ font-weight:300;
+ line-height:0.9;
+ letter-spacing:-2px;
+ font-size:clamp(4rem,14vw,16rem);
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ margin:0 0 32px;
 }
 .ver-sub{
-  font-family:var(--serif);
-  font-weight:300;
-  font-style:italic;
-  font-size:clamp(1.1rem,2.4vw,1.7rem);
-  color:rgba(248,246,241,0.85);
-  max-width:680px;
-  line-height:1.35;
-  text-shadow:0 1px 40px rgba(0,0,0,0.55);
-  margin:0;
+ font-family:var(--serif);
+ font-weight:300;
+ font-style:italic;
+ font-size:clamp(1.1rem,2.4vw,1.7rem);
+ color:rgba(248,246,241,0.85);
+ max-width:680px;
+ line-height:1.35;
+ text-shadow:0 1px 40px rgba(0,0,0,0.55);
+ margin:0;
 }
 
 /* reduced motion, static seal, all rings lit, no sweep */
 @media (prefers-reduced-motion: reduce){
-  .ver-scan,.ver-scan-glow{ animation:none; opacity:0; }
-  .ver-ring{ opacity:1; transition:none; }
+ .ver-scan,.ver-scan-glow{ animation:none; opacity:0; }
+ .ver-ring{ opacity:1; transition:none; }
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -400,267 +400,267 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="ver-hero" aria-label="Verification hero">
-  <!-- film grain -->
-  <div class="ver-grain" aria-hidden="true"></div>
-  <!-- radial vignette behind text -->
-  <div class="ver-vignette" aria-hidden="true"></div>
+ <!-- film grain -->
+ <div class="ver-grain" aria-hidden="true"></div>
+ <!-- radial vignette behind text -->
+ <div class="ver-vignette" aria-hidden="true"></div>
 
-  <!-- the stamp seal -->
-  <div class="ver-seal-wrap" aria-hidden="true">
-    <svg class="ver-seal" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- ring 3, outermost -->
-      <circle class="ver-ring ver-ring-3" cx="160" cy="160" r="148" fill="none" stroke="#B8945A" stroke-width="1.5"/>
-      <circle class="ver-ring ver-ring-3" cx="160" cy="160" r="140" fill="none" stroke="#B8945A" stroke-width="0.6" stroke-dasharray="2 4"/>
-      <!-- ring 2 -->
-      <circle class="ver-ring ver-ring-2" cx="160" cy="160" r="118" fill="none" stroke="#B8945A" stroke-width="1.5"/>
-      <!-- ring 1, innermost -->
-      <circle class="ver-ring ver-ring-1" cx="160" cy="160" r="90" fill="none" stroke="#B8945A" stroke-width="2"/>
+ <!-- the stamp seal -->
+ <div class="ver-seal-wrap" aria-hidden="true">
+ <svg class="ver-seal" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <!-- ring 3, outermost -->
+ <circle class="ver-ring ver-ring-3" cx="160" cy="160" r="148" fill="none" stroke="#B8945A" stroke-width="1.5"/>
+ <circle class="ver-ring ver-ring-3" cx="160" cy="160" r="140" fill="none" stroke="#B8945A" stroke-width="0.6" stroke-dasharray="2 4"/>
+ <!-- ring 2 -->
+ <circle class="ver-ring ver-ring-2" cx="160" cy="160" r="118" fill="none" stroke="#B8945A" stroke-width="1.5"/>
+ <!-- ring 1, innermost -->
+ <circle class="ver-ring ver-ring-1" cx="160" cy="160" r="90" fill="none" stroke="#B8945A" stroke-width="2"/>
 
-      <!-- text along outer rim (ring 3) -->
-      <path id="ver-rim-top" d="M 160,160 m -138,0 a 138,138 0 1,1 276,0" fill="none"/>
-      <text class="ver-rim-text">
-        <textPath href="#ver-rim-top" startOffset="0%">STERNBERG COLLECTION · VERIFIED · 2,468 ITEMS · STERNBERG COLLECTION · VERIFIED · 2,468 ITEMS ·</textPath>
-      </text>
+ <!-- text along outer rim (ring 3) -->
+ <path id="ver-rim-top" d="M 160,160 m -138,0 a 138,138 0 1,1 276,0" fill="none"/>
+ <text class="ver-rim-text">
+ <textPath href="#ver-rim-top" startOffset="0%">STERNBERG COLLECTION · VERIFIED · 2,468 ITEMS · STERNBERG COLLECTION · VERIFIED · 2,468 ITEMS ·</textPath>
+ </text>
 
-      <!-- tick marks inside ring 3 -->
-      <g class="ver-ticks" stroke="#B8945A" stroke-width="0.8" opacity="0.5">
-        <line x1="160" y1="14" x2="160" y2="22"/>
-        <line x1="160" y1="298" x2="160" y2="306"/>
-        <line x1="14" y1="160" x2="22" y2="160"/>
-        <line x1="298" y1="160" x2="306" y2="160"/>
-        <!-- 45° marks -->
-        <line x1="63.7" y1="63.7" x2="69.4" y2="69.4"/>
-        <line x1="250.6" y1="250.6" x2="256.3" y2="256.3"/>
-        <line x1="256.3" y1="63.7" x2="250.6" y2="69.4"/>
-        <line x1="69.4" y1="250.6" x2="63.7" y2="256.3"/>
-      </g>
+ <!-- tick marks inside ring 3 -->
+ <g class="ver-ticks" stroke="#B8945A" stroke-width="0.8" opacity="0.5">
+ <line x1="160" y1="14" x2="160" y2="22"/>
+ <line x1="160" y1="298" x2="160" y2="306"/>
+ <line x1="14" y1="160" x2="22" y2="160"/>
+ <line x1="298" y1="160" x2="306" y2="160"/>
+ <!-- 45° marks -->
+ <line x1="63.7" y1="63.7" x2="69.4" y2="69.4"/>
+ <line x1="250.6" y1="250.6" x2="256.3" y2="256.3"/>
+ <line x1="256.3" y1="63.7" x2="250.6" y2="69.4"/>
+ <line x1="69.4" y1="250.6" x2="63.7" y2="256.3"/>
+ </g>
 
-      <!-- centre content -->
-      <text class="ver-sku" x="160" y="148" text-anchor="middle">SKU 168515</text>
-      <line class="ver-divider" x1="130" y1="160" x2="190" y2="160" stroke="#B8945A" stroke-width="0.8" opacity="0.6"/>
-      <text class="ver-auth-word" x="160" y="178" text-anchor="middle">AUTHENTICATED</text>
-    </svg>
+ <!-- centre content -->
+ <text class="ver-sku" x="160" y="148" text-anchor="middle">SKU 168515</text>
+ <line class="ver-divider" x1="130" y1="160" x2="190" y2="160" stroke="#B8945A" stroke-width="0.8" opacity="0.6"/>
+ <text class="ver-auth-word" x="160" y="178" text-anchor="middle">AUTHENTICATED</text>
+ </svg>
 
-    <!-- scan line that sweeps across the seal -->
-    <div class="ver-scan" aria-hidden="true"></div>
-    <!-- scan glow clone (slightly wider, blurred) -->
-    <div class="ver-scan-glow" aria-hidden="true"></div>
-  </div>
+ <!-- scan line that sweeps across the seal -->
+ <div class="ver-scan" aria-hidden="true"></div>
+ <!-- scan glow clone (slightly wider, blurred) -->
+ <div class="ver-scan-glow" aria-hidden="true"></div>
+ </div>
 
-  <!-- text overlay -->
-  <div class="ver-inner">
-    <div class="ver-eyebrow">How the collection is documented</div>
-    <h1 class="ver-title">Verification</h1>
-    <p class="ver-sub">A three-tier framework, OCR, photographic, cross-referenced, to <em>documented chain of custody.</em></p>
-  </div>
+ <!-- text overlay -->
+ <div class="ver-inner">
+ <div class="ver-eyebrow">How the collection is documented</div>
+ <h1 class="ver-title">Verification</h1>
+ <p class="ver-sub">A three-tier framework, OCR, photographic, cross-referenced, to <em>documented chain of custody.</em></p>
+ </div>
 
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <!-- Reveal statement -->
 <section>
-  <div class="narrow">
-    <h2 class="reveal statement">A buyer asking &ldquo;how do I know item&nbsp;#1247 is actually in the collection?&rdquo; deserves a <span class="it">real answer.</span></h2>
-  </div>
+ <div class="narrow">
+ <h2 class="reveal statement">A buyer asking &ldquo;how do I know item&nbsp;#1247 is actually in the collection?&rdquo; deserves a <span class="it">real answer.</span></h2>
+ </div>
 </section>
 
 <!-- Three tiers as feature list -->
 <section class="soft">
-  <div class="container">
-    <div class="reveal eyebrow">The Three Tiers</div>
-    <div class="pieces">
+ <div class="container">
+ <div class="reveal eyebrow">The Three Tiers</div>
+ <div class="pieces">
 
-      <div class="reveal piece">
-        <div class="num">01</div>
-        <div>
-          <div class="tag">Strongest evidence</div>
-          <h3>OCR-Verified</h3>
-          <p>Bottom-stamp text legible via OCR and matched to inventory ticket. Direct text-based confirmation including SKU, copyright year, country of origin, and original retail price. Concentrated in anchors and high-value pieces where individual verification economics justify the OCR effort.</p>
-          <div class="meta">
-            <div><div class="k">Current count</div><div class="val">~200 pieces</div></div>
-            <div><div class="k">Coverage</div><div class="val plain">~8%</div></div>
-          </div>
-        </div>
-      </div>
+ <div class="reveal piece">
+ <div class="num">01</div>
+ <div>
+ <div class="tag">Strongest evidence</div>
+ <h3>OCR-Verified</h3>
+ <p>Bottom-stamp text legible via OCR and matched to inventory ticket. Direct text-based confirmation including SKU, copyright year, country of origin, and original retail price. Concentrated in anchors and high-value pieces where individual verification economics justify the OCR effort.</p>
+ <div class="meta">
+ <div><div class="k">Current count</div><div class="val">~200 pieces</div></div>
+ <div><div class="k">Coverage</div><div class="val plain">~8%</div></div>
+ </div>
+ </div>
+ </div>
 
-      <div class="reveal piece">
-        <div class="num">02</div>
-        <div>
-          <div class="tag">Visual confirmation</div>
-          <h3>Photo-Documented</h3>
-          <p>Visual match by side art, copyright stamp, or distinctive feature even without bottom OCR. Confirmed against ticket via multi-angle photography from the 9,872-image archive. The appropriate tier for items with non-English bottom text, Hebrew, Japanese, Thai, and items where the bottom is occluded by packaging.</p>
-          <div class="meta">
-            <div><div class="k">Current count</div><div class="val">~1,500 pieces</div></div>
-            <div><div class="k">Coverage</div><div class="val plain">~60%</div></div>
-          </div>
-        </div>
-      </div>
+ <div class="reveal piece">
+ <div class="num">02</div>
+ <div>
+ <div class="tag">Visual confirmation</div>
+ <h3>Photo-Documented</h3>
+ <p>Visual match by side art, copyright stamp, or distinctive feature even without bottom OCR. Confirmed against ticket via multi-angle photography from the 9,872-image archive. The appropriate tier for items with non-English bottom text, Hebrew, Japanese, Thai, and items where the bottom is occluded by packaging.</p>
+ <div class="meta">
+ <div><div class="k">Current count</div><div class="val">~1,500 pieces</div></div>
+ <div><div class="k">Coverage</div><div class="val plain">~60%</div></div>
+ </div>
+ </div>
+ </div>
 
-      <div class="reveal piece">
-        <div class="num">03</div>
-        <div>
-          <div class="tag">Provenance-level</div>
-          <h3>Cross-Referenced</h3>
-          <p>Every inventory line linked to box location, photo file, Instagram post, and series classification. The master cross-reference spreadsheet, when complete, <em>is</em> the verification artifact, the form of documentation a museum or auction house needs. Mechanical, not interpretive.</p>
-          <div class="meta">
-            <div><div class="k">Coverage</div><div class="val">2,468 items</div></div>
-            <div><div class="k">Status</div><div class="val plain">100%</div></div>
-          </div>
-        </div>
-      </div>
+ <div class="reveal piece">
+ <div class="num">03</div>
+ <div>
+ <div class="tag">Provenance-level</div>
+ <h3>Cross-Referenced</h3>
+ <p>Every inventory line linked to box location, photo file, Instagram post, and series classification. The master cross-reference spreadsheet, when complete, <em>is</em> the verification artifact, the form of documentation a museum or auction house needs. Mechanical, not interpretive.</p>
+ <div class="meta">
+ <div><div class="k">Coverage</div><div class="val">2,468 items</div></div>
+ <div><div class="k">Status</div><div class="val plain">100%</div></div>
+ </div>
+ </div>
+ </div>
 
-    </div>
-  </div>
+ </div>
+ </div>
 </section>
 
 <!-- Prose + callout -->
 <section>
-  <div class="narrow">
-    <div class="prose">
-      <p class="lead reveal">The answer cannot be a single percentage. The Sternberg Collection contains <span class="em">2,468 items</span> spanning fifty-three years, six continents, multiple languages, and dozens of production formats.</p>
-      <p class="drop reveal">A single verification metric flattens that complexity into a number that doesn&rsquo;t tell the buyer what matters. What matters is provenance. Chain of custody. The link between the inventory line and the physical object. The three-tier framework recognizes that different parts of the collection warrant different verification depths, and that all 2,468 items can be brought to documented chain-of-custody status.</p>
-      <p class="reveal">Tier 1 OCR-verified means the bottom-stamp text has been extracted from a photograph and confirmed against the inventory ticket. The Sternberg Collection currently has approximately 200 items at Tier 1, concentrated in anchors and high-value pieces: Giant Abbey, Doonesbury LE 10/10, Skyline GIANTS, Bahrain CMCS, Charity Edition 16/16, Architecture Series across 45+ cities.</p>
-      <p class="reveal">Tier 2 photo-documented means a photograph in the archive matches the inventory line by side art, distinctive shape, or visible identifier. Tier 2 work is currently underway across approximately 700&ndash;900 items, with capacity to scale to 1,500&ndash;2,000 items.</p>
-      <p class="reveal">Tier 3 inventory cross-referenced is the provenance-level verification: every inventory line linked to its box location, at least one matching photo file, an Instagram post URL where the piece appears in the @starbucks.mug.collection archive, and a series classification.</p>
-    </div>
-    <div class="reveal callout">The Sternberg Collection has always been at 100% chain-of-custody. Chaim&rsquo;s color-coded box system, his 9,872-photograph archive, and his 2,466-post Instagram account are the proof. The verification work now is making that chain <em>visible and queryable</em> for a buyer.</div>
-  </div>
+ <div class="narrow">
+ <div class="prose">
+ <p class="lead reveal">The answer cannot be a single percentage. The Sternberg Collection contains <span class="em">2,468 items</span> spanning fifty-three years, six continents, multiple languages, and dozens of production formats.</p>
+ <p class="drop reveal">A single verification metric flattens that complexity into a number that doesn&rsquo;t tell the buyer what matters. What matters is provenance. Chain of custody. The link between the inventory line and the physical object. The three-tier framework recognizes that different parts of the collection warrant different verification depths, and that all 2,468 items can be brought to documented chain-of-custody status.</p>
+ <p class="reveal">Tier 1 OCR-verified means the bottom-stamp text has been extracted from a photograph and confirmed against the inventory ticket. The Sternberg Collection currently has approximately 200 items at Tier 1, concentrated in anchors and high-value pieces: Giant Abbey, Doonesbury LE 10/10, Skyline GIANTS, Bahrain CMCS, Charity Edition 16/16, Architecture Series across 45+ cities.</p>
+ <p class="reveal">Tier 2 photo-documented means a photograph in the archive matches the inventory line by side art, distinctive shape, or visible identifier. Tier 2 work is currently underway across approximately 700 to 900 items, with capacity to scale to 1,500 to 2,000 items.</p>
+ <p class="reveal">Tier 3 inventory cross-referenced is the provenance-level verification: every inventory line linked to its box location, at least one matching photo file, an Instagram post URL where the piece appears in the @starbucks.mug.collection archive, and a series classification.</p>
+ </div>
+ <div class="reveal callout">The Sternberg Collection has always been at 100% chain-of-custody. Chaim&rsquo;s color-coded box system, his 9,872-photograph archive, and his 2,466-post Instagram account are the proof. The verification work now is making that chain <em>visible and queryable</em> for a buyer.</div>
+ </div>
 </section>
 
 <!-- Dark coverage bignums -->
 <section class="dark">
-  <div class="container">
-    <div class="reveal eyebrow" style="text-align:center">Coverage at a Glance</div>
-    <div class="bignums" style="margin-top:72px">
-      <div class="reveal bignum">
-        <div class="n"><span data-to="2468">2,468</span></div>
-        <div class="l">Items</div>
-        <div class="s">100% cross-referenced</div>
-      </div>
-      <div class="reveal bignum">
-        <div class="n"><span data-to="9872">9,872</span></div>
-        <div class="l">Photographs</div>
-        <div class="s">Multi-angle archive</div>
-      </div>
-      <div class="reveal bignum">
-        <div class="n"><span data-to="2466">2,466</span></div>
-        <div class="l">Instagram Posts</div>
-        <div class="s">@starbucks.mug.collection</div>
-      </div>
-    </div>
-    <div class="substats">
-      <div class="reveal substat">
-        <div class="n"><span data-to="200">200</span></div>
-        <div class="l">OCR-Verified</div>
-      </div>
-      <div class="reveal substat">
-        <div class="n"><span data-to="1500">1,500</span></div>
-        <div class="l">Photo-Documented</div>
-      </div>
-      <div class="reveal substat">
-        <div class="n"><span data-to="89">89</span></div>
-        <div class="l">Color-Coded Boxes</div>
-      </div>
-      <div class="reveal substat">
-        <div class="n"><span data-to="106">106</span></div>
-        <div class="l">Distinct Series</div>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="reveal eyebrow" style="text-align:center">Coverage at a Glance</div>
+ <div class="bignums" style="margin-top:72px">
+ <div class="reveal bignum">
+ <div class="n"><span data-to="2468">2,468</span></div>
+ <div class="l">Items</div>
+ <div class="s">100% cross-referenced</div>
+ </div>
+ <div class="reveal bignum">
+ <div class="n"><span data-to="9872">9,872</span></div>
+ <div class="l">Photographs</div>
+ <div class="s">Multi-angle archive</div>
+ </div>
+ <div class="reveal bignum">
+ <div class="n"><span data-to="2466">2,466</span></div>
+ <div class="l">Instagram Posts</div>
+ <div class="s">@starbucks.mug.collection</div>
+ </div>
+ </div>
+ <div class="substats">
+ <div class="reveal substat">
+ <div class="n"><span data-to="200">200</span></div>
+ <div class="l">OCR-Verified</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n"><span data-to="1500">1,500</span></div>
+ <div class="l">Photo-Documented</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n"><span data-to="89">89</span></div>
+ <div class="l">Color-Coded Boxes</div>
+ </div>
+ <div class="reveal substat">
+ <div class="n"><span data-to="106">106</span></div>
+ <div class="l">Distinct Series</div>
+ </div>
+ </div>
+ </div>
 </section>
 
-<!-- What a qualified buyer receives -->
+<!-- What the documentation includes -->
 <section>
-  <div class="narrow">
-    <div class="reveal eyebrow">What a Qualified Buyer Receives</div>
-    <h2 class="reveal statement" style="margin-bottom:56px">Four artifacts. <span class="it">Complete documentation.</span></h2>
-    <div class="cols top">
-      <div class="reveal">
-        <div class="prose">
-          <p>&ldquo;190 of 2,468 verified&rdquo; sounds like 7.7%, which sounds incomplete. &ldquo;Tier 1 OCR-verified for anchors, Tier 2 photo-documented for mid-tier items, Tier 3 cross-referenced for 100% of inventory&rdquo; is the truth, and what it describes is <span class="em">complete documentation.</span></p>
-          <p>An auction-house specialist or museum acquisitions team performing due diligence on a $1M+ private collection sale doesn&rsquo;t ask for a single verification percentage. They ask for the cross-reference table. They ask for the photo archive. They ask for the box manifest. They ask for the Instagram archive.</p>
-          <p>All four exist for the Sternberg Collection. The three-tier framework simply makes the verification work that has already been done legible to a buyer.</p>
-        </div>
-      </div>
-      <div class="reveal pullquote">
-        <div class="q">&ldquo;The master spreadsheet, NDA-distributable to qualified buyers.&rdquo;</div>
-        <p style="font-size:15px;color:var(--muted)">2,468 cross-referenced inventory lines with box location, photo file ID, Instagram post URL, and series classification, the verification artifact itself.</p>
-        <a class="linkout" href="./valuation.html">See the valuation &rarr;</a>
-      </div>
-    </div>
-  </div>
+ <div class="narrow">
+ <div class="reveal eyebrow">What the Documentation Includes</div>
+ <h2 class="reveal statement" style="margin-bottom:56px">Four artifacts. <span class="it">Complete documentation.</span></h2>
+ <div class="cols top">
+ <div class="reveal">
+ <div class="prose">
+ <p>&ldquo;190 of 2,468 verified&rdquo; sounds like 7.7%, which sounds incomplete. &ldquo;Tier 1 OCR-verified for anchors, Tier 2 photo-documented for mid-tier items, Tier 3 cross-referenced for 100% of inventory&rdquo; is the truth, and what it describes is <span class="em">complete documentation.</span></p>
+ <p>An auction-house specialist or museum acquisitions team performing due diligence on a $1M+ private collection sale doesn&rsquo;t ask for a single verification percentage. They ask for the cross-reference table. They ask for the photo archive. They ask for the box manifest. They ask for the Instagram archive.</p>
+ <p>All four exist for the Sternberg Collection. The three-tier framework simply makes the verification work that has already been done legible at a glance.</p>
+ </div>
+ </div>
+ <div class="reveal pullquote">
+ <div class="q">&ldquo;The master spreadsheet is the verification artifact.&rdquo;</div>
+ <p style="font-size:15px;color:var(--muted)">2,468 cross-referenced inventory lines with box location, photo file ID, Instagram post URL, and series classification, the verification artifact itself.</p>
+ <a class="linkout" href="./valuation.html">See the valuation &rarr;</a>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- Inquiries CTA -->
 <section id="inquiries" class="dark cta"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Inquiries&ensp;&#9670;</div>
-  <h2 class="reveal head">One owner.<br><span class="it">One sale.</span></h2>
-  <p class="reveal lede">Offered intact to a single buyer. Full documentation, photo archive, cross-reference spreadsheet, Instagram archive, available under NDA.</p>
-  <a class="reveal linkout" href="./index.html#inquiries">Begin an inquiry &rarr;</a>
+ <div class="reveal eyebrow" style="text-align:center">&#9670;&ensp;Verification&ensp;&#9670;</div>
+ <h2 class="reveal head">Documented,<br><span class="it">and verifiable.</span></h2>
+ <p class="reveal lede">Every piece ticketed and cross-referenced against the public Instagram archive. The catalogue is the proof.</p>
+ <a class="reveal linkout" href="./grid.html">Walk the whole archive &rarr;</a>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
 /* ver-hero: ring lock-in sequence */
 (function(){
-  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rings = [
-    document.querySelector('.ver-ring-1'),
-    document.querySelector('.ver-ring-2'),
-    document.querySelector('.ver-ring-3')
-  ];
-  if(!rings[0]) return;
-  if(REDUCE){
-    rings.forEach(function(r){ if(r) r.classList.add('ver-lit'); });
-    return;
-  }
-  /* staggered lock-in, each ring lights on the scan's second pass */
-  var delays = [1100, 1800, 2500];
-  rings.forEach(function(r, i){
-    if(!r) return;
-    setTimeout(function(){ r.classList.add('ver-lit'); }, delays[i]);
-  });
+ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var rings = [
+ document.querySelector('.ver-ring-1'),
+ document.querySelector('.ver-ring-2'),
+ document.querySelector('.ver-ring-3')
+ ];
+ if(!rings[0]) return;
+ if(REDUCE){
+ rings.forEach(function(r){ if(r) r.classList.add('ver-lit'); });
+ return;
+ }
+ /* staggered lock-in, each ring lights on the scan's second pass */
+ var delays = [1100, 1800, 2500];
+ rings.forEach(function(r, i){
+ if(!r) return;
+ setTimeout(function(){ r.classList.add('ver-lit'); }, delays[i]);
+ });
 
-  /* parallax on inner text while scrolling */
-  var hero = document.querySelector('.ver-hero');
-  var inner = document.querySelector('.ver-inner');
-  var sealWrap = document.querySelector('.ver-seal-wrap');
-  var ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return;
-    ticking = true;
-    requestAnimationFrame(function(){
-      if(!hero) { ticking = false; return; }
-      var hh = hero.offsetHeight;
-      var y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      if(inner){
-        inner.style.transform = 'translateY(' + (-60 * p).toFixed(1) + 'px)';
-        inner.style.opacity = (1 - p * 1.3).toFixed(3);
-      }
-      if(sealWrap){
-        sealWrap.style.transform = 'translate(-50%, calc(-50% + ' + (-30 * p).toFixed(1) + 'px))';
-        sealWrap.style.opacity = (1 - p * 1.1).toFixed(3);
-      }
-      ticking = false;
-    });
-  }, { passive: true });
+ /* parallax on inner text while scrolling */
+ var hero = document.querySelector('.ver-hero');
+ var inner = document.querySelector('.ver-inner');
+ var sealWrap = document.querySelector('.ver-seal-wrap');
+ var ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return;
+ ticking = true;
+ requestAnimationFrame(function(){
+ if(!hero) { ticking = false; return; }
+ var hh = hero.offsetHeight;
+ var y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ if(inner){
+ inner.style.transform = 'translateY(' + (-60 * p).toFixed(1) + 'px)';
+ inner.style.opacity = (1 - p * 1.3).toFixed(3);
+ }
+ if(sealWrap){
+ sealWrap.style.transform = 'translate(-50%, calc(-50% + ' + (-30 * p).toFixed(1) + 'px))';
+ sealWrap.style.opacity = (1 - p * 1.1).toFixed(3);
+ }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 </script>
 
@@ -670,73 +670,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

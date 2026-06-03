@@ -26,7 +26,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared with the rest of the site */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -158,17 +158,17 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats{grid-template-columns:repeat(2,1fr);gap:40px}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 64px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .abbey .comp{gap:40px}
-  nav .container{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats{grid-template-columns:repeat(2,1fr);gap:40px}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 64px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .abbey .comp{gap:40px}
+ nav .container{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -197,104 +197,104 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="figure"><span data-to="2468">2,468</span></div>
-    <div class="sub">The largest documented Starbucks collection ever assembled. <span class="it">Built by one man, over fifty-three years.</span></div>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+ <div class="vignette"></div>
+ <div class="hero-inner">
+ <div class="figure"><span data-to="2468">2,468</span></div>
+ <div class="sub">The largest documented Starbucks collection ever assembled. <span class="it">Built by one man, over fifty-three years.</span></div>
+ </div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <!-- THE SCALE -->
 <section><div class="container">
-  <div class="reveal eyebrow" style="text-align:center">The Collection</div>
-  <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Fifty-three years of chasing the siren around the world, <span class="it">ticketed and photographed down to the last cup.</span></h2>
-  <div class="bignums" style="margin-top:96px">
-    <div class="reveal bignum"><div class="n"><span data-to="2468">2,468</span></div><div class="l">Pieces</div><div class="s">Every one individually ticketed</div></div>
-    <div class="reveal bignum"><div class="n"><span data-to="53">53</span></div><div class="l">Years</div><div class="s">One unbroken hunt, 1971 to 2024</div></div>
-    <div class="reveal bignum"><div class="n"><span data-to="6216">6,216</span></div><div class="l">Photographs</div><div class="s">Each piece from every angle</div></div>
-  </div>
-  <div class="substats" style="border-top:1px solid rgba(26,26,26,0.1)">
-    <div class="reveal substat"><div class="n"><span data-to="89">89</span></div><div class="l">Storage boxes</div></div>
-    <div class="reveal substat"><div class="n"><span data-to="216">216</span></div><div class="l">Cities</div></div>
-    <div class="reveal substat"><div class="n"><span data-to="16">16</span></div><div class="l">Collections</div></div>
-    <div class="reveal substat"><div class="n"><span data-to="19">19</span></div><div class="l">Item types</div></div>
-  </div>
+ <div class="reveal eyebrow" style="text-align:center">The Collection</div>
+ <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Fifty-three years of chasing the siren around the world, <span class="it">ticketed and photographed down to the last cup.</span></h2>
+ <div class="bignums" style="margin-top:96px">
+ <div class="reveal bignum"><div class="n"><span data-to="2468">2,468</span></div><div class="l">Pieces</div><div class="s">Every one individually ticketed</div></div>
+ <div class="reveal bignum"><div class="n"><span data-to="53">53</span></div><div class="l">Years</div><div class="s">One unbroken hunt, 1971 to 2024</div></div>
+ <div class="reveal bignum"><div class="n"><span data-to="6216">6,216</span></div><div class="l">Photographs</div><div class="s">Each piece from every angle</div></div>
+ </div>
+ <div class="substats" style="border-top:1px solid rgba(26,26,26,0.1)">
+ <div class="reveal substat"><div class="n"><span data-to="89">89</span></div><div class="l">Storage boxes</div></div>
+ <div class="reveal substat"><div class="n"><span data-to="216">216</span></div><div class="l">Cities</div></div>
+ <div class="reveal substat"><div class="n"><span data-to="16">16</span></div><div class="l">Collections</div></div>
+ <div class="reveal substat"><div class="n"><span data-to="19">19</span></div><div class="l">Item types</div></div>
+ </div>
 </div></section>
 
 <!-- THE ANCHOR -->
 <section class="abbey"><div class="container">
-  <div class="reveal eyebrow">The Anchor</div>
-  <div class="reveal grail">&ldquo;The Holy Grail of Starbucks collectibles.&rdquo;</div>
-  <div class="reveal vessel"><span data-to="138">138</span><span class="u">&nbsp;oz</span></div>
-  <div class="reveal name">The Giant Abbey</div>
-  <p class="reveal body">The largest production vessel Starbucks ever made, released in 2001 as a limited store-display piece at the outer edge of what the brand ever manufactured. This one is preserved new in box, the singular anchor that pulls the whole archive into focus.</p>
-  <a class="reveal linkout" href="./collections.html">See it in the collections &rarr;</a>
+ <div class="reveal eyebrow">The Anchor</div>
+ <div class="reveal grail">&ldquo;The Holy Grail of Starbucks collectibles.&rdquo;</div>
+ <div class="reveal vessel"><span data-to="138">138</span><span class="u">&nbsp;oz</span></div>
+ <div class="reveal name">The Giant Abbey</div>
+ <p class="reveal body">The largest production vessel Starbucks ever made, released in 2001 as a limited store-display piece at the outer edge of what the brand ever manufactured. This one is preserved new in box, the singular anchor that pulls the whole archive into focus.</p>
+ <a class="reveal linkout" href="./collections.html">See it in the collections &rarr;</a>
 </div></section>
 
 <!-- HIGHLIGHTS -->
 <section><div class="container">
-  <div class="reveal eyebrow" style="text-align:center">A Few of the Stories</div>
-  <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Pieces that would make a collection <span class="it">on their own.</span></h2>
-  <div class="pieces">
-    <div class="reveal piece"><div class="num">01</div><div>
-      <div class="tag">Where it all began</div>
-      <h3>The 1994 Originals</h3>
-      <p>The very first Starbucks City Mug series ever produced, the year Starbucks collecting itself began. The Minneapolis and St. Paul 1994 is the one people chase, an early city mug that has quietly traded for around two thousand dollars.</p>
-    </div></div>
-    <div class="reveal piece"><div class="num">02</div><div>
-      <div class="tag">A complete set of giants</div>
-      <h3>The 2002 Oversized GIANTS</h3>
-      <p>Twenty-four ounce ceramic display pieces released, in the company&rsquo;s own words, to only the highest-volume stores. The Pike Place version is the most sought after. The collection holds all sixteen cities, the complete set.</p>
-    </div></div>
-    <div class="reveal piece"><div class="num">03</div><div>
-      <div class="tag">A Pulitzer winner&rsquo;s coffee gag</div>
-      <h3>Doonesbury &times; Garry Trudeau</h3>
-      <p>Designed for Starbucks by the Pulitzer-winning cartoonist, each piece numbered out of 1,500, including the Java Pump statue at number 47, an exceptionally low number in the run.</p>
-    </div></div>
-    <div class="reveal piece"><div class="num">04</div><div>
-      <div class="tag">A country that treats it as craft</div>
-      <h3>The Japan corpus</h3>
-      <p>Twenty-three separate sub-series under one country, from the worldwide Global Icon cities to the JIMOTO regional line made in real Kutani porcelain. Over a hundred Japan pieces, the deepest national section in the whole archive.</p>
-    </div></div>
-  </div>
+ <div class="reveal eyebrow" style="text-align:center">A Few of the Stories</div>
+ <h2 class="reveal statement" style="text-align:center;max-width:1000px;margin:0 auto">Pieces that would make a collection <span class="it">on their own.</span></h2>
+ <div class="pieces">
+ <div class="reveal piece"><div class="num">01</div><div>
+ <div class="tag">Where it all began</div>
+ <h3>The 1994 Originals</h3>
+ <p>The very first Starbucks City Mug series ever produced, the year Starbucks collecting itself began. The Minneapolis and St. Paul 1994 is the one people chase, an early city mug that has quietly traded for around two thousand dollars.</p>
+ </div></div>
+ <div class="reveal piece"><div class="num">02</div><div>
+ <div class="tag">A complete set of giants</div>
+ <h3>The 2002 Oversized GIANTS</h3>
+ <p>Twenty-four ounce ceramic display pieces released, in the company&rsquo;s own words, to only the highest-volume stores. The Pike Place version is the most sought after. The collection holds all sixteen cities, the complete set.</p>
+ </div></div>
+ <div class="reveal piece"><div class="num">03</div><div>
+ <div class="tag">A Pulitzer winner&rsquo;s coffee gag</div>
+ <h3>Doonesbury &times; Garry Trudeau</h3>
+ <p>Designed for Starbucks by the Pulitzer-winning cartoonist, each piece numbered out of 1,500, including the Java Pump statue at number 47, an exceptionally low number in the run.</p>
+ </div></div>
+ <div class="reveal piece"><div class="num">04</div><div>
+ <div class="tag">A country that treats it as craft</div>
+ <h3>The Japan corpus</h3>
+ <p>Twenty-three separate sub-series under one country, from the worldwide Global Icon cities to the JIMOTO regional line made in real Kutani porcelain. Over a hundred Japan pieces, the deepest national section in the whole archive.</p>
+ </div></div>
+ </div>
 </div></section>
 
 <!-- WALK IT -->
 <section style="background:rgba(184,148,90,0.05)"><div class="container">
-  <div class="reveal eyebrow" style="text-align:center">Every Piece, Every Angle</div>
-  <h2 class="reveal statement" style="text-align:center;max-width:900px;margin:0 auto 12px">Walk the whole archive <span class="it">on one page.</span></h2>
-  <p class="reveal lead">Two thousand four hundred and sixty-eight pieces, each with a researched note, in true ticket order.</p>
-  <div class="reveal filmstrip" style="margin-top:48px"><img loading="lazy" src="./img/giant-abbey.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/doonesbury/java-pump.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-giants/pike-place.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/charity/seattle.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/states-of-bean/california.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/japan/2009-japan-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/holiday/2010-paris-joyeux-noel-christmas-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/global-icon/abu-dhabi-global-icon-collectible-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/bearista/2002-summer-beach-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-series/alaska-skyline-series.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/relief/amsterdam-relief-series-2011-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/architecture/2004-first-logo-demitasse-3oz.jpg" alt="A piece from the collection"></div>
-  <div class="reveal explore">
-    <a class="btn solid" href="./grid.html">Enter The Grid &rarr;</a>
-    <a class="btn ghost" href="./collections.html">Browse by collection</a>
-  </div>
+ <div class="reveal eyebrow" style="text-align:center">Every Piece, Every Angle</div>
+ <h2 class="reveal statement" style="text-align:center;max-width:900px;margin:0 auto 12px">Walk the whole archive <span class="it">on one page.</span></h2>
+ <p class="reveal lead">Two thousand four hundred and sixty-eight pieces, each with a researched note, in true ticket order.</p>
+ <div class="reveal filmstrip" style="margin-top:48px"><img loading="lazy" src="./img/giant-abbey.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/doonesbury/java-pump.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-giants/pike-place.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/charity/seattle.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/states-of-bean/california.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/japan/2009-japan-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/holiday/2010-paris-joyeux-noel-christmas-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/global-icon/abu-dhabi-global-icon-collectible-mug-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/bearista/2002-summer-beach-bear.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/skyline-series/alaska-skyline-series.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/relief/amsterdam-relief-series-2011-16oz.jpg" alt="A piece from the collection"><img loading="lazy" src="./img/architecture/2004-first-logo-demitasse-3oz.jpg" alt="A piece from the collection"></div>
+ <div class="reveal explore">
+ <a class="btn solid" href="./grid.html">Enter The Grid &rarr;</a>
+ <a class="btn ghost" href="./collections.html">Browse by collection</a>
+ </div>
 </div></section>
 
 <!-- THE STORY -->
 <section class="dark"><div class="narrow">
-  <div class="reveal eyebrow" style="text-align:center">In Memory</div>
-  <p class="reveal story-quote">Chaim Sternberg spent fifty-three years quietly building what no museum and no other private collector on record ever has. When he passed on the 29th of February, 2024, his son Ohad set out to honor him the only way that felt right: by documenting every last piece, so the whole of it could be seen at once.<span class="sign">In loving memory of Chaim Sternberg, 1940 to 2024</span></p>
+ <div class="reveal eyebrow" style="text-align:center">In Memory</div>
+ <p class="reveal story-quote">Chaim Sternberg spent fifty-three years quietly building what no museum and no other private collector on record ever has. When he passed on the 29th of February, 2024, his son Ohad set out to honor him the only way that felt right: by documenting every last piece, so the whole of it could be seen at once.<span class="sign">In loving memory of Chaim Sternberg, 1940 to 2024</span></p>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
@@ -303,72 +303,72 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, recreates the pitch-deck's animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>

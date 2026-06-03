@@ -27,7 +27,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:3
 
 /* nav, shared site-wide */
 nav{padding:32px 0;border-bottom:1px solid rgba(26,26,26,0.08);position:sticky;top:0;background:rgba(248,246,241,0.9);backdrop-filter:blur(12px);z-index:50}
-nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+nav .container,nav .narrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .logo{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:0.5px}
 .nav-links{display:flex;gap:24px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;flex-wrap:wrap}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:400}
@@ -223,147 +223,147 @@ footer .container{display:flex;justify-content:space-between;gap:24px;flex-wrap:
 footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,246,241,0.5)}
 
 @media (max-width:768px){
-  .cols{grid-template-columns:1fr;gap:48px}
-  .bignums{grid-template-columns:1fr;gap:56px}
-  .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
-  .cards{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
-  .piece .meta{gap:32px}
-  .comp-row{grid-template-columns:1fr 70px;gap:16px}
-  .comp-row .track{display:none}
-  .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
-  .ledger-row{grid-template-columns:1fr auto;gap:16px}
-  .ledger-row .step{display:none}
-  nav .container,nav .narrow{flex-direction:column;align-items:center}
-  .nav-links{gap:12px;font-size:11px;justify-content:center}
-  footer .container{justify-content:center;text-align:center}
+ .cols{grid-template-columns:1fr;gap:48px}
+ .bignums{grid-template-columns:1fr;gap:56px}
+ .substats,.statgrid,.specs{grid-template-columns:repeat(2,1fr);gap:40px}
+ .cards{grid-template-columns:1fr}
+ .chips{grid-template-columns:repeat(2,1fr)}
+ .piece{grid-template-columns:1fr;gap:16px;padding:44px 0}
+ .piece .meta{gap:32px}
+ .comp-row{grid-template-columns:1fr 70px;gap:16px}
+ .comp-row .track{display:none}
+ .tier{grid-template-columns:1fr;gap:14px;padding:40px 0}
+ .ledger-row{grid-template-columns:1fr auto;gap:16px}
+ .ledger-row .step{display:none}
+ nav .container,nav .narrow{flex-direction:column;align-items:center}
+ .nav-links{gap:12px;font-size:11px;justify-content:center}
+ footer .container{justify-content:center;text-align:center}
 }
 
 /* ===== GIANTS bespoke hero, "OVERSIZED" typographic wall ===== */
 .gnt-hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:#163026;
-  overflow:hidden;
+ position:relative;
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ background:#163026;
+ overflow:hidden;
 }
 
 /* typographic wall */
 .gnt-wall{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  pointer-events:none;
-  user-select:none;
+ position:absolute;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-around;
+ pointer-events:none;
+ user-select:none;
 }
 .gnt-row{
-  display:flex;
-  white-space:nowrap;
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,16rem);
-  line-height:0.92;
-  color:rgba(224,192,131,0.13);
-  will-change:transform;
+ display:flex;
+ white-space:nowrap;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,16rem);
+ line-height:0.92;
+ color:rgba(224,192,131,0.13);
+ will-change:transform;
 }
 .gnt-row span{
-  display:inline-block;
-  padding-right:0.25em;
+ display:inline-block;
+ padding-right:0.25em;
 }
 
 /* five rows at slightly different speeds; odd rows drift left, even drift right */
 @keyframes gnt-drift-left{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
 }
 @keyframes gnt-drift-right{
-  from{transform:translateX(-50%)}
-  to{transform:translateX(0)}
+ from{transform:translateX(-50%)}
+ to{transform:translateX(0)}
 }
-.gnt-row--1{animation:gnt-drift-left  38s linear infinite}
+.gnt-row--1{animation:gnt-drift-left 38s linear infinite}
 .gnt-row--2{animation:gnt-drift-right 52s linear infinite;color:rgba(203,162,88,0.10)}
-.gnt-row--3{animation:gnt-drift-left  44s linear infinite;color:rgba(248,246,241,0.07)}
+.gnt-row--3{animation:gnt-drift-left 44s linear infinite;color:rgba(248,246,241,0.07)}
 .gnt-row--4{animation:gnt-drift-right 60s linear infinite;color:rgba(224,192,131,0.12)}
-.gnt-row--5{animation:gnt-drift-left  48s linear infinite;color:rgba(203,162,88,0.09)}
+.gnt-row--5{animation:gnt-drift-left 48s linear infinite;color:rgba(203,162,88,0.09)}
 
 /* radial scrim for legibility over the type wall */
 .gnt-scrim{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
-    radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
-  pointer-events:none;
-  z-index:1;
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(ellipse 55% 42% at 50% 50%, rgba(11,22,17,0.78) 0%, rgba(11,22,17,0.30) 44%, transparent 68%),
+ radial-gradient(ellipse 94% 94% at 50% 50%, transparent 50%, rgba(11,22,17,0.94) 100%);
+ pointer-events:none;
+ z-index:1;
 }
 
 /* film grain */
 .gnt-grain{
-  position:absolute;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  opacity:0.05;
-  mix-blend-mode:overlay;
-  pointer-events:none;
-  z-index:2;
+ position:absolute;
+ inset:0;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+ opacity:0.05;
+ mix-blend-mode:overlay;
+ pointer-events:none;
+ z-index:2;
 }
 
 /* centered title content */
 .gnt-inner{
-  position:relative;
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:140px 32px 90px;
+ position:relative;
+ z-index:3;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ padding:140px 32px 90px;
 }
 .gnt-eyebrow{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:36px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ color:var(--gold);
+ margin-bottom:36px;
 }
 .gnt-title{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(5rem,18vw,14rem);
-  line-height:0.88;
-  letter-spacing:-3px;
-  color:#F8F6F1;
-  text-shadow:0 2px 80px rgba(0,0,0,0.6);
-  margin:0;
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(5rem,18vw,14rem);
+ line-height:0.88;
+ letter-spacing:-3px;
+ color:#F8F6F1;
+ text-shadow:0 2px 80px rgba(0,0,0,0.6);
+ margin:0;
 }
 .gnt-title em{
-  font-style:italic;
-  color:var(--gold);
+ font-style:italic;
+ color:var(--gold);
 }
 .gnt-sub{
-  font-family:var(--serif);
-  font-weight:300;
-  font-size:clamp(1.3rem,3vw,2.2rem);
-  font-style:italic;
-  color:rgba(248,246,241,0.88);
-  max-width:720px;
-  margin:36px auto 0;
-  line-height:1.3;
-  text-shadow:0 1px 40px rgba(0,0,0,0.6);
+ font-family:var(--serif);
+ font-weight:300;
+ font-size:clamp(1.3rem,3vw,2.2rem);
+ font-style:italic;
+ color:rgba(248,246,241,0.88);
+ max-width:720px;
+ margin:36px auto 0;
+ line-height:1.3;
+ text-shadow:0 1px 40px rgba(0,0,0,0.6);
 }
 .gnt-spec{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:rgba(248,246,241,0.5);
-  margin-top:24px;
+ font-family:var(--mono);
+ font-size:12px;
+ letter-spacing:2.5px;
+ text-transform:uppercase;
+ color:rgba(248,246,241,0.5);
+ margin-top:24px;
 }
 
 /* scroll cue sits above the wall */
@@ -371,12 +371,12 @@ footer .ft{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transf
 
 /* reduced-motion: freeze all rows in place */
 @media (prefers-reduced-motion:reduce){
-  .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
-    animation:none;
-    /* show only the first copy so the row stays in frame */
-    transform:translateX(0);
-  }
-  .gnt-row span + span{display:none}
+ .gnt-row--1,.gnt-row--2,.gnt-row--3,.gnt-row--4,.gnt-row--5{
+ animation:none;
+ /* show only the first copy so the row stays in frame */
+ transform:translateX(0);
+ }
+ .gnt-row span + span{display:none}
 }
 
 /* legibility guard: cream components must darken on light sections */
@@ -407,138 +407,138 @@ section:not(.dark) .bignum .s,section:not(.dark) .substat .l,section:not(.dark) 
 <body>
 
 <nav><div class="container">
-  <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
-  <div class="nav-links">
-    <a href="./index.html">Home</a>
-    <a href="./about.html">About</a>
-    <a href="./collector.html">Collector</a>
-    <a href="./collections.html">Collections</a>
-    <a href="./grid.html">The Grid</a>
-    <a href="./verification.html">Verification</a>
-  </div>
-  </div></nav>
+ <a href="./index.html" class="logo"><img class="logo-mark" src="./logo-mark.svg" alt="" width="28" height="28">The Sternberg Collection</a>
+ <div class="nav-links">
+ <a href="./index.html">Home</a>
+ <a href="./about.html">About</a>
+ <a href="./collector.html">Collector</a>
+ <a href="./collections.html">Collections</a>
+ <a href="./grid.html">The Grid</a>
+ <a href="./verification.html">Verification</a>
+ </div>
+ </div></nav>
 
 <header class="hero short">
-  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
-  <div class="vignette"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">The You Are Here Series</div>
-    <div class="htitle">The series that ate <span class="g">the whole map.</span></div>
-    <div class="sub">Launched in 2013 and never stopped. A postcard in ceramic for every city, state and country worth landing in.</div>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
+ <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+ <div class="vignette"></div>
+ <div class="hero-inner">
+ <div class="eyebrow">The You Are Here Series</div>
+ <div class="htitle">The series that ate <span class="g">the whole map.</span></div>
+ <div class="sub">Launched in 2013 and never stopped. A postcard in ceramic for every city, state and country worth landing in.</div>
+ </div>
+ <div class="scrollcue"><span>Scroll</span><div class="line"></div></div>
 </header>
 
 <section class="soft"><div class="narrow">
-  <div class="gnote reveal">
-    <div class="nk">From Ohad&rsquo;s notebook</div>
-    <p>If the Architecture Series is the quiet one, You Are Here is the loud one, and it is the series most people actually recognize. It started in <span class="em">2013</span> as the new flagship travel line, a fat fourteen ounce mug crammed edge to edge with the icons of a place. The Texas one has the boots and the oil derrick, Hawaii has the surfer and the turtle, Animal Kingdom has the tree of life. Bright, busy, unapologetic.</p>
-    <p>What makes it a collector trap is that Starbucks treats it as <span class="em">living inventory</span>, retiring designs and slipping in new ones, so chasing a complete set is like chasing a moving train. We are running it well past a hundred places here, the spine of the whole modern era of the collection.</p>
-    <p class="sign">Ohad</p>
-  </div>
+ <div class="gnote reveal">
+ <div class="nk">From Ohad&rsquo;s notebook</div>
+ <p>If the Architecture Series is the quiet one, You Are Here is the loud one, and it is the series most people actually recognize. It started in <span class="em">2013</span> as the new flagship travel line, a fat fourteen ounce mug crammed edge to edge with the icons of a place. The Texas one has the boots and the oil derrick, Hawaii has the surfer and the turtle, Animal Kingdom has the tree of life. Bright, busy, unapologetic.</p>
+ <p>What makes it a collector trap is that Starbucks treats it as <span class="em">living inventory</span>, retiring designs and slipping in new ones, so chasing a complete set is like chasing a moving train. We are running it well past a hundred places here, the spine of the whole modern era of the collection.</p>
+ <p class="sign">Ohad</p>
+ </div>
 </div></section>
 
 <section><div class="container">
-  <div class="reveal eyebrow">The map</div>
-  <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Every place, <span class="it">in your hand.</span></h2>
-  <div class="mug-grid">
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/alaska-you-are-here-collection-14oz.jpg" alt="Alaska, Starbucks You Are Here"><figcaption>Alaska<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/amsterdam-you-are-here-collection-14oz.jpg" alt="Amsterdam, Starbucks You Are Here"><figcaption>Amsterdam<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/animal-kingdom-you-are-here-collection-14oz.jpg" alt="Animal Kingdom, Starbucks You Are Here"><figcaption>Animal Kingdom<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/arizona-you-are-here-collection-14oz.jpg" alt="Arizona, Starbucks You Are Here"><figcaption>Arizona<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/aspen-you-are-here-collection-14oz.jpg" alt="Aspen, Starbucks You Are Here"><figcaption>Aspen<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/atlanta-you-are-here-collection-14oz.jpg" alt="Atlanta, Starbucks You Are Here"><figcaption>Atlanta<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/austin-you-are-here-collection-14oz.jpg" alt="Austin, Starbucks You Are Here"><figcaption>Austin<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/australia-you-are-here-collection-14oz.jpg" alt="Australia, Starbucks You Are Here"><figcaption>Australia<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/banff-you-are-here-collection-14oz.jpg" alt="Banff, Starbucks You Are Here"><figcaption>Banff<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/berlin-you-are-here-collection-14oz.jpg" alt="Berlin, Starbucks You Are Here"><figcaption>Berlin<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/bodrum-you-are-here-collection-14oz.jpg" alt="Bodrum, Starbucks You Are Here"><figcaption>Bodrum<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/boston-you-are-here-collection-14oz.jpg" alt="Boston, Starbucks You Are Here"><figcaption>Boston<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/brisbane-you-are-here-collection-14oz.jpg" alt="Brisbane, Starbucks You Are Here"><figcaption>Brisbane<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/calgary-you-are-here-collection-14oz.jpg" alt="Calgary, Starbucks You Are Here"><figcaption>Calgary<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/california-you-are-here-collection-14oz.jpg" alt="California, Starbucks You Are Here"><figcaption>California<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cambridge-you-are-here-collection-14oz.jpg" alt="Cambridge, Starbucks You Are Here"><figcaption>Cambridge<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/canada-you-are-here-collection-14oz.jpg" alt="Canada, Starbucks You Are Here"><figcaption>Canada<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cannes-you-are-here-collection-14oz.jpg" alt="Cannes, Starbucks You Are Here"><figcaption>Cannes<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/charlotte-you-are-here-collection-14oz.jpg" alt="Charlotte, Starbucks You Are Here"><figcaption>Charlotte<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/chicago-you-are-here-collection-14oz.jpg" alt="Chicago, Starbucks You Are Here"><figcaption>Chicago<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/colorado-you-are-here-collection-14oz.jpg" alt="Colorado, Starbucks You Are Here"><figcaption>Colorado<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/copenhagen-you-are-here-collection-14oz.jpg" alt="Copenhagen, Starbucks You Are Here"><figcaption>Copenhagen<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cyprus-you-are-here-collection-14oz.jpg" alt="Cyprus, Starbucks You Are Here"><figcaption>Cyprus<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/dallas-you-are-here-collection-14oz.jpg" alt="Dallas, Starbucks You Are Here"><figcaption>Dallas<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/denver-you-are-here-collection-14oz.jpg" alt="Denver, Starbucks You Are Here"><figcaption>Denver<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/detroit-you-are-here-collection-14oz.jpg" alt="Detroit, Starbucks You Are Here"><figcaption>Detroit<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/dubai-you-are-here-collection-14oz.jpg" alt="Dubai, Starbucks You Are Here"><figcaption>Dubai<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/edmonton-you-are-here-collection-14oz.jpg" alt="Edmonton, Starbucks You Are Here"><figcaption>Edmonton<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/epcot-you-are-here-collection-14oz.jpg" alt="Epcot, Starbucks You Are Here"><figcaption>Epcot<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/florida-you-are-here-collection-14oz.jpg" alt="Florida, Starbucks You Are Here"><figcaption>Florida<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/gold-coast-you-are-here-collection-14oz.jpg" alt="Gold Coast, Starbucks You Are Here"><figcaption>Gold Coast<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hamburg-you-are-here-collection-14oz.jpg" alt="Hamburg, Starbucks You Are Here"><figcaption>Hamburg<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hawaii-you-are-here-collection-14oz.jpg" alt="Hawaii, Starbucks You Are Here"><figcaption>Hawaii<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hong-kong-you-are-here-collection-14oz.jpg" alt="Hong Kong, Starbucks You Are Here"><figcaption>Hong Kong<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/houston-you-are-here-collection-14oz.jpg" alt="Houston, Starbucks You Are Here"><figcaption>Houston<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/indianapolis-you-are-here-collection-14oz.jpg" alt="Indianapolis, Starbucks You Are Here"><figcaption>Indianapolis<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/istanbul-you-are-here-collection-14oz.jpg" alt="Istanbul, Starbucks You Are Here"><figcaption>Istanbul<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/izmir-you-are-here-collection-14oz.jpg" alt="Izmir, Starbucks You Are Here"><figcaption>Izmir<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/japan-you-are-here-collection-14oz.jpg" alt="Japan, Starbucks You Are Here"><figcaption>Japan<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/japan-you-are-here-collection-demitasse-3oz.jpg" alt="Japan, Starbucks You Are Here"><figcaption>Japan<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/kansas-city-you-are-here-collection-14oz.jpg" alt="Kansas City, Starbucks You Are Here"><figcaption>Kansas City<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/lake-tahoe-you-are-here-collection-14oz.jpg" alt="Lake Tahoe, Starbucks You Are Here"><figcaption>Lake Tahoe<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/las-vegas-you-are-here-collection-14oz.jpg" alt="Las Vegas, Starbucks You Are Here"><figcaption>Las Vegas<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/los-angeles-you-are-here-collection-14oz.jpg" alt="Los Angeles, Starbucks You Are Here"><figcaption>Los Angeles<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/m-nchen-you-are-here-collection-14oz.jpg" alt="München, Starbucks You Are Here"><figcaption>München<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/macau-you-are-here-collection-14oz.jpg" alt="Macau, Starbucks You Are Here"><figcaption>Macau<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/madrid-you-are-here-collection-14oz.jpg" alt="Madrid, Starbucks You Are Here"><figcaption>Madrid<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/melbourne-you-are-here-collection-14oz.jpg" alt="Melbourne, Starbucks You Are Here"><figcaption>Melbourne<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/miami-you-are-here-collection-14oz.jpg" alt="Miami, Starbucks You Are Here"><figcaption>Miami<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/montreal-you-are-here-collection-14oz.jpg" alt="Montreal, Starbucks You Are Here"><figcaption>Montreal<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/nashville-you-are-here-collection-14oz.jpg" alt="Nashville, Starbucks You Are Here"><figcaption>Nashville<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-jersey-you-are-here-collection-14oz.jpg" alt="New Jersey, Starbucks You Are Here"><figcaption>New Jersey<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-mexico-you-are-here-collection-14oz.jpg" alt="New Mexico, Starbucks You Are Here"><figcaption>New Mexico<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-orleans-you-are-here-collection-14oz.jpg" alt="New Orleans, Starbucks You Are Here"><figcaption>New Orleans<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-york-you-are-here-collection-14oz.jpg" alt="New York, Starbucks You Are Here"><figcaption>New York<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/niagara-falls-you-are-here-collection-14oz.jpg" alt="Niagara Falls, Starbucks You Are Here"><figcaption>Niagara Falls<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/north-carolina-you-are-here-collection-14oz.jpg" alt="North Carolina, Starbucks You Are Here"><figcaption>North Carolina<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/ohio-you-are-here-collection-14oz.jpg" alt="Ohio, Starbucks You Are Here"><figcaption>Ohio<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/orange-county-you-are-here-collection-14oz.jpg" alt="Orange County, Starbucks You Are Here"><figcaption>Orange County<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/oregon-you-are-here-collection-14oz.jpg" alt="Oregon, Starbucks You Are Here"><figcaption>Oregon<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/orlando-you-are-here-collection-14oz.jpg" alt="Orlando, Starbucks You Are Here"><figcaption>Orlando<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/paris-you-are-here-collection-14oz.jpg" alt="Paris, Starbucks You Are Here"><figcaption>Paris<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/philadelphia-you-are-here-collection-14oz.jpg" alt="Philadelphia, Starbucks You Are Here"><figcaption>Philadelphia<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/phoenix-you-are-here-collection-14oz.jpg" alt="Phoenix, Starbucks You Are Here"><figcaption>Phoenix<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pike-place-market-you-are-here-collection-14.jpg" alt="Pike Place Market, Starbucks You Are Here"><figcaption>Pike Place Market<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pittsburgh-you-are-here-collection-14oz.jpg" alt="Pittsburgh, Starbucks You Are Here"><figcaption>Pittsburgh<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/portland-you-are-here-collection-14oz.jpg" alt="Portland, Starbucks You Are Here"><figcaption>Portland<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/prague-you-are-here-collection-14oz.jpg" alt="Prague, Starbucks You Are Here"><figcaption>Prague<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pretoria-you-are-here-collection-14oz.jpg" alt="Pretoria, Starbucks You Are Here"><figcaption>Pretoria<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/quebec-you-are-here-collection-14oz.jpg" alt="Quebec, Starbucks You Are Here"><figcaption>Quebec<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-antonio-you-are-here-collection-14oz.jpg" alt="San Antonio, Starbucks You Are Here"><figcaption>San Antonio<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-diego-you-are-here-collection-14oz.jpg" alt="San Diego, Starbucks You Are Here"><figcaption>San Diego<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-francisco-you-are-here-collection-14oz.jpg" alt="San Francisco, Starbucks You Are Here"><figcaption>San Francisco<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/seattle-you-are-here-collection-14oz.jpg" alt="Seattle, Starbucks You Are Here"><figcaption>Seattle<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/singapore-you-are-here-collection-14oz.jpg" alt="Singapore, Starbucks You Are Here"><figcaption>Singapore<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/st-louis-you-are-here-collection-14oz.jpg" alt="St. Louis, Starbucks You Are Here"><figcaption>St. Louis<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/sydney-you-are-here-collection-14oz.jpg" alt="Sydney, Starbucks You Are Here"><figcaption>Sydney<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/tennessee-you-are-here-collection-14oz.jpg" alt="Tennessee, Starbucks You Are Here"><figcaption>Tennessee<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/texas-you-are-here-collection-14oz.jpg" alt="Texas, Starbucks You Are Here"><figcaption>Texas<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/thailand-you-are-here-collection-14oz.jpg" alt="Thailand, Starbucks You Are Here"><figcaption>Thailand<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/the-hamptons-you-are-here-collection-14oz.jpg" alt="The Hamptons, Starbucks You Are Here"><figcaption>The Hamptons<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/toronto-you-are-here-collection-14oz.jpg" alt="Toronto, Starbucks You Are Here"><figcaption>Toronto<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vail-you-are-here-collection-14oz.jpg" alt="Vail, Starbucks You Are Here"><figcaption>Vail<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vancouver-island-you-are-here-collection-14o.jpg" alt="Vancouver Island, Starbucks You Are Here"><figcaption>Vancouver Island<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vancouver-you-are-here-collection-14oz.jpg" alt="Vancouver, Starbucks You Are Here"><figcaption>Vancouver<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/virginia-you-are-here-collection-14oz.jpg" alt="Virginia, Starbucks You Are Here"><figcaption>Virginia<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/waikiki-you-are-here-collection-14oz.jpg" alt="Waikiki, Starbucks You Are Here"><figcaption>Waikiki<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/washington-d-c-you-are-here-collection-14oz.jpg" alt="Washington, D.C., Starbucks You Are Here"><figcaption>Washington, D.C.<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/washington-you-are-here-collection-14oz.jpg" alt="Washington, Starbucks You Are Here"><figcaption>Washington<span>You Are Here</span></figcaption></figure>
-      <figure class="reveal"><img loading="lazy" src="./img/you-are-here/wisconsin-you-are-here-collection-14oz.jpg" alt="Wisconsin, Starbucks You Are Here"><figcaption>Wisconsin<span>You Are Here</span></figcaption></figure>
-  </div>
-  <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full You Are Here run of 115 is being photographed in.</p>
+ <div class="reveal eyebrow">The map</div>
+ <h2 class="reveal statement" style="max-width:760px;font-size:clamp(1.8rem,4vw,3.2rem)">Every place, <span class="it">in your hand.</span></h2>
+ <div class="mug-grid">
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/alaska-you-are-here-collection-14oz.jpg" alt="Alaska, Starbucks You Are Here"><figcaption>Alaska<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/amsterdam-you-are-here-collection-14oz.jpg" alt="Amsterdam, Starbucks You Are Here"><figcaption>Amsterdam<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/animal-kingdom-you-are-here-collection-14oz.jpg" alt="Animal Kingdom, Starbucks You Are Here"><figcaption>Animal Kingdom<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/arizona-you-are-here-collection-14oz.jpg" alt="Arizona, Starbucks You Are Here"><figcaption>Arizona<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/aspen-you-are-here-collection-14oz.jpg" alt="Aspen, Starbucks You Are Here"><figcaption>Aspen<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/atlanta-you-are-here-collection-14oz.jpg" alt="Atlanta, Starbucks You Are Here"><figcaption>Atlanta<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/austin-you-are-here-collection-14oz.jpg" alt="Austin, Starbucks You Are Here"><figcaption>Austin<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/australia-you-are-here-collection-14oz.jpg" alt="Australia, Starbucks You Are Here"><figcaption>Australia<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/banff-you-are-here-collection-14oz.jpg" alt="Banff, Starbucks You Are Here"><figcaption>Banff<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/berlin-you-are-here-collection-14oz.jpg" alt="Berlin, Starbucks You Are Here"><figcaption>Berlin<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/bodrum-you-are-here-collection-14oz.jpg" alt="Bodrum, Starbucks You Are Here"><figcaption>Bodrum<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/boston-you-are-here-collection-14oz.jpg" alt="Boston, Starbucks You Are Here"><figcaption>Boston<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/brisbane-you-are-here-collection-14oz.jpg" alt="Brisbane, Starbucks You Are Here"><figcaption>Brisbane<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/calgary-you-are-here-collection-14oz.jpg" alt="Calgary, Starbucks You Are Here"><figcaption>Calgary<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/california-you-are-here-collection-14oz.jpg" alt="California, Starbucks You Are Here"><figcaption>California<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cambridge-you-are-here-collection-14oz.jpg" alt="Cambridge, Starbucks You Are Here"><figcaption>Cambridge<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/canada-you-are-here-collection-14oz.jpg" alt="Canada, Starbucks You Are Here"><figcaption>Canada<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cannes-you-are-here-collection-14oz.jpg" alt="Cannes, Starbucks You Are Here"><figcaption>Cannes<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/charlotte-you-are-here-collection-14oz.jpg" alt="Charlotte, Starbucks You Are Here"><figcaption>Charlotte<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/chicago-you-are-here-collection-14oz.jpg" alt="Chicago, Starbucks You Are Here"><figcaption>Chicago<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/colorado-you-are-here-collection-14oz.jpg" alt="Colorado, Starbucks You Are Here"><figcaption>Colorado<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/copenhagen-you-are-here-collection-14oz.jpg" alt="Copenhagen, Starbucks You Are Here"><figcaption>Copenhagen<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/cyprus-you-are-here-collection-14oz.jpg" alt="Cyprus, Starbucks You Are Here"><figcaption>Cyprus<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/dallas-you-are-here-collection-14oz.jpg" alt="Dallas, Starbucks You Are Here"><figcaption>Dallas<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/denver-you-are-here-collection-14oz.jpg" alt="Denver, Starbucks You Are Here"><figcaption>Denver<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/detroit-you-are-here-collection-14oz.jpg" alt="Detroit, Starbucks You Are Here"><figcaption>Detroit<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/dubai-you-are-here-collection-14oz.jpg" alt="Dubai, Starbucks You Are Here"><figcaption>Dubai<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/edmonton-you-are-here-collection-14oz.jpg" alt="Edmonton, Starbucks You Are Here"><figcaption>Edmonton<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/epcot-you-are-here-collection-14oz.jpg" alt="Epcot, Starbucks You Are Here"><figcaption>Epcot<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/florida-you-are-here-collection-14oz.jpg" alt="Florida, Starbucks You Are Here"><figcaption>Florida<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/gold-coast-you-are-here-collection-14oz.jpg" alt="Gold Coast, Starbucks You Are Here"><figcaption>Gold Coast<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hamburg-you-are-here-collection-14oz.jpg" alt="Hamburg, Starbucks You Are Here"><figcaption>Hamburg<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hawaii-you-are-here-collection-14oz.jpg" alt="Hawaii, Starbucks You Are Here"><figcaption>Hawaii<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/hong-kong-you-are-here-collection-14oz.jpg" alt="Hong Kong, Starbucks You Are Here"><figcaption>Hong Kong<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/houston-you-are-here-collection-14oz.jpg" alt="Houston, Starbucks You Are Here"><figcaption>Houston<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/indianapolis-you-are-here-collection-14oz.jpg" alt="Indianapolis, Starbucks You Are Here"><figcaption>Indianapolis<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/istanbul-you-are-here-collection-14oz.jpg" alt="Istanbul, Starbucks You Are Here"><figcaption>Istanbul<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/izmir-you-are-here-collection-14oz.jpg" alt="Izmir, Starbucks You Are Here"><figcaption>Izmir<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/japan-you-are-here-collection-14oz.jpg" alt="Japan, Starbucks You Are Here"><figcaption>Japan<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/japan-you-are-here-collection-demitasse-3oz.jpg" alt="Japan, Starbucks You Are Here"><figcaption>Japan<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/kansas-city-you-are-here-collection-14oz.jpg" alt="Kansas City, Starbucks You Are Here"><figcaption>Kansas City<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/lake-tahoe-you-are-here-collection-14oz.jpg" alt="Lake Tahoe, Starbucks You Are Here"><figcaption>Lake Tahoe<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/las-vegas-you-are-here-collection-14oz.jpg" alt="Las Vegas, Starbucks You Are Here"><figcaption>Las Vegas<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/los-angeles-you-are-here-collection-14oz.jpg" alt="Los Angeles, Starbucks You Are Here"><figcaption>Los Angeles<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/m-nchen-you-are-here-collection-14oz.jpg" alt="München, Starbucks You Are Here"><figcaption>München<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/macau-you-are-here-collection-14oz.jpg" alt="Macau, Starbucks You Are Here"><figcaption>Macau<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/madrid-you-are-here-collection-14oz.jpg" alt="Madrid, Starbucks You Are Here"><figcaption>Madrid<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/melbourne-you-are-here-collection-14oz.jpg" alt="Melbourne, Starbucks You Are Here"><figcaption>Melbourne<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/miami-you-are-here-collection-14oz.jpg" alt="Miami, Starbucks You Are Here"><figcaption>Miami<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/montreal-you-are-here-collection-14oz.jpg" alt="Montreal, Starbucks You Are Here"><figcaption>Montreal<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/nashville-you-are-here-collection-14oz.jpg" alt="Nashville, Starbucks You Are Here"><figcaption>Nashville<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-jersey-you-are-here-collection-14oz.jpg" alt="New Jersey, Starbucks You Are Here"><figcaption>New Jersey<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-mexico-you-are-here-collection-14oz.jpg" alt="New Mexico, Starbucks You Are Here"><figcaption>New Mexico<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-orleans-you-are-here-collection-14oz.jpg" alt="New Orleans, Starbucks You Are Here"><figcaption>New Orleans<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/new-york-you-are-here-collection-14oz.jpg" alt="New York, Starbucks You Are Here"><figcaption>New York<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/niagara-falls-you-are-here-collection-14oz.jpg" alt="Niagara Falls, Starbucks You Are Here"><figcaption>Niagara Falls<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/north-carolina-you-are-here-collection-14oz.jpg" alt="North Carolina, Starbucks You Are Here"><figcaption>North Carolina<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/ohio-you-are-here-collection-14oz.jpg" alt="Ohio, Starbucks You Are Here"><figcaption>Ohio<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/orange-county-you-are-here-collection-14oz.jpg" alt="Orange County, Starbucks You Are Here"><figcaption>Orange County<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/oregon-you-are-here-collection-14oz.jpg" alt="Oregon, Starbucks You Are Here"><figcaption>Oregon<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/orlando-you-are-here-collection-14oz.jpg" alt="Orlando, Starbucks You Are Here"><figcaption>Orlando<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/paris-you-are-here-collection-14oz.jpg" alt="Paris, Starbucks You Are Here"><figcaption>Paris<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/philadelphia-you-are-here-collection-14oz.jpg" alt="Philadelphia, Starbucks You Are Here"><figcaption>Philadelphia<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/phoenix-you-are-here-collection-14oz.jpg" alt="Phoenix, Starbucks You Are Here"><figcaption>Phoenix<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pike-place-market-you-are-here-collection-14.jpg" alt="Pike Place Market, Starbucks You Are Here"><figcaption>Pike Place Market<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pittsburgh-you-are-here-collection-14oz.jpg" alt="Pittsburgh, Starbucks You Are Here"><figcaption>Pittsburgh<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/portland-you-are-here-collection-14oz.jpg" alt="Portland, Starbucks You Are Here"><figcaption>Portland<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/prague-you-are-here-collection-14oz.jpg" alt="Prague, Starbucks You Are Here"><figcaption>Prague<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/pretoria-you-are-here-collection-14oz.jpg" alt="Pretoria, Starbucks You Are Here"><figcaption>Pretoria<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/quebec-you-are-here-collection-14oz.jpg" alt="Quebec, Starbucks You Are Here"><figcaption>Quebec<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-antonio-you-are-here-collection-14oz.jpg" alt="San Antonio, Starbucks You Are Here"><figcaption>San Antonio<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-diego-you-are-here-collection-14oz.jpg" alt="San Diego, Starbucks You Are Here"><figcaption>San Diego<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/san-francisco-you-are-here-collection-14oz.jpg" alt="San Francisco, Starbucks You Are Here"><figcaption>San Francisco<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/seattle-you-are-here-collection-14oz.jpg" alt="Seattle, Starbucks You Are Here"><figcaption>Seattle<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/singapore-you-are-here-collection-14oz.jpg" alt="Singapore, Starbucks You Are Here"><figcaption>Singapore<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/st-louis-you-are-here-collection-14oz.jpg" alt="St. Louis, Starbucks You Are Here"><figcaption>St. Louis<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/sydney-you-are-here-collection-14oz.jpg" alt="Sydney, Starbucks You Are Here"><figcaption>Sydney<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/tennessee-you-are-here-collection-14oz.jpg" alt="Tennessee, Starbucks You Are Here"><figcaption>Tennessee<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/texas-you-are-here-collection-14oz.jpg" alt="Texas, Starbucks You Are Here"><figcaption>Texas<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/thailand-you-are-here-collection-14oz.jpg" alt="Thailand, Starbucks You Are Here"><figcaption>Thailand<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/the-hamptons-you-are-here-collection-14oz.jpg" alt="The Hamptons, Starbucks You Are Here"><figcaption>The Hamptons<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/toronto-you-are-here-collection-14oz.jpg" alt="Toronto, Starbucks You Are Here"><figcaption>Toronto<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vail-you-are-here-collection-14oz.jpg" alt="Vail, Starbucks You Are Here"><figcaption>Vail<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vancouver-island-you-are-here-collection-14o.jpg" alt="Vancouver Island, Starbucks You Are Here"><figcaption>Vancouver Island<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/vancouver-you-are-here-collection-14oz.jpg" alt="Vancouver, Starbucks You Are Here"><figcaption>Vancouver<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/virginia-you-are-here-collection-14oz.jpg" alt="Virginia, Starbucks You Are Here"><figcaption>Virginia<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/waikiki-you-are-here-collection-14oz.jpg" alt="Waikiki, Starbucks You Are Here"><figcaption>Waikiki<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/washington-d-c-you-are-here-collection-14oz.jpg" alt="Washington, D.C., Starbucks You Are Here"><figcaption>Washington, D.C.<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/washington-you-are-here-collection-14oz.jpg" alt="Washington, Starbucks You Are Here"><figcaption>Washington<span>You Are Here</span></figcaption></figure>
+ <figure class="reveal"><img loading="lazy" src="./img/you-are-here/wisconsin-you-are-here-collection-14oz.jpg" alt="Wisconsin, Starbucks You Are Here"><figcaption>Wisconsin<span>You Are Here</span></figcaption></figure>
+ </div>
+ <p class="reveal" style="margin-top:40px;font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">A first selection. The full You Are Here run of 115 is being photographed in.</p>
 </div></section>
 
 <footer><div class="container">
-  <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
-  <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
+ <div class="ft" style="display:inline-flex;align-items:center;gap:11px"><img src="./logo-mark.svg" alt="" width="22" height="22" style="display:block;flex:none">In loving memory of Chaim Sternberg &middot; 1940-2024</div>
+ <div class="ft"><a href="./valuation.html" style="color:inherit;text-decoration:none">Valuation</a> &middot; The Sternberg Collection</div>
 </div></footer>
 
 <script>
@@ -547,73 +547,73 @@ var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: re
 
 /* hero tile mosaic, animated grid in the site palette */
 (function(){
-  var host = document.getElementById('mosaic');
-  if(!host) return;
-  var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
-  function build(){
-    var w = host.clientWidth, h = host.clientHeight;
-    if(!w || !h) return;
-    var target = w < 640 ? 30 : 46;
-    var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
-    host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
-    host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
-    var n = cols * rows, frag = document.createDocumentFragment();
-    for(var i = 0; i < n; i++){
-      var t = document.createElement('i');
-      t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
-      if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
-      frag.appendChild(t);
-    }
-    host.innerHTML = '';
-    host.appendChild(frag);
-    var tiles = host.querySelectorAll('i');
-    if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      tiles.forEach(function(t){ t.classList.add('lit'); });
-    }); });
-  }
-  build();
-  var rt;
-  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
-  if(REDUCE) return;
-  var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
-  window.addEventListener('scroll', function(){
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(function(){
-      var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
-      var p = Math.min(Math.max(y / hh, 0), 1);
-      host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
-      host.style.opacity = (1 - p * 0.85).toFixed(3);
-      if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
-      ticking = false;
-    });
-  }, { passive: true });
+ var host = document.getElementById('mosaic');
+ if(!host) return;
+ var PALETTE = ['#0B1611','#102A1F','#163026','#1C3A2D','#0F2419','#142D22','#163026','#1C3A2D','#102A1F','#0B1611','#163026','#142D22','#B8945A','#CBA258','#D9B877','#A07C44','#E0C083','#CBA258','#F1E9D9','#E8DCC0'];
+ function build(){
+ var w = host.clientWidth, h = host.clientHeight;
+ if(!w || !h) return;
+ var target = w < 640 ? 30 : 46;
+ var cols = Math.ceil(w / target), rows = Math.ceil(h / target);
+ host.style.gridTemplateColumns = 'repeat(' + cols + ',1fr)';
+ host.style.gridTemplateRows = 'repeat(' + rows + ',1fr)';
+ var n = cols * rows, frag = document.createDocumentFragment();
+ for(var i = 0; i < n; i++){
+ var t = document.createElement('i');
+ t.style.background = PALETTE[(Math.random() * PALETTE.length) | 0];
+ if(!REDUCE) t.style.transitionDelay = (Math.random() * 1.8).toFixed(2) + 's';
+ frag.appendChild(t);
+ }
+ host.innerHTML = '';
+ host.appendChild(frag);
+ var tiles = host.querySelectorAll('i');
+ if(REDUCE){ tiles.forEach(function(t){ t.classList.add('lit'); }); return; }
+ requestAnimationFrame(function(){ requestAnimationFrame(function(){
+ tiles.forEach(function(t){ t.classList.add('lit'); });
+ }); });
+ }
+ build();
+ var rt;
+ window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 250); });
+ if(REDUCE) return;
+ var hero = document.querySelector('.hero'), inner = document.querySelector('.hero-inner'), ticking = false;
+ window.addEventListener('scroll', function(){
+ if(ticking) return; ticking = true;
+ requestAnimationFrame(function(){
+ var hh = hero.offsetHeight, y = window.pageYOffset || document.documentElement.scrollTop;
+ var p = Math.min(Math.max(y / hh, 0), 1);
+ host.style.transform = 'scale(' + (1 + 0.18 * p).toFixed(3) + ')';
+ host.style.opacity = (1 - p * 0.85).toFixed(3);
+ if(inner){ inner.style.transform = 'translateY(' + (-80 * p).toFixed(1) + 'px)'; inner.style.opacity = (1 - p * 1.25).toFixed(3); }
+ ticking = false;
+ });
+ }, { passive: true });
 })();
 
 /* scroll reveals + count-up numbers */
 (function(){
-  var reveal = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+ var reveal = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -8% 0px' });
+ document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
 
-  function countTo(el){
-    var to = parseFloat(el.getAttribute('data-to'));
-    var dur = 1500, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.floor(eased * to).toLocaleString('en-US');
-      if(p < 1){ requestAnimationFrame(frame); }
-      else { el.textContent = to.toLocaleString('en-US'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var counters = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
+ function countTo(el){
+ var to = parseFloat(el.getAttribute('data-to'));
+ var dur = 1500, start = null;
+ function frame(ts){
+ if(!start) start = ts;
+ var p = Math.min((ts - start) / dur, 1);
+ var eased = 1 - Math.pow(1 - p, 3);
+ el.textContent = Math.floor(eased * to).toLocaleString('en-US');
+ if(p < 1){ requestAnimationFrame(frame); }
+ else { el.textContent = to.toLocaleString('en-US'); }
+ }
+ requestAnimationFrame(frame);
+ }
+ var counters = new IntersectionObserver(function(entries){
+ entries.forEach(function(e){ if(e.isIntersecting){ countTo(e.target); counters.unobserve(e.target); } });
+ }, { rootMargin: '0px 0px -10% 0px' });
+ document.querySelectorAll('[data-to]').forEach(function(el){ el.textContent = '0'; counters.observe(el); });
 })();
 </script>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
